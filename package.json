@@ -1,8 +1,7 @@
 {
-  "name": "hira.page",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -24,7 +23,8 @@
     "eslint-plugin-vue": "^7.0.0-0",
     "prettier": "^1.19.1",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-svg-inline-loader": "^1.5.1"
   },
   "eslintConfig": {
     "root": true,

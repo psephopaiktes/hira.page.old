@@ -1,0 +1,13 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $image := $.Page.Resources.GetMatch $src }}
+{{ $width := $image.Width }}
+{{ $height := $image.Height }}
+<amp-img
+    src="{{ $src }}"
+    alt="{{ $alt }}"
+    width="{{ $width }}"
+    height="{{ $height }}"
+    layout="responsive"
+    title="{{.Get "title" }}"
+></amp-img>

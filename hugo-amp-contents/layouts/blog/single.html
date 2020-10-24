@@ -1,0 +1,82 @@
+{{ partial "header" . }}
+
+    {{/*  <header id="globalHeader">
+        <h1>{{ .Site.Title }}</h1>
+        <nav><ul>
+            <li><a href="/blog">BLOG</a></li>
+            <li><a href="/about">about</a></li>
+            <li><a href="/contact">contact</a></li>
+        </ul></nav>
+    </header>  */}}
+
+    <main>
+        <header class="articleHeader">
+            <amp-img
+                src="{{ .Permalink }}cover.png"
+                alt="{{ .Title }}"
+                width="640"
+                height="320"
+                layout="responsive"
+            ></amp-img>
+
+            <h1>{{ .Title }}</h1>
+
+            <span class="date">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+                {{- if .Params.update -}}
+                公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006.01.02" }}</time>更新
+                {{ end }}
+            </span>
+
+            {{ with .Params.tags -}}
+            <ul class="tags">
+                {{ range . -}}
+                <li><a href="/blog/tags/{{ . | urlize }}/">{{ . }}</a>
+                {{- end }}
+            </ul>
+            {{- end }}
+
+            {{ with .Description -}}
+            <p>{{ . }}</p>
+            {{- end }}
+        </header>
+
+        <aside class="index">
+            <h3>Index</h3>
+            {{ .TableOfContents }}
+        </aside>
+
+        <article>
+            {{ .Content }}
+        </article>
+
+        <footer>
+            <aside class="share">
+                <a class="twitter" href="https://twitter.com/intent/tweet?url={{.Permalink}}&text={{.Title}}%20%7c%20{{.Site.Title}}" target="_blank" rel="noopener" title="Twitterでシェアする">Twitter</a>
+
+                <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" title="Facebookでシェア">Facebook</a>
+
+                <a class="hatena" href="http://b.hatena.ne.jp/entry/{{.Permalink}}" title="はてブに登録">はてなブックマーク</a>
+
+                <a class="pocket" href="https://getpocket.com/save?url={{.Permalink}}" title="Pocketに保存する">Pocket</a>
+
+                <a class="line" href="http://line.me/R/msg/text/?{{.Title}}%20%7c%20{{.Site.Title}}%20{{.Permalink}}" title="LINEで共有">LINE</a>
+            </aside>
+
+            <section class="follow">
+                <h3>Follow This Blog.</h3>
+                <ul>
+                    <li><a href="https://twitter.com/psephopaiktes" target="_blank" rel="noopener">Twitter</a>
+                    <li><a href="http://fb.me/hirata.page" target="_blank" rel="noopener">Facebook</a>
+                    <li><a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fhirata.blog%2Findex.xml" target="_blank" rel="noopener">Feedly</a>
+                    <li><a href="http://hirata.page/index.xml" target="_blank">RSS</a>
+                </ul>
+            </section>
+
+            <a id="gotop" href="#top" title="最上部へスクロール">TOP</a>
+
+            <!-- TODO:AD  -->
+        </footer>
+    </main>
+
+{{ partial "footer" . }}

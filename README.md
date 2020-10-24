@@ -1,24 +1,35 @@
-# hira.page
+# weba
+https://hirata.page/  
+**平田 章**のブログ兼ポートフォリオページです。
 
-## Project setup
-```
-npm install
-```
+## Design
+[Figma](https://www.figma.com/file/FCrd1uYqTKyUW16MtbWU8C/hira.page)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Command
+`$ npm start`
+`$ npm run start:hugo`
+`$ npm run start:vue`
+`$ npm run new`
+`$ npm run build`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Files Structure
 
-### Lints and fixes files
-```
-npm run lint
-```
+### design
+- Webサイトのデザイン、各種素材の編集ファイルです。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### docs
+- 最終的にビルドされる公開用ファイルです
+
+### hugo-amp-contents
+- ブログの記事です。
+- `/public` 配下に以下のファイルを生成し、Vueのページ内で使用されます。
+    - `blog/`: amp形式でビルドされたブログページのHTMLファイルです。
+    - `index.xml`: RSS用ファイルです。
+    - `sitemap.xml`: SEO用のサイトマップファイルです。
+
+### src
+- Vue用のソースファイルです。
+
+## その他
+- `⌘⌥V` でMarkdown中に画像を保存できます。
+    - VS CODE 拡張機能

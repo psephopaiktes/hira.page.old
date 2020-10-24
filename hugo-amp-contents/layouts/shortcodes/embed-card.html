@@ -1,0 +1,11 @@
+<a class="embed-card" href="{{ .Get 0 }}" target="brank_" rel="noopener">
+    {{ if .Get 1 }}
+    <img class="og" src="{{ .Get 1 }}" alt="参照記事サムネイル">
+    {{ else }}
+    <img class="og" src="{{ .Site.BaseURL }}/images/embed-thumbnail.png" alt="参照記事サムネイル">
+    {{ end }}
+    <h5>{{ .Get 2 }}</h5>
+    <img class="favi" src="http://www.google.com/s2/favicons?domain={{ .Get 3 }}">
+    <span>{{ .Get 3 }}</span>
+    <i class="material-icons">open_in_new</i>
+</a>

@@ -1,30 +1,49 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <Nav />
   <router-view />
+  aaa
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Nav from "@/components/Nav.vue";
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  name: "App",
+  components: {
+    Nav
+  },
+  beforeCreate() {
+    if (localStorage.redirect) {
+      // 404.html からリダイレクトしてきた場合
+      this.$router.push(localStorage.redirect);
+      localStorage.removeItem("redirect");
     }
   }
-}
+  // mounted() {
+  //   window.addEventListener("load", () => {
+  //     const elm = document.getElementById("loading");
+  //     if (!elm) {
+  //       return;
+  //     }
+  //     elm.style.display = "none";
+  //   });
+  // },
+  // // Anchor Scroll
+  // updated() {
+  //   const hash = this.$route.hash;
+  //   const elm = document.getElementById(hash.substring(1));
+  //   if (hash && elm && hash.match(/^#.+$/)) {
+  //     window.scroll({
+  //       top: elm.getBoundingClientRect().y + window.pageYOffset,
+  //       behavior: "smooth"
+  //     });
+  //   }
+  // }
+};
+</script>
+
+<style lang="scss">
+/* @use "@/style/foundation.scss"; */
+/* @import "@/style/layout.scss"; */
+/* @import "@/style/component.scss"; */
 </style>
