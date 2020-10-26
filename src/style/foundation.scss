@@ -1,0 +1,18 @@
+@use "common.scss" as *;
+
+:root{
+  @media (prefers-color-scheme: light) {
+    --color-theme: 255,0,255;
+    --color-base: white;
+    --color-main: black;
+  }
+  @media (prefers-color-scheme: dark) {
+    --color-theme: 255,0,255;
+    --color-base: black;
+    --color-main: white;
+  }
+}
+
+body{
+  background: color(theme);
+}

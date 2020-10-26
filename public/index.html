@@ -12,21 +12,74 @@
   <link rel="icon" sizes="64x64" type="image/png" href="img/favicon.png">
   <link rel="icon" sizes="192x192" href="img/android-chrome.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-
   <meta name="theme-color" content="TODO">
+
   <!-- OGP -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="WEBA">
   <meta property="og:site_name" content="WEBA">
   <meta property="og:description" content="デザイナー「平田 章」のブログ兼ポートフォリオサイトです。Webフロント技術やUIデザインについてなどの情報を発信しています。">
   <meta property="og:image" content="/img/ogp.png">
-  <meta property="og:url" content="hira.page">
+  <meta property="og:url" content="https://hira.page">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@psephopaiktes" />
+
   <!-- CSS for Loading -->
   <style>
+    #loading{
+      width: 100vw;
+      height: 100vh;
+      background: #FFCC66;
+      position: fixed;
+      bottom: 0; left: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 1;
+      transition: .4s ease-out;
+    }
+    #loading.hide{
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loading svg {
+      width: 20vw;
+      filter: drop-shadow(8px 20px 20px rgba(130,25,11,.15));
+      margin-top: -1vw;
+      animation: loading 1s ease infinite alternate;
+    }
+    @keyframes loading {
+      from {transform: scale(1);opacity:.9;}
+      to {transform: scale(1.1);opacity:1;}
+    }
+    #loading h2{
+      color: #ffffffcc;
+      margin-top: 4vw;
+      font-size: calc(14px + 1vw);
+      letter-spacing: .1em;
+      font-weight: 700;
+      font-family: "Avenir Next", "Avenir Neue", "Avenir", Futura, "Century Gothic", "Helvetica Neue", Helvetica, Roboto, Arial, Sans-serif;
+      text-align: center;
+    }
   </style>
+
+  <!-- Web Font -->
+  <!-- TODO 減らす -->
+  <link rel="preload" href="/font/UltLt.woff2" as="font">
+  <link rel="preload" href="/font/Thin.woff2" as="font">
+  <link rel="preload" href="/font/Light.woff2" as="font">
+  <link rel="preload" href="/font/Book.woff2" as="font">
+  <link rel="preload" href="/font/Regular.woff2" as="font">
+  <link rel="preload" href="/font/Medium.woff2" as="font">
+  <link rel="preload" href="/font/Bold.woff2" as="font">
+  <link rel="preload" href="/font/Heavy.woff2" as="font">
+  <link rel="preload" href="/font/Black.woff2" as="font">
+  <link rel="preload" href="/font/FuturaNowVar.woff2" as="font">
+
+  <script src="https://psephopaiktes.github.io/IE-blocker/index.js" defer></script>
 </head>
 
 <body>
@@ -34,6 +87,11 @@
   <noscript><strong>Javascriptがサポートされているブラウザで御覧ください。</strong></noscript>
 
   <div id="app"></div>
+
+  <section id="loading">
+    <svg fill="none" height="115" viewBox="0 0 120 115" width="120" xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="60" x2="120" y1="60" y2="60"><stop offset="0" stop-color="#fc6" stop-opacity=".2"/><stop offset="1" stop-color="#fc6" stop-opacity=".1"/></linearGradient><path d="m59.9999 0 17.887 38.4843 42.1131 5.1187-31.0535 28.9243 8.1442 41.6457-37.0908-20.6064-37.0909 20.6064 8.1442-41.6457-31.0532-28.9243 42.1127-5.1187z" fill="#fff"/><path d="m97.0908 114.173-8.1442-41.6457 31.0534-28.9243-42.1129-5.1187-17.8871-38.4843v93.5666z" fill="url(#a)"/></svg>
+    <h2>LOADING...</h2>
+  </section>
 
 </body>
 

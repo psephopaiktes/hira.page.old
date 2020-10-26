@@ -8,7 +8,7 @@ hasCJKLanguage = true
 disableKinds = ["taxonomy","taxonomyTerm"]
 
 [minify]
-  # minifyOutput = true
+  minifyOutput = true
 
 [Params] # 独自変数 一部はOGP生成用
   author = "Akira HIRATA"
@@ -16,7 +16,7 @@ disableKinds = ["taxonomy","taxonomyTerm"]
   title = "WEBA"
 
 [markup.goldmark.renderer]
-  unsafe = true #.mdでHTMLを書く
+  unsafe = true #.md内でHTMLを書く
 
 [markup.highlight]
   lineNos = true

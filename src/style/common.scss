@@ -1,0 +1,4 @@
+
+@function color($type,$opacity:1) {
+  @return rgba(var(--color-#{$type}),$opacity);
+}

@@ -17,4 +17,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@use "@/style/common.scss" as *;
+
+h1 {
+  background: color(theme,.2)
+}
+</style>
