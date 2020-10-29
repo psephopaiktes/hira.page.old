@@ -13,6 +13,13 @@ module.exports = {
       .rule("vue")
       .use("vue-svg-inline-loader")
       .loader("vue-svg-inline-loader")
-      .options({});
+      .options({
+        addTitle: true,
+        addAttributes: {
+          role: "presentation",
+          "aria-labelledby": "title"
+        },
+        svgo: false
+      });
   }
 };

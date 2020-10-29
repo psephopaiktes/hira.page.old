@@ -1,7 +1,8 @@
 <template>
   <Nav />
-  <router-view />
-  aaa
+  <main class="l-main">
+    <router-view />
+  </main>
 </template>
 
 <script>

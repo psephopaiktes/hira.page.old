@@ -1,4 +1,35 @@
-
+// FUNC
 @function color($type,$opacity:1) {
-  @return rgba(var(--color-#{$type}),$opacity);
+  @if $opacity == 1 { @return rgb(var(--color-#{$type})); }
+  @else { @return rgba(var(--color-#{$type}),$opacity); }
+}
+
+// CONST
+$SM: 480px;
+$MD: 960px;
+$LG: 1440px;
+
+$TRANSION: .2s ease-out;
+
+// MIXIN
+@mixin min($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin max($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin minmax($breakpoint1,$breakpoint2) {
+  @media screen and (min-width: $breakpoint1) and (max-width: $breakpoint2) {
+    @content;
+  }
+}
+
+@mixin textHidden {
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
 }

@@ -1,3 +1,10 @@
+# TODO
+  a{ color: $COLOR_THEME }
+  a:visited{ color: darken($COLOR_THEME, 8%) }
+  a:hover{ color: lighten($COLOR_THEME, 4%) }
+  a:active{ color: darken($COLOR_THEME, 8%) }
+
+
 # weba
 https://hirata.page/  
 **平田 章**のブログ兼ポートフォリオページです。
