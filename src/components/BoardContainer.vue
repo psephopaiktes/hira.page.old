@@ -6,25 +6,21 @@
       <ul>
         <li>
           <a href="https://twitter.com/psephopaiktes" target="brank">
-            <img svg-inline src="@/assets/icon/sns/twitter.svg" role="img" />
             Twitter
           </a>
         </li>
         <li>
           <a href="https://note.com/psephopaiktes" target="brank">
-            <img svg-inline src="@/assets/icon/sns/note.svg" />
             note
           </a>
         </li>
         <li>
           <a href="https://github.com/psephopaiktes" target="brank">
-            <img svg-inline src="@/assets/icon/sns/github.svg" />
             GitHub
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/psephopaiktes" target="brank">
-            <img svg-inline src="@/assets/icon/sns/instagram.svg" />
             Instagram
           </a>
         </li>

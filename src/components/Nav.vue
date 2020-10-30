@@ -1,10 +1,12 @@
 <template>
   <nav class="l-nav">
     <h1>
-      <router-link to="/">WEBA</router-link>
+      <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
     <ul>
-      <li><router-link to="/blog">blog</router-link></li>
+      <li>
+        <router-link to="/blog"><SVG symbol="blog" />blog</router-link>
+      </li>
       <li><router-link to="/me">me</router-link></li>
       <li><router-link to="/works">works</router-link></li>
     </ul>
@@ -22,11 +24,10 @@ export default {
 @use "@/style/common.scss" as *;
 
 h1 {
-  width: 12.8rem;
-  height: 3.2rem;
-  background-image: url(~@/assets/logo.svg);
-  @include textHidden;
   opacity: 0.7;
-  background-size: 100%;
+  svg {
+    width: 12.8rem;
+    height: 3.2rem;
+  }
 }
 </style>
