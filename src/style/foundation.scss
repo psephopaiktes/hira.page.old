@@ -66,7 +66,7 @@
     --color-main: 85,51,34;
   }
   @media (prefers-color-scheme: dark) {
-    --color-theme: 252,248,0;
+    --color-theme: 238,187,102;
     --color-base: 30, 40, 77;
     --color-main: 255,255,255;
   }
@@ -81,16 +81,16 @@ body {
   font-size: 1.6rem;
   font-weight: 500;
   font-family:
-    "FuturaNowVar", "Futura", "Avenir Next", "Avenir", "Century Gothic", "Robot", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial",
+    "Futura Now Text", "Futura", "Avenir Next", "Avenir", "Century Gothic", "Robot", "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial",
     Tazugane, 'Tazugane Gothic StdN', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans CJK JP", "BIZ UDPGothic", Meiryo,
     -apple-system, BlinkMacSystemFont, sans-serif;
   font-smoothing: antialiased;
   font-feature-settings : "pkna";
   letter-spacing: 0.05em;
 }
-
-*:hover{
-  transition: $TRANSION;
+::selection {
+  background: color(theme);
+  color: color(base);
 }
 
 *, *::before, *::after {

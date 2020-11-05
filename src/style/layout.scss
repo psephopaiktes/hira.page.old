@@ -1,7 +1,105 @@
 @use "common.scss" as *;
 
-.l-nav{}
+$NAVMENU_WIDTH: 32rem;
 
-.l-main{}
+$NAVBAR_TAB_HEIGHT: 6.4rem;
+$NAVBAR_SP_HEIGHT: 5.6rem;
 
-.l-modal{}
+$Z_HERO: 6000;
+$Z_NAVBAR: 7000;
+$Z_NAVMENU: 8000;
+$Z_MODAL: 9000;
+
+.l-navBar {
+  display: none;
+  z-index: $Z_NAVBAR;
+  @include max($MD) {
+    display: block;
+    width: 100vw;
+    height: $NAVBAR_TAB_HEIGHT;
+    padding-top: env(safe-area-inset-top);
+  }
+  @include max($SM) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: $NAVBAR_SP_HEIGHT;
+    padding-bottom: env(safe-area-inset-bottom);
+
+  }
+}
+
+.l-navOverlay {
+  display: none;
+  @include max($MD) {
+    display: block;
+    z-index: $Z_NAVMENU;
+    &.show {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+    }
+  }
+}
+
+.l-navMenu{
+  position: fixed;
+  top: 0; left: 0;
+  width: $NAVMENU_WIDTH;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: $Z_NAVMENU;
+
+  @include max($MD) {
+    transform: translateX(-$NAVMENU_WIDTH);
+    &.show  {
+      transform: translateX(0);
+    }
+  }
+}
+
+.l-main{
+  margin-left: $NAVMENU_WIDTH;
+  @include max($MD) {
+    margin: 0
+  }
+  @include max($SM) {
+    padding-bottom: $NAVBAR_SP_HEIGHT;
+  }
+}
+
+.l-modal{
+  position: fixed;
+  width: 100vw; height: 100vh;
+  top: 0; left: 0;
+  overflow: scroll;
+  z-index: $Z_MODAL;
+  overscroll-behavior-y: none;
+  &__overlay {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+  }
+  &__window {
+    position: relative;
+    margin: 12rem auto;
+    width: 90%;
+    max-width: 120rem;
+  }
+}
+
+.l-hero {
+  z-index: $Z_HERO;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  padding-left: $NAVMENU_WIDTH;
+  background: url("https://source.unsplash.com/daily?cat&orientation=landscape") center center / cover;
+}
+.l-board {
+  z-index: #{$Z_HERO + 1};
+  position: relative;
+}

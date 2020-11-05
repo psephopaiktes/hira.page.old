@@ -1,17 +1,22 @@
 <template>
   <Nav />
+
   <main class="l-main">
     <router-view />
   </main>
+
+  <Contact />
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
+import Contact from "@/components/Contact.vue";
 
 export default {
   name: "App",
   components: {
-    Nav
+    Nav,
+    Contact
   },
   beforeCreate() {
     if (localStorage.redirect) {
