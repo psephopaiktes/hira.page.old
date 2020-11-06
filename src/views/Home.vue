@@ -22,7 +22,13 @@ export default {
 @use "@/style/common.scss" as *;
 
 h1 {
+  display: none;
+  @include max($MD) {
+    display: block;
+  }
   svg {
+    width: 24rem;
+    height: 6rem;
     fill: color(theme);
   }
 }

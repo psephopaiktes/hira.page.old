@@ -57,13 +57,14 @@
 :root{
   background: color(theme);
   font-size: 10px;
+  scroll-behavior: smooth;
   @include max($LG) { font-size: 9px; }
   @include max($MD) { font-size: 9px; }
   @include max($SM) { font-size: 8px; }
   @media (prefers-color-scheme: light) {
     --color-theme: 255,204,102;
     --color-base: 255,255,255;
-    --color-main: 85,51,34;
+    --color-main: 34,51,102;
   }
   @media (prefers-color-scheme: dark) {
     --color-theme: 238,187,102;
@@ -73,7 +74,6 @@
 }
 
 body {
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   color: color(main,.9);

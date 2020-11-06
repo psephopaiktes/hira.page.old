@@ -1,1 +1,28 @@
 @use "common.scss" as *;
+
+.c-tips {
+  position: relative;
+  &::after {
+    content: attr(title);
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 50%;
+    padding: 0.5em 1em;
+    border-radius: 0.8rem;
+    text-align: center;
+    font-size: 1.4rem;
+    transition: $TRANSITION;
+    background: color(main, 0.4);
+    color: color(base, 1);
+  }
+  &:hover::after {
+    opacity: 1;
+    bottom: 110%;
+  }
+}

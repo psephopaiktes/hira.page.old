@@ -9,12 +9,18 @@
             href="https://twitter.com/psephopaiktes"
             target="brank"
             title="Twitter"
+            class="c-tips"
           >
             <SVG symbol="twitter" alt="Twitter" />
           </a>
         </li>
         <li>
-          <a href="https://note.com/psephopaiktes" target="brank" title="note">
+          <a
+            href="https://note.com/psephopaiktes"
+            target="brank"
+            title="note"
+            class="c-tips"
+          >
             <SVG symbol="note" alt="note" />
           </a>
         </li>
@@ -23,6 +29,7 @@
             href="https://github.com/psephopaiktes"
             target="brank"
             title="GitHub"
+            class="c-tips"
           >
             <SVG symbol="github" alt="GitHub" />
           </a>
@@ -32,6 +39,7 @@
             href="https://www.instagram.com/psephopaiktes"
             target="brank"
             title="Instagram"
+            class="c-tips"
           >
             <SVG symbol="instagram" alt="Instagram" />
           </a>
@@ -56,11 +64,11 @@ export default {
 .board {
   background: color(base);
   margin: 1.6rem;
+  padding: 0 9.6rem #{24 + 4.8}rem;
   min-height: calc(100vh - 3.2rem);
   overflow: hidden;
   border-radius: 1.6rem;
   position: relative;
-  padding-bottom: #{24 + 4.8}rem;
   @include max($MD) {
     margin: 0;
     border-radius: 0;
@@ -69,6 +77,15 @@ export default {
   @include max($SM) {
     min-height: 100vh;
   }
+}
+
+.board ::v-slotted(h1) {
+  color: color(theme);
+  margin-top: 9.6rem;
+  font-size: 5.6rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-weight: 800;
 }
 
 .board > footer {
@@ -89,30 +106,8 @@ export default {
       display: block;
       opacity: 0.6;
       margin: 0 1.2rem;
-      position: relative;
-      &::after {
-        content: attr(title);
-        display: block;
-        pointer-events: none;
-        opacity: 0;
-        position: absolute;
-        bottom: 50%;
-        left: calc(50% - 5rem);
-        width: 10rem;
-        padding: 0.5em 0;
-        border-radius: 0.8rem;
-        text-align: center;
-        font-size: 1.4rem;
-        transition: $TRANSITION;
-        background: color(main, 0.4);
-        color: color(base, 1);
-      }
       &:hover {
         opacity: 1;
-        &::after {
-          opacity: 1;
-          bottom: 110%;
-        }
       }
     }
     svg {

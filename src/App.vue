@@ -32,18 +32,14 @@ export default {
         return;
       }
       elm.classList.add("hide");
+
+      // #付きのURLに直接来たときの処理
+      const hash = document.location.hash;
+      const target = document.getElementById(hash.substring(1));
+      if (hash && target) {
+        target.scrollIntoView();
+      }
     });
-  },
-  // Anchor Scroll TODO:うごくか確認
-  updated() {
-    const hash = this.$route.hash;
-    const elm = document.getElementById(hash.substring(1));
-    if (hash && elm && hash.match(/^#.+$/)) {
-      window.scroll({
-        top: elm.getBoundingClientRect().y + window.pageYOffset,
-        behavior: "smooth"
-      });
-    }
   }
 };
 </script>

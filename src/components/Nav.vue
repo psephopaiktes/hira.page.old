@@ -221,7 +221,7 @@ export default {
   justify-content: center;
   align-items: flex-end;
   padding-right: 4.8rem;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(16px);
   transition: $TRANSITION;
   @include max($MD) {
     background: color(theme);
@@ -256,9 +256,11 @@ export default {
   }
   h1 {
     margin-top: -10vh;
-    opacity: 0.7;
     @include max($SM) {
       margin-top: 5vh;
+    }
+    a:not(.router-link-exact-active) {
+      opacity: 0.5;
     }
     svg {
       width: 12.8rem;

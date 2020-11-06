@@ -1,6 +1,6 @@
 <template>
   <BoardContainer>
-    <h1>This is an Works page</h1>
+    <h1>WORKS</h1>
     <ul v-for="n of 80" :key="n">
       <li>{{ n }}</li>
     </ul>

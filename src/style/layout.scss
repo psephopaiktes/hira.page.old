@@ -99,6 +99,9 @@ $Z_MODAL: 9000;
   width: 100vw; height: 100vh;
   padding-left: $NAVMENU_WIDTH;
   background: url("https://source.unsplash.com/daily?cat&orientation=landscape") center center / cover;
+  @include max($MD) {
+    padding: 0
+  }
 }
 .l-board {
   z-index: #{$Z_HERO + 1};
