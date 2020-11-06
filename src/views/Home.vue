@@ -1,6 +1,6 @@
 <template>
   <BoardContainer>
-    <h1>This is an Home page</h1>
+    <h1><SVG symbol="logo" alt="WEBA" /></h1>
     <ul v-for="n of 80" :key="n">
       <li>{{ n }}</li>
     </ul>
@@ -20,4 +20,10 @@ export default {
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
+
+h1 {
+  svg {
+    fill: color(theme);
+  }
+}
 </style>

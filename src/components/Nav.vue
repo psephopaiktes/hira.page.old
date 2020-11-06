@@ -3,7 +3,7 @@
     <button @click="open()">
       <SVG symbol="menu" alt="open menu" />
     </button>
-    <h1 @click="open()">
+    <h1 @click="open()" v-if="$route.path != '/'">
       <SVG symbol="logo" alt="WEBA LOGO" />
     </h1>
     <a href="#contact">

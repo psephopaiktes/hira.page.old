@@ -5,22 +5,34 @@
     <footer>
       <ul>
         <li>
-          <a href="https://twitter.com/psephopaiktes" target="brank">
+          <a
+            href="https://twitter.com/psephopaiktes"
+            target="brank"
+            title="Twitter"
+          >
             <SVG symbol="twitter" alt="Twitter" />
           </a>
         </li>
         <li>
-          <a href="https://note.com/psephopaiktes" target="brank">
+          <a href="https://note.com/psephopaiktes" target="brank" title="note">
             <SVG symbol="note" alt="note" />
           </a>
         </li>
         <li>
-          <a href="https://github.com/psephopaiktes" target="brank">
+          <a
+            href="https://github.com/psephopaiktes"
+            target="brank"
+            title="GitHub"
+          >
             <SVG symbol="github" alt="GitHub" />
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/psephopaiktes" target="brank">
+          <a
+            href="https://www.instagram.com/psephopaiktes"
+            target="brank"
+            title="Instagram"
+          >
             <SVG symbol="instagram" alt="Instagram" />
           </a>
         </li>
@@ -75,7 +87,33 @@ export default {
     justify-content: center;
     a {
       display: block;
+      opacity: 0.6;
       margin: 0 1.2rem;
+      position: relative;
+      &::after {
+        content: attr(title);
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        bottom: 50%;
+        left: calc(50% - 5rem);
+        width: 10rem;
+        padding: 0.5em 0;
+        border-radius: 0.8rem;
+        text-align: center;
+        font-size: 1.4rem;
+        transition: $TRANSITION;
+        background: color(main, 0.4);
+        color: color(base, 1);
+      }
+      &:hover {
+        opacity: 1;
+        &::after {
+          opacity: 1;
+          bottom: 110%;
+        }
+      }
     }
     svg {
       width: 3.2rem;
