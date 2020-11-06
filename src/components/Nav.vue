@@ -22,30 +22,32 @@
     <button class="close" @click="close()">
       <SVG symbol="close" alt="close" />
     </button>
-    <h1>
+    <h1 @click="close()">
       <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
     <ul>
-      <li @click="lottiePlay('blog')">
+      <li @click="movePage('blog')">
         <router-link to="/blog">
           <div class="lottie" ref="lottieElmBlog"></div>
-          blog
+          <span>BLOG</span>
         </router-link>
       </li>
-      <li @click="lottiePlay('me')">
+      <li @click="movePage('me')">
         <router-link to="/me">
           <div class="lottie" ref="lottieElmMe"></div>
-          me
+          <span>ME</span>
         </router-link>
       </li>
-      <li @click="lottiePlay('works')">
+      <li @click="movePage('works')">
         <router-link to="/works">
           <div class="lottie" ref="lottieElmWorks"></div>
-          works
+          <span>WORKS</span>
         </router-link>
       </li>
     </ul>
-    <a href="#contact">CONTACT</a>
+    <a class="contact" href="#contact">
+      <SVG symbol="contact" alt="contact" /> CONTACT
+    </a>
   </nav>
 </template>
 
@@ -59,7 +61,12 @@ export default {
   name: "Nav",
   data() {
     return {
-      show: false
+      show: false,
+      animation: {
+        blog: {},
+        me: {},
+        works: {}
+      }
     };
   },
   methods: {
@@ -69,12 +76,20 @@ export default {
     open() {
       this.show = true;
     },
-    lottiePlay(name) {
-      lottie.play(name);
+    movePage(name) {
+      this.close();
+      for (let anim of Object.values(this.animation)) {
+        if (name === anim.name) {
+          anim.setDirection(1);
+        } else {
+          anim.setDirection(-1);
+        }
+        anim.play();
+      }
     }
   },
   mounted() {
-    lottie.loadAnimation({
+    this.animation.blog = lottie.loadAnimation({
       container: this.$refs.lottieElmBlog,
       renderer: "svg",
       loop: false,
@@ -82,7 +97,7 @@ export default {
       animationData: lottieDataBlog,
       name: "blog"
     });
-    lottie.loadAnimation({
+    this.animation.me = lottie.loadAnimation({
       container: this.$refs.lottieElmMe,
       renderer: "svg",
       loop: false,
@@ -90,7 +105,7 @@ export default {
       animationData: lottieDataMe,
       name: "me"
     });
-    lottie.loadAnimation({
+    this.animation.works = lottie.loadAnimation({
       container: this.$refs.lottieElmWorks,
       renderer: "svg",
       loop: false,
@@ -132,7 +147,7 @@ export default {
     > a {
       display: block;
       background: color(main);
-      color: color(base, 0.9);
+      color: color(base);
       margin: 1.2rem 1.6rem 0 auto;
       height: 4rem;
       line-height: 3.9rem;
@@ -140,6 +155,8 @@ export default {
       border-radius: 0.8rem;
       position: relative;
       font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
       letter-spacing: 0.1em;
       svg {
         width: 2.4rem;
@@ -153,26 +170,28 @@ export default {
   }
   @include max($SM) {
     > button {
-      width: 5.6rem;
-      height: 5.6rem;
+      width: 6.4rem;
+      height: 6.4rem;
       margin: 0 0 0 0.8rem;
       svg {
-        width: 2.8rem;
-        height: 2.8rem;
-        margin: 1.4rem;
+        width: 3.2rem;
+        height: 3.2rem;
+        margin: 1.6rem;
       }
     }
     > h1 {
-      width: 8rem;
-      height: 2rem;
-      margin: 1.7rem 0.4rem;
+      width: 9.6rem;
+      height: 2.4rem;
+      margin: 2rem 0.4rem;
     }
     > a {
       margin: 0 0 0 auto;
-      width: 5.6rem;
-      height: 100%;
+      width: 6.4rem;
+      height: 200%;
       border-radius: 0;
       svg {
+        width: 3.2rem;
+        height: 3.2rem;
         top: 1.6rem;
         left: 1.6rem;
         opacity: 0.7;
@@ -197,6 +216,11 @@ export default {
 }
 
 .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 4.8rem;
   backdrop-filter: blur(2px);
   transition: $TRANSITION;
   @include max($MD) {
@@ -231,23 +255,80 @@ export default {
     }
   }
   h1 {
+    margin-top: -10vh;
     opacity: 0.7;
+    @include max($SM) {
+      margin-top: 5vh;
+    }
     svg {
       width: 12.8rem;
       height: 3.2rem;
     }
   }
   ul {
-  }
-  a {
-    .lottie {
-      width: 3.2rem;
-      height: 3.2rem;
+    margin-top: 3.2rem;
+    li {
+      margin-top: 0.8rem;
     }
-    &.router-link-active,
-    &:hover,
-    &:active {
-      color: color(base);
+    a {
+      display: flex;
+      justify-content: flex-end;
+      height: 5.6rem;
+      line-height: 5.2rem;
+      color: #fff;
+      font-size: 2.6rem;
+      letter-spacing: 0.05em;
+      opacity: 0.6;
+      transition: $TRANSITION;
+      .lottie {
+        display: flex;
+        margin-top: 1.2rem;
+        margin-right: 0.2em;
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+      span {
+        position: relative;
+      }
+      &.router-link-active,
+      &:hover,
+      &:active {
+        opacity: 1;
+      }
+      &.router-link-active {
+        font-weight: bold;
+        span::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 2rem;
+          right: calc(100% + 3.2rem);
+          border: 1rem solid currentColor;
+          border-width: 0.8rem 1.4rem;
+          border-color: transparent transparent transparent currentColor;
+        }
+      }
+    }
+  }
+  .contact {
+    display: block;
+    width: 20rem;
+    height: 5.6rem;
+    margin-top: 4.8rem;
+    background: color(main);
+    color: color(base);
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      opacity: 0.5;
+      margin-right: 0.8rem;
     }
   }
 }

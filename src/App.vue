@@ -34,7 +34,7 @@ export default {
       elm.classList.add("hide");
     });
   },
-  // Anchor Scroll
+  // Anchor Scroll TODO:うごくか確認
   updated() {
     const hash = this.$route.hash;
     const elm = document.getElementById(hash.substring(1));

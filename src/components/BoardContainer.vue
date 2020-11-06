@@ -50,13 +50,12 @@ export default {
   position: relative;
   padding-bottom: #{24 + 4.8}rem;
   @include max($MD) {
-    margin-top: 0;
+    margin: 0;
+    border-radius: 0;
     min-height: calc(100vh - 1.6rem);
   }
   @include max($SM) {
-    margin: 0;
     min-height: 100vh;
-    border-radius: 0;
   }
 }
 
