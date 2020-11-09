@@ -14,6 +14,21 @@ export default {
   name: "Blog",
   components: {
     BoardContainer
+  },
+  mounted() {
+    document.title = "BLOG | WEBA";
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open(`GET`, "/blog/index.xml");
+    // 開発用に取得できなかったらダミーJSONを読むようにしておく
+    xhr.responseType = `document`;
+    xhr.send();
+
+    xhr.onload = () => {
+      const rss_data = xhr.response.getElementsByTagName("item");
+      console.log(rss_data);
+    };
   }
 };
 </script>

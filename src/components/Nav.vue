@@ -122,36 +122,38 @@ export default {
 
 .bar {
   @include max($MD) {
-    background: color(theme);
+    background: color(base);
     display: flex;
     > button {
       width: 4.8rem;
       height: 4.8rem;
-      margin: 0.8rem;
       svg {
         margin: 0.8rem;
         width: 3.2rem;
         height: 3.2rem;
+        fill: color(main);
       }
     }
     > h1 {
-      width: 12rem;
-      height: 3rem;
-      margin-top: 1.6rem;
+      width: 9.6rem;
+      height: 2.4rem;
+      margin-top: 1.2rem;
+      margin-left: 0.4rem;
       * {
         display: block;
         width: 100%;
         height: 100%;
+        fill: color(main);
       }
     }
     > a {
       display: block;
       background: color(main);
       color: color(base);
-      margin: 1.2rem 1.6rem 0 auto;
-      height: 4rem;
-      line-height: 3.9rem;
-      padding: 0 1.6rem 0 4.2rem;
+      margin: 0.6rem 0.6rem 0 auto;
+      height: 3.6rem;
+      line-height: 3.5rem;
+      padding: 0 1.6rem 0 4.4rem;
       border-radius: 0.8rem;
       position: relative;
       font-size: 1.4rem;
@@ -162,7 +164,7 @@ export default {
         width: 2.4rem;
         height: 2.4rem;
         position: absolute;
-        top: 0.8rem;
+        top: 0.6rem;
         left: 0.8rem;
         opacity: 0.5;
       }
@@ -231,8 +233,8 @@ export default {
     @include max($MD) {
       display: block;
       position: fixed;
-      top: 0.8rem;
-      left: 0.8rem;
+      top: 0;
+      left: 0;
       width: 4.8rem;
       height: 4.8rem;
       svg {
@@ -314,23 +316,25 @@ export default {
   }
   .contact {
     display: block;
+    position: relative;
     width: 20rem;
     height: 5.6rem;
     margin-top: 4.8rem;
+    line-height: 5.2rem;
+    padding-left: 5.8rem;
     background: color(main);
     color: color(base);
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.05em;
     border-radius: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     svg {
+      position: absolute;
       width: 2.4rem;
       height: 2.4rem;
+      top: 1.6rem;
+      left: 1.6rem;
       opacity: 0.5;
-      margin-right: 0.8rem;
     }
   }
 }

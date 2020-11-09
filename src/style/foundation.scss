@@ -1,4 +1,5 @@
 @use "common.scss" as *;
+@use "sass:color";
 
 @font-face {
   font-family: 'FuturaNowVar';
@@ -57,7 +58,7 @@
 :root{
   background: color(theme);
   font-size: 10px;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
   @include max($LG) { font-size: 9px; }
   @include max($MD) { font-size: 9px; }
   @include max($SM) { font-size: 8px; }
@@ -109,9 +110,13 @@ img {
 a{
   text-decoration-skip-ink: none;
   text-decoration: none;
+  color: color(theme);
 }
 p a {
   text-decoration: underline;
+}
+p {
+  margin-top: 1.6rem;
 }
 b, strong {
   font-weight: bolder;
@@ -133,6 +138,26 @@ table {
   table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
+}
+h1{
+  margin-top: 8rem;
+  font-size: 5.6rem;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  font-weight: 800;
+  color: color(theme);
+}
+h2{
+  margin-top: 6.4rem;
+  font-size: 3.2rem;
+  line-height: 1.4;
+  color: color(main);
+}
+h3 {
+  margin-top: 2.4rem;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: color(main);
 }
 
 @media (prefers-reduced-motion: reduce) {

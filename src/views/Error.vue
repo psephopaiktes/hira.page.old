@@ -17,6 +17,9 @@ export default {
   name: "Error",
   components: {
     BoardContainer
+  },
+  mounted() {
+    document.title = "お探しのページは存在しません | WEBA";
   }
 };
 </script>

@@ -79,15 +79,6 @@ export default {
   }
 }
 
-.board ::v-slotted(h1) {
-  color: color(theme);
-  margin-top: 9.6rem;
-  font-size: 5.6rem;
-  letter-spacing: 0.05em;
-  line-height: 1;
-  font-weight: 800;
-}
-
 .board > footer {
   width: 100%;
   height: 24rem;

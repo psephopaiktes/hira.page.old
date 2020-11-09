@@ -2,7 +2,7 @@
 
 $NAVMENU_WIDTH: 32rem;
 
-$NAVBAR_TAB_HEIGHT: 6.4rem;
+$NAVBAR_TAB_HEIGHT: 4.8rem;
 $NAVBAR_SP_HEIGHT: 6.4rem;
 
 $Z_HERO: 6000;
@@ -12,22 +12,20 @@ $Z_MODAL: 9000;
 
 .l-navBar {
   display: none;
+  position: relative;
   z-index: $Z_NAVBAR;
   @include max($MD) {
     display: block;
     box-sizing: content-box;
     width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
     height: $NAVBAR_TAB_HEIGHT;
     padding-top: env(safe-area-inset-top);
   }
   @include max($SM) {
-    top: auto;
+    position: fixed;
     bottom: 0;
+    left: 0;
     height: $NAVBAR_SP_HEIGHT;
-    // padding-bottom: 30px;
     padding-bottom: env(safe-area-inset-bottom);
 
   }
@@ -64,10 +62,9 @@ $Z_MODAL: 9000;
 .l-main{
   margin-left: $NAVMENU_WIDTH;
   @include max($MD) {
-    margin: $NAVBAR_TAB_HEIGHT 0 0
+    margin:  0
   }
   @include max($SM) {
-    margin: 0;
     padding-bottom: $NAVBAR_SP_HEIGHT;
   }
 }

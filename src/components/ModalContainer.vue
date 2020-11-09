@@ -1,8 +1,10 @@
 <template>
   <div :id="id" class="l-modal">
     <a href="#" class="overlay l-modal__overlay">
-      <SVG symbol="close" alt="close" />
-      CLOSE
+      <span>
+        <SVG symbol="close" alt="close" />
+        CLOSE
+      </span>
     </a>
     <section class="window l-modal__window">
       <a href="#" class="closeButton"><SVG symbol="close" alt="close"/></a>
@@ -51,20 +53,24 @@ export default {
 .overlay {
   background: color(main, 0.4);
   backdrop-filter: blur(2px);
-  color: color(base);
-  text-align: center;
-  padding-top: 95vh;
-  svg {
-    width: 3.2rem;
-    height: 3.2rem;
-    vertical-align: -0.6em;
+  span {
+    color: color(base);
+    position: fixed;
+    bottom: 1.2rem;
+    left: 0;
+    right: 0;
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+      vertical-align: -0.6em;
+    }
   }
 }
 .window {
   background: color(base);
   border-radius: 1.6rem;
   position: relative;
-  padding: 4.8rem;
+  padding: 4.8rem 4.8rem 9.6rem;
   .closeButton {
     display: block;
     position: absolute;

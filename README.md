@@ -45,8 +45,14 @@ a | `$ npm run build`
   - `index.xml`: RSS用ファイルです。
   - `sitemap.xml`: SEO用のサイトマップファイルです。
 - [hugo](https://gohugo.io/)のインストールが必要です
-- `⌘⌥V` でMarkdown中に画像を保存できます。
-  - VS CODE 拡張機能
+
 
 #### src
 - Vue用のソースファイルです。
+
+<br/>
+
+## メモ
+- `⌘⌥V` でMarkdown中に画像を保存できます。
+  - VS CODE 拡張機能
+- SendGridを使うには `.env.local` が必要
