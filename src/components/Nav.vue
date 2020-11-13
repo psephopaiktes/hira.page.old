@@ -26,28 +26,47 @@
       <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
     <ul>
-      <li @click="movePage('blog')">
+      <li
+        @mouseenter="playLottie('blog')"
+        @mouseleave="reversePlayLottie('blog')"
+        @click="close()"
+      >
         <router-link to="/blog">
-          <div class="lottie" ref="lottieElmBlog"></div>
+          <div class="lottie" ref="blog"></div>
           <span>BLOG</span>
         </router-link>
       </li>
-      <li @click="movePage('me')">
+      <li
+        @mouseenter="playLottie('me')"
+        @mouseleave="reversePlayLottie('me')"
+        @click="close()"
+      >
         <router-link to="/me">
-          <div class="lottie" ref="lottieElmMe"></div>
+          <div class="lottie" ref="me"></div>
           <span>ME</span>
         </router-link>
       </li>
-      <li @click="movePage('works')">
+      <li
+        @mouseenter="playLottie('works')"
+        @mouseleave="reversePlayLottie('works')"
+        @click="close()"
+      >
         <router-link to="/works">
-          <div class="lottie" ref="lottieElmWorks"></div>
+          <div class="lottie" ref="works"></div>
           <span>WORKS</span>
         </router-link>
       </li>
     </ul>
-    <router-link to="/contact" class="contact">
-      <SVG symbol="contact" alt="contact" /> CONTACT
-    </router-link>
+    <div
+      @mouseenter="playLottie('contact')"
+      @mouseleave="reversePlayLottie('contact')"
+      @click="close()"
+    >
+      <router-link to="/contact" class="contact">
+        <div class="lottie" ref="contact"></div>
+        CONTACT
+      </router-link>
+    </div>
   </nav>
 </template>
 
@@ -56,12 +75,19 @@ import lottie from "lottie-web";
 import lottieDataBlog from "@/assets/lottie/blog.json";
 import lottieDataMe from "@/assets/lottie/me.json";
 import lottieDataWorks from "@/assets/lottie/works.json";
+import lottieDataContact from "@/assets/lottie/contact.json";
 
 export default {
   name: "Nav",
   data() {
     return {
       show: false,
+      lottieData: {
+        blog: lottieDataBlog,
+        me: lottieDataMe,
+        works: lottieDataWorks,
+        contact: lottieDataContact
+      },
       animation: {
         blog: {},
         me: {},
@@ -76,49 +102,37 @@ export default {
     open() {
       this.show = true;
     },
-    movePage(name) {
-      this.close();
-      for (let anim of Object.values(this.animation)) {
-        if (name === anim.name) {
-          anim.setDirection(1);
-        } else {
-          anim.setDirection(-1);
-        }
-        anim.play();
-      }
+    playLottie(name) {
+      this.animation[name].setDirection(1);
+      this.animation[name].play();
+    },
+    reversePlayLottie(name) {
+      this.animation[name].setDirection(-1);
+      this.animation[name].play();
     }
   },
   mounted() {
-    this.animation.blog = lottie.loadAnimation({
-      container: this.$refs.lottieElmBlog,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      animationData: lottieDataBlog,
-      name: "blog"
-    });
-    this.animation.me = lottie.loadAnimation({
-      container: this.$refs.lottieElmMe,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      animationData: lottieDataMe,
-      name: "me"
-    });
-    this.animation.works = lottie.loadAnimation({
-      container: this.$refs.lottieElmWorks,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      animationData: lottieDataWorks,
-      name: "works"
-    });
+    for (const name of Object.keys(this.lottieData)) {
+      this.animation[name] = lottie.loadAnimation({
+        container: this.$refs[name],
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        animationData: this.lottieData[name],
+        name
+      });
+    }
   }
 };
 </script>
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
+.lottie {
+  display: flex;
+  width: 3.2rem;
+  height: 3.2rem;
+}
 
 .bar {
   @include max($MD) {
@@ -290,11 +304,8 @@ export default {
       opacity: 0.6;
       transition: $TRANSITION;
       .lottie {
-        display: flex;
         margin-top: 1.2rem;
         margin-right: 0.2em;
-        width: 3.2rem;
-        height: 3.2rem;
       }
       span {
         position: relative;
@@ -325,21 +336,29 @@ export default {
     width: 20rem;
     height: 5.6rem;
     margin-top: 4.8rem;
-    line-height: 5.2rem;
-    padding-left: 5.8rem;
+    line-height: 5.4rem;
+    padding-left: 6rem;
     background: color(main);
     color: color(base);
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.05em;
     border-radius: 0.8rem;
-    svg {
+    transition: $TRANSITION;
+    .lottie {
       position: absolute;
-      width: 2.4rem;
-      height: 2.4rem;
-      top: 1.6rem;
-      left: 1.6rem;
+      top: 1.2rem;
+      left: 1.2rem;
       opacity: 0.5;
+      transition: inherit;
+    }
+    &:hover,
+    &:active {
+      filter: brightness(140%);
+      letter-spacing: 0.08em;
+      .lottie {
+        opacity: 1;
+      }
     }
   }
 }

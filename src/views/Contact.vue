@@ -68,25 +68,26 @@ export default {
 }
 
 form {
-  margin: 2.4rem auto 0;
+  margin-top: 4.8rem;
   max-width: 40em;
   text-align: left;
   label {
     display: block;
-    margin-top: 1.2rem;
+    margin-top: 1.6rem;
   }
   span {
+    margin-left: 0.4rem;
     letter-spacing: 0;
     font-weight: 600;
   }
   input,
   textarea {
     display: block;
-    margin-top: 0.2rem;
-    padding: 1.2rem;
+    margin-top: 0.4rem;
+    padding: 1.6rem 1.2rem;
     width: 100%;
-    border: none;
-    border-bottom: 0.2rem solid color(main, 0.4);
+    border: 0.3rem solid transparent;
+    border-radius: 0.8rem;
     background: color(main, 0.1);
     color: #000;
     outline: none;
@@ -100,7 +101,7 @@ form {
   }
   input:focus,
   textarea:focus {
-    background: color(main, 0.2);
+    border-color: color(main, 0.2);
   }
   button {
     display: block;
@@ -113,10 +114,14 @@ form {
     color: color(base);
     letter-spacing: 0.1em;
     font-weight: 600;
+    border: 0.3rem solid transparent;
+    outline: none;
     &:hover,
-    &:active,
-    &:focus {
+    &:active {
       /* TODO */
+    }
+    &:focus {
+      border-color: color(base, 0.4);
     }
   }
 }

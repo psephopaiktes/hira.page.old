@@ -7,23 +7,38 @@ const routes = [
   },
   {
     path: "/Blog",
-    component: () => import("../views/Blog.vue")
+    component: () => import("../views/Blog.vue"),
+    meta: {
+      title: "BLOG"
+    }
   },
   {
     path: "/Me",
-    component: () => import("../views/Me.vue")
+    component: () => import("../views/Me.vue"),
+    meta: {
+      title: "ABOUT ME"
+    }
   },
   {
     path: "/Works",
-    component: () => import("../views/Works.vue")
+    component: () => import("../views/Works.vue"),
+    meta: {
+      title: "WORKS"
+    }
   },
   {
     path: "/Contact",
-    component: () => import("../views/Contact.vue")
+    component: () => import("../views/Contact.vue"),
+    meta: {
+      title: "CONTACT"
+    }
   },
   {
     path: "/:catchAll(.*)",
-    component: () => import("../views/Error.vue")
+    component: () => import("../views/Error.vue"),
+    meta: {
+      title: "お探しのページは存在しません"
+    }
   }
 ];
 
@@ -38,6 +53,14 @@ const router = createRouter({
       return { selector: to.hash };
     }
     return { left: 0, top: 0 };
+  }
+});
+
+router.afterEach(to => {
+  if (to.meta.title) {
+    document.title = `${to.meta.title} | WEBA`;
+  } else {
+    document.title = "WEBA";
   }
 });
 

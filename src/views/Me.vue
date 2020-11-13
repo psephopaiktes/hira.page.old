@@ -73,9 +73,6 @@ export default {
   name: "Me",
   components: {
     BoardContainer
-  },
-  mounted() {
-    document.title = "ABOUT ME | WEBA";
   }
 };
 </script>

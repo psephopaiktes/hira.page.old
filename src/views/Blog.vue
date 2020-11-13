@@ -17,8 +17,6 @@ export default {
     BoardContainer
   },
   mounted() {
-    document.title = "BLOG | WEBA";
-
     let xhr = new XMLHttpRequest();
 
     xhr.open(`GET`, "/blog/index.xml");

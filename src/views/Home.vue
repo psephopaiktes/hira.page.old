@@ -15,9 +15,6 @@ export default {
   name: "Home",
   components: {
     BoardContainer
-  },
-  mounted() {
-    document.title = "WEBA";
   }
 };
 </script>
