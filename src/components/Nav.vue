@@ -3,13 +3,13 @@
     <button @click="open()">
       <SVG symbol="menu" alt="open menu" />
     </button>
-    <h1 @click="open()" v-if="$route.path != '/'">
-      <SVG symbol="logo" alt="WEBA LOGO" />
+    <h1 v-if="$route.path != '/'">
+      <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
-    <a href="#contact">
+    <router-link to="/contact">
       <SVG symbol="contact" alt="contact" />
       <span>CONTACT</span>
-    </a>
+    </router-link>
   </nav>
 
   <button
@@ -45,9 +45,9 @@
         </router-link>
       </li>
     </ul>
-    <a class="contact" href="#contact">
+    <router-link to="/contact" class="contact">
       <SVG symbol="contact" alt="contact" /> CONTACT
-    </a>
+    </router-link>
   </nav>
 </template>
 
@@ -122,7 +122,7 @@ export default {
 
 .bar {
   @include max($MD) {
-    background: color(base);
+    background: color(theme);
     display: flex;
     > button {
       width: 4.8rem;
@@ -131,7 +131,7 @@ export default {
         margin: 0.8rem;
         width: 3.2rem;
         height: 3.2rem;
-        fill: color(main);
+        fill: color(base);
       }
     }
     > h1 {
@@ -143,7 +143,7 @@ export default {
         display: block;
         width: 100%;
         height: 100%;
-        fill: color(main);
+        fill: color(base);
       }
     }
     > a {
@@ -171,6 +171,7 @@ export default {
     }
   }
   @include max($SM) {
+    background: color(theme);
     > button {
       width: 6.4rem;
       height: 6.4rem;
@@ -179,12 +180,16 @@ export default {
         width: 3.2rem;
         height: 3.2rem;
         margin: 1.6rem;
+        fill: color(base);
       }
     }
     > h1 {
       width: 9.6rem;
       height: 2.4rem;
       margin: 2rem 0.4rem;
+      svg {
+        fill: color(base);
+      }
     }
     > a {
       margin: 0 0 0 auto;

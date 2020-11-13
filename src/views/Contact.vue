@@ -1,5 +1,5 @@
 <template>
-  <ModalContainer id="contact" class="contact">
+  <BoardContainer>
     <h1>CONTACT</h1>
 
     <p>
@@ -43,16 +43,16 @@
     <h3>例2: ランディングページ</h3>
 
     <h3>例3: CMSを用いたコーポレートページの作成</h3>
-  </ModalContainer>
+  </BoardContainer>
 </template>
 
 <script>
-import ModalContainer from "@/components/ModalContainer.vue";
+import BoardContainer from "@/components/BoardContainer.vue";
 
 export default {
   name: "Contact",
   components: {
-    ModalContainer
+    BoardContainer
   }
 };
 </script>

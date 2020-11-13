@@ -1,7 +1,5 @@
 <template>
   <BoardContainer>
-    <p>平田 章</p>
-    <p>SendGrid</p>
     <h1><SVG symbol="logo" alt="WEBA" /></h1>
     <h2>BLOG</h2>
     <ul v-for="n of 80" :key="n">
