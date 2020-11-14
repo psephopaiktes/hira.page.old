@@ -10,7 +10,6 @@
 * https://hira.page/
 
 
-
 <br/>
 
 ## Design
@@ -19,14 +18,10 @@
 
 <br/>
 
-## Develop
-do | commands
---|--
-develop vue | `$ npm start`
-a | `$ npm run start:hugo`
-a | `$ npm run start:vue`
-a | `$ npm run new`
-a | `$ npm run build`
+## 更新作業
+- `$ npm start`: Vueのサーバー起動
+- `$ ./new.sh`: ブログ・実績の追加
+- `$ ./deploy.sh`: デプロイ
 
 <br/>
 
@@ -35,16 +30,9 @@ a | `$ npm run build`
 #### design
 - Webサイトのデザイン、各種素材の編集ファイルです。
 
-#### docs
-- 最終的にビルドされる公開用ファイルです
-
 #### hugo-amp-contents
-- ブログの記事用です。
-- `/public` 配下に以下のファイルを生成し、Vueのページ内で使用されます。
-  - `blog/`: amp形式でビルドされたブログページのHTMLファイルです。
-  - `index.xml`: RSS用ファイルです。
-  - `sitemap.xml`: SEO用のサイトマップファイルです。
-- [hugo](https://gohugo.io/)のインストールが必要です
+- (hugo-amp-contents/README.md)[./hugo-amp-contents/README.md]
+- ブログの記事用ファイルです。
 
 
 #### src
