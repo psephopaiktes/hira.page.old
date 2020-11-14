@@ -55,4 +55,4 @@ a | `$ npm run build`
 ## メモ
 - `⌘⌥V` でMarkdown中に画像を保存できます。
   - VS CODE 拡張機能
-- SendGridを使うには `.env.local` が必要
+- コンタクトフォームを使うには [.env.local](https://www.notion.so/psephopaiktes/Blog-Portfolio-Renewal-ad291ee9ac9d445489982f8ca9daf450) が必要

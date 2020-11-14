@@ -62,6 +62,7 @@
   @include max($LG) { font-size: 9px; }
   @include max($MD) { font-size: 9px; }
   @include max($SM) { font-size: 8px; }
+  --color-error: 204, 85, 85;
   @media (prefers-color-scheme: light) {
     --color-theme: 255,204,102;
     --color-base: 255,255,255;

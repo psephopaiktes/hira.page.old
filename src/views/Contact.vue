@@ -11,25 +11,45 @@
       そちらのほうが反応が早めです。
     </p>
 
-    <form>
-      <label>
-        <span>お名前</span>
-        <input type="text" placeholder="山田 太郎" />
-      </label>
+    <form @submit.prevent="send()">
       <label>
         <span>返信用メールアドレス</span>
-        <!-- TODO Validation HTML + JS -->
-        <input type="email" placeholder="hoge@mail.com" />
+        <input
+          type="email"
+          name="email"
+          v-model="email"
+          placeholder="hoge@mail.com"
+          @input="validate()"
+          required
+        />
       </label>
-      <label>
-        <span>件名</span>
-        <input type="text" placeholder="デザインの依頼" />
-      </label>
+
       <label>
         <span>お問い合わせ内容</span>
-        <div class="textarea" contenteditable="true"></div>
+        <div
+          class="textarea"
+          contenteditable="true"
+          @input="
+            syncMessage($event);
+            validate();
+          "
+        >
+          {{ message }}
+        </div>
       </label>
-      <button type="submit" @click.prevent="send()">送信</button>
+
+      <button type="submit" :disabled="status == ''" :class="status">
+        <img
+          v-if="status == 'sending'"
+          src="@/assets/loader.svg"
+          alt="sending..."
+        />
+        <span v-else-if="status == 'success'">送信しました 🙆‍♀️</span>
+        <span v-else-if="status == 'error'">エラーが発生しました</span>
+        <span v-else>送信</span>
+      </button>
+
+      <p class="errorText" v-if="errorText != ''">※ {{ errorText }}</p>
     </form>
 
     <hr />
@@ -62,8 +82,67 @@ export default {
   components: {
     BoardContainer
   },
+  data() {
+    return {
+      status: "",
+      email: "",
+      message: "",
+      errorText: ""
+    };
+  },
   methods: {
-    send() {}
+    syncMessage(e) {
+      this.message = e.target.innerText;
+    },
+    validate() {
+      const reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+
+      if (!reg.test(this.email)) {
+        this.errorText = "メールアドレスが正しくありません";
+        this.status = "";
+        return;
+      } else if (0 < this.message.length && this.message.length < 10) {
+        this.errorText = "お問い合わせ内容は10文字以上入力してください";
+        this.status = "";
+        return;
+      } else if (400 < this.message.length) {
+        this.errorText = "お問い合わせ内容は400文字以内にしてください";
+        this.status = "";
+        return;
+      } else {
+        this.errorText = "";
+      }
+
+      if (this.email != "" && this.message != "") {
+        this.status = "ready";
+      }
+    },
+    send() {
+      this.status = "sending";
+      fetch(
+        `https://formcarry.com/s/${process.env.VUE_APP_FORMCARRY_ENDPOINT}`,
+        {
+          recapture: false,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({ email: this.email, message: this.message })
+        }
+      )
+        .then(response => response.json())
+        .then(response => {
+          if (response.code === 200) {
+            this.status = "success";
+          } else {
+            // Formcarry error
+            this.status = "error";
+          }
+        })
+        // network error
+        .catch(() => (this.status = "error"));
+    }
   },
   mounted() {}
 };
@@ -86,11 +165,22 @@ form {
   label {
     display: block;
     margin-top: 1.6rem;
-  }
-  span {
-    margin-left: 0.4rem;
-    letter-spacing: 0;
-    font-weight: 600;
+    span {
+      margin-left: 0.4rem;
+      letter-spacing: 0;
+      font-weight: 600;
+      &::after {
+        content: "必須";
+        font-size: 11px;
+        color: color(base);
+        margin-left: 0.5em;
+        padding: 0 0.5em;
+        line-height: 1.5;
+        font-weight: 400;
+        border-radius: 3px;
+        background: color(theme);
+      }
+    }
   }
   input,
   .textarea {
@@ -105,6 +195,9 @@ form {
     outline: none;
     font-weight: 300;
   }
+  .textarea {
+    min-height: 16rem;
+  }
   input::placeholder {
     color: color(main, 0.3);
   }
@@ -115,16 +208,33 @@ form {
   button {
     display: block;
     width: 32rem;
+    height: 5.6rem;
     max-width: 100%;
-    margin-top: 4rem;
+    margin-top: 3.2rem;
     line-height: 5.2rem;
     border-radius: 0.6rem;
     background: color(main);
     color: color(base);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     font-weight: 600;
     font-size: 1.2em;
     border: 0.3rem solid transparent;
+    pointer-events: none;
+    cursor: not-allowed;
+    img {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+    &.ready {
+      pointer-events: auto;
+      cursor: pointer;
+    }
+    &.success {
+      background: color(theme);
+    }
+    &.error {
+      background: color(error);
+    }
     &:hover,
     &:active {
       /* TODO */
@@ -132,6 +242,15 @@ form {
     &:focus {
       border-color: color(base, 0.5);
     }
+    &:disabled {
+      opacity: 0.5;
+      color: color(base, 0.5);
+    }
+  }
+  .errorText {
+    margin-top: 1.2rem;
+    margin-left: 0.5em;
+    color: color(error);
   }
 }
 
