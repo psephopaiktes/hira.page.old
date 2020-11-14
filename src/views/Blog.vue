@@ -17,6 +17,7 @@ export default {
     BoardContainer
   },
   mounted() {
+    // Fetchで書き換える？
     let xhr = new XMLHttpRequest();
 
     xhr.open(`GET`, "/blog/index.xml");

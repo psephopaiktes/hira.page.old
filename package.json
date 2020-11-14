@@ -8,7 +8,6 @@
     "sprite": "svg-sprite -s --symbol-dest 'public/img' --symbol-sprite './sprite.svg' --shape-transform-svgo svgo.json 'src/assets/**/*.svg'"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.4.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"

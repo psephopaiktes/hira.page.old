@@ -13,6 +13,10 @@
 
     <form>
       <label>
+        <span>お名前</span>
+        <input type="text" placeholder="山田 太郎" />
+      </label>
+      <label>
         <span>返信用メールアドレス</span>
         <!-- TODO Validation HTML + JS -->
         <input type="email" placeholder="hoge@mail.com" />
@@ -59,20 +63,7 @@ export default {
     BoardContainer
   },
   methods: {
-    send() {
-      alert("ok");
-      fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email: "test@exsample.com",
-          subject: "TEST SUBJECT",
-          message: "Test mail."
-        })
-      });
-    }
+    send() {}
   },
   mounted() {}
 };
