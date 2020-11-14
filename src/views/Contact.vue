@@ -191,9 +191,8 @@ form {
     border: 0.3rem solid transparent;
     border-radius: 0.8rem;
     background: color(main, 0.1);
-    color: #000;
+    color: color(main);
     outline: none;
-    font-weight: 300;
   }
   .textarea {
     min-height: 16rem;
@@ -224,6 +223,10 @@ form {
     img {
       width: 4.8rem;
       height: 4.8rem;
+      opacity: 0.8;
+      @media (prefers-color-scheme: dark) {
+        filter: brightness(0.5);
+      }
     }
     &.ready {
       pointer-events: auto;
