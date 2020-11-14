@@ -22,7 +22,6 @@ export default {
     }
   },
   mounted() {
-    console.log("API KEY is " + process.env.VUE_APP_API_KEY);
     window.addEventListener("load", () => {
       const elm = document.getElementById("loading");
       if (!elm) {

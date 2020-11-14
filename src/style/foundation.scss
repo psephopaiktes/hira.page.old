@@ -125,6 +125,7 @@ a,area,button,[role="button"],
 input:not([type="range"]),
 label,select,summary,textarea {
   touch-action: manipulation;
+  font-family: inherit;
 }
 button{
   cursor: pointer;
@@ -132,6 +133,7 @@ button{
   border: none;
   font-size: inherit;
   color: inherit;
+  outline: none;
 }
 table {
   table-layout: fixed;
@@ -140,10 +142,11 @@ table {
 }
 h1{
   margin-top: 8rem;
-  font-size: 5.6rem;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
+  font: 5.6rem FuturaNowVar;
+  font-variation-settings: "wght" 800;
   font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
   color: color(theme);
 }
 h2{

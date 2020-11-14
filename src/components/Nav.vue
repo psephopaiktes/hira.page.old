@@ -1,8 +1,9 @@
 <template>
+  <button @click="toggleMenuAndAnimation()" class="l-navToggleBtn toggleBtn">
+    <div class="lottie" ref="menu"></div>
+  </button>
+
   <nav class="l-navBar bar">
-    <button @click="open()">
-      <SVG symbol="menu" alt="open menu" />
-    </button>
     <h1 v-if="$route.path != '/'">
       <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
@@ -15,21 +16,18 @@
   <button
     class="l-navOverlay overlay"
     :class="{ show: show }"
-    @click="close()"
+    @click="toggleMenuAndAnimation()"
   ></button>
 
   <nav class="l-navMenu menu" :class="{ show: show }">
-    <button class="close" @click="close()">
-      <SVG symbol="close" alt="close" />
-    </button>
-    <h1 @click="close()">
+    <h1 @click="toggleMenuAndAnimation()">
       <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
     <ul>
       <li
         @mouseenter="playLottie('blog')"
         @mouseleave="reversePlayLottie('blog')"
-        @click="close()"
+        @click="toggleMenuAndAnimation()"
       >
         <router-link to="/blog">
           <div class="lottie" ref="blog"></div>
@@ -39,7 +37,7 @@
       <li
         @mouseenter="playLottie('me')"
         @mouseleave="reversePlayLottie('me')"
-        @click="close()"
+        @click="toggleMenuAndAnimation()"
       >
         <router-link to="/me">
           <div class="lottie" ref="me"></div>
@@ -49,7 +47,7 @@
       <li
         @mouseenter="playLottie('works')"
         @mouseleave="reversePlayLottie('works')"
-        @click="close()"
+        @click="toggleMenuAndAnimation()"
       >
         <router-link to="/works">
           <div class="lottie" ref="works"></div>
@@ -60,7 +58,7 @@
     <div
       @mouseenter="playLottie('contact')"
       @mouseleave="reversePlayLottie('contact')"
-      @click="close()"
+      @click="toggleMenuAndAnimation()"
     >
       <router-link to="/contact" class="contact">
         <div class="lottie" ref="contact"></div>
@@ -76,6 +74,7 @@ import lottieDataBlog from "@/assets/lottie/blog.json";
 import lottieDataMe from "@/assets/lottie/me.json";
 import lottieDataWorks from "@/assets/lottie/works.json";
 import lottieDataContact from "@/assets/lottie/contact.json";
+import lottieDataMenu from "@/assets/lottie/menu.json";
 
 export default {
   name: "Nav",
@@ -86,21 +85,19 @@ export default {
         blog: lottieDataBlog,
         me: lottieDataMe,
         works: lottieDataWorks,
-        contact: lottieDataContact
+        contact: lottieDataContact,
+        menu: lottieDataMenu
       },
-      animation: {
-        blog: {},
-        me: {},
-        works: {}
-      }
+      animation: {}
     };
   },
   methods: {
-    close() {
-      this.show = false;
-    },
-    open() {
-      this.show = true;
+    toggleMenuAndAnimation() {
+      this.show
+        ? this.animation["menu"].setDirection(-1)
+        : this.animation["menu"].setDirection(1);
+      this.animation["menu"].play();
+      this.show = !this.show;
     },
     playLottie(name) {
       this.animation[name].setDirection(1);
@@ -134,25 +131,39 @@ export default {
   height: 3.2rem;
 }
 
+.toggleBtn {
+  @include max($MD) {
+    width: 4.8rem;
+    height: 4.8rem;
+    .lottie {
+      margin: 0.8rem;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+  @include max($SM) {
+    width: 6.4rem;
+    height: 6.4rem;
+    margin-left: 0.8rem;
+    .lottie {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin: 1.6rem;
+    }
+  }
+}
+
 .bar {
+  font-family: FuturaNowVar;
+  font-variation-settings: "wght" 700;
   @include max($MD) {
     background: color(theme);
     display: flex;
-    > button {
-      width: 4.8rem;
-      height: 4.8rem;
-      svg {
-        margin: 0.8rem;
-        width: 3.2rem;
-        height: 3.2rem;
-        fill: color(base);
-      }
-    }
     > h1 {
       width: 9.6rem;
       height: 2.4rem;
       margin-top: 1.2rem;
-      margin-left: 0.4rem;
+      margin-left: 5.2rem;
       * {
         display: block;
         width: 100%;
@@ -172,7 +183,6 @@ export default {
       position: relative;
       font-size: 1.4rem;
       font-weight: bold;
-      letter-spacing: 0.05em;
       letter-spacing: 0.1em;
       svg {
         width: 2.4rem;
@@ -186,21 +196,11 @@ export default {
   }
   @include max($SM) {
     background: color(theme);
-    > button {
-      width: 6.4rem;
-      height: 6.4rem;
-      margin: 0 0 0 0.8rem;
-      svg {
-        width: 3.2rem;
-        height: 3.2rem;
-        margin: 1.6rem;
-        fill: color(base);
-      }
-    }
     > h1 {
       width: 9.6rem;
       height: 2.4rem;
-      margin: 2rem 0.4rem;
+      margin-top: 2rem;
+      margin-left: 8rem;
       svg {
         fill: color(base);
       }
@@ -237,6 +237,9 @@ export default {
 }
 
 .menu {
+  font-family: FuturaNowVar;
+  font-variation-settings: "wght" 700;
+  letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -246,34 +249,6 @@ export default {
   transition: $TRANSITION;
   @include max($MD) {
     background: color(theme);
-  }
-  .close {
-    display: none;
-    @include max($MD) {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 4.8rem;
-      height: 4.8rem;
-      svg {
-        margin: 0.8rem;
-        width: 3.2rem;
-        height: 3.2rem;
-      }
-    }
-    @include max($SM) {
-      top: auto;
-      bottom: 0;
-      left: 0.8rem;
-      width: 5.6rem;
-      height: 5.6rem;
-      svg {
-        width: 2.8rem;
-        height: 2.8rem;
-        margin: 1.4rem;
-      }
-    }
   }
   h1 {
     margin-top: -10vh;
@@ -300,7 +275,6 @@ export default {
       line-height: 5.2rem;
       color: #fff;
       font-size: 2.6rem;
-      letter-spacing: 0.05em;
       opacity: 0.6;
       transition: $TRANSITION;
       .lottie {
@@ -342,11 +316,13 @@ export default {
     color: color(base);
     font-size: 2rem;
     font-weight: bold;
-    letter-spacing: 0.05em;
     border-radius: 0.8rem;
     transition: $TRANSITION;
     .lottie {
       position: absolute;
+      @media (prefers-color-scheme: dark) {
+        filter: brightness(-20%);
+      }
       top: 1.2rem;
       left: 1.2rem;
       opacity: 0.5;
@@ -355,9 +331,9 @@ export default {
     &:hover,
     &:active {
       filter: brightness(140%);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.11em;
       .lottie {
-        opacity: 1;
+        opacity: 0.8;
       }
     }
   }

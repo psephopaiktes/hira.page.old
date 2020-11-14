@@ -10,6 +10,22 @@ $Z_NAVBAR: 7000;
 $Z_NAVMENU: 8000;
 $Z_MODAL: 9000;
 
+.l-navToggleBtn {
+  display: none;
+  @include max($MD) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: #{$Z_NAVMENU + 1};
+  }
+  @include max($SM) {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+  }
+}
+
 .l-navBar {
   display: none;
   position: relative;

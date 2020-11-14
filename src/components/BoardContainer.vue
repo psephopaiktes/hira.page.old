@@ -64,7 +64,7 @@ export default {
 .board {
   background: color(base);
   margin: 1.6rem;
-  padding: 0 9.6rem #{24 + 4.8}rem;
+  padding: 0 9.6rem #{24 + 9.6}rem;
   min-height: calc(100vh - 3.2rem);
   overflow: hidden;
   border-radius: 1.6rem;

@@ -3,10 +3,14 @@
     <h1>CONTACT</h1>
 
     <p>
-      <a href="https://twitter.com/psephopaiktes" target="brank">Twitter</a>
+      <a href="https://twitter.com/psephopaiktes" target="brank">
+        Twitter
+        <SVG symbol="open" class="c-textIcon" />
+      </a>
       にリプライ、DMいただいても大丈夫です。<br />
       そちらのほうが反応が早めです。
     </p>
+
     <form>
       <label>
         <span>返信用メールアドレス</span>
@@ -19,9 +23,9 @@
       </label>
       <label>
         <span>お問い合わせ内容</span>
-        <textarea rows="8"></textarea>
+        <div class="textarea" contenteditable="true"></div>
       </label>
-      <button type="submit">送信</button>
+      <button type="submit" @click.prevent="send()">送信</button>
     </form>
 
     <hr />
@@ -53,7 +57,24 @@ export default {
   name: "Contact",
   components: {
     BoardContainer
-  }
+  },
+  methods: {
+    send() {
+      alert("ok");
+      fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: "test@exsample.com",
+          subject: "TEST SUBJECT",
+          message: "Test mail."
+        })
+      });
+    }
+  },
+  mounted() {}
 };
 </script>
 
@@ -81,47 +102,44 @@ form {
     font-weight: 600;
   }
   input,
-  textarea {
+  .textarea {
     display: block;
     margin-top: 0.4rem;
-    padding: 1.6rem 1.2rem;
+    padding: 1.6rem;
     width: 100%;
     border: 0.3rem solid transparent;
     border-radius: 0.8rem;
     background: color(main, 0.1);
     color: #000;
     outline: none;
+    font-weight: 300;
   }
-  textarea {
-    resize: vertical;
-  }
-  input::placeholder,
-  textarea::placeholder {
+  input::placeholder {
     color: color(main, 0.3);
   }
   input:focus,
-  textarea:focus {
+  .textarea:focus {
     border-color: color(main, 0.2);
   }
   button {
     display: block;
     width: 32rem;
     max-width: 100%;
-    margin: 2.4rem auto 0;
-    line-height: 4.8rem;
-    border-radius: 0.4rem;
+    margin-top: 4rem;
+    line-height: 5.2rem;
+    border-radius: 0.6rem;
     background: color(main);
     color: color(base);
     letter-spacing: 0.1em;
     font-weight: 600;
+    font-size: 1.2em;
     border: 0.3rem solid transparent;
-    outline: none;
     &:hover,
     &:active {
       /* TODO */
     }
     &:focus {
-      border-color: color(base, 0.4);
+      border-color: color(base, 0.5);
     }
   }
 }
