@@ -9,6 +9,10 @@ if [ -z ${COMMENT} ]; then
   read COMMENT
 fi
 
+# cache削除
+rm -rf public/blog
+rm -rf public/works
+
 # Hugoビルド
 cd hugo-amp-contents
 hugo

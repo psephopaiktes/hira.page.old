@@ -3,14 +3,14 @@ id: "sample"
 title: "サンプル記事サンプル記事サンプル記事サンプル記事サンプル記事サンプル記事"
 date: 2020-08-08T05:01:56+09:00
 update: true
-draft: true
+draft: false
 tags: ["design","other"]
 description: "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう"
-images: ["sample/cover.png"]
 ---
 
 ## 見出し2見出し2見出し2見出し2見出し2見出し2見出し2見出し2
 本文。あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう
+
 ### 見出し3見出し3見出し3見出し3見出し3見出し3見出し3見出し3見出し3
 - リスト
 - あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう
@@ -18,6 +18,7 @@ images: ["sample/cover.png"]
     - ああああああああああああああああああああああああああああああああああああああああああああああああああああ
     - あああ
 - あsdfghjk
+
 #### 見出し4
 1. 数値リスト
 1. Lorem ipsum elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -65,11 +66,12 @@ Internet
 ```md
 ![代替えテキスト](https://source.unsplash.com/random "Hover時のタイトル")
 ```
-shortcodeを使って自動生成させる
+shortcodeを使って自動生成させる。画像は自動で縮小される。
 ```html
 { {< img src="cat.jpg" alt="代替テキスト" title="neko" > }}
 ```
 {{< img src="cat.jpg" alt="代替テキスト" title="neko" >}}
+{{< img src="ss.png" alt="代替テキスト" title="ss" >}}
 
 ---
 

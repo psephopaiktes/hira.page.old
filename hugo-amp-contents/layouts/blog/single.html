@@ -1,3 +1,13 @@
+{{ $heder_img := .Resources.GetMatch "cover.png" }}
+{{ $heder_img_path := "" }}
+{{ if $heder_img }}
+    {{ $small := $heder_img.Fit "1280x640 q80" }}
+    {{ $heder_img_path = $small.RelPermalink }}
+{{ else }}
+    {{ $heder_img_path = "/img/placeholder.jpg" }}
+{{ end }}
+
+
 <!DOCTYPE html>
 <html ⚡ lang="ja">
 
@@ -15,7 +25,7 @@
             "@type": "NewsArticle",
             "mainEntityOfPage": {{ .Permalink }},
             "headline": {{ .Title }},
-            "image": {{ .Params.images }},
+            "image": {{ $heder_img_path }},
             "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05" }},
             "author": {
                 "@type": "Person",
@@ -86,7 +96,7 @@
     <main>
         <header class="articleHeader">
             <amp-img
-                src="{{ .Permalink }}cover.png"
+                src="{{ $heder_img_path }}"
                 alt="{{ .Title }}"
                 width="640"
                 height="320"

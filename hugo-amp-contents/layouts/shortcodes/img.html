@@ -1,10 +1,11 @@
 {{ $src := .Get "src" }}
 {{ $alt := .Get "alt" }}
 {{ $image := $.Page.Resources.GetMatch $src }}
-{{ $width := $image.Width }}
-{{ $height := $image.Height }}
+{{ $resized := $image.Resize "1200x q80" }}
+{{ $width := $resized.Width }}
+{{ $height := $resized.Height }}
 <amp-img
-    src="{{ $src }}"
+    src="{{ $resized.RelPermalink }}"
     alt="{{ $alt }}"
     width="{{ $width }}"
     height="{{ $height }}"
