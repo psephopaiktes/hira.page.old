@@ -27,6 +27,7 @@
             "headline": {{ .Title }},
             "image": {{ $heder_img_path }},
             "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05" }},
+            "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05" }},
             "author": {
                 "@type": "Person",
                 "name": {{ .Site.Params.Author }}
@@ -36,7 +37,7 @@
                 "name": {{ .Site.Title  }},
                 "logo": {
                 "@type": "ImageObject",
-                "url": "TODO"
+                "url": "{{ .Site.BaseURL }}/img/logo.svg"
                 }
             }
         },
