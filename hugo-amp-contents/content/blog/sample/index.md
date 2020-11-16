@@ -3,7 +3,7 @@ id: "sample"
 title: "サンプル記事サンプル記事サンプル記事サンプル記事サンプル記事サンプル記事"
 date: 2020-08-08T05:01:56+09:00
 update: true
-draft: false
+draft: true
 tags: ["design","other"]
 description: "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう"
 images: ["sample/cover.png"]
@@ -115,3 +115,16 @@ var elm = document.getElementById('gotop');
 </body>
 </html>
 ```
+
+## Other
+
+### Embed Card
+{{< embed-card
+    "https://ics.media/entry/201113/"
+    "https://ics.media/entry/201113/images/eyecatch.png"
+    "Adobe Flash作品から学ぶクリエイティブコーディングのテクニック - ICS MEDIAAdobe Flash作品から学ぶクリエイティブコーディングのテクニック - ICS MEDIA"
+    "ics.media"
+>}}
+
+### Amazon
+TBD

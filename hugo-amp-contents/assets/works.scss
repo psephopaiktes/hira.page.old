@@ -1,135 +1,54 @@
-///////////////////////////////////////////////////////////////////////////////
-// CONST
-///////////////////////////////////////////////////////////////////////////////
-html {
-  --color-theme: #ffcc66;
-  --color-theme-rgb: 255,204,102;
-  --color-base: #ffffff;
-  --color-base-rgb: 255,255,255;
-  --color-main: #553322;
-  --color-main-rgb: 85,51,34;
-  @media (prefers-color-scheme: light) {
-    --color-theme: #ffcc66;
-    --color-theme-rgb: 255,204,102;
-    --color-base: #ffffff;
-    --color-base-rgb: 255,255,255;
-    --color-main: #553322;
-    --color-main-rgb: 85,51,34;
-  }
-  @media (prefers-color-scheme: dark) {
-    --color-theme: #eebb66;
-    --color-theme-rgb: 238,187,102;
-    --color-base: #222233;
-    --color-base-rgb: 34,34,51;
-    --color-main: #ffffff;
-    --color-main-rgb: 255,255,255;
-  }
-}
+@import 'common';
 
-$COLOR_THEME: var(--color-theme);
-$COLOR_THEME_RGB: var(--color-theme-rgb);
-$COLOR_BASE: var(--color-base);
-$COLOR_BASE_RGB: var(--color-base-rgb);
-$COLOR_MAIN: var(--color-main);
-$COLOR_MAIN_RGB: var(--color-main-rgb);
-
-$WIDTH_SP: 480px;
-$WIDTH_TAB: 960px;
-$WIDTH_PC: 1440px;
-
-$TRANSITION: 0.2s ease-out;
-
-///////////////////////////////////////////////////////////////////////////////
-// RESET & BASIC STYLE
-///////////////////////////////////////////////////////////////////////////////
-html {
-  background-color: $COLOR_BASE;
-  font-size: 10px;
-  @media (max-width: $WIDTH_TAB) { font-size: 9px }
-  @media (max-width: $WIDTH_SP) { font-size: 8px }
-}
-body {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  font-size: 1.6rem;
-  color: $COLOR_MAIN;
-  line-height: 1.7;
-  font-weight: normal;
-  font-family: "Avenir Next", "Avenir", "SF Pro Text", "Robot", "Helvetica Neue",
-    "Helvetica", "Arial", "Hiragino Sans", -apple-system, BlinkMacSystemFont,
-    "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans CJK JP", "Meiryo",
-    "メイリオ", "Segoe UI", sans-serif;
-  font-smoothing: antialiased;
-  font-feature-settings: "pkna";
-  -webkit-text-size-adjust: 100%;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul {
-  list-style-type: none;
-}
-img {
-  border: none;
-  vertical-align: top;
-  max-width: 100%;
-}
-b,
-strong {
-  font-weight: bolder;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: $TRANSITION;
-}
-p a {
-  text-decoration: underline;
-}
-button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: inherit;
-  color: inherit;
-  transition: $TRANSITION;
-}
-a,
-area,
-button,
-[role="button"],
-input:not([type="range"]),
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
-}
-
-///////////////////////////////////////////////////////////////////////////////
-// Main Styling
-///////////////////////////////////////////////////////////////////////////////
 main {
   width: calc(100% - 8rem);
   max-width: 45em;
   margin: 9.6rem auto;
+  @include max($SM){
+    width: calc(100% - 6.4rem);
+  }
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// Header
+///////////////////////////////////////////////////////////////////////////////
+
 .articleHeader {
   amp-img {
     border-radius: .8rem;
     max-width: 100%;
   }
+  .breadcrumb {
+    display: flex;
+    list-style: none;
+    margin-top: 2.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1;
+    li {
+      margin-right: 2em;
+      position: relative;
+      a {
+        opacity: .6;
+        &:hover { opacity: .8}
+      }
+      &::after {
+        content: '';
+        display: block;
+        width:.6em; height: .6em;
+        position: absolute;
+        bottom: .25em; right: -1em;
+        border: .2rem solid currentColor;
+        border-width: .2rem .2rem 0 0;
+        transform: rotate(45deg);
+        opacity: .2;
+      }
+    }
+  }
   h1 {
     font-size: 2.8rem;
     line-height: 1.5;
-    margin-top: 2.4rem;
+    margin-top: 1.2rem;
   }
   .date {
     margin-top: 1.6rem;
@@ -139,7 +58,7 @@ main {
     opacity: .6;
     line-height: 3.2rem;
     vertical-align: -20%;
-    @media(max-width: $WIDTH_SP) {
+    @media(max-width: $SM) {
       width: 100%;
     }
   }
@@ -149,7 +68,7 @@ main {
     justify-content: flex-end;
     width: 50%;
     font-size: 1.2rem;
-    @media(max-width: $WIDTH_SP) {
+    @media(max-width: $SM) {
       margin-top: .8rem;
       width: 100%;
       justify-content: flex-start;
@@ -161,8 +80,8 @@ main {
       padding: 0 1.6rem;
       margin: 0 .4rem;
       border-radius: 1.6rem;
-      background: $COLOR_THEME;
-      color: $COLOR_MAIN;
+      background: color(theme);
+      color: color(main);
       font-weight: 600;
       letter-spacing: .05em;
       opacity: .8;
@@ -175,10 +94,11 @@ main {
 }
 .index {
   margin-top: 4.8rem;
-  padding: 3.2rem 5.6rem;
+  padding: 3.2rem 4.8rem;
   border-radius: .8rem;
+  background: color(theme,.1);
   h3 {
-    color: $COLOR_THEME;
+    color: color(theme);
     font-size: 1.8rem;
   }
   nav > ul {
@@ -195,12 +115,10 @@ main {
       margin-top: 1.4rem;
     }
     a {
-      color: $COLOR_MAIN_RGB;
-      text-decoration: underline;
+      color: color(main);
       &:hover{ opacity: 1 }
     }
   }
-  background: rgba(#{$COLOR_THEME_RGB}, .1);
 }
 
 // Footer
@@ -209,8 +127,8 @@ main {
   position: fixed;
   flex-direction: column;
   bottom: 2rem;
-  left: 2rem;
-  @media(max-width: $WIDTH_TAB){ flex-direction: row }
+  right: 2rem;
+  @media(max-width: $MD){ flex-direction: row }
   a{
     text-indent: 100%;
     white-space: nowrap;
@@ -222,7 +140,8 @@ main {
     height: 4rem;
     border-radius: 50%;
     background: url("/img/blog-share.svg") no-repeat;
-    background-color: rgba(#{$COLOR_MAIN_RGB},.3);
+    background-color: color(main,.3);
+    backdrop-filter: blur(8px);
     background-size: 28rem 4rem;
     &.twitter{background-position: 0 0 }
     &:hover.twitter{ background-color: #008ff7 }
@@ -232,13 +151,13 @@ main {
     &:hover.hatena{ background-color: #00a4de }
     &.pocket{
         background-position: -12rem 0;
-        @media (max-width: $WIDTH_SP) { display: none }
+        @media (max-width: $SM) { display: none }
     }
     &:hover.pocket{ background-color: #ef4056 }
     &.line{
         background-position: -16rem 0;
         display: none;
-        @media (max-width: $WIDTH_SP) { display: block }
+        @media (max-width: $SM) { display: block }
     }
     &:hover.line{ background-color: #00B500 }
   }
@@ -254,7 +173,7 @@ main {
     gap: .8rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: .8rem;
-    @media(max-width: $WIDTH_TAB) {
+    @media(max-width: $MD) {
       grid-template-columns: 1fr 1fr;
     }
     a {
@@ -293,14 +212,14 @@ main {
       &::before { background-position: -24rem 0 }
     }
     li:nth-child(4) a {
-      background-color: rgba(#{$COLOR_MAIN_RGB},.4);
+      background-color: color(main,.4);
       &::before { background-position: -20rem 0 }
     }
   }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// Article Styling
+// Content
 ///////////////////////////////////////////////////////////////////////////////
 article {
   margin: 12rem 0 0;
@@ -310,7 +229,7 @@ article {
   h2 {
     margin: 12rem 0 0;
     padding-left: 2rem;
-    border-left: .2rem solid $COLOR_THEME;
+    border-left: .2rem solid color(theme);
     line-height: 1.4;
     font-size: 3.2rem;
   }
@@ -367,27 +286,27 @@ article {
     width: 100%;
     border-collapse: collapse;
     th, td {
-      border: 0.1rem solid rgba(#{$COLOR_MAIN_RGB}, 0.2);
+      border: 0.1rem solid color(main, 0.2);
       padding: 0.8rem 1.2rem;
     }
     th {
-      background: rgba(#{$COLOR_MAIN_RGB}, 0.6);
-      color: $COLOR_BASE;
+      background: color(main, 0.6);
+      color: color(base);
     }
     tr:nth-child(even) td {
-      background: rgba(#{$COLOR_MAIN_RGB}, 0.03);
+      background: color(main, 0.03);
     }
   }
   b {
     font-weight: 700;
   }
   strong {
-    background: linear-gradient(transparent 60%, rgba(#{$COLOR_THEME_RGB}, 0.8) 40%);
+    background: linear-gradient(transparent 60%, color(theme,0.8) 40%);
   }
   code:not([class]) {
     font-family: Consolas, "Courier New", Courier, Monaco, monospace;
     color: #d72b3f;
-    background-color: rgba(#{$COLOR_MAIN_RGB}, 0.08);
+    background-color: color(main, 0.08);
     padding: 0.2em 0.4em;
     margin: auto 0.2em;
     border-radius: 0.2rem;
@@ -396,10 +315,10 @@ article {
   }
   blockquote {
     font-style: italic;
-    color: rgba(#{$COLOR_MAIN_RGB}, 0.8);
-    background: rgba(#{$COLOR_MAIN_RGB}, 0.08);
+    color: color(main, 0.8);
+    background: color(main, 0.08);
     padding: 1rem 2.4rem;
-    border-left: 0.2rem solid rgba(#{$COLOR_MAIN_RGB}, 0.2);
+    border-left: 0.2rem solid color(main, 0.2);
   }
   small {
     font-size: 0.9em;
@@ -409,11 +328,11 @@ article {
   hr {
     border: 0;
     margin: 12rem 0 6rem;
-    border-top: 0.1rem dashed rgba(#{$COLOR_MAIN_RGB}, 0.5);
+    border-top: 0.1rem dashed color(main, 0.5);
   }
   a {
     text-decoration: underline;
-    color: $COLOR_THEME;
+    color: color(theme);
     font-weight: 500;
     &:visited {
       filter: brightness(80%);

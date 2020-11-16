@@ -2,8 +2,8 @@
 id: "{{ .Name }}"
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-update: ""
+update: false
 draft: false
-tags: [""]
+tags: []
 description: ""
 ---

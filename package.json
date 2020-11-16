@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "npm run sprite && vue-cli-service serve",
+    "start": "npm run serve",
     "serve": "npm run sprite && vue-cli-service serve",
     "build": "npm run sprite && vue-cli-service build",
     "lint": "vue-cli-service lint",

@@ -7,15 +7,12 @@
   - `sitemap.xml`: SEO用のサイトマップファイルです。
 - [hugo](https://gohugo.io/)のインストールが必要です
 - HUGOとVueのサーバーを同時に起ち上げるのはやめたほうがいいかも
+    - もしかしたら `$ hugo -w` で都度ビルドさせればいけるかも？
 
 ## ブログ・実績の更新作業
 - ルートで `$ ./new.sh $ID` を実行
 - $IDは `blog/hello-word` など
 - 画像はindex.mdと同じフォルダに置いてOK
-
-`$ hugo new blog/hello-world2/index.md`
-→ ./new.sh $ID にできるように
-→ できれば `nr new $ID` でやりたい
 
 
 ## その他の基本コマンド

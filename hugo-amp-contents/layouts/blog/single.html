@@ -1,13 +1,87 @@
-{{ partial "header" . }}
+<!DOCTYPE html>
+<html ⚡ lang="ja">
 
-    {{/*  <header id="globalHeader">
-        <h1>{{ .Site.Title }}</h1>
-        <nav><ul>
-            <li><a href="/blog">BLOG</a></li>
-            <li><a href="/about">about</a></li>
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>{{- .Title }} | {{ .Site.Title -}}</title>
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "mainEntityOfPage": {{ .Permalink }},
+            "headline": {{ .Title }},
+            "image": {{ .Params.images }},
+            "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05" }},
+            "author": {
+                "@type": "Person",
+                "name": {{ .Site.Params.Author }}
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": {{ .Site.Title  }},
+                "logo": {
+                "@type": "ImageObject",
+                "url": "TODO"
+                }
+            }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "HOME",
+              "item": "https://hira.page/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "BLOG",
+              "item": "https://hira.page/blog/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": {{ .Title }},
+              "item": {{ .Permalink }}
+            }
+          ]
+        }
+    ]
+    </script>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+      {{ (resources.Get "blog.scss"| toCSS (dict "outputStyle" "compressed")).Content | safeCSS}}
+    </style>
+
+    {{/*  OGP  */}}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+
+    {{/*  Other  */}}
+    <meta name="theme-color" content="#FFCC66">
+    <meta name="description" content="{{ .Description }}">
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/favicon.png">
+</head>
+
+<body>
+    <header id="globalHeader">
+        <h1><a href="/"><img src="/img/logo.svg" alt="WEBA"></a></h1>
+        <!-- <nav><ul>
+            <li><a href="/blog">blog</a></li>
+            <li><a href="/me">me</a></li>
             <li><a href="/contact">contact</a></li>
-        </ul></nav>
-    </header>  */}}
+        </ul></nav> -->
+    </header>
 
     <main>
         <header class="articleHeader">
@@ -19,12 +93,17 @@
                 layout="responsive"
             ></amp-img>
 
+            <ol class="breadcrumb">
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/blog">ブログ一覧</a></li>
+            </ol>
+
             <h1>{{ .Title }}</h1>
 
             <span class="date">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
                 {{- if .Params.update -}}
-                公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006.01.02" }}</time>更新
+                公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006年1月2日" }}</time>更新
                 {{ end }}
             </span>
 
@@ -51,17 +130,6 @@
         </article>
 
         <footer>
-            <aside class="share">
-                <a class="twitter" href="https://twitter.com/intent/tweet?url={{.Permalink}}&text={{.Title}}%20%7c%20{{.Site.Title}}" target="_blank" rel="noopener" title="Twitterでシェアする">Twitter</a>
-
-                <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" title="Facebookでシェア">Facebook</a>
-
-                <a class="hatena" href="http://b.hatena.ne.jp/entry/{{.Permalink}}" title="はてブに登録">はてなブックマーク</a>
-
-                <a class="pocket" href="https://getpocket.com/save?url={{.Permalink}}" title="Pocketに保存する">Pocket</a>
-
-                <a class="line" href="http://line.me/R/msg/text/?{{.Title}}%20%7c%20{{.Site.Title}}%20{{.Permalink}}" title="LINEで共有">LINE</a>
-            </aside>
 
             <section class="follow">
                 <h3>Follow This Blog.</h3>
@@ -74,7 +142,31 @@
             </section>
 
             <!-- TODO:AD  -->
+            <div class="ad"></div>
+
+            <nav>
+                <h1><a href="/"><img src="/img/logo.svg" alt="WEBA"></a></h1>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/blog">ブログ一覧</a></li>
+                    <li><a href="/me">私について</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+
+            <aside class="share">
+                <a class="twitter" href="https://twitter.com/intent/tweet?url={{.Permalink}}&text={{.Title}}%20%7c%20{{.Site.Title}}" target="_blank" rel="noopener" title="Twitterでシェアする">Twitter</a>
+
+                <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" title="Facebookでシェア">Facebook</a>
+
+                <a class="hatena" href="http://b.hatena.ne.jp/entry/{{.Permalink}}" title="はてブに登録">はてなブックマーク</a>
+
+                <a class="pocket" href="https://getpocket.com/save?url={{.Permalink}}" title="Pocketに保存する">Pocket</a>
+
+                <a class="line" href="http://line.me/R/msg/text/?{{.Title}}%20%7c%20{{.Site.Title}}%20{{.Permalink}}" title="LINEで共有">LINE</a>
+            </aside>
         </footer>
     </main>
+</body>
 
-{{ partial "footer" . }}
+</html>
