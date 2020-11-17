@@ -1,4 +1,4 @@
-<a href="hira.page" target="_brank">
+<a href="hira.page" target="_blank">
   <img src="design/ogp.png" alt="WEBA">
 </a>
 

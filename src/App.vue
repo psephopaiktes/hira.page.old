@@ -38,11 +38,21 @@ export default {
             ? item.querySelector("source").getAttribute("url")
             : null;
 
+          let exSite = "";
+          if (/note/.test(redirect)) {
+            exSite = "note";
+          } else if (/qiita/.test(redirect)) {
+            exSite = "qiita";
+          } else {
+            exSite = null;
+          }
+
           blogIndex.push({
             title: item.querySelector("title").innerHTML,
             link: item.querySelector("link").innerHTML,
             description: item.querySelector("description").innerHTML,
             redirect,
+            exSite,
             tags
           });
         });

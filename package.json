@@ -2,9 +2,10 @@
   "private": true,
   "scripts": {
     "start": "npm run serve",
-    "serve": "npm run sprite && vue-cli-service serve",
-    "build": "npm run sprite && vue-cli-service build",
+    "serve": "npm run hugo && npm run sprite && vue-cli-service serve",
+    "build": "npm run hugo && npm run sprite && vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "hugo": "cd hugo-amp-contents && hugo && cd ..",
     "sprite": "svg-sprite -s --symbol-dest 'public/img' --symbol-sprite './sprite.svg' --shape-transform-svgo svgo.json 'src/assets/svg-sprite/**/*.svg'"
   },
   "dependencies": {

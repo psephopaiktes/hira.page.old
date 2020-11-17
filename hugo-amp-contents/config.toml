@@ -1,11 +1,11 @@
 languageCode = "ja"
 title = "WEBA"
 copyright = "© weba"
-baseURL = "https://hira.page/"
+baseURL = "/"
 publishDir = "../public/"
 newContentEditor = "code"
 hasCJKLanguage = true
-disableKinds = ["taxonomy","taxonomyTerm"]
+disableKinds = ["taxonomy", "taxonomyTerm", "category", "404", "home"]
 
 [author]
   name = "Akira HIRATA"

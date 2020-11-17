@@ -15,7 +15,7 @@
         <li>
           <a
             href="https://twitter.com/psephopaiktes"
-            target="brank"
+            target="_blank"
             title="Twitter"
             class="c-tips"
           >
@@ -25,7 +25,7 @@
         <li>
           <a
             href="https://note.com/psephopaiktes"
-            target="brank"
+            target="_blank"
             title="note"
             class="c-tips"
           >
@@ -35,7 +35,7 @@
         <li>
           <a
             href="https://github.com/psephopaiktes"
-            target="brank"
+            target="_blank"
             title="GitHub"
             class="c-tips"
           >
@@ -45,7 +45,7 @@
         <li>
           <a
             href="https://www.instagram.com/psephopaiktes"
-            target="brank"
+            target="_blank"
             title="Instagram"
             class="c-tips"
           >

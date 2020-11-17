@@ -1,10 +1,10 @@
-<a class="embed-card" href="{{ .Get 0 }}" target="brank_" rel="noopener">
+<a class="embed-card" href="{{ .Get 0 }}" target="_blank" rel="noopener">
     {{ if .Get 1 }}
-    <img class="og" src="{{ .Get 1 }}" alt="参照記事サムネイル">
+    <amp-img class="og" src="{{ .Get 1 }}" alt="参照記事サムネイル" width="160" height="120" layout="responsive"></amp-img>
     {{ else }}
-    <img class="og" src="{{ .Site.BaseURL }}/images/embed-thumbnail.png" alt="参照記事サムネイル">
+    <amp-img class="og" src="{{ .Site.BaseURL }}/images/embed-thumbnail.png" alt="参照記事サムネイル" width="160" height="120" layout="responsive"></amp-img>
     {{ end }}
     <h5>{{ .Get 2 }}</h5>
-    <img class="favi" src="http://www.google.com/s2/favicons?domain={{ .Get 3 }}">
+    <amp-img class="favi" src="http://www.google.com/s2/favicons?domain={{ .Get 3 }}" width="20" height="20" layout="responsive"></amp-img>
     <span>{{ .Get 3 }}</span>
 </a>

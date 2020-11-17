@@ -3,7 +3,7 @@
     <h1>CONTACT</h1>
 
     <p>
-      <a href="https://twitter.com/psephopaiktes" target="brank">
+      <a href="https://twitter.com/psephopaiktes" target="blank">
         Twitter
         <SVG symbol="open" class="c-textIcon" />
       </a>

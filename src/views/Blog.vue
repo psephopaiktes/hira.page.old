@@ -1,11 +1,19 @@
 <template>
   <BoardContainer>
     <h1>BLOG</h1>
-    <a href="/blog/sample">sample</a>
     <ul class="blogIndex">
       <li v-for="item in $store.state.blogIndex" :key="item.link">
-        <a :href="item.link">
+        <!-- prettier-ignore -->
+        <a
+          :href="item.link"
+          :target="item.exSite ? '_blank' : null"
+          :rel="item.exSite ? 'noopener' : null"
+        >
           <h3>{{ item.title }}</h3>
+          <span v-if="item.exSite">
+            {{ item.exSite }}
+            <!-- <SVG symbol="open" /> -->
+          </span>
         </a>
       </li>
     </ul>
@@ -28,4 +36,8 @@ export default {
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
+
+.blogIndex {
+  list-style: disc;
+}
 </style>
