@@ -20,7 +20,7 @@
         {{/*  Redirect  */}}
         {{ with .Params.redirect -}}
     <link rel="canonical" href="{{ . }}">
-    <meta http-equiv="refresh" content="0;URL={{ . }}">
+    <!-- <meta http-equiv="refresh" content="0;URL={{ . }}"> -->
     {{- else }}
     <link rel="canonical" href="{{ .Permalink }}" />
     {{- end }}
@@ -102,18 +102,18 @@
         </h1>
     </main>
     {{ else }}
-    <header id="globalHeader">
-        <h1><a href="/"><amp-img src="/img/logo.svg" alt="WEBA" width="200" height="50" layout="responsive"></amp-img></a></h1>
-        <!-- <nav><ul>
-            <li><a href="/blog">blog</a></li>
-            <li><a href="/me">me</a></li>
-            <li><a href="/contact">contact</a></li>
-        </ul></nav> -->
-    </header>
 
     <main>
         <header class="articleHeader">
+            <a class="back" href="/blog">
+                <i class="material-icons-round">arrow_back</i>
+                ブログ一覧
+            </a>
+
+            <h1 class="logo"><a href="/"><amp-img src="/img/logo.svg" alt="WEBA" width="200" height="50" layout="responsive"></amp-img></a></h1>
+
             <amp-img
+                class="hero"
                 src="{{ $heder_img_path }}"
                 alt="{{ .Title }}"
                 width="640"
@@ -121,7 +121,7 @@
                 layout="responsive"
             ></amp-img>
 
-            <h1>{{ .Title }}</h1>
+            <h1 class="title">{{ .Title }}</h1>
 
             <span class="date">
                 <i class="material-icons-round">today</i>
@@ -145,7 +145,7 @@
         </header>
 
         <aside class="index">
-            <h3>Index</h3>
+            <h3><i class="material-icons-round">toc</i> Index</h3>
             {{ .TableOfContents }}
         </aside>
 
