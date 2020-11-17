@@ -95,7 +95,6 @@ aa | aa | aa
 var elm = document.getElementById('gotop');
 
     window.addEventListener('scroll', function()
-
     if( window.pageYOffset > 200 ) elm.classList.add('show');
     else elm.classList.remove('show');
 
