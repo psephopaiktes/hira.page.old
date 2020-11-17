@@ -15,9 +15,17 @@
     <meta charset="UTF-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>{{- .Title }} | {{ .Site.Title -}}</title>
-    <link rel="canonical" href="{{ .Permalink }}" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
+    {{/*  Redirect  */}}
+    {{ with .Params.redirect -}}
+    <link rel="canonical" href="{{ . }}">
+    <meta http-equiv="refresh" content="0;URL={{ . }}">
+    {{- else }}
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{- end }}
+
+    {{/*  JSON-LD  */}}
     <script type="application/ld+json">
     [
         {
@@ -37,7 +45,7 @@
                 "name": {{ .Site.Title  }},
                 "logo": {
                 "@type": "ImageObject",
-                "url": "{{ .Site.BaseURL }}/img/logo.svg"
+                "url": "{{ .Site.BaseURL }}img/logo.svg"
                 }
             }
         },

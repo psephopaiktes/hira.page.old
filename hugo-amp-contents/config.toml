@@ -1,11 +1,14 @@
 languageCode = "ja"
 title = "WEBA"
-copyright = "© weba 2020"
+copyright = "© weba"
 baseURL = "https://hira.page/"
 publishDir = "../public/"
 newContentEditor = "code"
 hasCJKLanguage = true
 disableKinds = ["taxonomy","taxonomyTerm"]
+
+[author]
+  name = "Akira HIRATA"
 
 [minify]
   minifyOutput = true

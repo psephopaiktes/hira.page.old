@@ -6,5 +6,5 @@ update: ""
 draft: true
 tags: [""]
 description: ""
-images: ["hello-world3/cover.png"]
+redirect: ""
 ---

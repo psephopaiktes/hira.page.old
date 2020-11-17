@@ -20,6 +20,35 @@ export default {
       this.$router.push(localStorage.redirect);
       localStorage.removeItem("redirect");
     }
+
+    // Blog, Works のRSS読み込み
+    fetch("/blog/index.xml")
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        let blogIndex = [];
+        const items = data.querySelectorAll("item");
+        items.forEach(item => {
+          const tags = [];
+          item.querySelectorAll("category").forEach(tag => {
+            tags.push(tag.innerHTML);
+          });
+
+          const redirect = item.querySelector("source")
+            ? item.querySelector("source").getAttribute("url")
+            : null;
+
+          blogIndex.push({
+            title: item.querySelector("title").innerHTML,
+            link: item.querySelector("link").innerHTML,
+            description: item.querySelector("description").innerHTML,
+            redirect,
+            tags
+          });
+        });
+        this.$store.commit("setBlogIndex", blogIndex);
+        this.$store.commit("setBlogIndexLoaded");
+      });
   },
   mounted() {
     window.addEventListener("load", () => {
@@ -29,7 +58,7 @@ export default {
       }
       elm.classList.add("hide");
 
-      // #付きのURLに直接来たときの処理
+      // #付きのURLに直接来たときの処理 TODO
       const hash = document.location.hash;
       const target = document.getElementById(hash.substring(1));
       if (hash && target) {

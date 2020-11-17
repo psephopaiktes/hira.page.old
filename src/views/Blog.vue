@@ -2,8 +2,12 @@
   <BoardContainer>
     <h1>BLOG</h1>
     <a href="/blog/sample">sample</a>
-    <ul v-for="n of 80" :key="n">
-      <li>{{ n }}</li>
+    <ul class="blogIndex">
+      <li v-for="item in $store.state.blogIndex" :key="item.link">
+        <a :href="item.link">
+          <h3>{{ item.title }}</h3>
+        </a>
+      </li>
     </ul>
   </BoardContainer>
 </template>
@@ -17,18 +21,7 @@ export default {
     BoardContainer
   },
   mounted() {
-    // Fetchで書き換える？
-    let xhr = new XMLHttpRequest();
-
-    xhr.open(`GET`, "/blog/index.xml");
-    // 開発用に取得できなかったらダミーJSONを読むようにしておく
-    xhr.responseType = `document`;
-    xhr.send();
-
-    xhr.onload = () => {
-      const rss_data = xhr.response.getElementsByTagName("item");
-      console.log(rss_data);
-    };
+    console.log(this.$store.state.blogIndex);
   }
 };
 </script>
