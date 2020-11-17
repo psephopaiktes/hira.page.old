@@ -48,12 +48,12 @@ export default {
           }
 
           blogIndex.push({
-            title: item.querySelector("title").innerHTML,
-            link: item.querySelector("link").innerHTML,
-            description: item.querySelector("description").innerHTML,
+            title: item.querySelector("title").innerHTML || null,
+            link: item.querySelector("link").innerHTML || null,
+            description: item.querySelector("description").innerHTML || null,
+            tags,
             redirect,
-            exSite,
-            tags
+            exSite
           });
         });
         this.$store.commit("setBlogIndex", blogIndex);
