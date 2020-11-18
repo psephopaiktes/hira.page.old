@@ -36,3 +36,34 @@
     bottom: 110%;
   }
 }
+
+.c-exSite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .4rem 1.8rem .6rem 1.6rem;
+  border-radius: 0 1.8rem;
+  opacity: .9;
+  svg:last-of-type {
+    width: 2.4rem;
+    height: 2.4rem;
+    opacity: .5;
+    position: relative;
+    right: -.6rem;
+    bottom: -.4rem;
+  }
+  &.note {
+    background:#55C500;
+    svg:first-of-type {
+      width: 6.3rem;
+      height: 1.6rem;
+    }
+  }
+  &.qiita {
+    background:#41C9B4;
+    svg:first-of-type {
+      width: 4.8rem;
+      height: 1.6rem;
+    }
+  }
+}

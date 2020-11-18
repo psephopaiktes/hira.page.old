@@ -238,7 +238,7 @@ export default {
 
 .menu {
   font-family: FuturaNowVar;
-  font-variation-settings: "wght" 700;
+  font-variation-settings: "wght" 500;
   letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
@@ -255,8 +255,9 @@ export default {
     @include max($SM) {
       margin-top: 5vh;
     }
-    a:not(.router-link-exact-active) {
-      opacity: 0.5;
+    .router-link-exact-active {
+      opacity: 0;
+      pointer-events: none;
     }
     svg {
       width: 12.8rem;
@@ -288,6 +289,7 @@ export default {
       &:hover,
       &:active {
         opacity: 1;
+        font-variation-settings: "wght" 700;
       }
       &.router-link-active {
         font-weight: bold;

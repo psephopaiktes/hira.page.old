@@ -3,7 +3,6 @@
     <h1>BLOG</h1>
     <ul class="blogIndex">
       <li v-for="item in $store.state.blogIndex" :key="item.link">
-        <!-- prettier-ignore -->
         <a
           :href="item.link"
           :target="item.exSite ? '_blank' : null"

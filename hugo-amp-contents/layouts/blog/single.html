@@ -20,7 +20,7 @@
         {{/*  Redirect  */}}
         {{ with .Params.redirect -}}
     <link rel="canonical" href="{{ . }}">
-    <!-- <meta http-equiv="refresh" content="0;URL={{ . }}"> -->
+    <meta http-equiv="refresh" content="0;URL={{ . }}">
     {{- else }}
     <link rel="canonical" href="{{ .Permalink }}" />
     {{- end }}

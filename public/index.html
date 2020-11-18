@@ -30,14 +30,12 @@
     #loading{
       width: 100vw;
       height: 100vh;
-      background: #FFCC66;
+      background: #fc6;
       position: fixed;
       bottom: 0; left: 0;
       z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      display: grid;
+      place-items: center;
       opacity: 1;
       transition: .4s ease-out;
     }
@@ -46,23 +44,8 @@
       pointer-events: none;
     }
     #loading svg {
-      width: 20vw;
-      filter: drop-shadow(8px 20px 20px rgba(130,25,11,.15));
-      margin-top: -1vw;
-      animation: loading 1s ease infinite alternate;
-    }
-    @keyframes loading {
-      from {transform: scale(1);opacity:.9;}
-      to {transform: scale(1.1);opacity:1;}
-    }
-    #loading h2{
-      color: #ffffffcc;
-      margin-top: 4vw;
-      font-size: calc(14px + 1vw);
-      letter-spacing: .1em;
-      font-weight: 700;
-      font-family: "Avenir Next", "Avenir Neue", "Avenir", Futura, "Century Gothic", "Helvetica Neue", Helvetica, Roboto, Arial, Sans-serif;
-      text-align: center;
+      width: 10vw;
+      opacity: .8;
     }
   </style>
 
@@ -90,8 +73,7 @@
   <div id="app"></div>
 
   <section id="loading">
-    <svg fill="none" height="115" viewBox="0 0 120 115" width="120" xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="60" x2="120" y1="60" y2="60"><stop offset="0" stop-color="#fc6" stop-opacity=".2"/><stop offset="1" stop-color="#fc6" stop-opacity=".1"/></linearGradient><path d="m59.9999 0 17.887 38.4843 42.1131 5.1187-31.0535 28.9243 8.1442 41.6457-37.0908-20.6064-37.0909 20.6064 8.1442-41.6457-31.0532-28.9243 42.1127-5.1187z" fill="#fff"/><path d="m97.0908 114.173-8.1442-41.6457 31.0534-28.9243-42.1129-5.1187-17.8871-38.4843v93.5666z" fill="url(#a)"/></svg>
-    <h2>LOADING...</h2>
+    <svg width="105" height="105" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg" fill="#fff"><circle cx="12.5" cy="12.5" r="12.5"><animate attributeName="fill-opacity" begin="0s" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5"><animate attributeName="fill-opacity" begin="100ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="52.5" cy="12.5" r="12.5"><animate attributeName="fill-opacity" begin="300ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="52.5" cy="52.5" r="12.5"><animate attributeName="fill-opacity" begin="600ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="92.5" cy="12.5" r="12.5"><animate attributeName="fill-opacity" begin="800ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="92.5" cy="52.5" r="12.5"><animate attributeName="fill-opacity" begin="400ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="12.5" cy="92.5" r="12.5"><animate attributeName="fill-opacity" begin="700ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="52.5" cy="92.5" r="12.5"><animate attributeName="fill-opacity" begin="500ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="92.5" cy="92.5" r="12.5"><animate attributeName="fill-opacity" begin="200ms" dur=".5s" values="1;.2;1" calcMode="linear" repeatCount="indefinite" /></circle></svg>
   </section>
 
 </body>

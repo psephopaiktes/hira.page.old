@@ -48,9 +48,10 @@ export default {
           }
 
           blogIndex.push({
-            title: item.querySelector("title").innerHTML || null,
-            link: item.querySelector("link").innerHTML || null,
-            description: item.querySelector("description").innerHTML || null,
+            title: item.querySelector("title").innerHTML,
+            link: item.querySelector("link").innerHTML,
+            date: item.querySelector("pubDate").innerHTML,
+            description: item.querySelector("description").innerHTML,
             tags,
             redirect,
             exSite
@@ -67,14 +68,14 @@ export default {
         return;
       }
       elm.classList.add("hide");
-
-      // #付きのURLに直接来たときの処理 TODO
-      const hash = document.location.hash;
-      const target = document.getElementById(hash.substring(1));
-      if (hash && target) {
-        target.scrollIntoView();
-      }
     });
+
+    // #付きのURLに直接来たときの処理 TODO
+    const hash = document.location.hash;
+    const target = document.getElementById(hash.substring(1));
+    if (hash && target) {
+      target.scrollIntoView();
+    }
   }
 };
 </script>
