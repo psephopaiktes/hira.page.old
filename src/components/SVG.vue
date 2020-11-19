@@ -35,7 +35,4 @@ export default {
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
-svg {
-  fill: color(base);
-}
 </style>

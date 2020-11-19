@@ -1,22 +1,12 @@
 @import 'common';
 @import 'syntax';
 
-main:not([class]) {
-  width: calc(100% - 8rem);
-  max-width: 45em;
-  margin: 0 auto;
-  @include max($SM){
-    width: calc(100% - 6.4rem);
-  }
-}
-
 .redirect {
   display: grid;
   place-items: center;
   height: 100vh;
   h1 {
-    width: 24rem;
-    max-width: 80vw;
+    width: (24rem, 80vw);
   }
   p {
     text-align: center;
@@ -26,117 +16,6 @@ main:not([class]) {
     opacity: .6;
   }
 }
-
-///////////////////////////////////////////////////////////////////////////////
-// Article Header
-///////////////////////////////////////////////////////////////////////////////
-
-.articleHeader {
-  .back {
-    display: inline-block;
-    margin-top: 2.4rem;
-    height: 4rem;
-    line-height: 4rem;
-    padding-right: 1.6rem;
-    padding-left: .8rem;
-    font-weight: 500;
-    border-radius: 2rem;
-    color: color(main,.6);
-    background: color(main,0);
-    &:hover,&:active {
-      color: color(main,.8);
-      background: color(main,.1);
-    }
-  }
-  .logo {
-    width: 20rem;
-    height: 5rem;
-    margin: 4.8rem auto 3.2rem;
-  }
-  .hero {
-    border-radius: .8rem;
-    border: 1px solid color(main,.1);
-    max-width: 100%;
-  }
-  .title {
-    font-size: 2.8rem;
-    line-height: 1.5;
-    margin-top: 3.2rem;
-  }
-  .date {
-    margin-top: 1.6rem;
-    display: inline-block;
-    width: 49%;
-    font-size:1.4rem;
-    opacity: .6;
-    line-height: 3.2rem;
-    vertical-align: -20%;
-    @media(max-width: $SM) {
-      width: 100%;
-    }
-  }
-  .tags {
-    margin-top: 1.6rem;
-    display: inline-flex;
-    justify-content: flex-end;
-    width: 50%;
-    font-size: 1.2rem;
-    @media(max-width: $SM) {
-      margin-top: .8rem;
-      width: 100%;
-      justify-content: flex-start;
-    }
-    a{
-      display: block;
-      height: 3.2rem;
-      line-height: 3.2rem;
-      padding: 0 1.6rem;
-      margin: 0 .4rem;
-      border-radius: 1.6rem;
-      background: color(theme);
-      color: color(main);
-      font-weight: 600;
-      letter-spacing: .05em;
-      opacity: .8;
-      &:hover{ opacity: 1 }
-    }
-  }
-  p {
-    margin-top: 2rem;
-  }
-}
-.index {
-  margin-top: 4.8rem;
-  padding: 3.2rem 4.8rem;
-  border-radius: .8rem;
-  background: color(theme,.1);
-  @include max($SM) {
-    padding: 1.2rem 2.4rem;
-  }
-  h3 {
-    color: color(theme);
-    font-size: 1.8rem;
-  }
-  nav > ul {
-    margin-top: 1.6rem;
-    list-style: disc;
-    padding-left: 2rem;
-    opacity: .8;
-    ul {
-      list-style: circle;
-      padding-left: 3.2rem;
-    }
-    li {
-      line-height: 1.4;
-      margin-top: 1.4rem;
-    }
-    a {
-      color: color(main);
-      &:hover{ opacity: 1 }
-    }
-  }
-}
-
 ///////////////////////////////////////////////////////////////////////////////
 // Content
 ///////////////////////////////////////////////////////////////////////////////

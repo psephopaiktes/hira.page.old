@@ -1,6 +1,7 @@
 <template>
   <BoardContainer>
     <h1>BLOG</h1>
+    <input enterkeyhint="search" />
     <ul class="blogIndex">
       <li v-for="item in $store.state.blogIndex" :key="item.link">
         <a

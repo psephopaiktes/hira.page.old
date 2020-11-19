@@ -3,11 +3,16 @@
     <h1>CONTACT</h1>
 
     <p>
+      仕事のご依頼、お問い合わせはこちらから。<br class="u-hideSp" />
+      料金や業務領域についてはこのページの下部をご確認ください。
+    </p>
+
+    <p>
       <a href="https://twitter.com/psephopaiktes" target="blank">
         Twitter
         <SVG symbol="open" class="c-textIcon" />
       </a>
-      にリプライ、DMいただいても大丈夫です。<br />
+      にリプライ、DMいただいても大丈夫です。<br class="u-hideSp" />
       そちらのほうが反応が早めです。
     </p>
 
@@ -193,6 +198,7 @@ form {
     background: color(main, 0.1);
     color: color(main);
     outline: none;
+    caret-color: color(main);
   }
   .textarea {
     min-height: 16rem;

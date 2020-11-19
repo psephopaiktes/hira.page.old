@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="l-modal">
+  <div class="l-modal">
     <a href="#" class="overlay l-modal__overlay">
       <span>
         <SVG symbol="close" alt="close" />
@@ -15,12 +15,9 @@
 
 <script>
 export default {
-  name: "ModalContainer",
-  props: ["id"],
+  name: "WorksModal",
   data() {
-    return {
-      idName: this.id
-    };
+    return {};
   }
 };
 </script>

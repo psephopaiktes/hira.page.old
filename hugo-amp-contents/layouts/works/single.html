@@ -1,11 +1,120 @@
+{{ $heder_img := .Resources.GetMatch "cover.png" }}
+{{ $heder_img_path := "" }}
+{{ if $heder_img }}
+    {{ $small := $heder_img.Fit "1280x640 q80" }}
+    {{ $heder_img_path = $small.RelPermalink }}
+{{ else }}
+    {{ $heder_img_path = "/img/placeholder.jpg" }}
+{{ end }}
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <title>{{- .Title }} | {{ .Site.Title -}}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    {{/*  JSON-LD  */}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "HOME",
+            "item": "https://hira.page/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "BLOG",
+            "item": "https://hira.page/works/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ .Title }},
+            "item": {{ .Permalink }}
+        }
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+    {{ $styles := resources.Get "works.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}">
+
+    {{/*  OGP  */}}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+
+    {{/*  Other  */}}
+    <meta name="theme-color" content="#FFCC66">
+    <meta name="description" content="{{ .Description }}">
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/favicon.png">
 </head>
+
 <body>
-  {{ .Content }}
+    <main>
+        <header class="articleHeader">
+            <a class="back" href="/works">
+                <i class="material-icons-round">arrow_back</i>
+                実績一覧
+            </a>
+
+            <h1 class="logo"><a href="/">
+                <img src="/img/logo.svg" alt="WEBA">
+            </a></h1>
+
+            <img class="hero" src="{{ $heder_img_path }}" alt="{{ .Title }}" >
+
+            <h1 class="title">{{ .Title }}</h1>
+
+            <span class="date">
+                <i class="material-icons-round">today</i>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+                {{- if .Params.update -}}
+                公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006年1月2日" }}</time>更新
+                {{ end }}
+            </span>
+
+            {{ with .Params.tags -}}
+            <ul class="tags">
+                {{ range . -}}
+                <li><a href="/works/tags/{{ . | urlize }}/">{{ . }}</a>
+                {{- end }}
+            </ul>
+            {{- end }}
+
+            {{ with .Description -}}
+            <p>{{ . }}</p>
+            {{- end }}
+        </header>
+
+        <article>
+            {{ .Content }}
+        </article>
+
+        <footer>
+            <nav>
+                <h1><a href="/">
+                    <img src="/img/logo.svg" alt="WEBA">
+                </a></h1>
+                <ul>
+                    <li><a href="/">ホーム</a></li>
+                    <li><a href="/blog">ブログ一覧</a></li>
+                    <li><a href="/works">実績一覧</a></li>
+                    <li><a href="/me">私について</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </main>
 </body>
+
 </html>

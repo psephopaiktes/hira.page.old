@@ -3,7 +3,7 @@
 $NAVMENU_WIDTH: 32rem;
 
 $NAVBAR_TAB_HEIGHT: 4.8rem;
-$NAVBAR_SP_HEIGHT: 6.4rem;
+$NAVBAR_SP_HEIGHT: 5.6rem;
 
 $Z_HERO: 6000;
 $Z_NAVBAR: 7000;
@@ -65,6 +65,9 @@ $Z_MODAL: 9000;
   top: 0; left: 0;
   width: $NAVMENU_WIDTH;
   height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
   z-index: $Z_NAVMENU;
 
   @include max($MD) {

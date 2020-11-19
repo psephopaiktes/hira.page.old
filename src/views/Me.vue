@@ -110,7 +110,6 @@ export default {
     font-size: 2.4rem;
     font-weight: 700;
     svg {
-      fill: currentColor;
       display: block;
       margin: 0 auto;
       width: 3.2rem;

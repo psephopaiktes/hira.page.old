@@ -17,8 +17,8 @@
     <title>{{- .Title }} | {{ .Site.Title -}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
-        {{/*  Redirect  */}}
-        {{ with .Params.redirect -}}
+    {{/*  Redirect  */}}
+    {{ with .Params.redirect -}}
     <link rel="canonical" href="{{ . }}">
     <meta http-equiv="refresh" content="0;URL={{ . }}">
     {{- else }}
@@ -173,6 +173,7 @@
                 <ul>
                     <li><a href="/">ホーム</a></li>
                     <li><a href="/blog">ブログ一覧</a></li>
+                    <li><a href="/works">実績一覧</a></li>
                     <li><a href="/me">私について</a></li>
                     <li><a href="/contact">お問い合わせ</a></li>
                 </ul>

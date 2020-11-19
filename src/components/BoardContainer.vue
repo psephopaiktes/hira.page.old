@@ -80,7 +80,7 @@ export default {
   }
   @include max($SM) {
     min-height: 100vh;
-    padding: 0 4.8rem #{24 + 4.8}rem;
+    padding: 0 4rem #{24 + 4}rem;
   }
 }
 

@@ -39,13 +39,20 @@
       opacity: 1;
       transition: .4s ease-out;
     }
+    @supports (-webkit-touch-callout: none) {
+      #loading { height: -webkit-fill-available;}
+    }
     #loading.hide{
       opacity: 0;
       pointer-events: none;
     }
     #loading svg {
-      width: 10vw;
+      width: min(10vw,48px);
       opacity: .8;
+      fill: #fff;
+      @media (max-width:480px){
+        margin-top: 5vh;
+      }
     }
   </style>
 

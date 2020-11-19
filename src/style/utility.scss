@@ -1,0 +1,7 @@
+@use "common.scss" as *;
+
+.u-hideSp {
+  @include max($SM) {
+    display: none;
+  }
+}

@@ -4,6 +4,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 update: false
 draft: false
-tags: []
+tags: [""]
 description: ""
+priority: 0
 ---

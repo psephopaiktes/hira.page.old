@@ -4,15 +4,19 @@
   <main class="l-main">
     <router-view />
   </main>
+
+  <WorksModal />
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
+import WorksModal from "@/components/WorksModal.vue";
 
 export default {
   name: "App",
   components: {
-    Nav
+    Nav,
+    WorksModal
   },
   beforeCreate() {
     if (localStorage.redirect) {
@@ -60,6 +64,32 @@ export default {
         this.$store.commit("setBlogIndex", blogIndex);
         this.$store.commit("setBlogIndexLoaded");
       });
+
+    fetch("/works/index.xml")
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        let worksIndex = [];
+        const items = data.querySelectorAll("item");
+        items.forEach(item => {
+          const tags = [];
+          item.querySelectorAll("category").forEach(tag => {
+            tags.push(tag.innerHTML);
+          });
+
+          worksIndex.push({
+            title: item.querySelector("title").innerHTML,
+            link: item.querySelector("link").innerHTML,
+            date: item.querySelector("pubDate").innerHTML,
+            description: item.querySelector("description").innerHTML,
+            priority: item.querySelector("comments").innerHTML,
+            tags
+          });
+          console.log(worksIndex);
+        });
+        this.$store.commit("setWorksIndex", worksIndex);
+        this.$store.commit("setWorksIndexLoaded");
+      });
   },
   mounted() {
     window.addEventListener("load", () => {
@@ -76,6 +106,9 @@ export default {
     if (hash && target) {
       target.scrollIntoView();
     }
+
+    // URLに?works
+    alert(this.$route.params.work);
   }
 };
 </script>
@@ -84,4 +117,5 @@ export default {
 @use "@/style/foundation.scss";
 @use "@/style/layout.scss";
 @use "@/style/component.scss";
+@use "@/style/utility.scss";
 </style>

@@ -135,6 +135,8 @@ export default {
   @include max($MD) {
     width: 4.8rem;
     height: 4.8rem;
+    padding-top: env(safe-area-inset-top);
+    box-sizing: content-box;
     .lottie {
       margin: 0.8rem;
       width: 3.2rem;
@@ -142,13 +144,15 @@ export default {
     }
   }
   @include max($SM) {
-    width: 6.4rem;
-    height: 6.4rem;
+    width: 5.6rem;
+    height: 5.6rem;
     margin-left: 0.8rem;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: content-box;
     .lottie {
       width: 3.2rem;
       height: 3.2rem;
-      margin: 1.6rem;
+      margin: 1.2rem;
     }
   }
 }
@@ -199,22 +203,22 @@ export default {
     > h1 {
       width: 9.6rem;
       height: 2.4rem;
-      margin-top: 2rem;
-      margin-left: 8rem;
+      margin-top: 1.6rem;
+      margin-left: 6.4rem;
       svg {
         fill: color(base);
       }
     }
     > a {
       margin: 0 0 0 auto;
-      width: 6.4rem;
+      width: 5.6rem;
       height: 200%;
       border-radius: 0;
       svg {
         width: 3.2rem;
         height: 3.2rem;
-        top: 1.6rem;
-        left: 1.6rem;
+        top: 1.2rem;
+        left: 1.2rem;
         opacity: 0.7;
       }
       span {
@@ -252,9 +256,6 @@ export default {
   }
   h1 {
     margin-top: -10vh;
-    @include max($SM) {
-      margin-top: 5vh;
-    }
     .router-link-exact-active {
       opacity: 0;
       pointer-events: none;
@@ -262,6 +263,7 @@ export default {
     svg {
       width: 12.8rem;
       height: 3.2rem;
+      fill: #fff;
     }
   }
   ul {

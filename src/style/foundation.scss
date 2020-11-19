@@ -57,10 +57,13 @@
 
 :root{
   background: color(theme);
+  @include max($SM) { background: color(base); }
+
   font-size: 11px;
   @include max($LG) { font-size: 10px; }
   @include max($MD) { font-size: 9.5px; }
   @include max($SM) { font-size: 9px; }
+
   --color-error: 204, 85, 85;
   @media (prefers-color-scheme: light) {
     --color-theme: 255,204,102;
@@ -86,8 +89,10 @@ body {
     Tazugane, 'Tazugane Gothic StdN', "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans CJK JP", "BIZ UDPGothic", Meiryo,
     -apple-system, BlinkMacSystemFont, sans-serif;
   font-smoothing: antialiased;
-  font-feature-settings : "pkna";
-  letter-spacing: 0.05em;
+  font-feature-settings : "palt" 1;
+  font-kerning: normal;
+  hanging-punctuation: allow-end;
+  letter-spacing: 0.02em;
   -webkit-text-size-adjust: 100%;
 }
 ::selection {
@@ -146,21 +151,30 @@ h1{
   font: 5.6rem FuturaNowVar;
   font-variation-settings: "wght" 800;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   color: color(theme);
+  @include max($SM) {
+    margin-top: 6.4rem;
+  }
 }
 h2{
   margin-top: 6.4rem;
   font-size: 3.2rem;
   line-height: 1.4;
   color: color(main);
+  @include max($SM) {
+    margin-top: 5.6rem;
+  }
 }
 h3 {
   margin-top: 2.4rem;
   font-size: 2rem;
   line-height: 1.4;
   color: color(main);
+}
+svg {
+  fill: currentColor;
 }
 
 @media (prefers-reduced-motion: reduce) {
