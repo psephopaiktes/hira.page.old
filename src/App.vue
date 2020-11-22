@@ -53,7 +53,7 @@ export default {
 
           blogIndex.push({
             title: item.querySelector("title").innerHTML,
-            link: item.querySelector("link").innerHTML,
+            id: item.querySelector("guid").innerHTML,
             date: item.querySelector("pubDate").innerHTML,
             description: item.querySelector("description").innerHTML,
             tags,
@@ -79,13 +79,12 @@ export default {
 
           worksIndex.push({
             title: item.querySelector("title").innerHTML,
-            link: item.querySelector("link").innerHTML,
+            id: item.querySelector("guid").innerHTML,
             date: item.querySelector("pubDate").innerHTML,
             description: item.querySelector("description").innerHTML,
             priority: item.querySelector("comments").innerHTML,
             tags
           });
-          console.log(worksIndex);
         });
         this.$store.commit("setWorksIndex", worksIndex);
         this.$store.commit("setWorksIndexLoaded");
@@ -101,14 +100,11 @@ export default {
     });
 
     // #付きのURLに直接来たときの処理 TODO
-    const hash = document.location.hash;
-    const target = document.getElementById(hash.substring(1));
-    if (hash && target) {
-      target.scrollIntoView();
-    }
-
-    // URLに?works
-    alert(this.$route.params.work);
+    // const hash = document.location.hash;
+    // const target = document.getElementById(hash.substring(1));
+    // if (hash && target) {
+    //   target.scrollIntoView();
+    // }
   }
 };
 </script>

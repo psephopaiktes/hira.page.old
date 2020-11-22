@@ -5,8 +5,7 @@ export default createStore({
     blogIndex: [],
     blogIndexLoaded: false,
     worksIndex: [],
-    worksIndexLoaded: false,
-    worksModal: ""
+    worksIndexLoaded: false
   },
   mutations: {
     setBlogIndex(state, array) {
@@ -20,9 +19,6 @@ export default createStore({
     },
     setWorksIndexLoaded(state) {
       state.worksIndexLoaded = true;
-    },
-    setWorksModal(state, url) {
-      state.worksModal = url;
     }
   },
   actions: {},

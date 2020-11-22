@@ -1,6 +1,6 @@
 ---
 id: "sample3"
-title: "サンプル実績サンプル実績サンプル実績"
+title: "33サンプル実績サンプル実績サンプル実績"
 date: 2020-11-19T23:25:15+09:00
 update: false
 draft: false

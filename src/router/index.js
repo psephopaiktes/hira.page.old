@@ -52,7 +52,7 @@ const router = createRouter({
     if (to.hash) {
       return { selector: to.hash };
     }
-    return { left: 0, top: 0 };
+    // return { left: 0, top: 0 }; // これがあるとモーダル表示の際に後ろがTOPにスクロールする...
   }
 });
 

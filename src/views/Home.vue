@@ -8,14 +8,14 @@
         <router-link to="/blog">more<SVG symbol="next"/></router-link>
       </h2>
       <ul class="blogIndex">
-        <li v-for="item in $store.state.blogIndex.slice(0, 4)" :key="item.link">
+        <li v-for="item in $store.state.blogIndex.slice(0, 4)" :key="item.id">
           <a
-            :href="item.link"
+            :href="'/blog/' + item.id"
             :target="item.exSite ? '_blank' : null"
             :rel="item.exSite ? 'noopener' : null"
           >
-            <img :src="item.link + 'cover.png'" alt="見出し画像" />
-            <img :src="item.link + 'cover.png'" alt="見出し画像" />
+            <img :src="'/blog/' + item.id + '/cover.png'" alt="見出し画像" />
+            <img :src="'/blog/' + item.id + '/cover.png'" alt="見出し画像" />
             <h3>{{ item.title }}</h3>
             <div class="meta">
               <ul class="tags">
@@ -48,6 +48,10 @@
         WORKS
         <router-link to="/works">more<SVG symbol="next"/></router-link>
       </h2>
+
+      <router-link to="?work=1234">
+        1234test
+      </router-link>
     </section>
 
     <section class="other">

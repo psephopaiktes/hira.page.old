@@ -1,8 +1,12 @@
 <template>
   <BoardContainer>
     <h1>WORKS</h1>
-    <ul v-for="n of 80" :key="n">
-      <li>{{ n }}</li>
+    <ul class="worksIndex">
+      <li v-for="item in $store.state.worksIndex" :key="item.id">
+        <router-link :to="`?work=${item.id}`">
+          <h3>{{ item.title }}</h3>
+        </router-link>
+      </li>
     </ul>
   </BoardContainer>
 </template>
@@ -14,7 +18,8 @@ export default {
   name: "Works",
   components: {
     BoardContainer
-  }
+  },
+  mounted() {}
 };
 </script>
 

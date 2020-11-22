@@ -3,9 +3,9 @@
     <h1>BLOG</h1>
     <input enterkeyhint="search" />
     <ul class="blogIndex">
-      <li v-for="item in $store.state.blogIndex" :key="item.link">
+      <li v-for="item in $store.state.blogIndex" :key="item.id">
         <a
-          :href="item.link"
+          :href="`/blog/${item.id}`"
           :target="item.exSite ? '_blank' : null"
           :rel="item.exSite ? 'noopener' : null"
         >
@@ -28,9 +28,7 @@ export default {
   components: {
     BoardContainer
   },
-  mounted() {
-    console.log(this.$store.state.blogIndex);
-  }
+  mounted() {}
 };
 </script>
 
