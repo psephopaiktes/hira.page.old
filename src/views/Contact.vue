@@ -225,6 +225,8 @@ form {
     border: 0.3rem solid transparent;
     pointer-events: none;
     cursor: not-allowed;
+    transition: $TRANSITION;
+    will-change: transform;
     img {
       width: 4.8rem;
       height: 4.8rem;
@@ -245,7 +247,7 @@ form {
     }
     &:hover,
     &:active {
-      /* TODO */
+      transform: scale(1.04);
     }
     &:focus {
       border-color: color(base, 0.5);

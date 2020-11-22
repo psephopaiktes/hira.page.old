@@ -225,12 +225,16 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.2;
+    opacity: 0.4;
     -webkit-box-reflect: below 0;
-    filter: blur(10px);
-    transform: scale(1.01);
+    filter: blur(16px);
+    transform: scale(1.02);
+  }
+  img {
+    position: relative;
   }
   h3 {
+    position: relative;
     margin: 1.2rem 1.6rem 0;
     font-size: 1em;
     display: -webkit-box;
@@ -239,6 +243,7 @@ h2 {
     overflow: hidden;
   }
   .meta {
+    position: relative;
     position: absolute;
     bottom: 1.6rem;
     left: 1.6rem;
@@ -247,6 +252,7 @@ h2 {
     grid-template-columns: 1fr auto;
   }
   .tags {
+    position: relative;
     display: flex;
     li {
       margin-right: 0.5em;

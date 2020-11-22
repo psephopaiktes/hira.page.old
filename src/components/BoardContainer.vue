@@ -69,15 +69,18 @@ export default {
   overflow: hidden;
   border-radius: 1.6rem;
   position: relative;
+
   @include max($LG) {
     padding: 0 8rem #{24 + 8}rem;
   }
+
   @include max($MD) {
     margin: 0;
     border-radius: 0;
     min-height: calc(100vh - 1.6rem);
     padding: 0 6.4rem #{24 + 6.4}rem;
   }
+
   @include max($SM) {
     min-height: 100vh;
     padding: 0 4rem #{24 + 4}rem;

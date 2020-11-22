@@ -2,16 +2,13 @@
 
 $NAVMENU_WIDTH: 32rem;
 
-$NAVBAR_TAB_HEIGHT: 4.8rem;
-$NAVBAR_SP_HEIGHT: 5.6rem;
-
 $Z_HERO: 6000;
-$Z_NAVBAR: 7000;
 $Z_NAVMENU: 8000;
 $Z_MODAL: 9000;
 
 .l-navToggleBtn {
   display: none;
+
   @include max($MD) {
     display: block;
     position: absolute;
@@ -19,36 +16,18 @@ $Z_MODAL: 9000;
     left: 0;
     z-index: #{$Z_NAVMENU + 1};
   }
+
   @include max($SM) {
     position: fixed;
     top: auto;
-    bottom: 0;
-  }
-}
-
-.l-navBar {
-  display: none;
-  position: relative;
-  z-index: $Z_NAVBAR;
-  @include max($MD) {
-    display: block;
-    box-sizing: content-box;
-    width: 100vw;
-    height: $NAVBAR_TAB_HEIGHT;
-    padding-top: env(safe-area-inset-top);
-  }
-  @include max($SM) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: $NAVBAR_SP_HEIGHT;
-    padding-bottom: env(safe-area-inset-bottom);
-
+    bottom: 2.4rem;
+    left: 2.4rem;
   }
 }
 
 .l-navOverlay {
   display: none;
+
   @include max($MD) {
     display: block;
     z-index: $Z_NAVMENU;
@@ -63,28 +42,53 @@ $Z_MODAL: 9000;
 .l-navMenu{
   position: fixed;
   top: 0; left: 0;
+  z-index: $Z_NAVMENU;
   width: $NAVMENU_WIDTH;
   height: 100vh;
+  transition: $TRANSITION;
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
-  z-index: $Z_NAVMENU;
 
-  @include max($MD) {
+  @include maxmin($MD,$SM) {
     transform: translateX(-$NAVMENU_WIDTH);
+    will-change: transform;
     &.show  {
       transform: translateX(0);
+    }
+  }
+
+  @include max($SM) {
+    top: auto;
+    bottom: 2.4rem;
+    left: 2.4rem;
+    width: 5.6rem;
+    height: 5.6rem;
+    will-change: bottom, left, width, height;
+    > * {
+      opacity: 0;
+      transform: translateY(1.6rem);
+      transition: #{$TRANSITION} .2s;
+      will-change: opacity,transform;
+    }
+    &.show  {
+      bottom: -1.8rem;
+      left: 0;
+      width: 100vw;
+      height: 56rem;
+      > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }
 
 .l-main{
   margin-left: $NAVMENU_WIDTH;
+
   @include max($MD) {
     margin:  0
-  }
-  @include max($SM) {
-    padding-bottom: $NAVBAR_SP_HEIGHT;
   }
 }
 
@@ -115,6 +119,7 @@ $Z_MODAL: 9000;
   width: 100vw; height: 100vh;
   padding-left: $NAVMENU_WIDTH;
   background: url("https://source.unsplash.com/daily?cat&orientation=landscape") center center / cover;
+
   @include max($MD) {
     padding: 0
   }

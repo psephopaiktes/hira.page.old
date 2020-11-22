@@ -57,11 +57,15 @@
 
 :root{
   background: color(theme);
+
   @include max($SM) { background: color(base); }
 
   font-size: 11px;
+
   @include max($LG) { font-size: 10px; }
+
   @include max($MD) { font-size: 9.5px; }
+
   @include max($SM) { font-size: 9px; }
 
   --color-error: 204, 85, 85;
@@ -154,6 +158,7 @@ h1{
   letter-spacing: 0.05em;
   line-height: 1.4;
   color: color(theme);
+
   @include max($SM) {
     margin-top: 6.4rem;
   }
@@ -163,6 +168,7 @@ h2{
   font-size: 3.2rem;
   line-height: 1.4;
   color: color(main);
+
   @include max($SM) {
     margin-top: 5.6rem;
   }

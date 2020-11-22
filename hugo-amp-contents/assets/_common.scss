@@ -58,8 +58,11 @@ html {
   background: color(base);
   // scroll-behavior: smooth;
   font-size: 11px;
+
   @include max($LG) { font-size: 10px; }
+
   @include max($MD) { font-size: 9.5px; }
+
   @include max($SM) { font-size: 9px; }
 }
 
@@ -145,6 +148,7 @@ main:not([class]) {
   width: calc(100% - 8rem);
   max-width: 45em;
   margin: 0 auto;
+
   @include max($SM){
     width: calc(100% - 6.4rem);
   }
@@ -234,6 +238,7 @@ main:not([class]) {
   padding: 3.2rem 4.8rem;
   border-radius: .8rem;
   background: color(theme,.1);
+
   @include max($SM) {
     padding: 1.2rem 2.4rem;
   }

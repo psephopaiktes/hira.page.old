@@ -3,23 +3,18 @@
     <div class="lottie" ref="menu"></div>
   </button>
 
-  <nav class="l-navBar bar">
-    <h1 v-if="$route.path != '/'">
-      <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
-    </h1>
-    <router-link to="/contact">
-      <SVG symbol="contact" alt="contact" />
-      <span>CONTACT</span>
-    </router-link>
-  </nav>
-
   <button
     class="l-navOverlay overlay"
     :class="{ show: show }"
     @click="toggleMenuAndAnimation()"
   ></button>
 
-  <nav class="l-navMenu menu" :class="{ show: show }">
+  <nav
+    class="l-navMenu menu"
+    :class="{ show: show }"
+    @touchstart="menuDragStart($event)"
+    @touchend="menuDragEnd($event)"
+  >
     <h1 @click="toggleMenuAndAnimation()">
       <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
     </h1>
@@ -88,7 +83,8 @@ export default {
         contact: lottieDataContact,
         menu: lottieDataMenu
       },
-      animation: {}
+      animation: {},
+      menuDragStartPoint: 0
     };
   },
   methods: {
@@ -106,6 +102,17 @@ export default {
     reversePlayLottie(name) {
       this.animation[name].setDirection(-1);
       this.animation[name].play();
+    },
+    menuDragStart(e) {
+      this.menuDragStartPoint = e.touches[0].pageY;
+    },
+    menuDragEnd(e) {
+      const dragDistance = e.changedTouches[0].pageY - this.menuDragStartPoint;
+      if (dragDistance > 5) {
+        this.toggleMenuAndAnimation();
+      } else {
+        return;
+      }
     }
   },
   mounted() {
@@ -135,95 +142,23 @@ export default {
   @include max($MD) {
     width: 4.8rem;
     height: 4.8rem;
-    padding-top: env(safe-area-inset-top);
-    box-sizing: content-box;
+    background: color(theme);
     .lottie {
+      color: color(main);
       margin: 0.8rem;
       width: 3.2rem;
       height: 3.2rem;
     }
   }
+
   @include max($SM) {
     width: 5.6rem;
     height: 5.6rem;
-    margin-left: 0.8rem;
-    padding-bottom: env(safe-area-inset-bottom);
-    box-sizing: content-box;
+    background: none;
     .lottie {
       width: 3.2rem;
       height: 3.2rem;
       margin: 1.2rem;
-    }
-  }
-}
-
-.bar {
-  font-family: FuturaNowVar;
-  font-variation-settings: "wght" 700;
-  @include max($MD) {
-    background: color(theme);
-    display: flex;
-    > h1 {
-      width: 9.6rem;
-      height: 2.4rem;
-      margin-top: 1.2rem;
-      margin-left: 5.2rem;
-      * {
-        display: block;
-        width: 100%;
-        height: 100%;
-        fill: color(base);
-      }
-    }
-    > a {
-      display: block;
-      background: color(main);
-      color: color(base);
-      margin: 0.6rem 0.6rem 0 auto;
-      height: 3.6rem;
-      line-height: 3.5rem;
-      padding: 0 1.6rem 0 4.4rem;
-      border-radius: 0.8rem;
-      position: relative;
-      font-size: 1.4rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-      svg {
-        width: 2.4rem;
-        height: 2.4rem;
-        position: absolute;
-        top: 0.6rem;
-        left: 0.8rem;
-        opacity: 0.5;
-      }
-    }
-  }
-  @include max($SM) {
-    background: color(theme);
-    > h1 {
-      width: 9.6rem;
-      height: 2.4rem;
-      margin-top: 1.6rem;
-      margin-left: 6.4rem;
-      svg {
-        fill: color(base);
-      }
-    }
-    > a {
-      margin: 0 0 0 auto;
-      width: 5.6rem;
-      height: 200%;
-      border-radius: 0;
-      svg {
-        width: 3.2rem;
-        height: 3.2rem;
-        top: 1.2rem;
-        left: 1.2rem;
-        opacity: 0.7;
-      }
-      span {
-        display: none;
-      }
     }
   }
 }
@@ -250,15 +185,32 @@ export default {
   align-items: flex-end;
   padding-right: 4.8rem;
   backdrop-filter: blur(16px);
-  transition: $TRANSITION;
+
   @include max($MD) {
     background: color(theme);
+    backdrop-filter: none;
   }
+
+  @include max($SM) {
+    overflow: hidden;
+    align-items: center;
+    padding: 0;
+    background: none;
+
+    filter: drop-shadow(0 8px 8px color(theme, 0.4));
+    border: solid 20px;
+    border-image-slice: 20 fill;
+    border-image-source: url("data:image/svg+xml,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cstyle%3E%23bg%7Bfill%3A%23ffcc66%3B%7D%40media(prefers-color-scheme%3Adark)%7B%23bg%7Bfill%3A%23eebc66%3B%7D%7D%3C%2Fstyle%3E%3Cpath%20id%3D%22bg%22%20d%3D%22M0%2036C0%2021.0011%200%2013.5016%203.81966%208.2443C5.05325%206.5464%206.5464%205.05325%208.2443%203.81966C13.5016%200%2021.0011%200%2036%200H84C98.9989%200%20106.498%200%20111.756%203.81966C113.454%205.05325%20114.947%206.5464%20116.18%208.2443C120%2013.5016%20120%2021.0011%20120%2036V84C120%2098.9989%20120%20106.498%20116.18%20111.756C114.947%20113.454%20113.454%20114.947%20111.756%20116.18C106.498%20120%2098.9989%20120%2084%20120H36C21.0011%20120%2013.5016%20120%208.2443%20116.18C6.5464%20114.947%205.05325%20113.454%203.81966%20111.756C0%20106.498%200%2098.9989%200%2084V36Z%22%20%2F%3E%3C%2Fsvg%3E");
+  }
+
   h1 {
     margin-top: -10vh;
     .router-link-exact-active {
       opacity: 0;
       pointer-events: none;
+      @include max($SM) {
+        opacity: 0.5;
+      }
     }
     svg {
       width: 12.8rem;
@@ -268,8 +220,15 @@ export default {
   }
   ul {
     margin-top: 3.2rem;
+
+    @include max($SM) {
+      margin-top: 1.6rem;
+    }
     li {
       margin-top: 0.8rem;
+      @include max($SM) {
+        margin-top: 0.4rem;
+      }
     }
     a {
       display: flex;
@@ -280,6 +239,10 @@ export default {
       font-size: 2.6rem;
       opacity: 0.6;
       transition: $TRANSITION;
+
+      @include max($SM) {
+        justify-content: center;
+      }
       .lottie {
         margin-top: 1.2rem;
         margin-right: 0.2em;
@@ -319,26 +282,35 @@ export default {
     background: color(main);
     color: color(base);
     font-size: 2rem;
+    letter-spacing: 0.1em;
     font-weight: bold;
     border-radius: 0.8rem;
     transition: $TRANSITION;
+    will-change: transform;
+    @media (prefers-color-scheme: dark) {
+      padding-left: 7rem;
+      color: color(theme);
+    }
+
+    @include max($SM) {
+      margin-top: 3.2rem;
+    }
+
     .lottie {
       position: absolute;
-      @media (prefers-color-scheme: dark) {
-        filter: brightness(-20%);
-      }
-      top: 1.2rem;
-      left: 1.2rem;
-      opacity: 0.5;
+      width: 5.6rem;
+      height: 5.6rem;
+      padding: 1.2rem;
+      top: 0;
+      left: 0;
       transition: inherit;
+      @media (prefers-color-scheme: dark) {
+        background: color(theme, 0.6);
+      }
     }
     &:hover,
     &:active {
-      filter: brightness(140%);
-      letter-spacing: 0.11em;
-      .lottie {
-        opacity: 0.8;
-      }
+      transform: scale(1.04);
     }
   }
 }

@@ -162,6 +162,7 @@ article {
   border-radius: .8rem;
   box-shadow: .2rem .4rem 16rem -2rem color(main,.2);
   overflow: hidden;
+
   @include max($SM) {
     height: 10rem;
   }
