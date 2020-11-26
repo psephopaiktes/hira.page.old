@@ -14,8 +14,11 @@
             :target="item.exSite ? '_blank' : null"
             :rel="item.exSite ? 'noopener' : null"
           >
-            <img :src="'/blog/' + item.id + '/cover.png'" alt="見出し画像" />
-            <img :src="'/blog/' + item.id + '/cover.png'" alt="見出し画像" />
+            <img
+              :src="'/blog/' + item.id + '/cover.png'"
+              :alt="`${item.title}のサムネイル画像`"
+            />
+            <img :src="'/blog/' + item.id + '/cover.png'" alt="背景" />
             <h3>{{ item.title }}</h3>
             <div class="meta">
               <ul class="tags">
@@ -48,10 +51,34 @@
         WORKS
         <router-link to="/works">more<SVG symbol="next"/></router-link>
       </h2>
-
-      <router-link to="?work=1234">
-        1234test
-      </router-link>
+      <ul class="worksIndex">
+        <li v-for="item in $store.state.worksIndex.slice(0, 4)" :key="item.id">
+          <a :href="'?work=' + item.id">
+            <img
+              :src="'/works/' + item.id + '/thumbnail.png'"
+              :alt="`${item.title}のサムネイル画像`"
+            />
+            <!-- <div class="meta">
+              <h3>{{ item.title }}</h3>
+              <ul class="tags">
+                <li v-for="tag in item.tags.slice(0, 2)" :key="tag">
+                  {{ tag }}
+                </li>
+              </ul>
+              <time>{{
+                Intl.DateTimeFormat("ja-JP", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit"
+                }).format(new Date(item.date))
+              }}</time>
+            </div> -->
+          </a>
+        </li>
+        <li class="more">
+          <router-link to="/works"><SVG symbol="next" />more</router-link>
+        </li>
+      </ul>
     </section>
 
     <section class="other">
@@ -171,7 +198,7 @@ h2 {
   }
   > li {
     border: 1px solid color(main, 0.1);
-    border-radius: 2rem;
+    border-radius: 3.2rem 0.8rem;
     overflow: hidden;
     position: relative;
     background: rgba(#fff, 0.1);
@@ -199,6 +226,10 @@ h2 {
       @include max($MD) {
         display: block;
         box-shadow: none;
+        margin: 1.6rem 1.2rem;
+        border-radius: 2.4rem;
+        background: color(main, 0.1);
+        border: none;
         a {
           color: color(main, 0.8);
           padding: 0;
@@ -286,7 +317,7 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(0rem, 32rem));
   > li {
     border: 1px solid color(main, 0.1);
-    border-radius: 2rem;
+    border-radius: 3.2rem;
     overflow: hidden;
     a {
       display: flex;
@@ -298,6 +329,7 @@ h2 {
     }
   }
   > li:not(.follow) {
+    border-radius: 3.2rem 0.8rem;
     transition: $TRANSITION;
     will-change: transform;
     @media (prefers-color-scheme: light) {

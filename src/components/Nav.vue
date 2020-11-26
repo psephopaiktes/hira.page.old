@@ -164,10 +164,9 @@ export default {
 }
 
 .overlay {
-  background: color(main, 0.4);
-  backdrop-filter: blur(2px);
+  background: rgba(#000, 0.4);
+  backdrop-filter: blur(4px);
   color: color(base);
-  text-align: center;
   opacity: 0;
   transition: 0.4s ease-out;
   &.show {
@@ -184,7 +183,7 @@ export default {
   justify-content: center;
   align-items: flex-end;
   padding-right: 4.8rem;
-  backdrop-filter: blur(16px);
+  /* backdrop-filter: blur(16px); */
 
   @include max($MD) {
     background: color(theme);
@@ -197,10 +196,17 @@ export default {
     padding: 0;
     background: none;
 
-    filter: drop-shadow(0 8px 8px color(theme, 0.4));
     border: solid 20px;
     border-image-slice: 20 fill;
     border-image-source: url("data:image/svg+xml,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cstyle%3E%23bg%7Bfill%3A%23ffcc66%3B%7D%40media(prefers-color-scheme%3Adark)%7B%23bg%7Bfill%3A%23eebc66%3B%7D%7D%3C%2Fstyle%3E%3Cpath%20id%3D%22bg%22%20d%3D%22M0%2036C0%2021.0011%200%2013.5016%203.81966%208.2443C5.05325%206.5464%206.5464%205.05325%208.2443%203.81966C13.5016%200%2021.0011%200%2036%200H84C98.9989%200%20106.498%200%20111.756%203.81966C113.454%205.05325%20114.947%206.5464%20116.18%208.2443C120%2013.5016%20120%2021.0011%20120%2036V84C120%2098.9989%20120%20106.498%20116.18%20111.756C114.947%20113.454%20113.454%20114.947%20111.756%20116.18C106.498%20120%2098.9989%20120%2084%20120H36C21.0011%20120%2013.5016%20120%208.2443%20116.18C6.5464%20114.947%205.05325%20113.454%203.81966%20111.756C0%20106.498%200%2098.9989%200%2084V36Z%22%20%2F%3E%3C%2Fsvg%3E");
+
+    @media (prefers-color-scheme: light) {
+      filter: drop-shadow(0 0 1px color(base))
+        drop-shadow(0 8px 8px color(theme, 0.6));
+    }
+    @media (prefers-color-scheme: dark) {
+      filter: drop-shadow(0 8px 12px color(base, 0.6));
+    }
   }
 
   h1 {
@@ -287,6 +293,7 @@ export default {
     border-radius: 0.8rem;
     transition: $TRANSITION;
     will-change: transform;
+    overflow: hidden;
     @media (prefers-color-scheme: dark) {
       padding-left: 7rem;
       color: color(theme);

@@ -97,6 +97,9 @@ $Z_MODAL: 9000;
   width: 100vw; height: 100vh;
   top: 0; left: 0;
   overflow: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 12rem;
+  box-sizing: border-box;
   z-index: $Z_MODAL;
   overscroll-behavior-y: none;
   &__overlay {
@@ -106,9 +109,20 @@ $Z_MODAL: 9000;
   }
   &__window {
     position: relative;
-    margin: 12rem auto;
-    width: 90%;
-    max-width: 120rem;
+    margin: 12rem auto 0;
+    width: 96vw;
+    max-width: 96rem;
+  }
+  &__nav {
+    position: fixed;
+    left: 0;
+    bottom: 2vw;
+    width: 100vw;
+    @include max($MD) {
+      position: relative;
+      bottom: auto;
+      margin-top: 1.6rem;
+    }
   }
 }
 

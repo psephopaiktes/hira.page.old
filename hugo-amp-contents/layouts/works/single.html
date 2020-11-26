@@ -15,64 +15,35 @@
     <meta charset="UTF-8">
     <title>{{- .Title }} | {{ .Site.Title -}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="canonical" href="{{ .Permalink }}" />
-
-    {{/*  JSON-LD  */}}
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "HOME",
-            "item": "https://hira.page/"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "BLOG",
-            "item": "https://hira.page/works/"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": {{ .Title }},
-            "item": {{ .Permalink }}
-        }
-        ]
-    }
-    </script>
+    <link rel="canonical" href="{{ .Site.BaseURL }}" />
+    <meta name="robots" content="noindex">
 
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
     {{ $styles := resources.Get "works.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}">
 
-    {{/*  OGP  */}}
-    {{ template "_internal/opengraph.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-
-    {{/*  Other  */}}
-    <meta name="theme-color" content="#FFCC66">
-    <meta name="description" content="{{ .Description }}">
-    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}img/favicon.png">
+    {{/*  Loading  */}}
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+        body.show {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.addEventListener("load",function(){
+            document.getElementsByTagName("body")[0].classList.add("show");
+        });
+    </script>
 </head>
 
 <body>
     <main>
-        <header class="articleHeader">
-            <a class="back" href="/works">
-                <i class="material-icons-round">arrow_back</i>
-                実績一覧
-            </a>
+        <img class="hero" src="{{ $heder_img_path }}" alt="{{ .Title }}" >
 
-            <h1 class="logo"><a href="/">
-                <img src="/img/logo.svg" alt="WEBA">
-            </a></h1>
-
-            <img class="hero" src="{{ $heder_img_path }}" alt="{{ .Title }}" >
-
+        <article>
             <h1 class="title">{{ .Title }}</h1>
 
             <span class="date">
@@ -94,26 +65,9 @@
             {{ with .Description -}}
             <p>{{ . }}</p>
             {{- end }}
-        </header>
 
-        <article>
             {{ .Content }}
         </article>
-
-        <footer>
-            <nav>
-                <h1><a href="/">
-                    <img src="/img/logo.svg" alt="WEBA">
-                </a></h1>
-                <ul>
-                    <li><a href="/">ホーム</a></li>
-                    <li><a href="/blog">ブログ一覧</a></li>
-                    <li><a href="/works">実績一覧</a></li>
-                    <li><a href="/me">私について</a></li>
-                    <li><a href="/contact">お問い合わせ</a></li>
-                </ul>
-            </nav>
-        </footer>
     </main>
 </body>
 

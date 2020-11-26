@@ -46,13 +46,16 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    // TODO:
+    // スクロールしてページを変えるとそこでもスクロールしている
+    // モーダルを開くと後ろが勝手にTOPに戻る
     if (savedPosition) {
       return savedPosition;
     }
-    if (to.hash) {
-      return { selector: to.hash };
-    }
-    // return { left: 0, top: 0 }; // これがあるとモーダル表示の際に後ろがTOPにスクロールする...
+    // if (to.hash) {
+    //   return { selector: to.hash };
+    // }
+    // return { left: 0, top: 0 }; // これがあるとモーダル表示でURL変わっただけでも、後ろがTOPにスクロールする...
   }
 });
 

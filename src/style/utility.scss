@@ -2,6 +2,17 @@
 
 .u-hideSp {
   @include max($SM) {
-    display: none;
+    display: none !important;
+  }
+}
+
+.u-showTabSp,.u-hidePc {
+  @include min($MD + 1) {
+    display: none !important;
+  }
+}
+.u-showSp {
+  @include min($SM + 1) {
+    display: none !important;
   }
 }

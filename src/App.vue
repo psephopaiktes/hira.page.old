@@ -100,11 +100,14 @@ export default {
     });
 
     // #付きのURLに直接来たときの処理 TODO
-    // const hash = document.location.hash;
-    // const target = document.getElementById(hash.substring(1));
-    // if (hash && target) {
-    //   target.scrollIntoView();
-    // }
+    const hash = document.location.hash;
+    const target = document.getElementById(hash.substring(1));
+    if (hash && target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   }
 };
 </script>

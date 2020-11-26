@@ -8,6 +8,28 @@
         </router-link>
       </li>
     </ul>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
   </BoardContainer>
 </template>
 
