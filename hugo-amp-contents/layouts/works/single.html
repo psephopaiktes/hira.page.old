@@ -43,31 +43,36 @@
     <main>
         <img class="hero" src="{{ $heder_img_path }}" alt="{{ .Title }}" >
 
-        <article>
+        <header>
             <h1 class="title">{{ .Title }}</h1>
 
-            <span class="date">
-                <i class="material-icons-round">today</i>
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
-                {{- if .Params.update -}}
-                公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006年1月2日" }}</time>更新
-                {{ end }}
-            </span>
+            {{- with .Params.exlink -}}
+            <a href="{{.}}" class="exlink" target="_brank">{{.}}</a>
+            {{ end }}
 
-            {{ with .Params.tags -}}
-            <ul class="tags">
-                {{ range . -}}
-                <li><a href="/works/tags/{{ . | urlize }}/">{{ . }}</a>
+            <div class="meta">
+                <span class="date">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
+                    {{- if .Params.update -}}
+                    公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006" }}</time>更新
+                    {{ end }}
+                </span>
+
+                {{ with .Params.tags -}}
+                <ul class="tags">
+                    {{ range . -}}
+                    <li><a href="/works/tags/{{ . | urlize }}/">{{ . }}</a>
+                    {{- end }}
+                </ul>
                 {{- end }}
-            </ul>
-            {{- end }}
+            </div>
 
             {{ with .Description -}}
-            <p>{{ . }}</p>
+            <p class="description">{{ . }}</p>
             {{- end }}
+        </header>
 
-            {{ .Content }}
-        </article>
+        <article>{{ .Content }}</article>
     </main>
 </body>
 

@@ -6,9 +6,8 @@
 {{ $height := $resized.Height }}
 <amp-img
     src="{{ $resized.RelPermalink }}"
-    alt="{{ $alt }}"
     width="{{ $width }}"
     height="{{ $height }}"
     layout="responsive"
-    title="{{.Get "title" }}"
+    alt="{{ $alt }}"
 ></amp-img>

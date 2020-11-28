@@ -408,6 +408,10 @@ article {
   amp-img {
     margin-top: 1.2rem;
   }
+  amp-video {
+    margin-top: 1.2rem;
+    max-width: 100%;
+  }
   .highlight {
     margin-top: 1.2rem;
     pre {
@@ -428,7 +432,7 @@ article {
   border-radius: .8rem;
   box-shadow: .2rem .4rem 16rem -2rem color(main,.2);
   overflow: hidden;
-
+  will-change: transform;
   @include max($SM) {
     height: 10rem;
   }

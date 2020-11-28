@@ -9,6 +9,8 @@
       をご確認ください。
     </p>
 
+    <p>転職エージェントさまからのメッセージには反応いたしません。</p>
+
     <p>
       <a href="https://twitter.com/psephopaiktes" target="blank">
         Twitter
