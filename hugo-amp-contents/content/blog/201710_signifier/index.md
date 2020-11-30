@@ -1,7 +1,7 @@
 ---
 id: "201710_signifier"
 title: "デザイナなら意識したいシグニファイアと、間違いやすいアフォーダンスの話"
-tags: ["design","UX"]
+tags: ["design","ux"]
 date: 2017-10-22T22:49:51+16:32
 update: ""
 draft: false

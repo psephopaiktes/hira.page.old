@@ -203,6 +203,7 @@ form {
     color: color(main);
     outline: none;
     caret-color: color(main);
+    cursor: text;
   }
   .textarea {
     min-height: 16rem;

@@ -4,7 +4,7 @@ title: "ついに来た！ 最強のプロトタイピングツールと期待�
 date: 2018-03-23T00:46:13+10:00
 update: ""
 draft: false
-tags: ["App・Service","Sketch"]
+tags: ["app・service","sketch"]
 description: "去年からプロモ動画のみを公開し、大きな反響を呼んでいた inVision Studio. SketchやXDの対抗となるアプリですが、動画を見る限りそれらを駆逐するほどの高い機能を持っていると噂されていました。ついに登録していた early access版の招待メールが来たので、調査します。"
 ---
 

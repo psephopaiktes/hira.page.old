@@ -4,7 +4,7 @@ title: "AtomユーザもSublimeユーザも、死角が無いエディタ「VS C
 date: 2018-07-16T00:46:13+10:00
 update: 2018-09-13T00:46:13+10:00
 draft: false
-tags: ["App・Service", "web-design"]
+tags: ["app・service", "web"]
 description: "世の中にエディタは数あれど、機能不足・速度不足・学習コスト・値段などネックとなる要素はたくさんあります。その中でも、弱点が少なく、普段使いでちょうどよく快適に使えるエディタ、「VS CODE」を紹介します。主にAtomやSublime、BracketsやCodaなどを使っているユーザに向けた布教記事です。"
 ---
 

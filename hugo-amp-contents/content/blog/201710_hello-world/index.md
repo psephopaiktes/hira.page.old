@@ -5,7 +5,7 @@ date: 2017-10-01T00:46:13+09:00
 update: ""
 draft: false
 description: "ブログができました"
-tags: ["Hugo"]
+tags: ["hugo"]
 ---
 
 ## ブログをつくりました

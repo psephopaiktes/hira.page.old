@@ -11,6 +11,7 @@ select DRAFT in ${DRAFTS[@]}
 do
   # 記事ファイルを開く
   open $DRAFT
+  open ${DRAFT%/index.md}
 
   # 記事ページを表示 文中先頭の`content/`と末尾の`/index.md`は削除する
   DRAFT=${DRAFT#content/}

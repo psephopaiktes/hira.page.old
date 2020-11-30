@@ -129,4 +129,10 @@ var elm = document.getElementById('gotop');
 >}}
 
 ### Amazon
-TBD
+Assosiate Linkは自分で用意
+
+{{< embed-amazon
+    "https://amzn.to/3lmzD58"
+    "https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B004PGZE7Y&Format=_SL250_&ID=AsinImage&ServiceVersion=20070822&WS=1"
+    "Amazon | キャティーマン 猫用おもちゃ じゃれ猫 LEDにゃんだろー光線 | キャティーマン (CattyMan) | 光るおもちゃ 通販"
+>}}

@@ -3,7 +3,7 @@ id: "201712_python-server"
 title: "PCで作成中のWebページをリアルタイムにスマホで確認する方法"
 date: 2017-12-03T13:05:42+09:00
 update: ""
-tags: ["python","web design"]
+tags: ["web"]
 description: "Macなら特別な準備なしに、簡単にすぐローカルサーバをたてて手元のスマホから、作成中のWebページ・アプリを確認できます。"
 draft: false
 ---

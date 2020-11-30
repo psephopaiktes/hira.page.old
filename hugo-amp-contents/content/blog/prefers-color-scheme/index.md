@@ -1,0 +1,10 @@
+---
+id: "prefers-color-scheme"
+title: "CSSだけでWebページをダークモード対応。ついにChromeにも対応した prefers-color-scheme が超便利"
+date: 2019-07-31T17:15:11+09:00
+update: false
+draft: false
+tags: ["web","css"]
+description: "prefers-color-scheme という設定値を使うことで、Webページをかんたんにダークモード対応させることが可能です。Chromeでも本日公開された76から対応されたので、かんたんに紹介します。"
+redirect: "https://note.com/psephopaiktes/n/n878424784a1b"
+---

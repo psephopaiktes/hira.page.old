@@ -134,7 +134,7 @@
             {{ with .Params.tags -}}
             <ul class="tags">
                 {{ range . -}}
-                <li><a href="/blog/tags/{{ . | urlize }}/">{{ . }}</a>
+                <li><a href="/blog?tag={{ . | urlize }}">{{ . }}</a>
                 {{- end }}
             </ul>
             {{- end }}

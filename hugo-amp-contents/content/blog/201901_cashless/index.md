@@ -4,7 +4,7 @@ title: "財布を持ち歩くのをやめてわかったことと現状の最適
 date: 2019-01-10T10:42:17+09:00
 update: ""
 draft: false
-tags: ["Review", "appservice"]
+tags: ["review", "app・service"]
 description: "先日Pixel3というスマホを購入して以来、財布を持ち歩くのをやめました。持ち歩いているのはPixel3とカードケースのみで、主に支払いアプリのGoogle Payとクレカだけで支払いを行います。"
 ---
 

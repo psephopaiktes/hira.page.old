@@ -2,15 +2,15 @@
   <ul class="blogIndex">
     <li v-for="item in $store.state.blogIndex.slice(0, 4)" :key="item.id">
       <a
-        :href="'/blog/' + item.id"
+        :href="`/blog/${item.id}`"
         :target="item.exSite ? '_blank' : null"
         :rel="item.exSite ? 'noopener' : null"
       >
         <img
-          :src="'/blog/' + item.id + '/cover.png'"
+          :src="`/blog/${item.id}/cover.png`"
           :alt="`${item.title}のサムネイル画像`"
         />
-        <img :src="'/blog/' + item.id + '/cover.png'" alt="背景" />
+        <img :src="`/blog/${item.id}/cover.png`" alt="背景" />
         <h3>{{ item.title }}</h3>
         <div class="meta">
           <ul class="tags">
@@ -89,12 +89,11 @@ export default {
     }
     &.more {
       display: none;
+      background: none;
       @include max($MD) {
         display: block;
         box-shadow: none;
-        margin: 1.6rem 1.2rem;
-        border-radius: 2.4rem;
-        background: color(main, 0.1);
+        border-radius: 2.4rem 0 0 2.4rem;
         border: none;
         a {
           color: color(main, 0.8);
@@ -140,7 +139,6 @@ export default {
     overflow: hidden;
   }
   .meta {
-    position: relative;
     position: absolute;
     bottom: 1.6rem;
     left: 1.6rem;
