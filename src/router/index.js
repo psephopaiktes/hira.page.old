@@ -7,7 +7,14 @@ const routes = [
   },
   {
     path: "/Blog",
-    component: () => import("../views/Blog.vue"),
+    component: () => import("../views/Blog/Index.vue"),
+    meta: {
+      title: "BLOG"
+    }
+  },
+  {
+    path: "/Blog/Search",
+    component: () => import("../views/Blog/Search.vue"),
     meta: {
       title: "BLOG"
     }

@@ -35,7 +35,7 @@ export default {
   grid-gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, minmax(0rem, 1fr));
   @include max($MD) {
-    grid-template-columns: repeat(5, minmax(16rem, 1fr));
+    grid-template-columns: repeat(6, minmax(16rem, 1fr));
     overflow: scroll;
     margin: #{-6 + 2.4}rem -6rem -6rem;
     padding: 6rem;
