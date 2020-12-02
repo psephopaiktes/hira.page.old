@@ -54,7 +54,11 @@ export default {
           blogIndex.push({
             title: item.querySelector("title").innerHTML,
             id: item.querySelector("guid").innerHTML,
-            date: item.querySelector("pubDate").innerHTML,
+            date: Intl.DateTimeFormat("ja-JP", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit"
+            }).format(new Date(item.querySelector("pubDate").innerHTML)),
             description: item.querySelector("description").innerHTML,
             tags,
             redirect,
@@ -80,7 +84,11 @@ export default {
           worksIndex.push({
             title: item.querySelector("title").innerHTML,
             id: item.querySelector("guid").innerHTML,
-            date: item.querySelector("pubDate").innerHTML,
+            date: Intl.DateTimeFormat("ja-JP", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit"
+            }).format(new Date(item.querySelector("pubDate").innerHTML)),
             description: item.querySelector("description").innerHTML,
             priority: item.querySelector("comments").innerHTML,
             tags

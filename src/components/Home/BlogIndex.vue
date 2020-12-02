@@ -18,13 +18,7 @@
               {{ tag }}
             </li>
           </ul>
-          <time>{{
-            Intl.DateTimeFormat("ja-JP", {
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit"
-            }).format(new Date(item.date))
-          }}</time>
+          <time>{{ item.date }}</time>
         </div>
         <span v-if="item.exSite" class="c-exSite" :class="item.exSite">
           <SVG :symbol="item.exSite + '-logo'" />

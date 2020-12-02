@@ -26,13 +26,7 @@
               {{ tag }}
             </li>
           </ul>
-          <time>{{
-            Intl.DateTimeFormat("ja-JP", {
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit"
-            }).format(new Date(item.date))
-          }}</time>
+          <time>{{ item.date }}</time>
         </div>
         <span v-if="item.exSite" class="c-exSite" :class="item.exSite">
           <SVG :symbol="item.exSite + '-logo'" />
@@ -129,16 +123,9 @@ export default {
   margin-top: 4.8rem;
   display: grid;
   grid-gap: 3.2rem 1.2rem;
-  grid-template-columns: repeat(4, minmax(0rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
   @include max($XL) {
-    grid-template-columns: repeat(3, minmax(0rem, 1fr));
-  }
-  @include max($LG) {
-    grid-template-columns: repeat(2, minmax(0rem, 1fr));
-  }
-  @include max($SM) {
-    grid-template-columns: repeat(1, minmax(0rem, 1fr));
-    grid-gap: 2.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
   }
   > li {
     border: 1px solid color(main, 0.1);

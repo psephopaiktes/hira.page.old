@@ -13,16 +13,12 @@
       <h3>Follow This Blog.</h3>
       <ul>
         <li>
-          <a
-            href="https://twitter.com/psephopaiktes"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://twitter.com/psephopaiktes" target="_blank">
             <SVG symbol="twitter" alt="twitter" />
           </a>
         </li>
         <li>
-          <a href="http://fb.me/hira.page" target="_blank" rel="noopener">
+          <a href="http://fb.me/webablog" target="_blank">
             <SVG symbol="facebook" alt="facebook" />
           </a>
         </li>
@@ -30,7 +26,6 @@
           <a
             href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fhira.page%2Fblog%2Findex.xml"
             target="_blank"
-            rel="noopener"
           >
             <SVG symbol="feedly" alt="feedly" />
           </a>
@@ -58,7 +53,7 @@ export default {
   margin-top: 2rem;
   display: grid;
   grid-gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(0rem, 32rem));
+  grid-template-columns: repeat(auto-fit, 32rem);
   > li {
     border: 1px solid color(main, 0.1);
     border-radius: 3.2rem;

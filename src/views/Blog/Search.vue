@@ -1,32 +1,35 @@
 <template>
   <BoardContainer>
-    <h1>BLOG</h1>
+    <nav class="menu">
+      <h1>BLOG</h1>
 
-    <router-link to="/blog/">
-      <SVG symbol="close" alt="close" />
-    </router-link>
+      <router-link to="/blog/" class="close">
+        <SVG symbol="close" alt="close" />
+      </router-link>
 
-    <input
-      enterkeyhint="search"
-      type="search"
-      v-model="searchWord"
-      placeholder="キャラクター名で検索"
-      ref="form"
-      autofocus
-    />
+      <input
+        enterkeyhint="search"
+        type="search"
+        v-model="searchWord"
+        placeholder="記事を検索"
+        class="form"
+        ref="form"
+        autofocus
+      />
 
-    <ul class="tags">
-      <li>
-        <button @click="tagFilter()">すべて</button>
-      </li>
-      <li
-        v-for="tag in tags"
-        :key="tag"
-        :class="{ current: tag == $route.query.tag }"
-      >
-        <button @click="tagFilter(tag)">{{ tag }}</button>
-      </li>
-    </ul>
+      <ul class="tags">
+        <li :class="{ current: !$route.query.tag }">
+          <button @click="tagFilter()">ALL</button>
+        </li>
+        <li
+          v-for="tag in tags"
+          :key="tag"
+          :class="{ current: tag == $route.query.tag }"
+        >
+          <button @click="tagFilter(tag)">{{ tag }}</button>
+        </li>
+      </ul>
+    </nav>
 
     <BlogIndex :searchWord="searchWord" :tagWord="tagWord" />
 
@@ -80,6 +83,77 @@ export default {
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
+
+.menu {
+  position: relative;
+  .close {
+    position: absolute;
+    right: 0;
+    top: 1.8rem;
+    width: 5.6rem;
+    height: 5.6rem;
+    background: color(theme);
+    border-radius: 0.8rem;
+    transition: $TRANSITION;
+    will-change: transform;
+    &:hover,
+    &:active {
+      transform: scale(1.05);
+    }
+    svg {
+      margin: 1.2rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      color: color(base);
+    }
+  }
+}
+
+.form {
+  display: block;
+  margin: 3.2rem auto 0;
+  max-width: 96rem;
+  padding: 1.6rem;
+  width: 100%;
+  border: 0.3rem solid transparent;
+  border-radius: 0.8rem;
+  background: color(main, 0.1);
+  color: color(main);
+  outline: none;
+  caret-color: color(main);
+  cursor: text;
+  &::placeholder {
+    color: color(main, 0.3);
+  }
+  &:focus {
+    border-color: color(main, 0.2);
+  }
+}
+
+.tags {
+  margin: 2.4rem 1.6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  li {
+    margin: 0.8rem 0.4rem 0;
+    button {
+      background: color(theme);
+      color: color(base);
+      font-size: 1.4rem;
+      font-weight: 500;
+      height: 3.2rem;
+      line-height: 0;
+      letter-spacing: 0.08em;
+      padding: 0 1.6rem;
+      border-radius: 1.6rem;
+    }
+    &.current button {
+      background: color(main, 0.1);
+      color: color(main, 0.8);
+    }
+  }
+}
 
 .ad {
   margin-top: 6.4rem;

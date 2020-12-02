@@ -1,7 +1,7 @@
 <template>
   <ul class="worksIndex">
     <li v-for="item in $store.state.worksIndex.slice(0, 5)" :key="item.id">
-      <a :href="'?work=' + item.id">
+      <router-link :to="`?work=${item.id}`">
         <img
           :src="'/works/' + item.id + '/thumbnail.png'"
           :alt="`${item.title}のサムネイル画像`"
@@ -12,7 +12,7 @@
             {{ tag }}
           </li>
         </ul>
-      </a>
+      </router-link>
     </li>
     <li class="more">
       <router-link to="/works"><SVG symbol="next" />more</router-link>
