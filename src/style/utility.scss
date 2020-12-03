@@ -1,6 +1,6 @@
 @use "common.scss" as *;
 
-.u-hideSp {
+.u-showPcTab,.u-hideSp {
   @include max($SM) {
     display: none !important;
   }
@@ -11,7 +11,7 @@
     display: none !important;
   }
 }
-.u-showSp {
+.u-showSp,.u-hidePcTab {
   @include min($SM + 1) {
     display: none !important;
   }

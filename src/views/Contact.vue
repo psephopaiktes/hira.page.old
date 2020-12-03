@@ -20,7 +20,7 @@
       そちらのほうが反応が早めです。
     </p>
 
-    <form @submit.prevent="send()">
+    <form @submit.prevent>
       <label>
         <span>返信用メールアドレス</span>
         <input
@@ -35,19 +35,12 @@
 
       <label>
         <span>お問い合わせ内容</span>
-        <div
-          class="textarea"
-          contenteditable="true"
-          @input="
-            syncMessage($event);
-            validate();
-          "
-        >
+        <div class="textarea" contenteditable="true" @input="validate()">
           {{ message }}
         </div>
       </label>
 
-      <button type="submit" :disabled="status == ''" :class="status">
+      <button :disabled="status == ''" :class="status" @click="send()">
         <img
           v-if="status == 'sending'"
           src="@/assets/loader.svg"
@@ -100,9 +93,9 @@ export default {
     };
   },
   methods: {
-    syncMessage(e) {
-      this.message = e.target.innerText;
-    },
+    // syncMessage(e) {
+    //   this.message = e.target.innerText;
+    // },
     validate() {
       const reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
 
@@ -127,6 +120,10 @@ export default {
       }
     },
     send() {
+      if (this.status != "ready") {
+        console.log("not send1");
+        return;
+      }
       this.status = "sending";
       fetch(
         `https://formcarry.com/s/${process.env.VUE_APP_FORMCARRY_ENDPOINT}`,
@@ -203,7 +200,9 @@ form {
     color: color(main);
     outline: none;
     caret-color: color(main);
+    font-size: 1.8rem;
     cursor: text;
+    appearance: none;
   }
   .textarea {
     min-height: 16rem;

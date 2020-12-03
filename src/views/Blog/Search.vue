@@ -121,6 +121,8 @@ export default {
   color: color(main);
   outline: none;
   caret-color: color(main);
+  font-size: 1.8rem;
+  appearance: none;
   cursor: text;
   &::placeholder {
     color: color(main, 0.3);

@@ -1,6 +1,10 @@
 <template>
   <button @click="toggleMenuAndAnimation()" class="l-navToggleBtn toggleBtn">
     <div class="lottie" ref="menu"></div>
+
+    <span v-if="show" class="u-showSp">CLOSE</span>
+    <span v-else-if="$route.path == '/'" class="u-showSp">MENU</span>
+    <SVG v-else class="logo u-showSp" symbol="logo" alt="WEBA" />
   </button>
 
   <button
@@ -133,32 +137,39 @@ export default {
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
 .lottie {
-  display: flex;
+  display: inline-flex;
   width: 3.2rem;
   height: 3.2rem;
 }
 
 .toggleBtn {
   @include max($MD) {
-    width: 4.8rem;
-    height: 4.8rem;
     background: color(theme);
     .lottie {
       color: color(main);
       margin: 0.8rem;
-      width: 3.2rem;
-      height: 3.2rem;
     }
   }
 
   @include max($SM) {
-    width: 5.6rem;
-    height: 5.6rem;
     background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .lottie {
-      width: 3.2rem;
-      height: 3.2rem;
-      margin: 1.2rem;
+      margin: 0 1.2rem 0 -0.8em;
+    }
+    .logo {
+      fill: #fff;
+      width: 8rem;
+      height: 2rem;
+    }
+    span {
+      color: rgba(#fff, 0.8);
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin-top: 0.2rem;
     }
   }
 }
@@ -195,17 +206,15 @@ export default {
     align-items: center;
     padding: 0;
     background: none;
-
-    border: solid 20px;
+    border: solid 2rem;
     border-image-slice: 20 fill;
     border-image-source: url("data:image/svg+xml,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cstyle%3E%23bg%7Bfill%3A%23ffcc66%3B%7D%40media(prefers-color-scheme%3Adark)%7B%23bg%7Bfill%3A%23eebc66%3B%7D%7D%3C%2Fstyle%3E%3Cpath%20id%3D%22bg%22%20d%3D%22M0%2036C0%2021.0011%200%2013.5016%203.81966%208.2443C5.05325%206.5464%206.5464%205.05325%208.2443%203.81966C13.5016%200%2021.0011%200%2036%200H84C98.9989%200%20106.498%200%20111.756%203.81966C113.454%205.05325%20114.947%206.5464%20116.18%208.2443C120%2013.5016%20120%2021.0011%20120%2036V84C120%2098.9989%20120%20106.498%20116.18%20111.756C114.947%20113.454%20113.454%20114.947%20111.756%20116.18C106.498%20120%2098.9989%20120%2084%20120H36C21.0011%20120%2013.5016%20120%208.2443%20116.18C6.5464%20114.947%205.05325%20113.454%203.81966%20111.756C0%20106.498%200%2098.9989%200%2084V36Z%22%20%2F%3E%3C%2Fsvg%3E");
 
     @media (prefers-color-scheme: light) {
-      filter: drop-shadow(0 0 1px color(base))
-        drop-shadow(0 8px 8px color(theme, 0.6));
+      filter: drop-shadow(0 8px 8px color(theme, 0.6));
     }
     @media (prefers-color-scheme: dark) {
-      filter: drop-shadow(0 8px 12px color(base, 0.6));
+      filter: drop-shadow(0 8px 12px rgba(#000, 0.6));
     }
   }
 
