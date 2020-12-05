@@ -15,7 +15,6 @@
           :src="`/works/${$route.query.work}`"
           ref="iframe"
           frameborder="0"
-          scrolling="no"
           :height="iframe.height"
           allow-scripts
         ></iframe>

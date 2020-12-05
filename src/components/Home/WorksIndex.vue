@@ -108,7 +108,7 @@ export default {
     letter-spacing: 0.05em;
     font-weight: 600;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

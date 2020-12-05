@@ -42,7 +42,9 @@
 
 <body>
     <main>
+        {{- with $heder_img -}}
         <img class="hero" src="{{ $heder_img_path }}" alt="{{ .Title }}" width="1200" height="600" >
+        {{ end }}
 
         <header>
             <h1 class="title">{{ .Title }}</h1>

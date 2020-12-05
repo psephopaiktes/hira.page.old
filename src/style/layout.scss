@@ -16,7 +16,6 @@ $Z_MODAL: 9000;
     left: 0;
     width: 4.8rem;
     height: 4.8rem;
-    z-index: #{$Z_NAVMENU + 1};
   }
 
   @include max($SM) {
@@ -27,6 +26,7 @@ $Z_MODAL: 9000;
     left: calc(50vw - 10rem);
     width: 20rem;
     height: 5.6rem;
+    z-index: #{$Z_NAVMENU + 1};
   }
 }
 
@@ -47,7 +47,6 @@ $Z_MODAL: 9000;
 .l-navMenu{
   position: fixed;
   top: 0; left: 0;
-  z-index: $Z_NAVMENU;
   width: $NAVMENU_WIDTH;
   height: 100vh;
   transition: $TRANSITION;
@@ -64,6 +63,7 @@ $Z_MODAL: 9000;
   }
 
   @include max($SM) {
+    z-index: $Z_NAVMENU;
     top: auto;
     bottom: calc(2.4rem + env(safe-area-inset-bottom));
     left: calc(50vw - 10rem);
@@ -130,21 +130,4 @@ $Z_MODAL: 9000;
       margin-top: 1.6rem;
     }
   }
-}
-
-.l-hero {
-  z-index: $Z_HERO;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  padding-left: $NAVMENU_WIDTH;
-  background: url("https://source.unsplash.com/daily?cat&orientation=landscape") center center / cover;
-
-  @include max($MD) {
-    padding: 0
-  }
-}
-.l-board {
-  z-index: #{$Z_HERO + 1};
-  position: relative;
 }
