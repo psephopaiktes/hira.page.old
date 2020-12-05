@@ -1,7 +1,7 @@
 ---
 id: "osyaberiya"
 title: "おしゃべりや"
-date: 2020-12-05T23:24:39+09:00
+date: 2017-12-05T23:24:39+09:00
 update: false
 draft: false
 tags: ["UI","CODE"]

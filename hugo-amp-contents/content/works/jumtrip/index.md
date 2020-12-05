@@ -1,0 +1,18 @@
+---
+id: "jumtrip"
+title: "JUMTRIP"
+date: 2018-07-05T23:45:42+09:00
+update: false
+draft: false
+tags: ["UI"]
+description: "自撮りしながらジャンプすると、世界中にランダムに旅するアプリ。2018年SPAJAM ハッカソンで優秀賞受賞。"
+exlink: "https://spajam.jp/2018/final/result/"
+priority: 1
+---
+
+360度画像とVision APIを組み合わせ、旅先で自撮りする体験を実現。旅先が気になれば実際に行くための情報を提示。仮想から現実へトリップできる。
+
+
+<div class="yt-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jXVO8wrtdb8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
