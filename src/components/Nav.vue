@@ -145,6 +145,7 @@ export default {
 .toggleBtn {
   @include max($MD) {
     background: color(theme);
+    border-radius: 0 0 0.8rem 0;
     .lottie {
       color: color(main);
       margin: 0.8rem;

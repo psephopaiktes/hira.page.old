@@ -20,7 +20,7 @@
       そちらのほうが反応が早めです。
     </p>
 
-    <form @submit.prevent>
+    <form @submit.prevent="send()">
       <label>
         <span>返信用メールアドレス</span>
         <input
@@ -35,12 +35,17 @@
 
       <label>
         <span>お問い合わせ内容</span>
-        <div class="textarea" contenteditable="true" @input="validate()">
-          {{ message }}
-        </div>
+        <textarea
+          class="textarea"
+          contenteditable="true"
+          v-model="message"
+          @input="validate()"
+          placeholder="お問い合わせ内容"
+          rows="6"
+        ></textarea>
       </label>
 
-      <button :disabled="status == ''" :class="status" @click="send()">
+      <button type="submit" :disabled="status == ''" :class="status">
         <img
           v-if="status == 'sending'"
           src="@/assets/loader.svg"
@@ -93,9 +98,6 @@ export default {
     };
   },
   methods: {
-    // syncMessage(e) {
-    //   this.message = e.target.innerText;
-    // },
     validate() {
       const reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
 
@@ -120,10 +122,6 @@ export default {
       }
     },
     send() {
-      if (this.status != "ready") {
-        console.log("not send1");
-        return;
-      }
       this.status = "sending";
       fetch(
         `https://formcarry.com/s/${process.env.VUE_APP_FORMCARRY_ENDPOINT}`,
@@ -149,8 +147,7 @@ export default {
         // network error
         .catch(() => (this.status = "error"));
     }
-  },
-  mounted() {}
+  }
 };
 </script>
 
@@ -189,7 +186,7 @@ form {
     }
   }
   input,
-  .textarea {
+  textarea {
     display: block;
     margin-top: 0.4rem;
     padding: 1.6rem;
@@ -204,14 +201,15 @@ form {
     cursor: text;
     appearance: none;
   }
-  .textarea {
-    min-height: 16rem;
+  textarea {
+    resize: vertical;
   }
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: color(main, 0.3);
   }
   input:focus,
-  .textarea:focus {
+  textarea:focus {
     border-color: color(main, 0.2);
   }
   button {

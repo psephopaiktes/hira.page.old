@@ -12,6 +12,7 @@
         type="search"
         v-model="searchWord"
         placeholder="記事を検索"
+        @keyup.enter="$event.target.blur()"
         class="form"
         ref="form"
         autofocus

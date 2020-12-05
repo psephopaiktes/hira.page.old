@@ -2,12 +2,12 @@
   <transition name="modal">
     <div class="l-modal" v-if="$route.query.work" ref="scrollContainer">
       <router-link
-        :to="$route.path"
+        :to="closeUrl"
         class="overlay l-modal__overlay"
       ></router-link>
 
       <section class="window l-modal__window">
-        <router-link :to="$route.path" class="closeButton">
+        <router-link :to="closeUrl" class="closeButton">
           <SVG symbol="close" alt="close" />
         </router-link>
         <iframe
@@ -22,16 +22,16 @@
       </section>
 
       <nav class="nav l-modal__nav">
-        <button @click="move(prevUrl)" v-if="prevUrl">
+        <button @click="move(prevId)" v-if="prevId">
           <SVG symbol="prev" /><span>PREV</span>
         </button>
 
-        <router-link class="u-showTabSp" :to="$route.path">
+        <router-link class="u-showTabSp" :to="closeUrl">
           <SVG symbol="close" />
           <span>CLOSE</span>
         </router-link>
 
-        <button @click="move(nextUrl)" v-if="nextUrl">
+        <button @click="move(nextId)" v-if="nextId">
           <span>NEXT</span><SVG symbol="next" />
         </button>
       </nav>
@@ -50,35 +50,42 @@ export default {
       }
     };
   },
+  props: {
+    idIndex: Array
+  },
   computed: {
+    closeUrl() {
+      return { query: Object.assign({}, this.$route.query, { work: null }) };
+    },
     currentNo() {
-      return this.$store.state.worksIndex.findIndex(work => {
-        return work.id === this.$route.query.work;
+      return this.idIndex.findIndex(id => {
+        return id === this.$route.query.work;
       });
     },
-    prevUrl() {
+    prevId() {
       if (this.currentNo == 0) {
         return null;
       }
-      return `?work=${this.$store.state.worksIndex[this.currentNo - 1].id}`;
+      return this.idIndex[this.currentNo - 1];
     },
-    nextUrl() {
-      if (this.currentNo == this.$store.state.worksIndex.length - 1) {
+    nextId() {
+      if (this.currentNo == this.idIndex.length - 1) {
         return null;
       }
-      return `?work=${this.$store.state.worksIndex[this.currentNo + 1].id}`;
+      return this.idIndex[this.currentNo + 1];
     }
   },
   methods: {
     loaded() {
       this.iframe.height = this.$refs.iframe.contentWindow.document.body.scrollHeight;
     },
-    move(url) {
-      this.$router.push(url);
+    move(id) {
+      this.$router.push({
+        query: Object.assign({}, this.$route.query, { work: id })
+      });
       this.$refs.scrollContainer.scrollTo(0, 0);
     }
-  },
-  mounted() {}
+  }
 };
 </script>
 

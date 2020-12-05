@@ -4,19 +4,15 @@
   <main class="l-main">
     <router-view />
   </main>
-
-  <WorksModal />
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
-import WorksModal from "@/components/WorksModal.vue";
 
 export default {
   name: "App",
   components: {
-    Nav,
-    WorksModal
+    Nav
   },
   beforeCreate() {
     if (localStorage.redirect) {

@@ -5,6 +5,7 @@ baseURL = "/"
 publishDir = "../public/"
 newContentEditor = "code"
 hasCJKLanguage = true
+canonifyurls = true
 disableKinds = ["taxonomy", "taxonomyTerm", "category", "404", "home"]
 
 [author]

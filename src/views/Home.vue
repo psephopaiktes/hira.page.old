@@ -22,8 +22,10 @@
       <h2>
         OTHER
       </h2>
+      <OtherIndex />
     </section>
-    <OtherIndex />
+
+    <WorksModal :idIndex="resultIdIndex" />
   </BoardContainer>
 </template>
 
@@ -32,6 +34,7 @@ import BoardContainer from "@/components/BoardContainer.vue";
 import BlogIndex from "@/components/Home/BlogIndex.vue";
 import WorksIndex from "@/components/Home/WorksIndex.vue";
 import OtherIndex from "@/components/Home/OtherIndex.vue";
+import WorksModal from "@/components/WorksModal.vue";
 
 export default {
   name: "Home",
@@ -39,7 +42,17 @@ export default {
     BoardContainer,
     BlogIndex,
     WorksIndex,
-    OtherIndex
+    OtherIndex,
+    WorksModal
+  },
+  computed: {
+    resultIdIndex() {
+      let idIndex = [];
+      this.$store.state.worksIndex.slice(0, 5).forEach(i => {
+        idIndex.push(i.id);
+      });
+      return idIndex;
+    }
   }
 };
 </script>

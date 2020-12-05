@@ -46,8 +46,8 @@
 export default {
   name: "BlogIndex",
   props: {
-    searchWord: { type: String },
-    tagWord: { type: String }
+    searchWord: String,
+    tagWord: String
   },
   data() {
     return {

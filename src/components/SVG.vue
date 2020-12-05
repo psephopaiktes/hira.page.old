@@ -19,9 +19,9 @@
 export default {
   name: "SVG",
   props: {
-    symbol: { type: String },
-    alt: { type: String },
-    class: { type: String }
+    symbol: String,
+    alt: String,
+    class: String
   },
   data() {
     return {

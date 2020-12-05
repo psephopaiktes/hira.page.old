@@ -27,7 +27,11 @@
 
     <ul class="worksIndex">
       <li v-for="item in resultIndex" :key="item.id">
-        <router-link :to="`?work=${item.id}`">
+        <router-link
+          :to="{
+            query: Object.assign({}, $route.query, { work: item.id })
+          }"
+        >
           <img
             :src="'/works/' + item.id + '/thumbnail.png'"
             :alt="`${item.title}のサムネイル画像`"
@@ -44,15 +48,19 @@
       </li>
     </ul>
   </BoardContainer>
+
+  <WorksModal :idIndex="resultIdIndex" />
 </template>
 
 <script>
 import BoardContainer from "@/components/BoardContainer.vue";
+import WorksModal from "@/components/WorksModal.vue";
 
 export default {
   name: "Works",
   components: {
-    BoardContainer
+    BoardContainer,
+    WorksModal
   },
   data() {
     return {
@@ -70,6 +78,13 @@ export default {
     this.tags = [...new Set(this.tags)];
   },
   computed: {
+    resultIdIndex() {
+      let idIndex = [];
+      this.resultIndex.forEach(i => {
+        idIndex.push(i.id);
+      });
+      return idIndex;
+    },
     resultIndex() {
       let result = [];
       if (this.tagWord) {
@@ -218,7 +233,7 @@ export default {
       justify-content: center;
       opacity: 0;
       background: color(main, 0.4);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(2px) grayscale(100%);
       transition: $TRANSITION;
       color: color(base);
       @include max($MD) {
