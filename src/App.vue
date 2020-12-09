@@ -95,7 +95,7 @@ export default {
       });
   },
   mounted() {
-    window.addEventListener("load", () => {
+    window.addEventListener("DOMContentLoaded", () => {
       const elm = document.getElementById("loading");
       if (!elm) {
         return;

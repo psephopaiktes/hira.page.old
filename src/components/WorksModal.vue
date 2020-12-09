@@ -11,10 +11,11 @@
           <SVG symbol="close" alt="close" />
         </router-link>
         <iframe
-          @load="loaded()"
           :src="`/works/${$route.query.work}`"
+          @load="setIframeHeight()"
           ref="iframe"
           frameborder="0"
+          scrolling="no"
           :height="iframe.height"
           allow-scripts
         ></iframe>
@@ -75,8 +76,17 @@ export default {
     }
   },
   methods: {
-    loaded() {
-      this.iframe.height = this.$refs.iframe.contentWindow.document.body.scrollHeight;
+    setIframeHeight() {
+      this.iframe.height = this.$refs.iframe.contentWindow.document.body.clientHeight;
+      console.log(
+        "set" + this.$refs.iframe.contentWindow.document.body.clientHeight
+      );
+      window.onload = () => {
+        this.iframe.height = this.$refs.iframe.contentWindow.document.body.clientHeight;
+        console.log(
+          "onload" + this.$refs.iframe.contentWindow.document.body.clientHeight
+        );
+      };
     },
     move(id) {
       this.$router.push({
@@ -84,6 +94,11 @@ export default {
       });
       this.$refs.scrollContainer.scrollTo(0, 0);
     }
+  },
+  mounted() {
+    setInterval(() => {
+      console.log(this.$refs.iframe.contentWindow.document.body.clientHeight);
+    }, 5000);
   }
 };
 </script>
@@ -135,7 +150,7 @@ export default {
     height: 4.8rem;
     background: color(main, 0.6);
     backdrop-filter: blur(4px);
-    border-radius: 1.6rem 0;
+    border-radius: 0 0 1.6rem 0;
     svg {
       width: 3.2rem;
       height: 3.2rem;

@@ -16,6 +16,7 @@ $Z_MODAL: 9000;
     left: 0;
     width: 4.8rem;
     height: 4.8rem;
+    z-index: #{$Z_NAVMENU + 1};
   }
 
   @include max($SM) {
@@ -26,7 +27,6 @@ $Z_MODAL: 9000;
     left: calc(50vw - 10rem);
     width: 20rem;
     height: 5.6rem;
-    z-index: #{$Z_NAVMENU + 1};
   }
 }
 
@@ -62,8 +62,10 @@ $Z_MODAL: 9000;
     }
   }
 
-  @include max($SM) {
+  @include max($MD) {
     z-index: $Z_NAVMENU;
+  }
+  @include max($SM) {
     top: auto;
     bottom: calc(2.4rem + env(safe-area-inset-bottom));
     left: calc(50vw - 10rem);

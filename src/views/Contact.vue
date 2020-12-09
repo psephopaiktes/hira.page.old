@@ -20,6 +20,8 @@
       そちらのほうが反応が早めです。
     </p>
 
+    <Form />
+
     <form @submit.prevent="send()">
       <label>
         <span>返信用メールアドレス</span>
@@ -83,11 +85,13 @@
 
 <script>
 import BoardContainer from "@/components/BoardContainer.vue";
+import Form from "@/components/Contact/Form.vue";
 
 export default {
   name: "Contact",
   components: {
-    BoardContainer
+    BoardContainer,
+    Form
   },
   data() {
     return {

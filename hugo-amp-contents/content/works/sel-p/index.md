@@ -4,7 +4,7 @@ title: "SEL-P"
 date: 2016-09-05T22:11:42+09:00
 update: false
 draft: false
-tags: ["UI","GRAPHIC"]
+tags: ["UI"]
 description: "自撮り投稿のインプレッションに応じてポイントが貯まるサービス・アプリ。自撮りに顔が写っているか、ポイントが貯まる商品が写っているかを自動識別。NRI HACKATHON 参加作品。"
 exlink: ""
 priority: 0
