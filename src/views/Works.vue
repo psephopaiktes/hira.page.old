@@ -212,10 +212,10 @@ export default {
 .worksIndex {
   margin-top: 3.2rem;
   display: grid;
-  grid-gap: 0.4rem;
+  gap: 0.4rem;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   @include max($MD) {
-    grid-gap: 2.4rem 0.4rem;
+    gap: 2.4rem 0.4rem;
   }
   li {
     position: relative;

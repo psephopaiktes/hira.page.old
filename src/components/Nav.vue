@@ -221,7 +221,7 @@ export default {
 
   h1 {
     margin-top: -10vh;
-    .router-link-exact-active {
+    .router-link-active {
       opacity: 0;
       pointer-events: none;
       @include max($SM) {

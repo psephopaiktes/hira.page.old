@@ -32,7 +32,7 @@ export default {
 .worksIndex {
   margin-top: 2rem;
   display: grid;
-  grid-gap: 1.2rem;
+  gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, minmax(0rem, 1fr));
   @include max($MD) {
     grid-template-columns: repeat(6, minmax(16rem, 1fr));

@@ -52,7 +52,7 @@ export default {
 .otherIndex {
   margin-top: 2rem;
   display: grid;
-  grid-gap: 1.2rem;
+  gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, 32rem);
   > li {
     border: 1px solid color(main, 0.1);

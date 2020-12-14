@@ -4,82 +4,207 @@
 
     <p>
       仕事のご依頼、お問い合わせはこちらから。<br class="u-hideSp" />
-      料金や業務領域については
+      料金や請負内容については
       <a href="#ご依頼について">このページの下部 </a>
-      をご確認ください。
-    </p>
-
-    <p>転職エージェントさまからのメッセージには反応いたしません。</p>
-
-    <p>
+      をご確認ください。<br class="u-hideSp" />
       <a href="https://twitter.com/psephopaiktes" target="blank">
         Twitter
         <SVG symbol="open" class="c-textIcon" />
       </a>
       にリプライ、DMいただいても大丈夫です。<br class="u-hideSp" />
-      そちらのほうが反応が早めです。
     </p>
 
     <Form />
 
-    <form @submit.prevent="send()">
-      <label>
-        <span>返信用メールアドレス</span>
-        <input
-          type="email"
-          name="email"
-          v-model="email"
-          placeholder="hoge@mail.com"
-          @input="validate()"
-          required
-        />
-      </label>
-
-      <label>
-        <span>お問い合わせ内容</span>
-        <textarea
-          class="textarea"
-          contenteditable="true"
-          v-model="message"
-          @input="validate()"
-          placeholder="お問い合わせ内容"
-          rows="6"
-        ></textarea>
-      </label>
-
-      <button type="submit" :disabled="status == ''" :class="status">
-        <img
-          v-if="status == 'sending'"
-          src="@/assets/loader.svg"
-          alt="sending..."
-        />
-        <span v-else-if="status == 'success'">送信しました 🙆‍♀️</span>
-        <span v-else-if="status == 'error'">エラーが発生しました</span>
-        <span v-else>送信</span>
-      </button>
-
-      <p class="errorText" v-if="errorText != ''">※ {{ errorText }}</p>
-    </form>
-
     <hr />
 
     <h2 id="ご依頼について">ご依頼について</h2>
-    <!-- TODO: イラスト -->
     <p>
       ロゴ・UIなどのデザイン制作、Webのコーディング作業、イベントでの登壇等を受け付けております。
+      <br class="u-hideSp" />
+      過去の実績は
+      <router-link to="/works">WORKS</router-link>
+      ページからご確認ください。
     </p>
-    <p><router-link to="/works">仕事の事例</router-link></p>
 
     <h2>参考価格</h2>
     <p>
-      料金は人日単価4万円前後でお見積もりします。例はあくまで目安ですので、作業内容の複雑さや納期により変動します。
+      制作料金は人日単価4万円前後でお見積もりします。<br class="u-hideSp" />
+      例はあくまで目安ですので、作業内容の複雑さや納期により<b>大きく変動</b>します。
     </p>
-    <h3>例1: ロゴと名刺の作成</h3>
-    <!-- TODO: TABLEで請求書 -->
+    <p>
+      期間を決めて委任契約での対応も可能です。
+    </p>
 
-    <h3>例2: ランディングページ</h3>
+    <ol class="example">
+      <li>
+        <div class="description">
+          <h3>ロゴと名刺の作成</h3>
+          <p>
+            ロゴと名刺をデザインする例です。モーションやコンストラクショングリッド等は含みません。
+          </p>
+        </div>
+        <picture>
+          <source
+            srcset="@/assets/bitmap/example-logo-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcset="@/assets/bitmap/example-logo.webp"
+            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          />
+          <img
+            src="@/assets/bitmap/example-logo.webp"
+            loading="lazy"
+            alt="ロゴと名刺のイメージ画像"
+          />
+        </picture>
+        <table>
+          <tr>
+            <td>ヒアリング・ディレクションなど</td>
+            <td>¥20,000</td>
+          </tr>
+          <tr>
+            <td>デザイン作業 (ロゴ・名刺)</td>
+            <td>¥60,000</td>
+          </tr>
+          <tr>
+            <td>合計金額(税抜)</td>
+            <td>¥80,000</td>
+          </tr>
+        </table>
+      </li>
 
-    <h3>例3: CMSを用いたコーポレートページの作成</h3>
+      <li>
+        <div class="description">
+          <h3>ランディングページのデザイン・コーディング</h3>
+          <p>
+            静的なWebサイト1ページ構築の例です。サーバーサイドの設定や内容のディレクション、SEO対応などにより料金は前後いたします。
+          </p>
+        </div>
+        <picture>
+          <source
+            srcset="@/assets/bitmap/example-lp-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcset="@/assets/bitmap/example-lp.webp"
+            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          />
+          <img
+            src="@/assets/bitmap/example-lp.webp"
+            loading="lazy"
+            alt="ランディングページのイメージ画像"
+          />
+        </picture>
+        <table>
+          <tr>
+            <td>ヒアリング・ディレクションなど</td>
+            <td>¥40,000</td>
+          </tr>
+          <tr>
+            <td>デザイン作業 (1ページ)</td>
+            <td>¥60,000</td>
+          </tr>
+          <tr>
+            <td>コーディング作業 (1ページ)</td>
+            <td>¥40,000</td>
+          </tr>
+          <tr>
+            <td>合計金額(税抜)</td>
+            <td>¥140,000</td>
+          </tr>
+        </table>
+      </li>
+
+      <li>
+        <div class="description">
+          <h3>CMSを用いたコーポレート/ブログサイトなどの作成</h3>
+          <p>
+            ブログやニュースなど、記事の更新機能を含めたWebサイトです。Wordpressでの対応もある程度可能ですが、基本的には保守・運用性の高い
+            Headless CMS での構築をおすすめしています。
+          </p>
+        </div>
+        <picture>
+          <source
+            srcset="@/assets/bitmap/example-cms-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcset="@/assets/bitmap/example-cms.webp"
+            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          />
+          <img
+            src="@/assets/bitmap/example-cms.webp"
+            loading="lazy"
+            alt="CMSを用いたコーポレート/ブログサイトなどの作成のイメージ画像"
+          />
+        </picture>
+        <table>
+          <tr>
+            <td>ヒアリング・ディレクションなど</td>
+            <td>¥80,000</td>
+          </tr>
+          <tr>
+            <td>デザイン作業 (5ページ前後)</td>
+            <td>¥100,000</td>
+          </tr>
+          <tr>
+            <td>コーディング作業 (5ページ前後)</td>
+            <td>¥200,000</td>
+          </tr>
+          <tr>
+            <td>合計金額(税抜)</td>
+            <td>¥380,000</td>
+          </tr>
+        </table>
+      </li>
+
+      <li>
+        <div class="description">
+          <h3>アプリケーションのUIデザイン・設計</h3>
+          <p>
+            iOS, Android や TV
+            など、システムを考慮したアプリケーションのUIデザインです。エンジニア様とはSketch,
+            Figma, XD
+            等のツールでやりとりさせていただきます。ワイヤー・設計・ドキュメンテーションなど全般的に対応可能です。
+          </p>
+        </div>
+        <picture>
+          <source
+            srcset="@/assets/bitmap/example-ui-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcset="@/assets/bitmap/example-ui.webp"
+            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          />
+          <img
+            src="@/assets/bitmap/example-ui.webp"
+            loading="lazy"
+            alt="アプリケーションのUIデザイン・設計のイメージ画像"
+          />
+        </picture>
+        <table>
+          <tr>
+            <td>ヒアリング・ディレクションなど</td>
+            <td>¥40,000</td>
+          </tr>
+          <tr>
+            <td>デザイン作業 (5画面前後)</td>
+            <td>¥100,000</td>
+          </tr>
+          <tr>
+            <td>設計・ドキュメント (5画面前後)</td>
+            <td>¥40,000</td>
+          </tr>
+          <tr>
+            <td>合計金額(税抜)</td>
+            <td>¥180,000</td>
+          </tr>
+        </table>
+      </li>
+    </ol>
   </BoardContainer>
 </template>
 
@@ -92,65 +217,6 @@ export default {
   components: {
     BoardContainer,
     Form
-  },
-  data() {
-    return {
-      status: "",
-      email: "",
-      message: "",
-      errorText: ""
-    };
-  },
-  methods: {
-    validate() {
-      const reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
-
-      if (!reg.test(this.email)) {
-        this.errorText = "メールアドレスが正しくありません";
-        this.status = "";
-        return;
-      } else if (0 < this.message.length && this.message.length < 10) {
-        this.errorText = "お問い合わせ内容は10文字以上入力してください";
-        this.status = "";
-        return;
-      } else if (400 < this.message.length) {
-        this.errorText = "お問い合わせ内容は400文字以内にしてください";
-        this.status = "";
-        return;
-      } else {
-        this.errorText = "";
-      }
-
-      if (this.email != "" && this.message != "") {
-        this.status = "ready";
-      }
-    },
-    send() {
-      this.status = "sending";
-      fetch(
-        `https://formcarry.com/s/${process.env.VUE_APP_FORMCARRY_ENDPOINT}`,
-        {
-          recapture: false,
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: JSON.stringify({ email: this.email, message: this.message })
-        }
-      )
-        .then(response => response.json())
-        .then(response => {
-          if (response.code === 200) {
-            this.status = "success";
-          } else {
-            // Formcarry error
-            this.status = "error";
-          }
-        })
-        // network error
-        .catch(() => (this.status = "error"));
-    }
   }
 };
 </script>
@@ -158,119 +224,107 @@ export default {
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
 
-.contact {
-  text-align: center;
-  h1 {
-    margin-top: 4.8rem;
-  }
-}
-
-form {
+.example {
   margin-top: 4.8rem;
-  max-width: 40em;
-  text-align: left;
-  label {
-    display: block;
-    margin-top: 1.6rem;
-    span {
-      margin-left: 0.4rem;
-      letter-spacing: 0;
-      font-weight: 600;
-      &::after {
-        content: "必須";
-        font-size: 11px;
-        color: color(base);
-        margin-left: 0.5em;
-        padding: 0 0.5em;
-        line-height: 1.5;
-        font-weight: 400;
-        border-radius: 3px;
-        background: color(theme);
-      }
-    }
-  }
-  input,
-  textarea {
-    display: block;
-    margin-top: 0.4rem;
-    padding: 1.6rem;
-    width: 100%;
-    border: 0.3rem solid transparent;
-    border-radius: 0.8rem;
-    background: color(main, 0.1);
-    color: color(main);
-    outline: none;
-    caret-color: color(main);
-    font-size: 1.8rem;
-    cursor: text;
-    appearance: none;
-  }
-  textarea {
-    resize: vertical;
-  }
-  input::placeholder,
-  textarea::placeholder {
-    color: color(main, 0.3);
-  }
-  input:focus,
-  textarea:focus {
-    border-color: color(main, 0.2);
-  }
-  button {
-    display: block;
-    width: 32rem;
-    height: 5.6rem;
-    max-width: 100%;
-    margin-top: 3.2rem;
+  max-width: 96rem;
+  list-style: none;
+  counter-reset: number 0;
+  li {
+    display: grid;
+    grid-template-areas:
+      "imageArea descriptionArea"
+      "tableArea tableArea";
+    grid-template-columns: 1fr 50%;
+    gap: 4rem 3.2rem;
+    place-items: center;
+    margin-top: 2.4rem;
+    padding: 4rem;
+    position: relative;
+    border: 0.2rem solid color(main, 0.2);
     border-radius: 0.6rem;
-    background: color(main);
-    color: color(base);
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    font-size: 1.2em;
-    border: 0.3rem solid transparent;
-    pointer-events: none;
-    cursor: not-allowed;
-    transition: $TRANSITION;
-    will-change: transform;
-    img {
-      width: 4.8rem;
-      height: 4.8rem;
-      opacity: 0.8;
-      @media (prefers-color-scheme: dark) {
-        filter: brightness(0.5);
+    &:nth-child(even) {
+      grid-template-areas:
+        "descriptionArea imageArea"
+        "tableArea tableArea";
+      grid-template-columns: 50% 1fr;
+    }
+    @include max($SM) {
+      grid-template-areas:
+        "imageArea imageArea"
+        "descriptionArea descriptionArea"
+        "tableArea tableArea" !important;
+    }
+    &::before {
+      counter-increment: number 1;
+      content: counter(number);
+      position: absolute;
+      display: block;
+      top: -0.6rem;
+      left: -0.6rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      line-height: 3rem;
+      border-radius: 0.7rem;
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      text-indent: 0.1em;
+      background: color(main, 0.5);
+      color: color(base);
+    }
+    .description {
+      grid-area: descriptionArea;
+      h3 {
+        margin-top: 0;
+      }
+      p {
+        margin-top: 1.2rem;
       }
     }
-    &.ready {
-      pointer-events: auto;
-      cursor: pointer;
+    picture,
+    img {
+      grid-area: imageArea;
+      max-height: 32rem;
     }
-    &.success {
-      background: color(theme);
-    }
-    &.error {
-      background: color(error);
-    }
-    &:hover,
-    &:active {
-      transform: scale(1.04);
-    }
-    &:focus {
-      border-color: color(base, 0.5);
-    }
-    &:disabled {
-      opacity: 0.5;
-      color: color(base, 0.5);
+    table {
+      grid-area: tableArea;
+      color: color(main, 0.7);
+      border-radius: 1.2rem;
+      overflow: hidden;
+      font-size: 1.4rem;
+      @include max($SM) {
+        font-size: 1.2rem;
+      }
+      td {
+        padding: 0.8rem 10%;
+        text-align: right;
+        @include max($SM) {
+          display: block;
+          padding: 1.2rem 10% 0.1rem;
+        }
+        &:last-child {
+          width: 40%;
+          @include max($SM) {
+            width: 100%;
+            padding: 0 10% 1.2rem;
+          }
+        }
+      }
+      tr {
+        background: color(theme, 0.2);
+        font-weight: 400;
+        & + tr {
+          border-top: 0.3rem solid color(base);
+        }
+        &:last-child {
+          background: color(theme);
+          color: #fff;
+          font-size: 1.3em;
+          font-weight: 500;
+          text-shadow: 0 0 0.8rem rgba(#000, 0.1);
+        }
+      }
     }
   }
-  .errorText {
-    margin-top: 1.2rem;
-    margin-left: 0.5em;
-    color: color(error);
-  }
-}
-
-hr {
-  margin-top: 6.4rem;
 }
 </style>

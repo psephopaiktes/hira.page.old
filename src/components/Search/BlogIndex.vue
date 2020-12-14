@@ -122,7 +122,7 @@ export default {
 .blogIndex {
   margin-top: 4.8rem;
   display: grid;
-  grid-gap: 3.2rem 1.2rem;
+  gap: 3.2rem 1.2rem;
   grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
   @include max($XL) {
     grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
