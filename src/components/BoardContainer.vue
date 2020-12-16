@@ -64,26 +64,26 @@ export default {
 .board {
   background: color(base);
   margin: 1.6rem;
-  padding: 0 9.6rem #{24 + 9.6}rem;
+  padding: 0 9.6rem #{24 + 10.4}rem;
   min-height: calc(100vh - 3.2rem);
   overflow: hidden;
   border-radius: 1.6rem;
   position: relative;
 
   @include max($LG) {
-    padding: 0 8rem #{24 + 8}rem;
+    padding: 0 8rem #{24 + 8.8}rem;
   }
 
   @include max($MD) {
     margin: 0;
     border-radius: 0;
     min-height: calc(100vh - 1.6rem);
-    padding: 0 6.4rem #{24 + 6.4}rem;
+    padding: 0 6.4rem #{24 + 7.2}rem;
   }
 
   @include max($SM) {
     min-height: 100vh;
-    padding: 0 4rem #{24 + 4}rem;
+    padding: 0 4rem #{24 + 6.4}rem;
   }
 }
 
@@ -101,6 +101,9 @@ export default {
   > ul {
     display: flex;
     justify-content: center;
+    @include max($SM) {
+      margin-top: -3.2rem;
+    }
     a {
       display: block;
       opacity: 0.6;
@@ -119,6 +122,9 @@ export default {
     margin-top: 3.2rem;
     text-align: center;
     font-weight: 500;
+    @include max($SM) {
+      margin-top: 1.6rem;
+    }
   }
 }
 </style>

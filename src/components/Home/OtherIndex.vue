@@ -1,16 +1,21 @@
 <template>
   <ul class="otherIndex">
     <li class="me">
-      <router-link to="/me">ABOUT ME</router-link>
+      <router-link to="/me">
+        <SVG symbol="me" class="u-showSp" />
+        ABOUT ME
+        <SVG symbol="next" class="u-showSp" />
+      </router-link>
     </li>
     <li class="contact">
       <router-link to="/contact">
         <SVG symbol="contact" />
         お仕事のご依頼
+        <SVG symbol="next" class="u-showSp" />
       </router-link>
     </li>
-    <li class="follow">
-      <h3>Follow This Blog.</h3>
+    <li class="follow u-hideSp">
+      <h3>Follow Blog.</h3>
       <ul>
         <li>
           <a href="https://twitter.com/psephopaiktes" target="_blank">
@@ -53,10 +58,13 @@ export default {
   margin-top: 2rem;
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, 32rem);
+  grid-template-columns: repeat(3, 1fr);
+  @include max($SM) {
+    grid-template-columns: 1fr;
+  }
   > li {
     border: 1px solid color(main, 0.1);
-    border-radius: 3.2rem;
+    border-radius: 3.2rem 0.8rem;
     overflow: hidden;
     a {
       display: flex;
@@ -68,7 +76,6 @@ export default {
     }
   }
   > li:not(.follow) {
-    border-radius: 3.2rem 0.8rem;
     transition: $TRANSITION;
     will-change: transform;
     @media (prefers-color-scheme: light) {
@@ -76,6 +83,11 @@ export default {
     }
     a {
       transition: inherit;
+      color: color(base);
+    }
+    svg {
+      width: 4.8rem;
+      height: 4.8rem;
     }
     &:hover,
     &:active {
@@ -84,25 +96,49 @@ export default {
         letter-spacing: 0.08em;
       }
     }
+
+    @include max($SM) {
+      background: none;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      border-radius: 1.2rem;
+      font-size: 1.8rem;
+      background: color(main, 0.05);
+      a {
+        flex-direction: row;
+        color: color(main);
+        padding: 1.6rem 1.2rem 1.6rem 1.8rem;
+      }
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+        &:first-child {
+          margin-right: 1.6rem;
+        }
+        &:last-child {
+          opacity: 0.2;
+          margin-left: auto;
+        }
+      }
+      &:hover,
+      &:active {
+        transform: none;
+      }
+    }
   }
   .me {
     background: url(https://source.unsplash.com/daily?cat&orientation=landscape);
     background-size: cover;
-    a {
-      color: color(base);
-    }
   }
   .contact {
-    background: color(theme);
-    a {
-      color: color(base);
-    }
-    svg {
-      width: 4.8rem;
-      height: 4.8rem;
-    }
+    background: color(main, 0.9);
   }
   .follow {
+    @include max($SM) {
+      margin-top: 3.2rem;
+      border-radius: 1.6rem;
+    }
     h3 {
       border-bottom: 1px solid rgba(var(--color-main), 0.1);
       text-align: center;
@@ -131,8 +167,8 @@ export default {
     }
     svg {
       fill: color(main);
-      width: 4rem;
-      height: 4rem;
+      width: 3.2rem;
+      height: 3.2rem;
     }
   }
 }

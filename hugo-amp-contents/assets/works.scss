@@ -3,6 +3,7 @@
 .hero {
   width: 100%;
   height: auto;
+  border-bottom: .1rem solid color(main,.1);
 }
 
 header {
@@ -199,6 +200,9 @@ article {
       top: 0;
       left: 0;
     }
+  }
+  .figma-iframe {
+    width: 100%;
   }
   .highlight {
     margin-top: 1.2rem;

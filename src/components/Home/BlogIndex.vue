@@ -88,7 +88,7 @@ export default {
         display: block;
         box-shadow: none;
         border-radius: 2.4rem 0 0 2.4rem;
-        border: none;
+        border: 0.2rem solid color(main, 0.1);
         a {
           color: color(main, 0.8);
           padding: 0;
@@ -100,6 +100,10 @@ export default {
         svg {
           width: 5.6rem;
           height: 5.6rem;
+        }
+        &:hover,
+        &:active {
+          background: color(main, 0.1);
         }
       }
     }

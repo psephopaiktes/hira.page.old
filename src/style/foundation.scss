@@ -172,10 +172,6 @@ h2{
   font-size: 3.2rem;
   line-height: 1.4;
   color: color(main);
-
-  @include max($SM) {
-    margin-top: 5.6rem;
-  }
 }
 h3 {
   margin-top: 2.4rem;
