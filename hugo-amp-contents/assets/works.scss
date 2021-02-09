@@ -75,6 +75,7 @@ article {
     font-size: 3.2rem;
     @include max($MD) {
       margin: 8rem 0 0;
+      font-size: 2.4rem;
     }
   }
   h3 {

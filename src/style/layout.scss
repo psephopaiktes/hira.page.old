@@ -119,10 +119,15 @@ $Z_MODAL: 9000;
   top: 0; left: 0;
   overflow: scroll;
   scroll-behavior: smooth;
-  padding-bottom: 12rem;
   box-sizing: border-box;
   z-index: $Z_MODAL;
   overscroll-behavior-y: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @include max($MD) {
+    justify-content: space-between;
+  }
   &__overlay {
     position: fixed;
     width: 100%; height: 100%;
@@ -130,19 +135,21 @@ $Z_MODAL: 9000;
   }
   &__window {
     position: relative;
-    margin: 12rem auto 0;
-    width: 96vw;
-    max-width: 96rem;
-  }
-  &__nav {
-    position: fixed;
-    left: 0;
-    bottom: 2vw;
-    width: 100vw;
+    width: 90%;
+    max-width: 80rem;
+    height: 90vh;
+    iframe {
+      width: 100%;
+      height: 90vh;
+    }
     @include max($MD) {
-      position: relative;
-      bottom: auto;
-      margin-top: 1.6rem;
+      margin: 0 -24rem;
+    }
+    @include max($SM) {
+      height: 80vh;
+      iframe {
+        height: 80vh;
+      }
     }
   }
 }

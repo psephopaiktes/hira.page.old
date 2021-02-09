@@ -76,19 +76,22 @@ export default {
       @include max($MD) {
         display: block;
         box-shadow: none;
-        border-radius: 2.4rem 0 0 2.4rem;
-        border: 0.2rem solid color(main, 0.1);
         a {
+          widows: 100%;
           color: color(main, 0.8);
           padding: 0;
           display: flex;
-          justify-content: center;
           align-items: center;
           flex-direction: column;
         }
         svg {
           width: 5.6rem;
           height: 5.6rem;
+          padding: calc(50% - 3rem);
+          box-sizing: content-box;
+          border-radius: 2.4rem 0 0 2.4rem;
+          border: 0.2rem solid color(main, 0.1);
+          margin-bottom: 1.6rem;
         }
         &:hover,
         &:active {
@@ -103,10 +106,9 @@ export default {
     height: 100%;
   }
   img {
-    border: 1px solid color(theme, 0.2);
     border-radius: 3.2rem 0.8rem;
     overflow: hidden;
-    background: color(theme, 0.1);
+    background: color(theme, 0.15);
     width: 100%;
     height: auto;
     @media (prefers-color-scheme: light) {
