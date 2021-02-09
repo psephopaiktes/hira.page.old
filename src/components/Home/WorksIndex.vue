@@ -1,11 +1,12 @@
 <template>
   <ul class="worksIndex">
-    <li v-for="item in $store.state.worksIndex.slice(0, 5)" :key="item.id">
+    <li v-for="item in resultIndex" :key="item.id">
       <router-link :to="`?work=${item.id}`">
         <img
           :src="'/works/' + item.id + '/thumbnail.png'"
           :alt="`${item.title}のサムネイル画像`"
         />
+        <img src="" alt="" />
         <h3>{{ item.title }}</h3>
         <ul class="tags">
           <li v-for="tag in item.tags.slice(0, 2)" :key="tag">
@@ -22,7 +23,16 @@
 
 <script>
 export default {
-  name: "WorksIndex"
+  name: "WorksIndex",
+  computed: {
+    resultIndex() {
+      return Object.create(this.$store.state.worksIndex)
+        .sort((a, b) => {
+          return a.priority < b.priority ? 1 : -1;
+        })
+        .slice(0, 5);
+    }
+  }
 };
 </script>
 

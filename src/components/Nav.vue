@@ -170,7 +170,7 @@ export default {
       font-size: 1.8rem;
       font-weight: 600;
       letter-spacing: 0.1em;
-      margin-top: 0.2rem;
+      margin-top: -0.3em;
     }
   }
 }
@@ -195,7 +195,6 @@ export default {
   justify-content: center;
   align-items: flex-end;
   padding-right: 4.8rem;
-  /* backdrop-filter: blur(16px); */
 
   @include max($MD) {
     background: color(theme);

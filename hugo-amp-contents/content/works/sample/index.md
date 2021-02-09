@@ -15,7 +15,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## 画像
 
-![UI](ui.jpg)
+![UI](ui.png)
 
 ## YouTube
 

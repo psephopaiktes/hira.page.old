@@ -235,13 +235,15 @@ export default {
       "imageArea descriptionArea"
       "tableArea tableArea";
     grid-template-columns: 1fr 50%;
-    gap: 4rem 3.2rem;
+    gap: 4rem 2.4rem;
     place-items: center;
     margin-top: 2.4rem;
     padding: 4rem;
     position: relative;
     border: 0.2rem solid color(main, 0.2);
     border-radius: 0.6rem;
+    perspective: 500;
+    -webkit-perspective: 400;
     &:nth-child(even) {
       grid-template-areas:
         "descriptionArea imageArea"
@@ -285,6 +287,11 @@ export default {
     img {
       grid-area: imageArea;
       max-height: 32rem;
+      transform: rotateY(16deg);
+    }
+    &:nth-child(even) picture,
+    &:nth-child(even) img {
+      transform: rotateY(-16deg);
     }
     table {
       grid-area: tableArea;

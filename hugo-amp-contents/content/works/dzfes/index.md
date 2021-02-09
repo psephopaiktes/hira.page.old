@@ -1,7 +1,7 @@
 ---
 id: "dzfes"
 title: "デザインフェスタ"
-date: 2020-11-30T12:21:28+09:00
+date: 2015-11-27T12:21:28+09:00
 update: false
 draft: false
 tags: ["OTHER","GRAPHIC"]

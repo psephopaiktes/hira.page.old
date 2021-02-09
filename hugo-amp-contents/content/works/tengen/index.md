@@ -14,5 +14,5 @@ priority: 3
 
 ![提案候補](options.png)
 ![名刺のデザイン](card1.png)
-![名刺の写真](card2.png)
+<!-- ![名刺の写真](card2.png) -->
 ![ブランディング](branding.png)

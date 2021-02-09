@@ -7,7 +7,7 @@ draft: false
 tags: ["UI","CODE"]
 description: "入力された文章からフリー画像サイト「いらすとや」のキャラクターがおしゃべりする動画を生成するサービス。Yahoo!開催の日本最大規模のハッカソン：HackDayでTECH賞を受賞しました。"
 exlink: ""
-priority: 3
+priority: 2
 ---
 
 ![UI](ui.png)

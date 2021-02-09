@@ -41,7 +41,7 @@
 
 <script>
 import BoardContainer from "@/components/BoardContainer.vue";
-import BlogIndex from "@/components/Search/BlogIndex.vue";
+import BlogIndex from "@/components/Blog/BlogIndex.vue";
 
 export default {
   name: "Blog",
