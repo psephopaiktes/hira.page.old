@@ -1,5 +1,11 @@
 <template>
   <div class="board l-board">
+    <nav id="backhome">
+      <router-link to="/">
+        <SVG symbol="backhome" alt="ホームへ戻る" />
+      </router-link>
+    </nav>
+
     <slot></slot>
 
     <footer>
@@ -8,6 +14,7 @@
           <a
             href="https://twitter.com/psephopaiktes"
             target="_blank"
+            rel="noopener"
             title="Twitter"
             class="c-tips"
           >
@@ -18,6 +25,7 @@
           <a
             href="https://note.com/psephopaiktes"
             target="_blank"
+            rel="noopener"
             title="note"
             class="c-tips"
           >
@@ -28,6 +36,7 @@
           <a
             href="https://github.com/psephopaiktes"
             target="_blank"
+            rel="noopener"
             title="GitHub"
             class="c-tips"
           >
@@ -38,6 +47,7 @@
           <a
             href="https://www.instagram.com/psephopaiktes"
             target="_blank"
+            rel="noopener"
             title="Instagram"
             class="c-tips"
           >
@@ -61,6 +71,31 @@ export default {
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
 
+#backhome {
+  .router-link-exact-active {
+    display: none;
+  }
+  a {
+    background: color(theme, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0 0 3.2rem 0;
+  }
+  svg {
+    opacity: 0.6;
+    margin: 0.3rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    fill: color(base);
+  }
+  @include min($SM + 1) {
+    display: none;
+  }
+}
+
 .board {
   background: color(base);
   margin: 1.6rem;
@@ -78,12 +113,12 @@ export default {
     margin: 0;
     border-radius: 0;
     min-height: calc(100vh - 1.6rem);
-    padding: 0 6.4rem #{24 + 7.2}rem;
+    padding: 0 6.4rem #{24 + 8}rem;
   }
 
   @include max($SM) {
     min-height: 100vh;
-    padding: 0 4rem #{24 + 6.4}rem;
+    padding: 0 4rem #{24 + 8}rem;
   }
 }
 

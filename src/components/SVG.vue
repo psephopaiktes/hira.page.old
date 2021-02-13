@@ -1,6 +1,11 @@
 <template>
-  <svg v-if="alt" aria-labelledby="title" role="img" :class="className">
-    <title id="title">{{ altText }}</title>
+  <svg
+    v-if="alt"
+    :aria-labelledby="`title-${altText}`"
+    role="img"
+    :class="className"
+  >
+    <title :id="`title-${altText}`">{{ altText }}</title>
     <use
       xmlns:xlink="http://www.w3.org/1999/xlink"
       :xlink:href="'/img/sprite.svg#' + symbolName"

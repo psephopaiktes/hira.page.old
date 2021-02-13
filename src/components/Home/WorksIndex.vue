@@ -47,7 +47,7 @@ export default {
   @include max($MD) {
     grid-template-columns: repeat(6, minmax(16rem, 1fr));
     overflow: scroll;
-    margin: #{-6 + 2.4}rem -6rem -6rem;
+    margin: #{-6 + 1.6}rem -6rem -6rem;
     padding: 6rem;
     z-index: 1;
     &::-webkit-scrollbar {
@@ -122,7 +122,7 @@ export default {
     font-size: 1.8rem;
     line-height: 1.5;
     letter-spacing: 0.05em;
-    font-weight: 600;
+    font-weight: 700;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;

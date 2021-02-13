@@ -108,6 +108,7 @@ a {
   color: inherit;
   text-decoration: none;
   transition: $TRANSITION;
+  word-break: break-all;
 }
 p a {
   text-decoration: underline;

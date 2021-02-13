@@ -9,6 +9,7 @@
 
 .c-tips {
   position: relative;
+  word-break: keep-all;
 
   &::before,&::after {
     position: absolute;

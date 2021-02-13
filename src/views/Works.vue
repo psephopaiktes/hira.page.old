@@ -167,7 +167,7 @@ export default {
       &::before {
         content: "・";
         color: color(main, 0.4);
-        margin: 0 0.3em;
+        margin: 0 0.4em;
       }
     }
   }
@@ -182,7 +182,7 @@ export default {
       border: none;
       color: color(theme);
       font-size: 1.8rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.05em;
       appearance: none;
       background: none;
@@ -221,6 +221,9 @@ export default {
     position: relative;
     img {
       background: color(main, 0.04);
+      @include max($MD) {
+        border-radius: 2.8rem;
+      }
     }
     .meta {
       position: absolute;
@@ -252,7 +255,7 @@ export default {
         color: inherit;
         line-height: 1.5;
         letter-spacing: 0.05em;
-        font-weight: 600;
+        font-weight: 700;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;

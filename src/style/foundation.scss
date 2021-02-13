@@ -6,50 +6,14 @@
   src: local('Futura Now Var'), url('/font/FuturaNowVar.woff2') format('woff2');
   font-display: fallback;
 }
-// TODO 不要なウェイト消す
 @font-face {
-  font-family:'Tazugane'; font-weight: 100;
-  src: local('Tazugane Gothic StdN UltLt'), url('/font/UltLt.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 200;
-  src: local('Tazugane Gothic StdN Thin'), url('/font/Thin.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 300;
-  src: local('Tazugane Gothic StdN Light'), url('/font/Light.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 400;
-  src: local('Tazugane Gothic StdN Book'), url('/font/Book.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 500;
+  font-family:'Tazugane'; font-weight: 300 400 500;
   src: local('Tazugane Gothic StdN'), url('/font/Regular.woff2') format('woff2');
   font-display: fallback;
 }
 @font-face {
-  font-family:'Tazugane'; font-weight: 600;
-  src: local('Tazugane Gothic StdN Medium'), url('/font/Medium.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 700;
+  font-family:'Tazugane'; font-weight: 600 700 800 900;
   src: local('Tazugane Gothic StdN Bold'), url('/font/Bold.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 800;
-  src: local('Tazugane Gothic StdN Heavy'), url('/font/Heavy.woff2') format('woff2');
-  font-display: fallback;
-}
-@font-face {
-  font-family:'Tazugane'; font-weight: 900;
-  src: local('Tazugane Gothic StdN Black'), url('/font/Black.woff2') format('woff2');
   font-display: fallback;
 }
 
@@ -122,6 +86,7 @@ a{
   text-decoration-skip-ink: none;
   text-decoration: none;
   color: color(theme);
+  word-break: break-all;
 }
 p a {
   text-decoration: underline;
@@ -155,12 +120,12 @@ table {
   width: 100%;
 }
 h1{
-  margin-top: 8rem;
+  margin: 8rem 0 2.4rem;
   font: 5.6rem FuturaNowVar;
+  font-weight: 700;
   font-variation-settings: "wght" 800;
-  font-weight: 800;
   letter-spacing: 0.05em;
-  line-height: 1.4;
+  line-height: 1;
   color: color(theme);
 
   @include max($SM) {

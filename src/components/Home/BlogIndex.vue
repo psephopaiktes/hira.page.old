@@ -49,7 +49,7 @@ export default {
   @include max($MD) {
     grid-template-columns: repeat(5, minmax(32rem, 1fr));
     overflow: scroll;
-    margin: #{-6 + 2.4}rem -6rem -6rem;
+    margin: #{-6 + 1.6}rem -6rem -6rem;
     padding: 6rem;
     z-index: 1;
     &::-webkit-scrollbar {

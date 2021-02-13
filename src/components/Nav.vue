@@ -20,7 +20,7 @@
     @touchend="menuDragEnd($event)"
   >
     <h1 @click="toggleMenuAndAnimation()">
-      <router-link to="/"><SVG symbol="logo" alt="WEBA LOGO"/></router-link>
+      <router-link to="/"><SVG symbol="logo" alt="WEBA"/></router-link>
     </h1>
     <ul>
       <li
@@ -168,7 +168,7 @@ export default {
     span {
       color: rgba(#fff, 0.8);
       font-size: 1.8rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.1em;
       margin-top: -0.3em;
     }
@@ -221,8 +221,7 @@ export default {
   h1 {
     margin-top: -10vh;
     .router-link-active {
-      opacity: 0;
-      pointer-events: none;
+      opacity: 0.2;
       @include max($SM) {
         opacity: 0.5;
       }
@@ -272,7 +271,7 @@ export default {
         font-variation-settings: "wght" 700;
       }
       &.router-link-active {
-        font-weight: bold;
+        font-weight: 700;
         span::before {
           content: "";
           display: block;
@@ -298,7 +297,6 @@ export default {
     color: color(base);
     font-size: 2rem;
     letter-spacing: 0.1em;
-    font-weight: bold;
     border-radius: 0.8rem;
     transition: $TRANSITION;
     will-change: transform;

@@ -105,10 +105,6 @@
 
     <main>
         <header class="articleHeader">
-            <a class="back" href="/blog">
-                <i class="material-icons-round">arrow_back</i>
-                ブログ一覧
-            </a>
 
             <h1 class="logo"><a href="/"><amp-img src="/img/logo.svg" alt="WEBA" width="200" height="50" layout="responsive"></amp-img></a></h1>
 
@@ -125,9 +121,9 @@
 
             <span class="date">
                 <i class="material-icons-round">today</i>
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+                <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}" content="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
                 {{- if .Params.update -}}
-                公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006年1月2日" }}</time>更新
+                公開 / <time itemprop="datePublished" datetime="{{ .Lastmod.Format "2006-01-02" }}" content="{{ .Date.Format "2006-01-02" }}">{{ .Lastmod.Format "2006年1月2日" }}</time>更新
                 {{ end }}
             </span>
 
@@ -158,10 +154,10 @@
             <section class="follow">
                 <h3>Follow This Blog.</h3>
                 <ul>
-                    <li><a href="https://twitter.com/psephopaiktes" target="_blank">Twitter</a>
-                    <li><a href="http://fb.me/webablog" target="_blank">Facebook</a>
-                    <li><a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fhira.page%2Fblog%2Findex.xml" target="_blank">Feedly</a>
-                    <li><a href="http://hira.page/blog/index.xml" target="_blank">RSS</a>
+                    <li><a href="https://twitter.com/psephopaiktes" target="_blank" rel="noopener">Twitter</a>
+                    <li><a href="http://fb.me/webablog" target="_blank" rel="noopener">Facebook</a>
+                    <li><a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fhira.page%2Fblog%2Findex.xml" target="_blank" rel="noopener">Feedly</a>
+                    <li><a href="http://hira.page/blog/index.xml" target="_blank" rel="noopener">RSS</a>
                 </ul>
             </section>
 
@@ -169,13 +165,28 @@
             <div class="ad"></div>
 
             <nav>
+                <ol class="breadcrumb" itemscope="" itemType="http://schema.org/BreadcrumbList">
+                    <li itemProp="itemListElement" itemscope="" itemType="http://schema.org/ListItem">
+                        <a href="/" itemProp="item">HOME</a>
+                        <meta itemProp="position" content="1"/>
+                    </li>
+                    <li itemProp="itemListElement" itemscope="" itemType="http://schema.org/ListItem">
+                        <a href="/blog" itemProp="item">ブログ一覧</a>
+                        <meta itemProp="position" content="2"/>
+                    </li>
+                    <li itemProp="itemListElement" itemscope="" itemType="http://schema.org/ListItem">
+                        {{ .Title }}
+                        <meta itemProp="position" content="3"/>
+                    </li>
+                </ol>
+
                 <h1><a href="/"><amp-img src="/img/logo.svg" alt="WEBA" width="120" height="30" layout="responsive"></amp-img></a></h1>
                 <ul>
-                    <li><a href="/">ホーム</a></li>
-                    <li><a href="/blog">ブログ一覧</a></li>
-                    <li><a href="/works">実績一覧</a></li>
-                    <li><a href="/me">私について</a></li>
-                    <li><a href="/contact">お問い合わせ</a></li>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/blog">BLOG</a></li>
+                    <li><a href="/works">WORKS</a></li>
+                    <li><a href="/me">ME</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
                 </ul>
             </nav>
 

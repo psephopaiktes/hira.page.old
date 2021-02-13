@@ -7,7 +7,11 @@
       料金や請負内容については
       <a href="#ご依頼について">このページの下部 </a>
       をご確認ください。<br class="u-hideSp" />
-      <a href="https://twitter.com/psephopaiktes" target="blank">
+      <a
+        href="https://twitter.com/psephopaiktes"
+        target="_blank"
+        rel="noopener"
+      >
         Twitter
         <SVG symbol="open" class="c-textIcon" />
       </a>
@@ -251,6 +255,7 @@ export default {
       grid-template-columns: 50% 1fr;
     }
     @include max($SM) {
+      padding: 4rem 2rem 2rem;
       grid-template-areas:
         "imageArea imageArea"
         "descriptionArea descriptionArea"
@@ -319,7 +324,6 @@ export default {
       }
       tr {
         background: color(theme, 0.2);
-        font-weight: 400;
         & + tr {
           border-top: 0.3rem solid color(base);
         }

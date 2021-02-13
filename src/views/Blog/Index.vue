@@ -5,12 +5,16 @@
 
       <ul class="follow">
         <li>
-          <a href="https://twitter.com/psephopaiktes" target="_blank">
+          <a
+            href="https://twitter.com/psephopaiktes"
+            target="_blank"
+            rel="noopener"
+          >
             <SVG symbol="twitter" alt="twitter" />
           </a>
         </li>
         <li>
-          <a href="http://fb.me/webablog" target="_blank">
+          <a href="http://fb.me/webablog" target="_blank" rel="noopener">
             <SVG symbol="facebook" alt="facebook" />
           </a>
         </li>
@@ -18,12 +22,17 @@
           <a
             href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fhira.page%2Fblog%2Findex.xml"
             target="_blank"
+            rel="noopener"
           >
             <SVG symbol="feedly" alt="feedly" />
           </a>
         </li>
         <li>
-          <a href="http://hira.page/blog/index.xml" target="_blank">
+          <a
+            href="http://hira.page/blog/index.xml"
+            target="_blank"
+            rel="noopener"
+          >
             <SVG symbol="rss" alt="rss" />
           </a>
         </li>
@@ -91,7 +100,7 @@ export default {
   .search {
     position: absolute;
     right: 0;
-    top: 1.8rem;
+    top: 0.6rem;
     width: 5.6rem;
     height: 5.6rem;
     background: color(theme);

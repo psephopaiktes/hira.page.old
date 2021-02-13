@@ -117,7 +117,7 @@ form {
     span {
       margin-left: 0.4rem;
       letter-spacing: 0;
-      font-weight: 600;
+      font-weight: 500;
       &::after {
         content: "必須";
         font-size: 11px;
@@ -125,7 +125,7 @@ form {
         margin-left: 0.5em;
         padding: 0 0.5em;
         line-height: 1.5;
-        font-weight: 400;
+        font-weight: 500;
         border-radius: 3px;
         background: color(theme);
       }
@@ -168,7 +168,7 @@ form {
     background: color(main);
     color: color(base);
     letter-spacing: 0.05em;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.2em;
     border: 0.3rem solid transparent;
     pointer-events: none;

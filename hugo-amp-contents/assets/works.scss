@@ -1,5 +1,15 @@
 @import 'common';
 
+#loader {
+  z-index: 999;
+  position: fixed;
+  width: 8rem;
+  height: 2rem;
+  top: 10vh;
+  left: calc(50% - 4rem);
+  fill: color(main,.4);
+}
+
 .hero {
   width: 100%;
   height: auto;
@@ -62,7 +72,7 @@ header {
 
 article {
   padding: 0 4.8rem 8rem;
-  @include max($MD) { padding: 0 3.2rem 5.6rem}
+  @include max($MD) { padding: 0 3.2rem 16rem}
   margin: 8rem 0 0;
   > * {
     margin: 2rem 0 0;

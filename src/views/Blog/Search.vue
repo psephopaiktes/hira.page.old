@@ -90,7 +90,7 @@ export default {
   .close {
     position: absolute;
     right: 0;
-    top: 1.8rem;
+    top: 0.6rem;
     width: 5.6rem;
     height: 5.6rem;
     background: color(theme);
@@ -141,19 +141,18 @@ export default {
   li {
     margin: 0.8rem 0.4rem 0;
     button {
-      background: color(theme);
-      color: color(base);
+      border: 0.3rem solid color(theme, 0.2);
+      color: color(theme, 0.9);
       font-size: 1.4rem;
       font-weight: 500;
       height: 3.2rem;
-      line-height: 0;
       letter-spacing: 0.08em;
-      padding: 0 1.6rem;
+      padding: 0 1.6rem 0.4rem;
       border-radius: 1.6rem;
     }
     &.current button {
-      background: color(main, 0.1);
-      color: color(main, 0.8);
+      background: color(theme);
+      color: color(base);
     }
   }
 }

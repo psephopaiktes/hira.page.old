@@ -140,6 +140,17 @@ export default {
       height: 3.2rem;
       margin: 0.8rem;
       color: color(base);
+      @include max($SM) {
+        margin: 1.6rem;
+      }
+    }
+    @include max($SM) {
+      width: 6.4rem;
+      height: 6.4rem;
+      position: absolute;
+      left: calc(50% - 3.2rem);
+      top: calc(50% + 30vh - 3.2rem);
+      border-radius: 3.2rem;
     }
   }
 }
