@@ -18,31 +18,36 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-
 export default {
   name: "MeHero",
+  data() {
+    return {
+      typography: null
+    };
+  },
+  mounted() {
+    this.typography = document.querySelector("#hero .typography");
+  },
   methods: {
     stalker(evt) {
-      const elm = document.querySelector("#hero .typography");
+      if (!this.typography) return;
 
-      const typographyX = window.pageXOffset + elm.getBoundingClientRect().left;
-      const typographyY = window.pageYOffset + elm.getBoundingClientRect().top;
-      const typographyHeight = elm.clientHeight;
-      const typographyWidth = elm.clientWidth;
+      const typographyX =
+        window.pageXOffset + this.typography.getBoundingClientRect().left;
+      const typographyY =
+        window.pageYOffset + this.typography.getBoundingClientRect().top;
+      const typographyHeight = this.typography.clientHeight;
+      const typographyWidth = this.typography.clientWidth;
 
       const mouseX = evt.clientX;
       const mouseY = evt.clientY;
 
-      gsap.to(".typography", {
-        css: {
-          backgroundPosition: `
+      setTimeout(() => {
+        this.typography.style.backgroundPosition = `
             ${mouseX - typographyX - typographyWidth / 2}px
             ${mouseY - typographyY - typographyHeight / 2}px
-          `
-        },
-        stagger: 1
-      });
+          `;
+      }, 100);
     }
   }
 };

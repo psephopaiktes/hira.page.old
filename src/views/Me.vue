@@ -1,6 +1,34 @@
 <template>
   <BoardContainer class="meBoard" @mousemove="stalker($event)">
-    <div id="cursor"></div>
+    <div id="cursor">
+      <div class="hirata">
+        <SVG symbol="contact" class="c-textIcon" />
+        <p>お問い合わせ</p>
+      </div>
+
+      <div class="design">
+        <SVG symbol="next" class="c-textIcon" />
+        <p>デザインの実績</p>
+      </div>
+
+      <div class="develop">
+        <SVG symbol="next" class="c-textIcon" />
+        <p>フロントエンドの実績</p>
+      </div>
+
+      <div class="skillmap">
+        <SVG symbol="next" class="c-textIcon" />
+        <p>すべての実績</p>
+      </div>
+
+      <div class="open">
+        <SVG symbol="open" class="c-textIcon" />
+      </div>
+
+      <div class="contact">
+        <SVG symbol="contact" class="c-textIcon" />
+      </div>
+    </div>
 
     <Hero />
 
@@ -13,7 +41,14 @@
       </div>
 
       <div class="aboutMe__right">
-        <img src="@/assets/bitmap/me/hirata.png" alt="平田の写真" />
+        <router-link
+          @mouseenter="swell($event)"
+          @mouseleave="shrink()"
+          data-id="hirata"
+          to="/contact"
+        >
+          <img src="@/assets/bitmap/me/hirata.png" alt="平田の写真" />
+        </router-link>
       </div>
     </section>
 
@@ -26,10 +61,17 @@
       </div>
 
       <div class="aboutMe__left">
-        <img
-          src="@/assets/bitmap/me/design.webp"
-          alt="デザインスキルのイメージ画像"
-        />
+        <router-link
+          @mouseenter="swell($event)"
+          @mouseleave="shrink()"
+          data-id="design"
+          to="/works?tag=UI"
+        >
+          <img
+            src="@/assets/bitmap/me/design.webp"
+            alt="デザインスキルのイメージ画像"
+          />
+        </router-link>
       </div>
     </section>
 
@@ -41,6 +83,10 @@
         </p>
         <p>
           <a
+            @mouseenter="swell($event)"
+            @mouseleave="shrink()"
+            data-id="open"
+            data-size="small"
             href="https://github.com/psephopaiktes/hira.page"
             target="_brank"
             rel="noopener"
@@ -51,10 +97,17 @@
       </div>
 
       <div class="aboutMe__right">
-        <img
-          src="@/assets/bitmap/me/develop.webp"
-          alt="開発スキルのイメージ画像"
-        />
+        <router-link
+          @mouseenter="swell($event)"
+          @mouseleave="shrink()"
+          data-id="develop"
+          to="/works?tag=CODE"
+        >
+          <img
+            src="@/assets/bitmap/me/develop.webp"
+            alt="開発スキルのイメージ画像"
+          />
+        </router-link>
       </div>
     </section>
 
@@ -65,72 +118,59 @@
           アプリ・サービス開発に携わるデザイナーとして、スキル領域のイメージです。実装・ビジュアライズなど、アウトプットに落とし込むことが得意です。
         </p>
         <p>
-          参考:
           <a
+            @mouseenter="swell($event)"
+            @mouseleave="shrink()"
+            data-id="open"
+            data-size="small"
             href="https://yasuhisa.com/could/article/product-designer-skillmap/"
             target="_brank"
             rel="noopener"
           >
-            プロダクトデザイナーのスキルマップ
+            参考
             <SVG symbol="open" class="c-textIcon" />
           </a>
         </p>
       </div>
 
       <div class="aboutMe__left">
-        <img src="@/assets/bitmap/me/skillmap.png" alt="スキルマップ" />
+        <router-link
+          @mouseenter="swell($event)"
+          @mouseleave="shrink()"
+          data-id="skillmap"
+          to="/works"
+        >
+          <img src="@/assets/bitmap/me/skillmap.png" alt="スキルマップ" />
+        </router-link>
       </div>
     </section>
 
-    <router-link to="/contact" class="cta">
-      <SVG symbol="contact" class="c-textIcon" />
+    <router-link
+      @mouseenter="swell($event)"
+      @mouseleave="shrink()"
+      data-id="contact"
+      data-size="small"
+      to="/contact"
+      class="cta"
+    >
       ご依頼・お問い合わせはこちら
     </router-link>
 
-    <hr />
-
-    <section class="history">
-      <h2>略歴</h2>
-      <table id="career">
-        <tr>
-          <th>2009</th>
-          <td><h4>高知私立 土佐高等学校 入学</h4></td>
-        </tr>
-        <tr>
-          <th>2011</th>
-          <td>
-            <h4>筑波大学 情報学群 情報メディア創生学類 入学</h4>
-            情報学の基本、デザイン、認知心理学等について学ぶ
-          </td>
-        </tr>
-        <tr>
-          <th>2015</th>
-          <td>
-            <h4>同大学院 図書館情報メディア研究科 入学</h4>
-            クラウドソーシングを用いたコンテンツ生成について研究
-          </td>
-        </tr>
-        <tr>
-          <th>2017</th>
-          <td>
-            <h4>株式会社 U-NEXT 入社</h4>
-            プロダクトデザイナーとして勤務
-          </td>
-        </tr>
-      </table>
-    </section>
+    <Resume />
   </BoardContainer>
 </template>
 
 <script>
 import BoardContainer from "@/components/BoardContainer.vue";
 import Hero from "@/components/Me/Hero.vue";
+import Resume from "@/components/Me/Resume.vue";
 
 export default {
   name: "Me",
   components: {
     BoardContainer,
-    Hero
+    Hero,
+    Resume
   },
   data() {
     return {
@@ -148,6 +188,16 @@ export default {
       const mouseY = evt.clientY;
 
       this.cursor.style.transform = `translate(${mouseX}px,${mouseY}px)`;
+    },
+    swell(evt) {
+      this.cursor.classList.add(
+        evt.target.dataset.id,
+        "swell",
+        evt.target.dataset.size
+      );
+    },
+    shrink() {
+      this.cursor.classList.remove(...this.cursor.classList);
     }
   }
 };
@@ -160,7 +210,9 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: color(theme);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 2rem;
   height: 2rem;
   margin: -1rem 0 0 -1rem;
@@ -170,6 +222,53 @@ export default {
   pointer-events: none;
   z-index: 10000;
   mix-blend-mode: exclusion;
+  transition: $TRANSITION;
+  background: color(theme);
+  color: #000;
+  @include max($SM) {
+    display: none;
+  }
+
+  > * {
+    display: none;
+  }
+  &.swell {
+    width: 16rem;
+    height: 16rem;
+    margin: -8rem 0 0 -8rem;
+
+    &.hirata .hirata,
+    &.design .design,
+    &.develop .develop,
+    &.skillmap .skillmap,
+    &.open .open,
+    &.contact .contact {
+      display: block;
+    }
+
+    div {
+      text-align: center;
+      svg {
+        width: 7.2rem;
+        height: 7.2rem;
+        fill: #000;
+      }
+      p {
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+    }
+
+    &.small {
+      width: 4rem;
+      height: 4rem;
+      margin: -2rem 0 0 -2rem;
+      svg {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
 }
 
 .board {
@@ -247,7 +346,7 @@ export default {
   h2 {
     font-family: FuturaNowVar;
     font-variation-settings: "wght" 700;
-    animation: breathe 6s ease-in-out infinite both;
+    animation: breathe 4s ease-in-out infinite both;
     @keyframes breathe {
       0% {
         font-variation-settings: "wght" 700;
@@ -288,43 +387,6 @@ export default {
   }
   &:hover {
     transform: scale(1.05);
-  }
-  svg {
-    opacity: 0.6;
-    margin-right: 0.5em;
-  }
-}
-
-.history {
-  text-align: center;
-  table {
-    margin-top: 2.4rem;
-    border-collapse: separate;
-    border-spacing: 0 2.4rem;
-    line-height: 1.4;
-    th {
-      width: 40%;
-      text-align: right;
-      padding: 0.8rem 1.6rem;
-      border-right: 0.2rem solid;
-      font-weight: 700;
-      font-family: monospace;
-      @include max($LG) {
-        width: 30%;
-      }
-      @include max($SM) {
-        width: 20%;
-      }
-    }
-    td {
-      font-weight: auto;
-      padding: 0.8rem 1.6rem;
-      text-align: left;
-      h4 {
-        font-weight: 700;
-        margin-bottom: 0.4em;
-      }
-    }
   }
 }
 </style>
