@@ -7,13 +7,13 @@
   font-display: fallback;
 }
 @font-face {
-  font-family:'Tazugane'; font-weight: 300 400 500;
+  font-family:'Tazugane'; font-weight: 400 500;
   src: local('Tazugane Gothic StdN'), url('/font/Regular.woff2') format('woff2');
   font-display: fallback;
 }
 @font-face {
-  font-family:'Tazugane'; font-weight: 600 700 800 900;
-  src: local('Tazugane Gothic StdN Bold'), url('/font/Bold.woff2') format('woff2');
+  font-family:'Tazugane'; font-weight: 600 700;
+  src: local('Tazugane Gothic StdN'), url('/font/Bold.woff2') format('woff2');
   font-display: fallback;
 }
 

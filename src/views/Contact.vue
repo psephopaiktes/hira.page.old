@@ -18,6 +18,13 @@
       にリプライ、DMいただいても大丈夫です。<br class="u-hideSp" />
     </p>
 
+    <p>
+      <small
+        >※
+        現在転職活動は行っておりません。エージェント様のメールにはご返事できませんのでご了承ください。</small
+      >
+    </p>
+
     <Form />
 
     <hr />
@@ -50,15 +57,15 @@
         </div>
         <picture>
           <source
-            srcset="@/assets/bitmap/example-logo-dark.webp"
+            srcset="@/assets/bitmap/contact/example-logo-dark.webp"
             media="(prefers-color-scheme: dark)"
           />
           <source
-            srcset="@/assets/bitmap/example-logo.webp"
+            srcset="@/assets/bitmap/contact/example-logo.webp"
             media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
           />
           <img
-            src="@/assets/bitmap/example-logo.webp"
+            src="@/assets/bitmap/contact/example-logo.webp"
             loading="lazy"
             alt="ロゴと名刺のイメージ画像"
           />
@@ -70,11 +77,11 @@
           </tr>
           <tr>
             <td>デザイン作業 (ロゴ・名刺)</td>
-            <td>¥60,000</td>
+            <td>¥50,000</td>
           </tr>
           <tr>
             <td>合計金額(税抜)</td>
-            <td>¥80,000</td>
+            <td>¥70,000</td>
           </tr>
         </table>
       </li>
@@ -83,20 +90,20 @@
         <div class="description">
           <h3>ランディングページのデザイン・コーディング</h3>
           <p>
-            静的なWebサイト1ページ構築の例です。サーバーサイドの設定や内容のディレクション、SEO対応などにより料金は前後いたします。
+            静的なWebサイト構築の例です。サーバーサイドの設定や内容含めた企画ディレクションなどにより料金は前後いたします。
           </p>
         </div>
         <picture>
           <source
-            srcset="@/assets/bitmap/example-lp-dark.webp"
+            srcset="@/assets/bitmap/contact/example-lp-dark.webp"
             media="(prefers-color-scheme: dark)"
           />
           <source
-            srcset="@/assets/bitmap/example-lp.webp"
+            srcset="@/assets/bitmap/contact/example-lp.webp"
             media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
           />
           <img
-            src="@/assets/bitmap/example-lp.webp"
+            src="@/assets/bitmap/contact/example-lp.webp"
             loading="lazy"
             alt="ランディングページのイメージ画像"
           />
@@ -125,21 +132,21 @@
         <div class="description">
           <h3>CMSを用いたコーポレート/ブログサイトなどの作成</h3>
           <p>
-            ブログやニュースなど、記事の更新機能を含めたWebサイトです。Wordpressでの対応もある程度可能ですが、基本的には保守・運用性の高い
+            ブログやニュースなど、記事の更新機能を含めたWebサイトです。Wordpressでの対応も可能ですが、基本的には保守・運用性の高い
             Headless CMS での構築をおすすめしています。
           </p>
         </div>
         <picture>
           <source
-            srcset="@/assets/bitmap/example-cms-dark.webp"
+            srcset="@/assets/bitmap/contact/example-cms-dark.webp"
             media="(prefers-color-scheme: dark)"
           />
           <source
-            srcset="@/assets/bitmap/example-cms.webp"
+            srcset="@/assets/bitmap/contact/example-cms.webp"
             media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
           />
           <img
-            src="@/assets/bitmap/example-cms.webp"
+            src="@/assets/bitmap/contact/example-cms.webp"
             loading="lazy"
             alt="CMSを用いたコーポレート/ブログサイトなどの作成のイメージ画像"
           />
@@ -169,22 +176,22 @@
           <h3>アプリケーションのUIデザイン・設計</h3>
           <p>
             iOS, Android や TV
-            など、システムを考慮したアプリケーションのUIデザインです。エンジニア様とはSketch,
+            など、システムを考慮したアプリケーションのUIデザインです。Sketch,
             Figma, XD
-            等のツールでやりとりさせていただきます。ワイヤー・設計・ドキュメンテーションなど全般的に対応可能です。
+            等で納品いたします。ワイヤー・仕様設計・ドキュメンテーションなど全般的に対応可能です。
           </p>
         </div>
         <picture>
           <source
-            srcset="@/assets/bitmap/example-ui-dark.webp"
+            srcset="@/assets/bitmap/contact/example-ui-dark.webp"
             media="(prefers-color-scheme: dark)"
           />
           <source
-            srcset="@/assets/bitmap/example-ui.webp"
+            srcset="@/assets/bitmap/contact/example-ui.webp"
             media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
           />
           <img
-            src="@/assets/bitmap/example-ui.webp"
+            src="@/assets/bitmap/contact/example-ui.webp"
             loading="lazy"
             alt="アプリケーションのUIデザイン・設計のイメージ画像"
           />
