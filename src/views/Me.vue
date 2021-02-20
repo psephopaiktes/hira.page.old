@@ -125,7 +125,6 @@
 <script>
 import BoardContainer from "@/components/BoardContainer.vue";
 import Hero from "@/components/Me/Hero.vue";
-import { gsap } from "gsap";
 
 export default {
   name: "Me",
@@ -133,15 +132,22 @@ export default {
     BoardContainer,
     Hero
   },
+  data() {
+    return {
+      cursor: null
+    };
+  },
+  mounted() {
+    this.cursor = document.getElementById("cursor");
+  },
   methods: {
     stalker(evt) {
+      if (!this.cursor) return;
+
       const mouseX = evt.clientX;
       const mouseY = evt.clientY;
 
-      gsap.set("#cursor", {
-        x: mouseX,
-        y: mouseY
-      });
+      this.cursor.style.transform = `translate(${mouseX}px,${mouseY}px)`;
     }
   }
 };
@@ -163,6 +169,7 @@ export default {
   user-select: none;
   pointer-events: none;
   z-index: 10000;
+  mix-blend-mode: exclusion;
 }
 
 .board {

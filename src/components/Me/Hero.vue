@@ -14,12 +14,6 @@
         <p>and Web Front-end Developper.</p>
       </div>
     </div>
-
-    <ul class="shapes">
-      <li class="shape shape-1"></li>
-      <li class="shape shape-2"></li>
-      <li class="shape shape-3"></li>
-    </ul>
   </section>
 </template>
 
@@ -30,14 +24,24 @@ export default {
   name: "MeHero",
   methods: {
     stalker(evt) {
-      console.log(evt);
+      const elm = document.querySelector("#hero .typography");
+
+      const typographyX = window.pageXOffset + elm.getBoundingClientRect().left;
+      const typographyY = window.pageYOffset + elm.getBoundingClientRect().top;
+      const typographyHeight = elm.clientHeight;
+      const typographyWidth = elm.clientWidth;
+
       const mouseX = evt.clientX;
       const mouseY = evt.clientY;
 
-      gsap.to(".shape", {
-        x: mouseX,
-        y: mouseY,
-        stagger: -0.1
+      gsap.to(".typography", {
+        css: {
+          backgroundPosition: `
+            ${mouseX - typographyX - typographyWidth / 2}px
+            ${mouseY - typographyY - typographyHeight / 2}px
+          `
+        },
+        stagger: 1
       });
     }
   }
@@ -46,31 +50,6 @@ export default {
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
-
-.shape {
-  mix-blend-mode: exclusion;
-  will-change: transform;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  margin: -1.6rem;
-
-  $shapes: (
-    #005ffe: 24rem,
-    #ffe5e3: 16rem,
-    #ffffff: 8rem
-  );
-
-  @each $color, $size in $shapes {
-    &.shape-#{index($shapes, ($color $size))} {
-      background: $color;
-      width: $size;
-      height: $size;
-      margin: (-$size/2 - 1.6rem) 0 0 (-$size/2 - 1.6rem);
-    }
-  }
-}
 
 #hero {
   position: absolute;
@@ -102,13 +81,23 @@ video {
   height: 100%;
   font-size: 3rem;
 
+  background-color: #fff;
+  background-clip: text;
+  background-repeat: no-repeat;
+  color: transparent;
+  filter: drop-shadow(0 0 0.3em rgba(#000, 0.4));
+  @include min($SM + 1) {
+    background-image: radial-gradient(circle, #fff 6rem, transparent 6rem),
+      radial-gradient(circle, color(theme) 12rem, transparent 12rem),
+      radial-gradient(circle, #fff 18rem, transparent 18rem),
+      radial-gradient(circle, color(theme) 24rem, transparent 24rem);
+  }
+
   p {
     margin: 0;
-    color: #fff;
     line-height: 1;
     font-weight: 700;
     letter-spacing: 0.08em;
-    text-shadow: 0 0 0.3em rgba(#000, 0.4);
     &:nth-child(1) {
       font-size: 2.37em;
       margin-top: -0.3em;
