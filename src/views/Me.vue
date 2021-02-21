@@ -47,8 +47,12 @@
           data-id="hirata"
           to="/contact"
         >
-          <img src="@/assets/bitmap/me/hirata.png" alt="平田の写真" />
-          <!-- TODO: W/H ↑ -->
+          <img
+            src="@/assets/bitmap/me/hirata.png"
+            alt="平田の写真"
+            loading="lazy"
+          />
+          <!-- TODO: W/H ↑, Convert to WebP -->
         </router-link>
       </div>
     </section>
@@ -73,6 +77,7 @@
             alt="デザインスキルのイメージ画像"
             width="960"
             height="600"
+            loading="lazy"
           />
         </router-link>
       </div>
@@ -111,6 +116,7 @@
             alt="開発スキルのイメージ画像"
             width="960"
             height="600"
+            loading="lazy"
           />
         </router-link>
       </div>
@@ -150,6 +156,7 @@
             alt="スキルマップ"
             width="960"
             height="640"
+            loading="lazy"
           />
         </router-link>
       </div>

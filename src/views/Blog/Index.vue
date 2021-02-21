@@ -1,7 +1,9 @@
 <template>
   <BoardContainer>
     <nav class="menu">
-      <h1>BLOG</h1>
+      <h1>
+        <router-link to="/blog">BLOG</router-link>
+      </h1>
 
       <ul class="follow">
         <li>

@@ -11,10 +11,10 @@ createApp(App)
   .mount("#app");
 
 window.console.log(
-  "%chttps://github.com/psephopaiktes/hira.page",
+  "Hello! Check this site's code\n%chttps://github.com/psephopaiktes/hira.page",
   `
     padding: 20px 40px;
-    margin: 40px 0px;
+    margin: 8px 0px 24px;
     border: 2px solid #fc6;
     border-radius: 8px;
     letter-spacing: .1em;

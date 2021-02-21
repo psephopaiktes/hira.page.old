@@ -1,5 +1,13 @@
 @use "common.scss" as *;
 
+.js-lazy {
+  opacity: 0;
+  transition: .4s ease-out;
+  &.load {
+    opacity: 1;
+  }
+}
+
 .c-textIcon {
   margin: 0 -.2em;
   width: 1.4em;

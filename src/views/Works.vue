@@ -1,6 +1,8 @@
 <template>
   <BoardContainer>
-    <h1>WORKS</h1>
+    <h1>
+      <router-link to="/works">WORKS</router-link>
+    </h1>
 
     <nav class="filter">
       <ul class="tags">
@@ -25,19 +27,34 @@
       </div>
     </nav>
 
-    <ul class="worksIndex">
-      <li v-for="item in resultIndex" :key="item.id">
+    <transition-group
+      name="staggered-fade"
+      tag="ul"
+      class="worksIndex"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
+      <li
+        v-for="(item, index) in resultIndex.slice(0, currentNum)"
+        :key="item.id"
+        :data-index="index"
+      >
         <router-link
           :to="{
             query: Object.assign({}, $route.query, { work: item.id })
           }"
         >
-          <img
-            :src="'/works/' + item.id + '/thumbnail.png'"
-            :alt="`${item.title}のサムネイル画像`"
-            width="600"
-            height="600"
-          />
+          <div class="thumb">
+            <img
+              src="/works/placeholder.png"
+              :data-src="'/works/' + item.id + '/thumbnail.png'"
+              :alt="`${item.title}のサムネイル画像`"
+              width="600"
+              height="600"
+              class="js-lazy"
+            />
+          </div>
           <div class="meta">
             <h3>{{ item.title }}</h3>
             <ul class="tags">
@@ -48,7 +65,12 @@
           </div>
         </router-link>
       </li>
-    </ul>
+    </transition-group>
+
+    <button class="more" @click="more()" v-if="currentNum < resultIndex.length">
+      <SVG symbol="more" />
+      MORE
+    </button>
   </BoardContainer>
 
   <WorksModal :idIndex="resultIdIndex" />
@@ -57,6 +79,7 @@
 <script>
 import BoardContainer from "@/components/BoardContainer.vue";
 import WorksModal from "@/components/WorksModal.vue";
+import { lazyImages } from "@/lib/lazyImages";
 
 export default {
   name: "Works",
@@ -68,10 +91,18 @@ export default {
     return {
       tags: [],
       tagWord: "",
-      sortOrder: "reccommend"
+      sortOrder: "reccommend",
+      addNum: 12,
+      currentNum: 0
     };
   },
   mounted() {
+    this.$nextTick(() => {
+      lazyImages();
+    });
+
+    this.currentNum += this.addNum;
+
     this.tagWord = this.$route.query.tag || "";
 
     this.$store.state.worksIndex.forEach(item => {
@@ -79,14 +110,27 @@ export default {
     });
     this.tags = [...new Set(this.tags)];
   },
-  computed: {
-    resultIdIndex() {
-      let idIndex = [];
-      this.resultIndex.forEach(i => {
-        idIndex.push(i.id);
-      });
-      return idIndex;
+  methods: {
+    more() {
+      this.currentNum += this.addNum;
     },
+    beforeEnter(el) {
+      el.classList.remove("show");
+    },
+    enter(el) {
+      var delay = el.dataset.index * 80;
+      setTimeout(() => {
+        el.classList.add("show");
+      }, delay);
+    },
+    leave(el) {
+      var delay = el.dataset.index * 80;
+      setTimeout(() => {
+        el.classList.remove("show");
+      }, delay);
+    }
+  },
+  computed: {
     resultIndex() {
       let result = [];
       if (this.tagWord) {
@@ -221,10 +265,18 @@ export default {
   }
   li {
     position: relative;
-    img {
+    transition: $TRANSITION;
+    opacity: 0;
+    &.show {
+      opacity: 1;
+    }
+    .thumb {
       background: color(main, 0.04);
       @include max($MD) {
         border-radius: 2.8rem;
+      }
+      img {
+        width: 100%;
       }
     }
     .meta {
@@ -296,6 +348,33 @@ export default {
     .meta {
       opacity: 1;
     }
+  }
+}
+
+.more {
+  margin-top: 4.8rem;
+  width: 100%;
+  height: 6.4rem;
+  color: color(base);
+  background: color(theme);
+  font-size: 2rem;
+  border-radius: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: $TRANSITION;
+  @include max($SM) {
+    margin-top: 3.2rem;
+  }
+  &:hover,
+  &:active {
+    letter-spacing: 0.2em;
+  }
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    margin-left: -1em;
   }
 }
 </style>

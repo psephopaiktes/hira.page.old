@@ -7,12 +7,21 @@
         :rel="item.exSite ? 'noopener' : null"
       >
         <img
-          :src="`/blog/${item.id}/cover.png`"
+          alt="背景"
+          src="/blog/placeholder.png"
+          :data-src="`/blog/${item.id}/cover.png`"
+          width="600"
+          height="300"
+          class="bg js-lazy"
+        />
+        <img
+          src="/blog/placeholder.png"
+          :data-src="`/blog/${item.id}/cover.png`"
           :alt="`${item.title}のサムネイル画像`"
           width="600"
           height="300"
+          class="js-lazy"
         />
-        <img :src="`/blog/${item.id}/cover.png`" alt="背景" />
         <h3>{{ item.title }}</h3>
         <div class="meta">
           <ul class="tags">
@@ -120,8 +129,9 @@ export default {
     height: 100%;
     position: relative;
     padding-bottom: 5.6rem;
+    background: color(base);
   }
-  img:first-child {
+  img.bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -132,6 +142,7 @@ export default {
   }
   img {
     position: relative;
+    width: 100%;
   }
   h3 {
     position: relative;
@@ -155,11 +166,11 @@ export default {
     display: flex;
     li {
       margin-right: 0.5em;
-      background: color(theme);
+      background: color(main, 0.6);
       color: color(base);
       font-size: 1.2rem;
       height: 2.4rem;
-      line-height: 2.2rem;
+      line-height: 2.1rem;
       letter-spacing: 0;
       padding: 0 1.2rem;
       border-radius: 1.2rem;

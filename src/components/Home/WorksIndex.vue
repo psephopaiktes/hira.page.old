@@ -2,12 +2,16 @@
   <ul class="worksIndex">
     <li v-for="item in resultIndex" :key="item.id">
       <router-link :to="`?work=${item.id}`">
-        <img
-          :src="'/works/' + item.id + '/thumbnail.png'"
-          :alt="`${item.title}のサムネイル画像`"
-          width="600"
-          height="600"
-        />
+        <div class="thumb">
+          <img
+            src="/works/placeholder.png"
+            :data-src="'/works/' + item.id + '/thumbnail.png'"
+            :alt="`${item.title}のサムネイル画像`"
+            width="600"
+            height="600"
+            class="js-lazy"
+          />
+        </div>
         <h3>{{ item.title }}</h3>
         <ul class="tags">
           <li v-for="tag in item.tags.slice(0, 2)" :key="tag">
@@ -106,14 +110,15 @@ export default {
     width: 100%;
     height: 100%;
   }
-  img {
+  .thumb {
     border-radius: 3.2rem 0.8rem;
     overflow: hidden;
     background: color(theme, 0.15);
-    width: 100%;
-    height: auto;
     @media (prefers-color-scheme: light) {
       box-shadow: 0 1.6rem 4.8rem -2.4rem color(main, 0.3);
+    }
+    img {
+      width: 100%;
     }
   }
   h3 {

@@ -7,18 +7,31 @@
     条件に合う記事はありません
   </p>
 
-  <ul class="blogIndex">
-    <li v-for="item in resultIndex.slice(0, currentNum)" :key="item.id">
+  <transition-group
+    name="staggered-fade"
+    tag="ul"
+    class="blogIndex"
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @leave="leave"
+  >
+    <li
+      v-for="(item, index) in resultIndex.slice(0, currentNum)"
+      :key="item.id"
+      :data-index="index"
+    >
       <a
         :href="`/blog/${item.id}`"
         :target="item.exSite ? '_blank' : null"
         :rel="item.exSite ? 'noopener' : null"
       >
         <img
-          :src="`/blog/${item.id}/cover.png`"
+          src="/blog/placeholder.png"
+          :data-src="`/blog/${item.id}/cover.png`"
           :alt="`${item.title}のサムネイル画像`"
           width="600"
           height="300"
+          class="js-lazy"
         />
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
@@ -36,7 +49,7 @@
         </span>
       </a>
     </li>
-  </ul>
+  </transition-group>
 
   <button class="more" @click="more()" v-if="currentNum < resultIndex.length">
     <SVG symbol="more" />
@@ -45,6 +58,8 @@
 </template>
 
 <script>
+import { lazyImages } from "@/lib/lazyImages";
+
 export default {
   name: "BlogIndex",
   props: {
@@ -57,13 +72,32 @@ export default {
       currentNum: 0
     };
   },
+  mounted() {
+    this.currentNum += this.addNum;
+
+    this.$nextTick(() => {
+      lazyImages();
+    });
+  },
   methods: {
     more() {
       this.currentNum += this.addNum;
+    },
+    beforeEnter(el) {
+      el.classList.remove("show");
+    },
+    enter(el) {
+      var delay = el.dataset.index * 80;
+      setTimeout(() => {
+        el.classList.add("show");
+      }, delay);
+    },
+    leave(el) {
+      var delay = el.dataset.index * 80;
+      setTimeout(() => {
+        el.classList.remove("show");
+      }, delay);
     }
-  },
-  mounted() {
-    this.currentNum += this.addNum;
   },
   computed: {
     resultIndex() {
@@ -137,8 +171,12 @@ export default {
     background: rgba(#fff, 0.1);
     transition: $TRANSITION;
     will-change: transform;
+    opacity: 0;
     @media (prefers-color-scheme: light) {
       box-shadow: 0 1.2rem 4rem -1.6rem color(main, 0.3);
+    }
+    &.show {
+      opacity: 1;
     }
     &:hover,
     &:active {
@@ -185,11 +223,11 @@ export default {
       display: flex;
       li {
         margin-right: 0.5em;
-        background: color(theme);
+        background: color(main, 0.4);
         color: color(base);
         font-size: 1.2rem;
         height: 2.4rem;
-        line-height: 2.2rem;
+        line-height: 2.1rem;
         letter-spacing: 0;
         padding: 0 1.2rem;
         border-radius: 1.2rem;

@@ -6,6 +6,13 @@
         <p>PAGE NOT FOUND</p>
       </h1>
       <h2>お探しのページは存在しません</h2>
+
+      <nav>
+        <ul>
+          <li><router-link to="/">HOME</router-link></li>
+          <li><router-link to="/contact">CONTACT</router-link></li>
+        </ul>
+      </nav>
     </section>
   </BoardContainer>
 </template>
@@ -27,7 +34,7 @@ export default {
 .error {
   text-align: center;
   h1 {
-    margin-top: calc(35vh - 15rem);
+    margin-top: calc(35vh - 20rem);
     font-size: 3.6rem;
     color: #ffcc66;
     img {
@@ -35,7 +42,23 @@ export default {
     }
   }
   h2 {
-    margin-top: 1.6rem;
+    margin-top: 0;
+    font-size: 1.6em;
+    opacity: 0.6;
+  }
+  ul {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    a {
+      display: block;
+      border-radius: 2rem;
+      height: 4rem;
+      line-height: 3.6rem;
+      margin: 0 0.8rem;
+      background: color(theme, 0.2);
+      padding: 0 2rem;
+    }
   }
 }
 </style>
