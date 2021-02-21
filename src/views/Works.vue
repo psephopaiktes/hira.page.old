@@ -110,9 +110,17 @@ export default {
     });
     this.tags = [...new Set(this.tags)];
   },
+  updated() {
+    this.$nextTick(() => {
+      lazyImages();
+    });
+  },
   methods: {
     more() {
       this.currentNum += this.addNum;
+      this.$nextTick(() => {
+        lazyImages();
+      });
     },
     beforeEnter(el) {
       el.classList.remove("show");

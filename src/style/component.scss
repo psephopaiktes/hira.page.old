@@ -8,6 +8,16 @@
   }
 }
 
+.js-inview{
+  transition: .4s ease-out;
+  opacity: 0;
+  transform: translateY(4rem);
+  &.show{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .c-textIcon {
   margin: 0 -.2em;
   width: 1.4em;

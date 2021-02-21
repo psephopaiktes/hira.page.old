@@ -1,7 +1,7 @@
 <template>
   <hr />
 
-  <section class="history">
+  <section class="history js-inview">
     <h2>略歴</h2>
     <table id="career">
       <tr>
@@ -32,7 +32,7 @@
     </table>
   </section>
 
-  <!-- <section class="license">
+  <!-- <section class="license js-inview">
     <h2>資格</h2>
     <ul>
       <li>基本情報技術者</li>

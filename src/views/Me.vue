@@ -32,7 +32,7 @@
 
     <Hero />
 
-    <section class="aboutMe hirata">
+    <section class="aboutMe hirata js-inview">
       <div class="aboutMe__left">
         <h2>平田 章</h2>
         <p>
@@ -57,7 +57,7 @@
       </div>
     </section>
 
-    <section class="aboutMe design">
+    <section class="aboutMe design js-inview">
       <div class="aboutMe__right">
         <h2>Design</h2>
         <p>
@@ -83,7 +83,7 @@
       </div>
     </section>
 
-    <section class="aboutMe develop">
+    <section class="aboutMe develop js-inview">
       <div class="aboutMe__left">
         <h2>Develop</h2>
         <p>
@@ -122,7 +122,7 @@
       </div>
     </section>
 
-    <section class="aboutMe skillmap">
+    <section class="aboutMe skillmap js-inview">
       <div class="aboutMe__right">
         <h2>Skill Map</h2>
         <p>
@@ -168,7 +168,7 @@
       data-id="contact"
       data-size="small"
       to="/contact"
-      class="cta"
+      class="cta js-inview"
     >
       ご依頼・お問い合わせはこちら
     </router-link>
@@ -196,6 +196,13 @@ export default {
   },
   mounted() {
     this.cursor = document.getElementById("cursor");
+
+    this.$nextTick(() => {
+      this.checkInView();
+    });
+    window.addEventListener("scroll", () => {
+      this.checkInView();
+    });
   },
   methods: {
     stalker(evt) {
@@ -215,6 +222,21 @@ export default {
     },
     shrink() {
       this.cursor.classList.remove(...this.cursor.classList);
+    },
+    checkInView() {
+      // スクロール表示アニメーション
+      const elements = document.getElementsByClassName("js-inview");
+      if (!elements) {
+        return;
+      }
+      const num = window.innerHeight - 100;
+      Array.prototype.forEach.call(elements, el => {
+        if (el.getBoundingClientRect().top < num) {
+          el.classList.add("show");
+        } else {
+          el.classList.remove("show");
+        }
+      });
     }
   }
 };

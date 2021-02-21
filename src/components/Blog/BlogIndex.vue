@@ -79,6 +79,11 @@ export default {
       lazyImages();
     });
   },
+  updated() {
+    this.$nextTick(() => {
+      lazyImages();
+    });
+  },
   methods: {
     more() {
       this.currentNum += this.addNum;
