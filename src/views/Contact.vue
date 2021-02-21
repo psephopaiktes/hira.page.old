@@ -68,6 +68,8 @@
             src="@/assets/bitmap/contact/example-logo.webp"
             loading="lazy"
             alt="ロゴと名刺のイメージ画像"
+            width="1200"
+            height="823"
           />
         </picture>
         <table>
@@ -106,6 +108,8 @@
             src="@/assets/bitmap/contact/example-lp.webp"
             loading="lazy"
             alt="ランディングページのイメージ画像"
+            width="1200"
+            height="1291"
           />
         </picture>
         <table>
@@ -149,6 +153,8 @@
             src="@/assets/bitmap/contact/example-cms.webp"
             loading="lazy"
             alt="CMSを用いたコーポレート/ブログサイトなどの作成のイメージ画像"
+            width="1200"
+            height="989"
           />
         </picture>
         <table>
@@ -194,6 +200,8 @@
             src="@/assets/bitmap/contact/example-ui.webp"
             loading="lazy"
             alt="アプリケーションのUIデザイン・設計のイメージ画像"
+            width="1200"
+            height="1056"
           />
         </picture>
         <table>

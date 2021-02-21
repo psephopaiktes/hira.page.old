@@ -52,12 +52,17 @@
 }
 
 .c-exSite {
+  transition: $TRANSITION;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0rem 1.2rem .4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
   border-radius: 0 0 0 1.4rem;
-  opacity: .9;
+  width: 9.6rem;
+  height: 3.2rem;
+  opacity: .8;
   svg {
     fill: #fff;
   }
@@ -67,7 +72,7 @@
     opacity: .5;
     position: relative;
     right: -.6rem;
-    bottom: -.4rem;
+    bottom: .1rem;
   }
   &.note {
     background:#55C500;

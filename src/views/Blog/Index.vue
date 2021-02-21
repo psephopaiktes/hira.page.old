@@ -69,7 +69,7 @@ export default {
   .follow {
     position: absolute;
     right: 6.4rem;
-    bottom: 0.8rem;
+    top: 0;
     display: flex;
     @include max($MD) {
       position: static;
@@ -100,7 +100,7 @@ export default {
   .search {
     position: absolute;
     right: 0;
-    top: 0.6rem;
+    top: 0;
     width: 5.6rem;
     height: 5.6rem;
     background: color(theme);

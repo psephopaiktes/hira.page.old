@@ -9,6 +9,8 @@
         <img
           :src="`/blog/${item.id}/cover.png`"
           :alt="`${item.title}のサムネイル画像`"
+          width="600"
+          height="300"
         />
         <img :src="`/blog/${item.id}/cover.png`" alt="背景" />
         <h3>{{ item.title }}</h3>
@@ -70,6 +72,10 @@ export default {
     &:hover,
     &:active {
       transform: scale(1.02);
+      .c-exSite {
+        width: 12rem;
+        height: 4.8rem;
+      }
     }
     &:nth-child(4) {
       @include maxmin($XL, $MD) {

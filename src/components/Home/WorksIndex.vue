@@ -5,8 +5,9 @@
         <img
           :src="'/works/' + item.id + '/thumbnail.png'"
           :alt="`${item.title}のサムネイル画像`"
+          width="600"
+          height="600"
         />
-        <img src="" alt="" />
         <h3>{{ item.title }}</h3>
         <ul class="tags">
           <li v-for="tag in item.tags.slice(0, 2)" :key="tag">

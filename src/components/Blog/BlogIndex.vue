@@ -17,6 +17,8 @@
         <img
           :src="`/blog/${item.id}/cover.png`"
           :alt="`${item.title}のサムネイル画像`"
+          width="600"
+          height="300"
         />
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
@@ -141,6 +143,10 @@ export default {
     &:hover,
     &:active {
       transform: scale(1.02);
+      .c-exSite {
+        width: 12rem;
+        height: 4.8rem;
+      }
     }
     a {
       display: block;

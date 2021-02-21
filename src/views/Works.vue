@@ -35,6 +35,8 @@
           <img
             :src="'/works/' + item.id + '/thumbnail.png'"
             :alt="`${item.title}のサムネイル画像`"
+            width="600"
+            height="600"
           />
           <div class="meta">
             <h3>{{ item.title }}</h3>

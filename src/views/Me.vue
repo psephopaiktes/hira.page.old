@@ -48,6 +48,7 @@
           to="/contact"
         >
           <img src="@/assets/bitmap/me/hirata.png" alt="平田の写真" />
+          <!-- TODO: W/H ↑ -->
         </router-link>
       </div>
     </section>
@@ -70,6 +71,8 @@
           <img
             src="@/assets/bitmap/me/design.webp"
             alt="デザインスキルのイメージ画像"
+            width="960"
+            height="600"
           />
         </router-link>
       </div>
@@ -106,6 +109,8 @@
           <img
             src="@/assets/bitmap/me/develop.webp"
             alt="開発スキルのイメージ画像"
+            width="960"
+            height="600"
           />
         </router-link>
       </div>
@@ -140,7 +145,12 @@
           data-id="skillmap"
           to="/works"
         >
-          <img src="@/assets/bitmap/me/skillmap.png" alt="スキルマップ" />
+          <img
+            src="@/assets/bitmap/me/skillmap.png"
+            alt="スキルマップ"
+            width="960"
+            height="640"
+          />
         </router-link>
       </div>
     </section>
@@ -298,6 +308,7 @@ export default {
   }
   img {
     width: 100%;
+    height: auto;
     max-width: 48rem;
     @include max($SM) {
       margin-top: 2.4rem;
