@@ -25,6 +25,10 @@
     <link rel="canonical" href="{{ .Permalink }}" />
     {{- end }}
 
+    {{/*  Analytics  */}}
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+    ></script>
+
     {{/*  JSON-LD  */}}
     <script type="application/ld+json">
     [
@@ -204,6 +208,21 @@
         </footer>
     </main>
     {{ end }}
+
+
+    {{/*  Analytics  */}}
+    <amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+    {
+        "vars" : {
+        "gtag_id": "G-2T1J8R59SX",
+        "config" : {
+            "G-2T1J8R59SX": { "groups": "default" }
+        }
+        }
+    }
+    </script>
+    </amp-analytics>
 </body>
 
 </html>
