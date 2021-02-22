@@ -21,7 +21,7 @@
 
 :root{
   background: color(theme);
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 
   @include max($SM) { background: color(base); }
 

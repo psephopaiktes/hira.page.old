@@ -78,10 +78,8 @@ export default {
     $route(to) {
       if (to.query.work) {
         backfaceFixed(true);
-        console.log("show");
       } else {
         backfaceFixed();
-        console.log("close");
       }
     }
   }

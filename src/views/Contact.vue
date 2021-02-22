@@ -270,7 +270,8 @@ export default {
       grid-template-columns: 50% 1fr;
     }
     @include max($SM) {
-      padding: 4rem 2rem 2rem;
+      padding: 4rem 1.2rem 1.2rem;
+      margin: 3.2rem -1.2rem 0;
       grid-template-areas:
         "imageArea imageArea"
         "descriptionArea descriptionArea"
@@ -321,6 +322,7 @@ export default {
       font-size: 1.4rem;
       @include max($SM) {
         font-size: 1.2rem;
+        border-radius: 0.6rem;
       }
       td {
         padding: 0.8rem 10%;
@@ -328,6 +330,7 @@ export default {
         @include max($SM) {
           display: block;
           padding: 1.2rem 10% 0.1rem;
+          text-align: center;
         }
         &:last-child {
           width: 40%;

@@ -2,7 +2,6 @@
 
 const lazyImages = () => {
   var images = document.getElementsByClassName("js-lazy");
-  console.log("laze" + images[0]);
 
   for (var i = 0; i < images.length; i++) {
     var LoadImage = new Image();

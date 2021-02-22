@@ -32,7 +32,7 @@
           <time>{{ item.date }}</time>
         </div>
         <span v-if="item.exSite" class="c-exSite" :class="item.exSite">
-          <SVG :symbol="item.exSite + '-logo'" />
+          <SVG :symbol="`logo-${item.exSite}`" />
           <SVG symbol="open" />
         </span>
       </a>

@@ -7,35 +7,35 @@ const routes = [
     component: () => import("../views/Home.vue")
   },
   {
-    path: "/Blog",
+    path: "/blog",
     component: () => import("../views/Blog/Index.vue"),
     meta: {
       title: "BLOG"
     }
   },
   {
-    path: "/Blog/Search",
+    path: "/blog/search",
     component: () => import("../views/Blog/Search.vue"),
     meta: {
       title: "BLOG"
     }
   },
   {
-    path: "/Me",
+    path: "/me",
     component: () => import("../views/Me.vue"),
     meta: {
       title: "ABOUT ME"
     }
   },
   {
-    path: "/Works",
+    path: "/works",
     component: () => import("../views/Works.vue"),
     meta: {
       title: "WORKS"
     }
   },
   {
-    path: "/Contact",
+    path: "/contact",
     component: () => import("../views/Contact.vue"),
     meta: {
       title: "CONTACT"
@@ -54,16 +54,28 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // TODO:
-    // スクロールしてページを変えるとそこでもスクロールしている
-    // モーダルを開くと後ろが勝手にTOPに戻る
+    // ブラウザバックの位置を記録する
     if (savedPosition) {
       return savedPosition;
     }
-    // if (to.hash) {
-    //   return { selector: to.hash };
-    // }
-    // return { left: 0, top: 0 }; // これがあるとモーダル表示でURL変わっただけでも、後ろがTOPにスクロールする...
+
+    // #アンカーの振る舞いをシミュレート
+    else if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth"
+      };
+    }
+
+    // Queryの変更だけではなにもしない
+    else if (from.path == to.path) {
+      return;
+    }
+
+    // Routeが変わったときにちゃんと最上部を表示する
+    else {
+      return { top: 0 };
+    }
   }
 });
 

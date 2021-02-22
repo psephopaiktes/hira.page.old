@@ -108,12 +108,12 @@ main:not([class]) {
 }
 .index {
   margin-top: 4.8rem;
-  padding: 3.2rem 4.8rem;
+  padding: 3.2rem 4rem 4rem;
   border-radius: .8rem;
   background: color(theme,.1);
 
   @include max($SM) {
-    padding: 1.2rem 2.4rem;
+    padding: 1.6rem 2.4rem;
   }
   h3 {
     color: color(theme);
@@ -373,10 +373,10 @@ article {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background: url("/img/blog-share.svg") no-repeat;
+    background: url("/img/blog-sns.svg") no-repeat;
     background-color: color(main,.3);
     backdrop-filter: blur(8px);
-    background-size: 28rem 4rem;
+    background-size: 36rem 4rem;
     &.twitter{background-position: 0 0 }
     &:hover.twitter{ background-color: #008ff7 }
     &.facebook{ background-position: -4rem 0 }
@@ -396,30 +396,27 @@ article {
     &:hover.line{ background-color: #00B500 }
   }
 }
-.follow {
+.follow, .support {
   h3 {
-    margin-top: 12rem;
-    font-weight: 500;
-    font-size: 1.6em;
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: color(main,.8);
   }
   ul {
     display: grid;
     gap: .8rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: .8rem;
-    @media(max-width: $MD) {
-      grid-template-columns: 1fr 1fr;
-    }
+    margin-top: 1.2rem;
     a {
       display: block;
-      font-size: 1.8rem;
       font-weight: 600;
-      letter-spacing: .08em;
+      letter-spacing: .05em;
+      border-radius: .2rem;
       color: #fff;
       height: 4.8rem;
       line-height: 4.8rem;
       text-align: center;
-      text-indent: -1rem;
+      text-indent: -1.6rem;
       opacity: .8;
       &:hover { opacity: 1 }
       &::before {
@@ -427,28 +424,55 @@ article {
         display: inline-block;
         width: 4rem;
         height: 4rem;
-        background: url("/img/blog-share.svg") no-repeat;
-        background-size: 28rem 4rem;
+        background: url("/img/blog-sns.svg") no-repeat;
+        background-size: 36rem 4rem;
         margin-right: .4rem;
         vertical-align: -30%;
       }
     }
-    li:nth-child(1) a {
-      background-color: #1DA1F2;
-      &::before { background-position: 0 0 }
+  }
+}
+.follow {
+  h3 {
+    margin-top: 12rem;
+  }
+  ul{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media(max-width: $MD) {
+      grid-template-columns: 1fr 1fr;
     }
-    li:nth-child(2) a {
-      background-color: #1876F2;
-      &::before { background-position: -4rem 0 }
-    }
-    li:nth-child(3) a {
-      background-color: #2BB24C;
-      &::before { background-position: -24rem 0 }
-    }
-    li:nth-child(4) a {
-      background-color: color(main,.4);
-      &::before { background-position: -20rem 0 }
-    }
+  }
+  li:nth-child(1) a {
+    background-color: #1DA1F2;
+    &::before { background-position: 0 0 }
+  }
+  li:nth-child(2) a {
+    background-color: #1876F2;
+    &::before { background-position: -4rem 0 }
+  }
+  li:nth-child(3) a {
+    background-color: #2BB24C;
+    &::before { background-position: -24rem 0 }
+  }
+  li:nth-child(4) a {
+    background-color: color(main,.4);
+    &::before { background-position: -20rem 0 }
+  }
+}
+.support {
+  h3 {
+    margin-top: 4.8rem;
+  }
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+  li:nth-child(1) a {
+    background-color: #FFA724;
+    &::before { background-position: -28rem 0 }
+  }
+  li:nth-child(2) a {
+    background-color: #0070ba;
+    &::before { background-position: -32rem 0 }
   }
 }
 .ad {
@@ -459,18 +483,19 @@ article {
 }
 
 footer nav {
-  margin: 9.6rem calc(50% - 50vw) 0;
+  margin: 16rem calc(50% - 50vw) 0;
   padding: 0 0 14rem;
-  background: color(theme,.1);
+  background: color(theme,.2);
   .breadcrumb {
     margin: 0 0;
-    padding: 1.2rem 2.4rem;
+    padding: 1.2rem 2.4rem .8rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: color(theme,.8);
+    background: color(base);
     list-style: none;
-    color: color(base);
+    color: color(main,.6);
+    font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.4;
     @include max($MD) {
@@ -487,12 +512,12 @@ footer nav {
       opacity: .4;
     }
     a {
-      color: color(base);
+      color: color(theme);
       text-decoration: underline;
     }
   }
   h1 {
-    margin: 9.6rem auto 0;
+    margin: 6.4rem auto 0;
     width: 12rem;
     height: 3rem;
   }
@@ -507,7 +532,7 @@ footer nav {
     li {
       margin: 1.2rem .8rem 0;
       color: color(theme,.8);
-      font-weight: 500;
+      font-weight: 600;
       @include max($MD) {
         font-size: 1.8rem;
       }
@@ -518,7 +543,7 @@ footer nav {
       margin-right: 1.6rem;
       width: .5em;
       height: .5em;
-      background: color(theme,.4);
+      background: color(theme,.5);
       border-radius: 50%;
       @include max($MD) {
         display: none;

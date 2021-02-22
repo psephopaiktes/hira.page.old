@@ -12,7 +12,7 @@
   <link rel="icon" sizes="64x64" type="image/png" href="img/favicon.png">
   <link rel="icon" sizes="192x192" href="img/android-chrome.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <meta name="theme-color" content="TODO">
+  <meta name="theme-color" content="#FFCC66">
 
   <!-- OGP -->
   <meta property="og:type" content="website">
@@ -66,8 +66,12 @@
   <link rel="preload" href="/font/Bold.woff2" as="font">
   <link rel="preload" href="/font/FuturaNowVar.woff2" as="font">
 
-  <!-- Other Script -->
-  <script src="https://psephopaiktes.github.io/IE-blocker/index.js" defer></script>
+  <!-- Block IE -->
+  <script>
+    if ( document.documentMode ) {
+      location.href = `https://psephopaiktes.github.io/IE-blocker/?https://hira.page`;
+    }
+  </script>
 
   <!-- TODO: Delete? -->
   <script data-ad-client="ca-pub-5055970484117246" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

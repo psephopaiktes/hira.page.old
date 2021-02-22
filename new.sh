@@ -19,5 +19,6 @@ hugo new $ID/index.md
 open ./content/$ID
 
 # サーバをたててChromeで開く
-# open https://spark.adobe.com/ #TODO
+open https://spark.adobe.com/
+open https://www.canva.com/
 hugo server -D & open http://localhost:1313/$ID

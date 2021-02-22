@@ -118,7 +118,6 @@ $Z_MODAL: 9000;
   width: 100vw; height: 100vh;
   top: 0; left: 0;
   overflow: scroll;
-  scroll-behavior: smooth;
   box-sizing: border-box;
   z-index: $Z_MODAL;
   overscroll-behavior-y: none;

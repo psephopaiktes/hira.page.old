@@ -43,6 +43,8 @@ export default {
             exSite = "note";
           } else if (/qiita/.test(redirect)) {
             exSite = "qiita";
+          } else if (/zenn/.test(redirect)) {
+            exSite = "zenn";
           } else {
             exSite = null;
           }
@@ -103,15 +105,15 @@ export default {
       elm.classList.add("hide");
     });
 
-    // #付きのURLに直接来たときの処理 TODO
-    const hash = document.location.hash;
-    const target = document.getElementById(hash.substring(1));
-    if (hash && target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
+    // #付きのURLに直接来たときの処理
+    // const hash = document.location.hash;
+    // const target = document.getElementById(hash.substring(1));
+    // if (hash && target) {
+    //   target.scrollIntoView({
+    //     behavior: "smooth",
+    //     block: "start"
+    //   });
+    // }
 
     console.log(
       "Hello! Check this site's code\n%chttps://github.com/psephopaiktes/hira.page",
