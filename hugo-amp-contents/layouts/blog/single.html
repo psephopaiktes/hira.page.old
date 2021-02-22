@@ -17,6 +17,9 @@
     <title>{{- .Title }} | {{ .Site.Title -}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
+    <!-- TODO: Delete? -->
+    <script data-ad-client="ca-pub-5055970484117246" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     {{/*  Redirect  */}}
     {{ with .Params.redirect -}}
     <link rel="canonical" href="{{ . }}">
@@ -25,9 +28,9 @@
     <link rel="canonical" href="{{ .Permalink }}" />
     {{- end }}
 
-    {{/*  Analytics  */}}
+    {{/*  AMP Plugins  */}}
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
-    ></script>
+    ></script><script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
     {{/*  JSON-LD  */}}
     <script type="application/ld+json">

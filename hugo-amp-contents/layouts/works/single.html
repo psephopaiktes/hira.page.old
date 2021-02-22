@@ -19,6 +19,9 @@
     <link rel="canonical" href="{{ .Site.BaseURL }}" />
     <meta name="robots" content="noindex">
 
+    <!-- TODO: Delete? -->
+    <script data-ad-client="ca-pub-5055970484117246" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
     {{ $styles := resources.Get "works.scss" | toCSS (dict "targetPath" "works/style.css" "outputStyle" "compressed")| minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}">
