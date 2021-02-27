@@ -9,10 +9,13 @@ $Z_MODAL: 9000;
 
 
 @keyframes showUpMenu {
-  from {
-    bottom: -3.2rem;
+  0% {
+    bottom: -8rem;
   }
-  to {
+  80% {
+    bottom: calc(8rem + env(safe-area-inset-bottom));
+  }
+  100% {
     bottom: calc(2.4rem + env(safe-area-inset-bottom));
   }
 }

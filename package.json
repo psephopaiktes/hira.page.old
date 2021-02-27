@@ -5,7 +5,11 @@
     "serve": "npm run sprite && vue-cli-service serve",
     "build": "npm run sprite && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "sprite": "svg-sprite -s --symbol-dest 'public/img' --symbol-sprite './sprite.svg' --shape-transform-svgo svgo.json 'src/assets/svg-sprite/**/*.svg'"
+    "hugo": "cd hugo-amp-contents && hugo && cd ..",
+    "sprite": "svg-sprite -s --symbol-dest 'public/img' --symbol-sprite './sprite.svg' --shape-transform-svgo svgo.json 'src/assets/svg-sprite/**/*.svg'",
+    "new": "./shell/new.sh",
+    "draft": "./shell/draft.sh",
+    "deploy": "./shell/deploy.sh"
   },
   "dependencies": {
     "vue": "^3.0.0",

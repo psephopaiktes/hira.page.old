@@ -1,32 +1,21 @@
 # hugo-amp-contents
-- WEBAのブログ、Portfolio部分
-- HUGOで静的なAMP HTMLを生成する
+- WEBAのブログ、実績部分。HUGOで静的なHTMLを生成する
 - `/public` 配下に以下のファイルを生成し、Vueのページ内で使用されます。
   - `blog/`: amp形式でビルドされたブログページのHTMLファイルです。
   - `index.xml`: RSS用ファイルです。
   - `sitemap.xml`: SEO用のサイトマップファイルです。
 - [hugo](https://gohugo.io/)のインストールが必要です
-- HUGOとVueのサーバーを同時に起ち上げるのはやめたほうがいいかも
-    - もしかしたら `$ hugo -w` で都度ビルドさせればいけるかも？
 
 ## ブログ・実績の更新作業
-- ルートで `$ ./new.sh $ID` を実行
+- ルートで `$ nr new` を実行
 - $IDは `blog/hello-word` など
 - 画像はindex.mdと同じフォルダに置いてOK
-
-
-## その他の基本コマンド
-実行するには `$ cd hugo-amp-contents` してから。
-
-- `hugo server -D` :ローカルサーバー起動。記事ファイル中でdraft = trueになっている記事も表示する。
-- `hugo new post/20170717_Hello-World.md` :記事の作成
-- `hugo` :deployする。
-- `./new.sh blog/$post-id` :ブログの新規作成
-- `./new.sh works/$post-id` :実績の新規作成
+  - `⌘⌥V` でMarkdown中に画像を挿入
+  - VS CODE で [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image)が必要
 
 ## ファイル構成
-ファイル・フォルダ名 | 役割
---:|:--
+file | description
+--|--
 archetypes/ | 記事作成時のデフォルトmarkdownテンプレート置き場
 assets/ | SCSS。HUGOでビルドされる
 content/ | 記事ファイルが作成される場所

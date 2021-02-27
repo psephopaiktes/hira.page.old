@@ -46,7 +46,7 @@
     </nav>
 
     <BlogIndex />
-    <div class="ad"></div>
+    <!-- <div class="ad"></div> -->
   </BoardContainer>
 </template>
 

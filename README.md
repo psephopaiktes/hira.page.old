@@ -6,42 +6,36 @@
 <br/>
 
 # WEBA
-* My Blog & Portofolio website.
-* https://hira.page/
+ブログ兼ポートフォリオWebサイト
+https://hira.page/
 
 
 <br/>
 
-## Design
+## デザイン
 * UI: [Figma](https://www.figma.com/file/FCrd1uYqTKyUW16MtbWU8C/hira.page)
 * Assets: [./design](design)
 
 <br/>
 
-## 更新作業
+## npm コマンド
 - `$ npm start`: Vueのサーバー起動
-- `$ ./new.sh`: ブログ・実績記事の新規追加
-- `$ ./draft.sh`: 下書き中の記事を選択して再開
-- `$ ./deploy.sh`: HUGOのビルド、本番公開まで
+- `$ npm run build`: Vueのビルド
+- `$ npm run hugo`: Hugoのビルド
+- `$ npm run new`: ブログ・実績記事の新規追加
+- `$ npm run draft`: 下書き中の記事を選択して編集を再開
+- `$ npm run deploy`: すべてのビルド、GitHubプッシュ、本番公開
 
 <br/>
 
-## Files Structure
-
-#### design
-- Webサイトのデザイン、各種素材の編集ファイルです。
-
-#### hugo-amp-contents
-- (hugo-amp-contents/README.md)[./hugo-amp-contents/README.md]
-- ブログの記事用ファイルです。
-
-
-#### src
-- Vue用のソースファイルです。
+## ファイル構成
+file | description
+--|--
+/design | Webサイトのデザイン、各種素材の編集ファイル
+/[hugo-amp-contents](./hugo-amp-contents/README.md) | ブログの記事用ファイル
+/src | Vue用のソースファイル
 
 <br/>
 
-## メモ
-- `⌘⌥V` でMarkdown中に画像を保存できます。
-  - VS CODE 拡張機能
-- コンタクトフォームを使うには [.env.local](https://www.notion.so/psephopaiktes/Blog-Portfolio-Renewal-ad291ee9ac9d445489982f8ca9daf450)🔒 が必要
+## 環境変数
+コンタクトフォームを使うには [.env.local](https://www.notion.so/psephopaiktes/Blog-Portfolio-Renewal-ad291ee9ac9d445489982f8ca9daf450)🔒 がルートに必要

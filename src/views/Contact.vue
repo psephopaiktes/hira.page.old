@@ -261,8 +261,8 @@ export default {
     position: relative;
     border: 0.2rem solid color(main, 0.2);
     border-radius: 0.6rem;
-    perspective: 500;
-    -webkit-perspective: 400;
+    perspective: 600;
+    -webkit-perspective: 600;
     &:nth-child(even) {
       grid-template-areas:
         "descriptionArea imageArea"
@@ -308,11 +308,12 @@ export default {
     img {
       grid-area: imageArea;
       max-height: 32rem;
-      transform: rotateY(16deg);
+      width: auto;
+      transform: rotateY(12deg);
     }
     &:nth-child(even) picture,
     &:nth-child(even) img {
-      transform: rotateY(-16deg);
+      transform: rotateY(-12deg);
     }
     table {
       grid-area: tableArea;
