@@ -2,19 +2,19 @@
   <ul class="otherIndex">
     <li class="me">
       <router-link to="/me">
-        <SVG symbol="me" class="u-showSp" />
+        <SVG symbol="me" />
         ABOUT ME
-        <SVG symbol="next" class="u-showSp" />
+        <SVG symbol="next" class="u-showTabSp" />
       </router-link>
     </li>
     <li class="contact">
       <router-link to="/contact">
         <SVG symbol="contact" />
         お仕事のご依頼
-        <SVG symbol="next" class="u-showSp" />
+        <SVG symbol="next" class="u-showTabSp" />
       </router-link>
     </li>
-    <li class="follow u-hideSp">
+    <li class="follow u-hideTabSp">
       <h3>Follow Blog.</h3>
       <ul>
         <li>
@@ -68,7 +68,7 @@ export default {
   display: grid;
   gap: 1.2rem;
   grid-template-columns: repeat(3, 1fr);
-  @include max($SM) {
+  @include max($MD) {
     grid-template-columns: 1fr;
   }
   > li {
@@ -106,7 +106,7 @@ export default {
       }
     }
 
-    @include max($SM) {
+    @include max($MD) {
       background: none;
       box-shadow: none;
       border: none;
@@ -136,15 +136,12 @@ export default {
       }
     }
   }
-  .me {
-    background: url(https://source.unsplash.com/daily?cat&orientation=landscape);
-    background-size: cover;
-  }
+  .me,
   .contact {
-    background: color(main, 0.9);
+    background: color(main, 0.8);
   }
   .follow {
-    @include max($SM) {
+    @include max($MD) {
       margin-top: 3.2rem;
       border-radius: 1.6rem;
     }

@@ -72,17 +72,20 @@ export default {
 @use "@/style/common.scss" as *;
 
 #backhome {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 3.2rem 0;
+  overflow: hidden;
   .router-link-exact-active {
     display: none;
   }
   a {
-    background: color(theme, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
+    background: color(theme);
     width: 4rem;
     height: 4rem;
-    border-radius: 0 0 3.2rem 0;
   }
   svg {
     opacity: 0.6;

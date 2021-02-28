@@ -1,5 +1,11 @@
 @use "common.scss" as *;
 
+.u-showPc,.u-hideTabSp {
+  @include max($MD) {
+    display: none !important;
+  }
+}
+
 .u-showPcTab,.u-hideSp {
   @include max($SM) {
     display: none !important;

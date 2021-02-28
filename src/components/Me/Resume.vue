@@ -79,7 +79,7 @@ section {
       padding: 0.8rem 1.6rem;
       text-align: left;
       h4 {
-        font-weight: 700;
+        font-weight: bold;
         margin-bottom: 0.4em;
       }
     }

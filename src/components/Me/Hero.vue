@@ -1,12 +1,17 @@
 <template>
   <section id="hero" @mousemove="stalker($event)">
     <div class="wrapper">
-      <video
-        src=""
-        poster="@/assets/bitmap/me/cover.png"
-        playsinline
-        autoplay
-      ></video>
+      <picture class="eyecatch">
+        <source
+          srcset="@/assets/bitmap/me/eyecatch-sp.jpg"
+          media="(max-width: 480px)"
+        />
+        <img
+          class="eyecatch"
+          src="@/assets/bitmap/me/eyecatch-pc.jpg"
+          alt="アイキャッチ画像:仕事中のイメージ"
+        />
+      </picture>
 
       <div class="typography">
         <p>Akira HIRATA</p>
@@ -59,17 +64,21 @@ export default {
 #hero {
   position: absolute;
   width: calc(100% - 3.2rem);
+  height: auto;
   left: 1.6rem;
   top: 1.6rem;
   overflow: hidden;
+  border-radius: 1.2rem;
+  background: #000;
   .wrapper {
     position: relative;
   }
 }
 
-video {
+.eyecatch {
   width: 100%;
-  border-radius: 1.2rem;
+  height: auto;
+  opacity: 0.8;
 }
 
 .typography {
@@ -84,13 +93,16 @@ video {
 
   width: 100%;
   height: 100%;
-  font-size: 3rem;
+  font-size: 2vw;
 
   background-color: #fff;
   background-clip: text;
   background-repeat: no-repeat;
   color: transparent;
   filter: drop-shadow(0 0 0.3em rgba(#000, 0.4));
+  @include max($SM) {
+    font-size: 4vw;
+  }
   @include min($SM + 1) {
     background-image: radial-gradient(circle, #fff 6rem, transparent 6rem),
       radial-gradient(circle, color(theme) 12rem, transparent 12rem),
@@ -106,6 +118,9 @@ video {
     &:nth-child(1) {
       font-size: 2.37em;
       margin-top: -0.3em;
+      @include max($SM) {
+        margin-top: 0.2em;
+      }
     }
     &:nth-child(2) {
       font-size: 1.11em;

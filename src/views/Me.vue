@@ -48,11 +48,12 @@
           to="/contact"
         >
           <img
-            src="@/assets/bitmap/me/hirata.png"
+            src="@/assets/bitmap/me/hirata.webp"
             alt="平田の写真"
+            width="960"
+            height="674"
             loading="lazy"
           />
-          <!-- TODO: W/H ↑, Convert to WebP -->
         </router-link>
       </div>
     </section>
@@ -245,6 +246,13 @@ export default {
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
 
+.board {
+  padding-top: 50%;
+  @include max($SM) {
+    padding-top: 95%;
+  }
+}
+
 #cursor {
   position: fixed;
   top: 0;
@@ -310,10 +318,6 @@ export default {
   }
 }
 
-.board {
-  padding-top: 42%;
-}
-
 .aboutMe {
   margin-top: 6.4rem;
   display: grid;
@@ -326,9 +330,7 @@ export default {
   }
 
   h2 {
-    @include min(#{$SM + 1}) {
-      margin: 0;
-    }
+    margin: 0;
   }
   h2,
   p {
@@ -350,8 +352,8 @@ export default {
       text-align: right;
       justify-self: end;
     }
-    h2,
-    p {
+    > a {
+      display: block;
       margin-right: 5.6rem;
       @include max($LG) {
         margin-right: 4rem;
@@ -367,8 +369,8 @@ export default {
       text-align: left;
       justify-self: start;
     }
-    h2,
-    p {
+    > a {
+      display: block;
       margin-left: 5.6rem;
       @include max($LG) {
         margin-left: 4rem;
@@ -380,9 +382,9 @@ export default {
   }
 }
 
-.design,
-.develop,
-.skillmap {
+.aboutMe.design,
+.aboutMe.develop,
+.aboutMe.skillmap {
   h2 {
     font-family: FuturaNowVar;
     font-variation-settings: "wght" 700;
@@ -402,7 +404,12 @@ export default {
     }
   }
 }
-.skillmap {
+.aboutMe.hirata {
+  img {
+    margin-top: 0rem;
+  }
+}
+.aboutMe.skillmap {
   img {
     background: rgba(#fff, 0.4);
     border: 0.2rem solid color(theme, 0.2);
