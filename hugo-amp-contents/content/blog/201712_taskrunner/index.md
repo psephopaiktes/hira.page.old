@@ -43,7 +43,7 @@ CSSやJavascriptに構文ミスが無いか検証するツールです。細か�
 そこでこれらのひとつひとつを<b>タスク</b>として一元管理し、バックグラウンドで動かしておけばファイルごとに勝手に処理してくれるのが**タスクランナー**です。共通の設定ファイルを利用することで、チーム全員が同様の環境をすぐに構築できて、特に意識せずとも同じような処理を行えるようにするものです。
 
 ### フロントエンド地獄
-ここまで読んでお気づきかもしれませんが、フロントエンド開発の世界にはいつのまにか様々なライブラリやフレームワークやトランスパイラ、開発環境が増えまくっており、なおかつどれもこれもそこそこに人気があり、これだけ学べば全部大丈夫みたいのはありません。また結構な勢いで新しいものが出ており、栄枯盛衰が激しい世界です。[ここらへん](http://kikuchi1201.hateblo.jp/entry/2016/10/26/172404)を読めばわかりますが、とりあえずこーしよみたいなのが決まらないので、ある程度学んでも無限に苦しみは続きます。逆に言うと様々な選択肢があり、それぞれの良さがあるので楽しいと言えなくもないです。無理に全てを学ぼうとせず、必要なものだけ少しずつ慣れていくとよいかと思います。
+ここまで読んでお気づきかもしれませんが、フロントエンド開発の世界にはいつのまにか様々なライブラリやフレームワークやトランスパイラ、開発環境が増えまくっており、なおかつどれもこれもそこそこに人気があり、これだけ学べば全部大丈夫みたいのはありません。また結構な勢いで新しいものが出ており、栄枯盛衰が激しい世界です。[ここらへん](https://kikuchi1201.hateblo.jp/entry/2016/10/26/172404)を読めばわかりますが、とりあえずこーしよみたいなのが決まらないので、ある程度学んでも無限に苦しみは続きます。逆に言うと様々な選択肢があり、それぞれの良さがあるので楽しいと言えなくもないです。無理に全てを学ぼうとせず、必要なものだけ少しずつ慣れていくとよいかと思います。
 
 ### Node.jsとNPM
 上記で紹介したライブラリやフレームワークのほとんど、またそれを扱うタスクランナー自体が[Node.js](https://nodejs.org)で開発され、<b>パッケージ</b>として公開されています。それらのパッケージを簡単にインストール・管理できる公式ツールがNodePackageManager= **NPM** です。(RubyのbundlerやPythonのpipみたいなものです。) フロントエンド開発の環境構築はNPMではじまりNPMで終わるといっても過言ではありません。( NPMと互換性のある[YARN](https://yarnpkg.com)も人気ですが、今回は説明しません。 ) 各プロジェクトフォルダに`package.json`という管理ファイルを作成し、そのファイルの中に利用するパッケージをリスト化してまとめておくことができます。node.jsやnpmについて深く知らなくてもタスクランナーは使えますが、そういうものでできているんだな、という認識だけぜひ持っておいてください。
@@ -51,7 +51,7 @@ CSSやJavascriptに構文ミスが無いか検証するツールです。細か�
 ---
 
 ## gulp
-<img src="http://www.google.com/s2/favicons?domain=gulpjs.com" alt="gulp">
+<img src="https://www.google.com/s2/favicons?domain=gulpjs.com" alt="gulp">
 
 [[公式サイト]](https://gulpjs.com)
 [[GitHub]](https://github.com/gulpjs/gulp)  
@@ -78,7 +78,7 @@ Gulpのはじめ方についてわかりやすくまとまっています。
 ---
 
 ## npm script
-<img src="http://www.google.com/s2/favicons?domain=npmjs.com" alt="script">
+<img src="https://www.google.com/s2/favicons?domain=npmjs.com" alt="script">
 
 [[公式サイト]](https://npmjs.com)
 [[GitHub]](https://github.com/npm/npm)  
@@ -104,7 +104,7 @@ Gulpのはじめ方についてわかりやすくまとまっています。
 ---
 
 ## webpack
-<img src="http://www.google.com/s2/favicons?domain=webpack.js.org" alt="webpack">
+<img src="https://www.google.com/s2/favicons?domain=webpack.js.org" alt="webpack">
 
 [[公式サイト]](https://webpack.js.org)
 [[GitHub]](https://github.com/webpack/webpack)  
@@ -126,12 +126,12 @@ Browserifyに変わるモジュールバンドラ(兼タスクランナー)と�
 またまたICSさんの記事です。入門記事として最適だと思います。ICSさんは他にも[TypeScript](https://ics.media/entry/16329)や[Babel](https://ics.media/entry/16028)と、ReactやVueを組み合わせる場合のコード例も紹介されているので、とても参考になります。
 - [Gulpで始めるwebpack 3入門 - Qiita](https://qiita.com/tonkotsuboy_com/items/2d4f3862e6d05dc0bea1)  
 Gulpと組み合わせて使いたい場合は、上記のQiita記事がよくまとまっています。
-- [Reactを使ったモジュラーCSS : CSS-in-JSとCSS Module | プログラミング | POSTD](http://postd.cc/modular-css-with-react/)  
+- [Reactを使ったモジュラーCSS : CSS-in-JSとCSS Module | プログラミング | POSTD](https://postd.cc/modular-css-with-react/)  
 Reactの様に複数のComponentでページを管理する場合、CSSもComponentごとに定義してしまいたい場合があります(CSS-in-JSと言います)。スタイル定義を[CSSファイルで作成する](https://qiita.com/clockmaker/items/8fab54c93e84001846b0)のか、JSの中に書いてしまうのがいいか、上記の記事が参考になると思います。
 ---
 
 ## Rollup
-<img src="http://www.google.com/s2/favicons?domain=rollupjs.org" alt="Rollup">
+<img src="https://www.google.com/s2/favicons?domain=rollupjs.org" alt="Rollup">
 
 [[公式サイト]](https://rollupjs.org)
 [[GitHub]](https://github.com/rollup/rollup)  
@@ -150,15 +150,15 @@ Reactの様に複数のComponentでページを管理する場合、CSSもCompon
 
 ### おすすめ記事
 - [Rollupがちょうどいい感じ - Qiita](https://qiita.com/cognitom/items/e3ac0da00241f427dad6)
-- [Webpack and Rollup: the same but different – webpack – Medium](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c) ([日本語訳](http://postd.cc/webpack-and-rollup-the-same-but-different/) )
+- [Webpack and Rollup: the same but different – webpack – Medium](https://medium.com/webpack/webpack-and-rollup-the-same-but-different-a41ad427058c) ([日本語訳](https://postd.cc/webpack-and-rollup-the-same-but-different/) )
 
 
 ---
 
 ## Fusebox
-<img src="http://www.google.com/s2/favicons?domain=fuse-box.org" alt="Fusebox">
+<img src="https://www.google.com/s2/favicons?domain=fuse-box.org" alt="Fusebox">
 
-[[公式サイト]](http://fuse-box.org)
+[[公式サイト]](https://fuse-box.org)
 [[GitHub]](https://github.com/fuse-box/fuse-box)  
 かなり新しめのモジュールバンドラです。webpackよりも圧倒的に高速、かつ設定がシンプルで、一部で人気がでています。(後発のParcelに比べると勢いは低いですが...。) ローカルサーバやTypeScriptにデフォルトで対応しており、設定ファイル`fuse.js`も簡潔に記述できます。webpack同様、タスクランナーとしてCSSや画像の処理もできますが、それはGulpやnpm scriptに任せたほうがよいかもしれません。まだレファレンスがかなり少ないので、特殊なことをしようとすると苦労しそうです。
 
@@ -180,7 +180,7 @@ Fuseboxについての概要と、競合との比較を行った良記事です�
 ---
 
 ## Parcel
-<img src="http://www.google.com/s2/favicons?domain=parceljs.org" alt="Parcel">
+<img src="https://www.google.com/s2/favicons?domain=parceljs.org" alt="Parcel">
 
 [[公式サイト]](https://parceljs.org)
 [[GitHub]](https://github.com/parcel-bundler/parcel)  
@@ -212,7 +212,7 @@ Parcelの人気の火付け役となったQiita記事です。
 Reactの開発元であるFacebookが提供するReact開発用の環境です。webpackなどで設定されており、とりあえずReactを使ってみたいときなどに便利です。
 - [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/?hl=ja)  
 Googleが提供するWeb作成用の環境です。Gulpベースで作成されており、よく使われる機能が網羅されています。
-- [asset pipline ( Ruby on Rails ) ](http://rubyonrails.org/)  
+- [asset pipline ( Ruby on Rails ) ](https://rubyonrails.org/)  
 Railsには最初からSASSの変換やローカルサーバの機能が備わっています。また、`v5.1`からは[webpacker](https://github.com/rails/webpacker) というモジュールバンドラも追加されるそうです。
 - [CodeKit](https://codekitapp.com/)  
 今回紹介しているものは全てターミナルで使用するCUIツールですが、CodeKitのようなGUIで管理・制御できるツールもあります。あくまで個人の趣味開発などであれば選択肢としてありかもしれませんが、使用プラグインが限られたり、複数人での開発時にコードを管理しづらかったりと、基本的におすすめはできません。

@@ -51,7 +51,7 @@ Chrome拡張ではボタンを押したタイミングで実行できる<b>Brows
       "css": ["google/style.css"],"js": ["google/script.js"]
     },
     {
-      "matches": ["http://www.nicovideo.jp/watch/*"],
+      "matches": ["https://www.nicovideo.jp/watch/*"],
       "css": ["nico/style.css"],"js": ["nico/script.js"]
     }
   ]
@@ -71,7 +71,7 @@ CSS, JSを読み込ませたいページを指定します。`manifest.json`中�
       "css": ["google/style.css"],"js": ["google/script.js"]
     },
     {
-      "matches": ["http://www.nicovideo.jp/watch/*"],
+      "matches": ["https://www.nicovideo.jp/watch/*"],
       "css": ["nico/style.css"],"js": ["nico/script.js"]
     }
   ]

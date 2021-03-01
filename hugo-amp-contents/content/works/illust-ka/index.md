@@ -6,7 +6,7 @@ update: false
 draft: false
 tags: ["UI","CODE"]
 description: "入力された文章をフリー画像サイト「いらすとや」のイラストを使って、いらすとで表現してくれるサービス。Yahoo!開催の日本最大規模のハッカソン：HackDay優秀賞作品。"
-exlink: "http://gigazine.net/news/20170206-irasutoya-irasutoka/"
+exlink: "https://gigazine.net/news/20170206-irasutoya-irasutoka/"
 priority: 3
 ---
 
@@ -14,7 +14,7 @@ priority: 3
 
 ![スクリーンショット](ss1.jpg)
 
-[GAGAZIN](http://gigazine.net/news/20170206-irasutoya-irasutoka/)、[livedoorNEWS](http://news.livedoor.com/article/detail/12638328/)、[APPBANK](http://www.appbank.net/2017/02/06/iphone-news/1308841.php)、[BuzzFeeD](https://www.buzzfeed.com/akikochino/irasutoka?utm_term=.qsVLx58j8#.hqond64G4)、[ねとらぼ](https://nlab.itmedia.co.jp/nl/articles/1702/07/news092.html)、[やじうまWatch](https://internet.watch.impress.co.jp/docs/yajiuma/1042606.html)など、多くのメディアに掲載していただきました。
+[GAGAZIN](https://gigazine.net/news/20170206-irasutoya-irasutoka/)、[livedoorNEWS](https://news.livedoor.com/article/detail/12638328/)、[APPBANK](https://www.appbank.net/2017/02/06/iphone-news/1308841.php)、[BuzzFeeD](https://www.buzzfeed.com/akikochino/irasutoka?utm_term=.qsVLx58j8#.hqond64G4)、[ねとらぼ](https://nlab.itmedia.co.jp/nl/articles/1702/07/news092.html)、[やじうまWatch](https://internet.watch.impress.co.jp/docs/yajiuma/1042606.html)など、多くのメディアに掲載していただきました。
 
 5人チームで参加し、ヒラタは企画・デザイン・フロントエンドを担当しました。とにかく「楽しい」サービスであることを目指し、アクセス後すぐ利用できる迷わない構成でデザインしました。
 

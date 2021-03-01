@@ -18,7 +18,7 @@ VS CODE (正式名称 Visual Studio Code) (以下、CODE) はMicrosoftが開発�
 
 {{< embed-card
     "https://code.visualstudio.com/"
-    "http://code.visualstudio.com/opengraphimg/opengraph-home.png"
+    "https://code.visualstudio.com/opengraphimg/opengraph-home.png"
     "Visual Studio Code - Code Editing. Redefined"
     "code.visualstudio.com"
 >}}
@@ -115,7 +115,7 @@ CODEでは一度登録したプロジェクトは `Ctrl + R`のショートカ�
 ちなみに、以下の2つの設定をしておけば、GUIからもCUIからもすぐにフォルダをCODEで開けて便利ですよ。
 
 [ASCII.jp：MacのFinderのツールバーにアプリを追加するテクで作業が捗る！]
-(http://ascii.jp/elem/000/001/025/1025457/)
+(https://ascii.jp/elem/000/001/025/1025457/)
 
 [ターミナルからVisual Studio Codeを起動する方法【公式の方法】 - Qiita]
 (https://qiita.com/naru0504/items/c2ed8869ffbf7682cf5c)
@@ -135,7 +135,7 @@ CODEでは `.vscode` という設定フォルダをプロジェクトルート�
 
 {{< embed-card
     "https://code.visualstudio.com/docs"
-    "http://code.visualstudio.com/opengraphimg/opengraph-gettingstarted.png"
+    "https://code.visualstudio.com/opengraphimg/opengraph-gettingstarted.png"
     "Documentation for Visual Studio Code"
     "code.visualstudio.com"
 >}}
@@ -174,12 +174,12 @@ VS CODE はMicrosoft発のオルト言語「TypeScript」の人気に伴い、�
 
 {{< embed-card
     "https://code.visualstudio.com/"
-    "http://code.visualstudio.com/opengraphimg/opengraph-home.png"
+    "https://code.visualstudio.com/opengraphimg/opengraph-home.png"
     "Visual Studio Code - Code Editing. Redefined"
     "code.visualstudio.com"
 >}}
 
-ちなみにAtomの開発元であるGitHubはMicrosoftに買収されましたが、[Atomの開発が止まる予定は無い](http://www.itmedia.co.jp/enterprise/articles/1806/13/news052_2.html)らしいです。
+ちなみにAtomの開発元であるGitHubはMicrosoftに買収されましたが、[Atomの開発が止まる予定は無い](https://www.itmedia.co.jp/enterprise/articles/1806/13/news052_2.html)らしいです。
 
 
 

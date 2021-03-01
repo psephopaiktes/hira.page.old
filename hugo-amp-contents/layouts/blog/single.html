@@ -36,7 +36,7 @@
     <script type="application/ld+json">
     [
         {
-            "@context": "http://schema.org",
+            "@context": "https://schema.org",
             "@type": "NewsArticle",
             "mainEntityOfPage": {{ .Permalink }},
             "headline": {{ .Title }},
@@ -162,16 +162,16 @@
                 <h3>ブログをフォロー</h3>
                 <ul>
                     <li><a href="https://twitter.com/psephopaiktes" target="_blank" rel="noopener">Twitter</a>
-                    <li><a href="http://fb.me/webablog" target="_blank" rel="noopener">Facebook</a>
+                    <li><a href="https://fb.me/webablog" target="_blank" rel="noopener">Facebook</a>
                     <li><a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fhira.page%2Fblog%2Findex.xml" target="_blank" rel="noopener">Feedly</a>
-                    <li><a href="http://hira.page/blog/index.xml" target="_blank" rel="noopener">RSS</a>
+                    <li><a href="https://hira.page/blog/index.xml" target="_blank" rel="noopener">RSS</a>
                 </ul>
             </section>
 
             <section class="support">
                 <h3>ライターを支援</h3>
                 <ul>
-                    <li><a href="http://amzn.asia/eoKfIyd" target="_blank" rel="noopener">Wish list</a>
+                    <li><a href="https://amzn.asia/eoKfIyd" target="_blank" rel="noopener">Wish list</a>
                     <li><a href="https://paypal.com/paypalme/psephopaiktes" target="_blank" rel="noopener">PayPal</a>
                 </ul>
             </section>
@@ -179,16 +179,16 @@
             <!-- <div class="ad"></div> -->
 
             <nav>
-                <ol class="breadcrumb" itemscope="" itemType="http://schema.org/BreadcrumbList">
-                    <li itemProp="itemListElement" itemscope="" itemType="http://schema.org/ListItem">
+                <ol class="breadcrumb" itemscope="" itemType="https://schema.org/BreadcrumbList">
+                    <li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem">
                         <a href="/" itemProp="item">HOME</a>
                         <meta itemProp="position" content="1"/>
                     </li>
-                    <li itemProp="itemListElement" itemscope="" itemType="http://schema.org/ListItem">
+                    <li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem">
                         <a href="/blog" itemProp="item">ブログ一覧</a>
                         <meta itemProp="position" content="2"/>
                     </li>
-                    <li itemProp="itemListElement" itemscope="" itemType="http://schema.org/ListItem">
+                    <li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem">
                         {{ .Title }}
                         <meta itemProp="position" content="3"/>
                     </li>
@@ -209,11 +209,11 @@
 
                 <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}" title="Facebookでシェア">Facebook</a>
 
-                <a class="hatena" href="http://b.hatena.ne.jp/entry/{{.Permalink}}" title="はてブに登録">はてなブックマーク</a>
+                <a class="hatena" href="https://b.hatena.ne.jp/entry/{{.Permalink}}" title="はてブに登録">はてなブックマーク</a>
 
                 <a class="pocket" href="https://getpocket.com/save?url={{.Permalink}}" title="Pocketに保存する">Pocket</a>
 
-                <a class="line" href="http://line.me/R/msg/text/?{{.Title}}%20%7c%20{{.Site.Title}}%20{{.Permalink}}" title="LINEで共有">LINE</a>
+                <a class="line" href="https://line.me/R/msg/text/?{{.Title}}%20%7c%20{{.Site.Title}}%20{{.Permalink}}" title="LINEで共有">LINE</a>
             </aside>
         </footer>
     </main>
@@ -222,16 +222,16 @@
 
     {{/*  Analytics  */}}
     <amp-analytics type="gtag" data-credentials="include">
-    <script type="application/json">
-    {
-        "vars" : {
-        "gtag_id": "G-2T1J8R59SX",
-        "config" : {
-            "G-2T1J8R59SX": { "groups": "default" }
+        <script type="application/json">
+        {
+            "vars" : {
+            "gtag_id": "G-2T1J8R59SX",
+            "config" : {
+                "G-2T1J8R59SX": { "groups": "default" }
+            }
+            }
         }
-        }
-    }
-    </script>
+        </script>
     </amp-analytics>
 </body>
 

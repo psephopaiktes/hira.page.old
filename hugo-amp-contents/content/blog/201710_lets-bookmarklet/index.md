@@ -31,7 +31,7 @@ tags: ["javascript"]
 - [開いているページのTitleとURLをコピーする。](https://psephopaiktes.github.io/pages/bookmarklets/#bookmarklet-0)
 - [開いているページのCSSレイアウトをいじる](https://biz.moneyforward.com/blog/business-hack/iphone-chrome-bookmarklet/#26Web)
 - [開いているページを翻訳する](https://psephopaiktes.github.io/pages/bookmarklets/#bookmarklet-4)
-- [テンプレートからすばやくGmailを作成できる](http://bookmarklet.web.fc2.com/bookmarklet_070.html)
+- [テンプレートからすばやくGmailを作成できる](https://bookmarklet.web.fc2.com/bookmarklet_070.html)
 
 ものなど、検索するとたくさんあります。また、SNS系だと開いているページをすばやく共有できるブックマークレットがTwitterやFaceebook公式から出ていたりします。私のおすすめのブックマークレットは[こちらのページで](https://psephopaiktes.github.io/pages/bookmarklets/)まとめたので、見てみてください。
 
@@ -48,7 +48,7 @@ javascript:!function(undefined){
 上記のような形で作成しましょう。ブックマークレットとして使うため、先頭に`javascript:`の文字列を加えます。
 
 ### STEP2. 特殊文字を整形し、1行に圧縮する。
-ブックマークレットとして登録するためには、圧縮されている(改行が無い)必要があります。[/packer/](http://dean.edwards.name/packer/)などのツールを使って一行にしましょう。また、`(`や`&`の文字や、日本語をそのまま利用することは基本的にできません。そのため、一行にした後[URLエンコード・デコードフォーム](http://www.tagindex.com/tool/url.html)のようなツールを使ってURLエスケープ(特殊文字へ変換)します。もっとも最近の環境だと改行つき&amp;&amp;日本語のまま登録しても動くことも多いようです。
+ブックマークレットとして登録するためには、圧縮されている(改行が無い)必要があります。[/packer/](https://dean.edwards.name/packer/)などのツールを使って一行にしましょう。また、`(`や`&`の文字や、日本語をそのまま利用することは基本的にできません。そのため、一行にした後[URLエンコード・デコードフォーム](https://www.tagindex.com/tool/url.html)のようなツールを使ってURLエスケープ(特殊文字へ変換)します。もっとも最近の環境だと改行つき&amp;&amp;日本語のまま登録しても動くことも多いようです。
 ### STEP3. ブラウザに登録する
 {{< img src="1.png" alt="ブックマークを登録するイメージ" >}}
 
@@ -58,7 +58,7 @@ STEP2で圧縮&amp;エスケープした文字列をブラウザに新規ブッ�
 登録するURLの中で事前にライブラリを読み込んで置くことで、jQueryも利用できます。ページのDOMを取得しやすくなるので、特定のページの要素を抽出しやすくなりますね。以下のページがわかりやすいです。
 
 {{< embed-card
-    "http://blog.mudatobunka.org/entry/2016/02/29/030633"
+    "https://blog.mudatobunka.org/entry/2016/02/29/030633"
     ""
     "いまさらまとめるブックマークレットの作り方"
     "blog.mudatobunka.org"

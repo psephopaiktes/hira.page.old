@@ -6,7 +6,7 @@ update: false
 draft: false
 tags: ["GRAPHIC","CODE"]
 description: "職人や工事会社の検索・協力会社の紹介・発注相談サービスである「CraftBank」の導入事例ページをWordPressで作成しました。"
-# exlink: "http://case.craft-bank.com/"
+# exlink: "https://case.craft-bank.com/"
 priority: 2
 ---
 

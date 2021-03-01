@@ -16,7 +16,7 @@
           </a>
         </li>
         <li>
-          <a href="http://fb.me/webablog" target="_blank" rel="noopener">
+          <a href="https://fb.me/webablog" target="_blank" rel="noopener">
             <SVG symbol="facebook" alt="facebook" />
           </a>
         </li>
@@ -31,7 +31,7 @@
         </li>
         <li>
           <a
-            href="http://hira.page/blog/index.xml"
+            href="https://hira.page/blog/index.xml"
             target="_blank"
             rel="noopener"
           >
