@@ -92,13 +92,13 @@ export default {
       el.classList.remove("show");
     },
     enter(el) {
-      var delay = el.dataset.index * 80;
+      var delay = el.dataset.index * 40;
       setTimeout(() => {
         el.classList.add("show");
       }, delay);
     },
     leave(el) {
-      var delay = el.dataset.index * 80;
+      var delay = el.dataset.index * 40;
       setTimeout(() => {
         el.classList.remove("show");
       }, delay);

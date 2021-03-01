@@ -1,7 +1,7 @@
 <template>
   <section id="hero" @mousemove="stalker($event)">
     <div class="wrapper">
-      <picture class="eyecatch">
+      <picture class="eyecatch" @load="alert('ok')">
         <source
           srcset="@/assets/bitmap/me/eyecatch-sp.jpg"
           media="(max-width: 480px)"
@@ -69,9 +69,14 @@ export default {
   top: 1.6rem;
   overflow: hidden;
   border-radius: 1.2rem;
-  background: #000;
+  background: rgba(#000, 0.2);
   .wrapper {
     position: relative;
+    /* opacity: 0; */
+    transition: $TRANSITION;
+    &.show {
+      opacity: 1;
+    }
   }
 }
 

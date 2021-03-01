@@ -25,7 +25,7 @@
       <OtherIndex />
     </section>
 
-    <WorksModal :idIndex="resultIdIndex" />
+    <WorksModal :idIndex="resultIndex" />
   </BoardContainer>
 </template>
 
@@ -52,7 +52,7 @@ export default {
     });
   },
   computed: {
-    resultIdIndex() {
+    resultIndex() {
       let idIndex = [];
       this.$store.state.worksIndex.slice(0, 5).forEach(i => {
         idIndex.push(i.id);
