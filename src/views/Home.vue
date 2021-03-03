@@ -51,6 +51,11 @@ export default {
       lazyImages();
     });
   },
+  updated() {
+    this.$nextTick(() => {
+      lazyImages();
+    });
+  },
   computed: {
     resultIndex() {
       let idIndex = [];

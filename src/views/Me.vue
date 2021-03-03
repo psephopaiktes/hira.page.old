@@ -230,7 +230,7 @@ export default {
       if (!elements) {
         return;
       }
-      const num = window.innerHeight - 100;
+      const num = window.innerHeight - 40;
       Array.prototype.forEach.call(elements, el => {
         if (el.getBoundingClientRect().top < num) {
           el.classList.add("show");

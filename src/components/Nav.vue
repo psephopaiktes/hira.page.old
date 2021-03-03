@@ -13,12 +13,7 @@
     @click="toggleMenuAndAnimation()"
   ></button>
 
-  <nav
-    class="l-navMenu menu"
-    :class="{ show: show }"
-    @touchstart="menuDragStart($event)"
-    @touchend="menuDragEnd($event)"
-  >
+  <nav class="l-navMenu menu" :class="{ show: show }">
     <h1 @click="toggleMenuAndAnimation()">
       <router-link to="/"><SVG symbol="logo" alt="WEBA"/></router-link>
     </h1>
@@ -87,8 +82,7 @@ export default {
         contact: lottieDataContact,
         menu: lottieDataMenu
       },
-      animation: {},
-      menuDragStartPoint: 0
+      animation: {}
     };
   },
   methods: {
@@ -106,17 +100,6 @@ export default {
     reversePlayLottie(name) {
       this.animation[name].setDirection(-1);
       this.animation[name].play();
-    },
-    menuDragStart(e) {
-      this.menuDragStartPoint = e.touches[0].pageY;
-    },
-    menuDragEnd(e) {
-      const dragDistance = e.changedTouches[0].pageY - this.menuDragStartPoint;
-      if (dragDistance > 5) {
-        this.toggleMenuAndAnimation();
-      } else {
-        return;
-      }
     }
   },
   mounted() {
