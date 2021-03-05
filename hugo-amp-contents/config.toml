@@ -1,7 +1,7 @@
 languageCode = "ja"
 title = "WEBA"
 copyright = "© weba"
-baseURL = "/"
+baseURL = "https://hira.page/"
 publishDir = "../public/"
 newContentEditor = "code"
 hasCJKLanguage = true
