@@ -73,7 +73,7 @@
     </button>
   </BoardContainer>
 
-  <WorksModal :idIndex="resultIndex" />
+  <WorksModal :idIndex="resultIdIndex" />
 </template>
 
 <script>
@@ -139,6 +139,13 @@ export default {
     }
   },
   computed: {
+    resultIdIndex() {
+      let idIndex = [];
+      this.resultIndex.forEach(i => {
+        idIndex.push(i.id);
+      });
+      return idIndex;
+    },
     resultIndex() {
       let result = [];
       if (this.tagWord) {
