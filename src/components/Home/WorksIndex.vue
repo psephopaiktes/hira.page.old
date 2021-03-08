@@ -27,8 +27,15 @@
 </template>
 
 <script>
+import { lazyImages } from "@/lib/lazyImages";
+
 export default {
   name: "WorksIndex",
+  mounted() {
+    this.$nextTick(() => {
+      lazyImages();
+    });
+  },
   computed: {
     resultIndex() {
       return Object.create(this.$store.state.worksIndex)

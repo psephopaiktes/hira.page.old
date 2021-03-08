@@ -44,8 +44,15 @@
 </template>
 
 <script>
+import { lazyImages } from "@/lib/lazyImages";
+
 export default {
-  name: "BlogIndex"
+  name: "BlogIndex",
+  mounted() {
+    this.$nextTick(() => {
+      lazyImages();
+    });
+  }
 };
 </script>
 

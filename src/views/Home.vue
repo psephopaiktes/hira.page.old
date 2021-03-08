@@ -35,7 +35,6 @@ import BlogIndex from "@/components/Home/BlogIndex.vue";
 import WorksIndex from "@/components/Home/WorksIndex.vue";
 import OtherIndex from "@/components/Home/OtherIndex.vue";
 import WorksModal from "@/components/WorksModal.vue";
-import { lazyImages } from "@/lib/lazyImages";
 
 export default {
   name: "Home",
@@ -45,16 +44,6 @@ export default {
     WorksIndex,
     OtherIndex,
     WorksModal
-  },
-  mounted() {
-    this.$nextTick(() => {
-      lazyImages();
-    });
-  },
-  updated() {
-    this.$nextTick(() => {
-      lazyImages();
-    });
   },
   computed: {
     resultIndex() {
