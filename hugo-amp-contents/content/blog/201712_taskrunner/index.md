@@ -51,7 +51,6 @@ CSSやJavascriptに構文ミスが無いか検証するツールです。細か�
 ---
 
 ## gulp
-<img src="https://www.google.com/s2/favicons?domain=gulpjs.com" alt="gulp">
 
 [[公式サイト]](https://gulpjs.com)
 [[GitHub]](https://github.com/gulpjs/gulp)  
@@ -78,7 +77,6 @@ Gulpのはじめ方についてわかりやすくまとまっています。
 ---
 
 ## npm script
-<img src="https://www.google.com/s2/favicons?domain=npmjs.com" alt="script">
 
 [[公式サイト]](https://npmjs.com)
 [[GitHub]](https://github.com/npm/npm)  
@@ -104,7 +102,6 @@ Gulpのはじめ方についてわかりやすくまとまっています。
 ---
 
 ## webpack
-<img src="https://www.google.com/s2/favicons?domain=webpack.js.org" alt="webpack">
 
 [[公式サイト]](https://webpack.js.org)
 [[GitHub]](https://github.com/webpack/webpack)  
@@ -131,7 +128,6 @@ Reactの様に複数のComponentでページを管理する場合、CSSもCompon
 ---
 
 ## Rollup
-<img src="https://www.google.com/s2/favicons?domain=rollupjs.org" alt="Rollup">
 
 [[公式サイト]](https://rollupjs.org)
 [[GitHub]](https://github.com/rollup/rollup)  
@@ -156,7 +152,6 @@ Reactの様に複数のComponentでページを管理する場合、CSSもCompon
 ---
 
 ## Fusebox
-<img src="https://www.google.com/s2/favicons?domain=fuse-box.org" alt="Fusebox">
 
 [[公式サイト]](https://fuse-box.org)
 [[GitHub]](https://github.com/fuse-box/fuse-box)  
@@ -180,7 +175,6 @@ Fuseboxについての概要と、競合との比較を行った良記事です�
 ---
 
 ## Parcel
-<img src="https://www.google.com/s2/favicons?domain=parceljs.org" alt="Parcel">
 
 [[公式サイト]](https://parceljs.org)
 [[GitHub]](https://github.com/parcel-bundler/parcel)  
