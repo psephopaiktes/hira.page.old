@@ -179,15 +179,15 @@
 
             <nav>
                 <ol class="breadcrumb" itemscope="" itemType="https://schema.org/BreadcrumbList">
-                    <li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem">
+                    <li itemProp="itemListElement" name="HOME" itemscope="" itemType="https://schema.org/ListItem">
                         <a href="/" itemProp="item">HOME</a>
                         <meta itemProp="position" content="1"/>
                     </li>
-                    <li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem">
+                    <li itemProp="itemListElement" name="ブログ一覧" itemscope="" itemType="https://schema.org/ListItem">
                         <a href="/blog" itemProp="item">ブログ一覧</a>
                         <meta itemProp="position" content="2"/>
                     </li>
-                    <li itemProp="itemListElement" itemscope="" itemType="https://schema.org/ListItem">
+                    <li itemProp="itemListElement" name="{{ .Title }}" itemscope="" itemType="https://schema.org/ListItem">
                         {{ .Title }}
                         <meta itemProp="position" content="3"/>
                     </li>

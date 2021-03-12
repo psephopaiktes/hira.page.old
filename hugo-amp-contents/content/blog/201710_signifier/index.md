@@ -70,5 +70,3 @@ description: "アフォーダンスとシグニファイアという言葉を聞
 
 ## おわりに
 冒頭で紹介した [誰のためのデザイン？ 増補・改訂版](https://amzn.to/2yAmeln) はデザイナーはもちろんのこと、プロダクトに関わるあらゆるひとの必読書として愛されています。本記事で紹介したアフォーダンス、シグニファイアについての詳細はもちろん、プロダクトやサービスについての重要な考え方や技術が多く紹介されています。ページ数が多くて大変ですが、ぜひ一度は読んでおくことをおすすめします。デザイナ以外の人が読んでもわかりやすい文体で記述されていますので、読むのに困ることは無いと思います。まちがえて古い版を買わないようにお気をつけください。
-
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=psephopaiktes-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4788514346&linkId=a2ea9d4a5edf2db9de71a7bea0a056dd"></iframe>
