@@ -18,12 +18,21 @@
       にリプライ、DMいただいても大丈夫です。<br class="u-hideSp" />
     </p>
 
-    <p>
-      <small
-        >※
-        現在転職活動は行っておりません。エージェント様のメールにはご返事できませんのでご了承ください。</small
-      >
-    </p>
+    <section class="status">
+      <h3>補足: 2021年3月追記</h3>
+      <ul>
+        <li>
+          <small>
+            転職活動は行っておりません。エージェント様のメールにはご返事できかねます。
+          </small>
+        </li>
+        <li>
+          <small>
+            現在すこし多忙のため、新規のご依頼はお断りする可能性が高いです。
+          </small>
+        </li>
+      </ul>
+    </section>
 
     <Form />
 
@@ -242,6 +251,21 @@ export default {
 
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
+
+.status {
+  h3 {
+    font-size: 1em;
+  }
+  ul {
+    margin-top: 0.4em;
+  }
+  li {
+    &::before {
+      content: "※";
+      opacity: 0.6;
+    }
+  }
+}
 
 .example {
   margin-top: 4.8rem;

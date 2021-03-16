@@ -107,6 +107,7 @@ export default {
   filter: drop-shadow(0 0 0.3em rgba(#000, 0.4));
   @include max($SM) {
     font-size: 4vw;
+    color: #fff;
   }
   @include min($SM + 1) {
     background-image: radial-gradient(circle, #fff 6rem, transparent 6rem),
