@@ -1,5 +1,5 @@
 <template>
-  <div class="board l-board">
+  <div class="board">
     <nav id="backhome">
       <router-link to="/">
         <SVG symbol="backhome" alt="ホームへ戻る" />

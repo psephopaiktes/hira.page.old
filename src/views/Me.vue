@@ -32,6 +32,8 @@
 
     <Hero />
 
+    <hr class="spacer" />
+
     <section class="aboutMe hirata js-inview">
       <div class="aboutMe__left">
         <h2>平田 章</h2>
@@ -246,10 +248,14 @@ export default {
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
 
-.meBoard {
-  padding-top: 50%;
+.spacer {
+  opacity: 0;
+  margin-top: calc(50vw - 16rem);
+  @include max($MD) {
+    margin-top: 50vw;
+  }
   @include max($SM) {
-    padding-top: 95%;
+    margin-top: 100vw;
   }
 }
 
