@@ -246,7 +246,7 @@ export default {
 <style scoped lang="scss">
 @use "@/style/common.scss" as *;
 
-.board {
+.meBoard {
   padding-top: 50%;
   @include max($SM) {
     padding-top: 95%;

@@ -1,13 +1,13 @@
 <template>
   <section id="hero" @mousemove="stalker($event)">
     <div class="wrapper">
-      <picture class="eyecatch" @load="alert('ok')">
+      <picture class="eyecatch" ref="eyecatch">
         <source
           srcset="@/assets/bitmap/me/eyecatch-sp.jpg"
           media="(max-width: 480px)"
         />
         <img
-          class="eyecatch"
+          @load="fadeImg()"
           src="@/assets/bitmap/me/eyecatch-pc.jpg"
           alt="アイキャッチ画像:仕事中のイメージ"
         />
@@ -34,6 +34,9 @@ export default {
     this.typography = document.querySelector("#hero .typography");
   },
   methods: {
+    fadeImg() {
+      this.$refs.eyecatch.classList.add("show");
+    },
     stalker(evt) {
       if (!this.typography) return;
 
@@ -72,18 +75,18 @@ export default {
   background: rgba(#000, 0.2);
   .wrapper {
     position: relative;
-    /* opacity: 0; */
-    transition: $TRANSITION;
-    &.show {
-      opacity: 1;
-    }
   }
 }
 
 .eyecatch {
   width: 100%;
   height: auto;
-  opacity: 0.8;
+
+  opacity: 0;
+  transition: $TRANSITION;
+  &.show {
+    opacity: 0.6;
+  }
 }
 
 .typography {
