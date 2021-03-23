@@ -489,7 +489,7 @@ article {
 footer nav {
   margin: 16rem calc(50% - 50vw) 0;
   padding: 0 0 14rem;
-  background: color(theme,.2);
+  background: color(theme,.8);
   .breadcrumb {
     margin: 0 0;
     padding: 1.2rem 2.4rem .8rem;
@@ -520,10 +520,16 @@ footer nav {
       text-decoration: underline;
     }
   }
+  .related {
+    background: color(base,.2);
+    padding: 1.2rem 2.4rem 6.4rem;
+  }
   h1 {
     margin: 6.4rem auto 0;
     width: 12rem;
     height: 3rem;
+    filter: brightness(300%);
+    opacity: .8;
   }
   ul {
     display: flex;
@@ -535,7 +541,6 @@ footer nav {
     }
     li {
       margin: 1.2rem .8rem 0;
-      color: color(theme,.8);
       font-weight: 600;
       @include max($MD) {
         font-size: 1.8rem;
@@ -547,10 +552,17 @@ footer nav {
       margin-right: 1.6rem;
       width: .5em;
       height: .5em;
-      background: color(theme,.5);
+      background: color(base,.4);
       border-radius: 50%;
       @include max($MD) {
         display: none;
+      }
+    }
+    a {
+      color: color(base);
+      opacity: .7;
+      &:hover {
+        opacity: 1;
       }
     }
   }

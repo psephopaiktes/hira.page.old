@@ -112,7 +112,7 @@
     <main>
         <header class="articleHeader">
 
-            <h1 class="logo"><a href="/"><amp-img src="/img/logo.svg" alt="WEBA" width="200" height="50" layout="responsive"></amp-img></a></h1>
+            <h1 class="logo"><a href="/blog"><amp-img src="/img/logo.svg" alt="WEBA" width="200" height="50" layout="responsive"></amp-img></a></h1>
 
             <amp-img
                 class="hero"
@@ -192,6 +192,21 @@
                         <meta itemProp="position" content="3"/>
                     </li>
                 </ol>
+
+                <!-- {{ $related := .Site.RegularPages.Related . | first 3 }}
+                {{ with $related }}
+                <section class="related">
+                    <h3>See Also</h3>
+                    <ul>
+                        {{ range . }}
+                        <li><a href="{{ .RelPermalink }}">
+                            {{ .Title }}
+                            {{ .Params.id }}
+                        </a></li>
+                        {{ end }}
+                    </ul>
+                </section>
+                {{ end }} -->
 
                 <h1><a href="/"><amp-img src="/img/logo.svg" alt="WEBA" width="120" height="30" layout="responsive"></amp-img></a></h1>
                 <ul>
