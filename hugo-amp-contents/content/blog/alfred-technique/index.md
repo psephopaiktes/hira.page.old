@@ -6,6 +6,7 @@ update: false
 draft: false
 tags: ["app・service"]
 description: "Macで定番の作業効率化アプリ、「Alfred」のおすすめの使用方法や設定をまとめます。大人気アプリなので、似たような記事はよくありますが、できるだけ知られて無さそうなTipsや裏技を紹介していきます。有料版（Powerpack）を前提にしています。すべての機能を書くと長くなるので、自分が毎日レベルで実際に使っているものだけ紹介していきます。"
+images = ["cover.png"]
 redirect: ""
 ---
 
