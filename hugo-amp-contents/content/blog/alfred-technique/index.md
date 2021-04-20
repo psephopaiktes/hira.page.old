@@ -1,9 +1,9 @@
 ---
 id: "alfred-technique"
 title: "【Mac効率化】きっとまだ知らない、Alfredのオススメ設定・使い方"
-date: 2021-03-25T18:31:43+09:00
+date: 2021-04-20T17:31:43+09:00
 update: false
-draft: true
+draft: false
 tags: ["app・service"]
 description: "Macで定番の作業効率化アプリ、「Alfred」のおすすめの使用方法や設定をまとめます。大人気アプリなので、似たような記事はよくありますが、できるだけ知られて無さそうなTipsや裏技を紹介していきます。有料版（Powerpack）を前提にしています。すべての機能を書くと長くなるので、自分が毎日レベルで実際に使っているものだけ紹介していきます。"
 redirect: ""
@@ -44,6 +44,10 @@ Macでデフォルトで入っている[Spotlight検索](https://support.apple.c
 一致する結果がない単語を入力した場合、Alfredはデフォルトのブラウザを起動し、Google検索を行ってくれます。
 ![Web検索の実行](basic-use-google.png)
 
+### ブラウザのブックマークを検索
+`b`を押したあと文字を入力すると、デフォルトブラウザのブックマークを検索してすばやく開けます。
+![ブックマーク検索を実行](basic-use-bookmark.png)
+
 ### 電卓
 数値を入力すれば計算できます。Enterを押すと結果がコピーされるので便利。
 ![電卓機能の実行](basic-use-calicurate.png)
@@ -55,8 +59,6 @@ Macでデフォルトで入っている[Spotlight検索](https://support.apple.c
 ### Terminalコマンドを実行
 `>` を入力したあと、Zshコマンドを入力すると、ターミナルが起動してそのコマンドを実行してくれます。起動するターミナルアプリは設定できます。
 ![コマンドの実行](basic-use-terminal.png)
-
-### 選択したテキストに対してAlfredを実行
 
 ### 設定
 Alfredはカスタマイズしてなんぼのアプリなので、設定画面をよく開きます。検索ボックスを表示した状態で`⌘,`を入力するのがいちばん早いです。
@@ -121,44 +123,56 @@ Workflowとは、Alfredに対してさまざまな機能を追加するプラグ
 
 例えば、[絵文字を検索して素早くコピーできるWorkflow](https://github.com/meyer/alfred-emoji-workflow)など、実に様々なものがあります。
 
-正直、Workflowはすでに多くの方が紹介されてますし、職種によっても必要なものが異なるので、「[デザイナー Alfred おすすめ](https://www.google.co.jp/search?q=デザイナー+Alfred+おすすめ)」「[エンジニア Alfred おすすめ](https://www.google.co.jp/search?q=エンジニア+Alfred+おすすめ)」などでググってもらうのが良いと思います。
+正直、Workflowはすでに多くの方が紹介されてますし、職種によっても必要なものが異なるので、「[デザイナー Alfred おすすめ](https://www.google.co.jp/search?q=デザイナー+Alfred+おすすめ)」「[エンジニア Alfred おすすめ](https://www.google.co.jp/search?q=エンジニア+Alfred+おすすめ)」などでググってもらうのが良いかと思います。
 
 ### 複数のWebページで検索を実行するWorkflowを作る
 Workflowの作成にはプログラミングの知識が必要だったりするのですが、かんたんでおすすめの検索ワークフローの作り方を紹介します。
 
-上で紹介した「Web Search」機能は便利なのですが、一度にひとつのサイトでしか検索を実行できません。Workflowとして作ることで、たとえば「ストックフォトサイトで一気にフリー素材を検索したい」「複数の中古サイトでまとめて商品を検索したい」などの要望を叶えてくれます。
+上で紹介した「Web Search」機能は便利なのですが、一度にひとつのサイトでしか検索を実行できません。Workflowとして作ることで、たとえば「**ストックフォトサイトで一気にフリー素材を検索したい**」「**複数のECサイトでまとめて商品を検索したい**」などの要望を叶えてくれます。
 
 例として、複数のVODサービスで一気に検索を行うWorkflowの作り方を紹介します。
 
-1. 
+1. Alfredの設定画面で「Workflow」を開き、左下の`+`ボタンを押します。`Templates→Web and URLs→Open custom URL in specified browser`の順に選びます。
 ![手順1](workflow-1.png)
 
-2. 
+2. Workflowの新規作成画面が開くので、適宜情報を入力します。必須なのはNameだけなので、わかりやすい名前をつけましょう。
 ![手順2](workflow-2.png)
 
-3. 
+3. 作成されたブロックの`Keyword`をダブルクリックします。ここではこのWorkflowを呼び出すための英字キーワードを設定します。
 ![手順3](workflow-3.png)
 
-4. 
+4. 次に、実行時に開きたいWebサイトを設定します。`Open URL`のブロックをダブルクリックして、[Web Search](#web-search)と同様に検索用のURLを設定します。
 ![手順4](workflow-4.png)
 
-5. 
+5. 今回は複数のWebサイトの検索ページを開きたいので、`Open URL`を複製します。クリックして選択し、`⌘C`→`⌘V`でコピペします。複製したブロックをダブルクリックして、同様に別のURLを設定してください。
 ![手順5](workflow-5.png)
 
-6. 
+6. `Keyword`からあたらしく複製した`Open URL`へ、ドラッグして線をつなぎます。
 ![手順6](workflow-6.png)
 
-7. 
+7. 開きたいWebサイトの数だけ`Open URL`を作れば完成です。さきほど設定したKeywordで実行できるようになっています。
 ![手順7](workflow-7.png)
 
-8. 
+8. 実行すると、ブラウザでいっきに検索を行ってくれます。めっちゃ便利。
 ![手順8](workflow-8.png)
 
 ## オススメ設定
 
-### 設定は同期しよう
+### Advanced→Force Keyboard
+`Alphanumeric` にしておくと、Alfred起動時はかならず英語入力になります。AlfredのKeywordは英語なので、これを有効にしておくといちいち入力切替しなくてちょっと楽です。
+
+### Advanced→Syncing
+設定ファイルをDropboxやGoogle Driveに保存して、同期することができます。
 
 ## 紹介しきれなかった機能
 Alfredはまだまだ機能はありますし、愛用している機能はけっこう人によって違うと思われます。僕はほとんど使ってないですが、
 
-あたりは人によってはものすごく重宝するかもしれません。以下の記事が個人的に参考になる&内容があまりかぶってないので、もっと知りたい方はごらんください。
+* 1Passwordとの連携
+* Apple Music の操作
+* 連絡先や辞書の検索
+
+あたりは使っているひとには便利かもです。ほかにも、iPhoneからMacを操作できるようになる、[Alfred Remote](https://www.alfredapp.com/remote/)なる機能もあったりします。
+
+ぜひいろいろ試してみて、快適なAlfredライフを。
+
+完
