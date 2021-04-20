@@ -19,7 +19,7 @@ redirect: ""
 
 Macで人気のランチャーアプリです。一番メインの機能としてはショートカットで表示される検索ボックスにアプリ名やファイル名を入れて、素早く起動させることです。[BetterTouchTool](https://folivora.ai/)や[Keyboard Maestro](https://www.keyboardmaestro.com/main/)と並んで、Macではド定番の作業効率化アプリです。
 
-![基本的な使用イメージ](alfred-main-image.png)
+{{<img alt="基本的な使用イメージ" src="alfred-main-image.png">}}
 
 Macでデフォルトで入っている[Spotlight検索](https://support.apple.com/ja-jp/HT204014)機能とほとんど同じコンセプトなので、それの代わりに使うことになります。
 
@@ -33,32 +33,32 @@ Macでデフォルトで入っている[Spotlight検索](https://support.apple.c
 
 ### アプリを検索
 アプリ名を入力して検索し、すばやく起動できます。たいてい最初の1・2文字を入力すればすぐ見つかります。
-![アプリを検索](besic-use-app.png)
+{{<img alt="アプリを検索" src="besic-use-app.png">}}
 
 ### ファイル・ディレクトリを検索
 まず`Space`もしくは`'`を入力すると、ファイル検索モードになります。
-![ファイル検索モード](basic-use-file.png)
+{{<img alt="ファイル検索モード" src="basic-use-file.png">}}
 この状態でファイル名やディレクト名を入力すると、すばやく目的のファイルを開けます。
 
 ### Web検索
 一致する結果がない単語を入力した場合、Alfredはデフォルトのブラウザを起動し、Google検索を行ってくれます。
-![Web検索の実行](basic-use-google.png)
+{{<img alt="Web検索の実行" src="basic-use-google.png">}}
 
 ### ブラウザのブックマークを検索
 `b`を押したあと文字を入力すると、デフォルトブラウザのブックマークを検索してすばやく開けます。
-![ブックマーク検索を実行](basic-use-bookmark.png)
+{{<img alt="ブックマーク検索を実行" src="basic-use-bookmark.png">}}
 
 ### 電卓
 数値を入力すれば計算できます。Enterを押すと結果がコピーされるので便利。
-![電卓機能の実行](basic-use-calicurate.png)
+{{<img alt="電卓機能の実行" src="basic-use-calicurate.png">}}
 
 ### システムコマンドを実行
 `sleep`、`restart`、`emptytrash`などと入力することでMacを再起動させたりゴミ箱を空にしたりできます。他にも以下の画像にあるようなことができます。
-![システム系機能](alfred-system-feature.png)
+{{<img alt="システム系機能" src="alfred-system-feature.png">}}
 
 ### Terminalコマンドを実行
 `>` を入力したあと、Zshコマンドを入力すると、ターミナルが起動してそのコマンドを実行してくれます。起動するターミナルアプリは設定できます。
-![コマンドの実行](basic-use-terminal.png)
+{{<img alt="コマンドの実行" src="basic-use-terminal.png">}}
 
 ### 設定
 Alfredはカスタマイズしてなんぼのアプリなので、設定画面をよく開きます。検索ボックスを表示した状態で`⌘,`を入力するのがいちばん早いです。
@@ -80,7 +80,7 @@ Alfredの有料プランです。買い切り式ですが、特定のバージ�
 Macでコピーした履歴を一覧で探して、再度ペーストができる機能です。この機能だけの類似アプリは様々あり、私も[Paste](https://apps.apple.com/jp/app/paste-clipboard-manager/id967805235)を使っていましたが、Alfredのほうが優秀に思います。
 
 `⌘⇧V`などのショートカットで呼び出せて、いつでもコピー履歴を表示できます。テキストだけではなく、**画像のコピー履歴**も保存されます。
-![クリップボード](clipboard.png)
+{{<img alt="クリップボード" src="clipboard.png">}}
 上下キーで再度貼り付けしたいものを選んで、`Enter`でペーストが実行されます。WordやHTMLをコピーしていた場合は書式込みでペーストされますが、`⇧Enter`でただのテキストとしてペーストすることもできます。
 
 この状態でキーワードを入力することで、コピー履歴を検索できます。Imageと入力すればコピーした画像一覧が表示されます。
@@ -91,11 +91,11 @@ Macでコピーした履歴を一覧で探して、再度ペーストができ�
 ## Appearance
 Alfredはすばらしいアプリなのですが、デフォルトの検索ボックスの見た目が鬼ダサくてとてもそのまま使えません。
 
-![デフォルトのアピアランス](appearance.png)
+{{<img alt="デフォルトのアピアランス" src="appearance.png">}}
 
 見た目は色や余白までかなり自由に設定できます。有志が公開しているThemeをDLして反映することもできます。
 
-![アピアランスのカスタム](appearance-custom.png)
+{{<img alt="アピアランスのカスタム" src="appearance-custom.png">}}
 
 * [Alfred Theme - Glass--dark](https://www.alfredapp.com/extras/theme/jlgqHifMRw/)
 * [Alfred Theme - Smoke](https://www.alfredapp.com/extras/theme/AUkf1A6h2G/)
@@ -103,7 +103,7 @@ Alfredはすばらしいアプリなのですが、デフォルトの検索ボ�
 
 ## Web Search
 特定のWebサイトでの検索を、Alfredからいつでもすぐに行えるようになります。
-![Web検索の例](web-search.png)
+{{<img alt="Web検索の例" src="web-search.png">}}
 
 正確に言うと、**入力したキーワードをもとにしたURLを開く機能**です。
 
@@ -133,28 +133,28 @@ Workflowの作成にはプログラミングの知識が必要だったりする
 例として、複数のVODサービスで一気に検索を行うWorkflowの作り方を紹介します。
 
 1. Alfredの設定画面で「Workflow」を開き、左下の`+`ボタンを押します。`Templates→Web and URLs→Open custom URL in specified browser`の順に選びます。
-![手順1](workflow-1.png)
+{{<img alt="手順1" src="workflow-1.png">}}
 
 2. Workflowの新規作成画面が開くので、適宜情報を入力します。必須なのはNameだけなので、わかりやすい名前をつけましょう。
-![手順2](workflow-2.png)
+{{<img alt="手順2" src="workflow-2.png">}}
 
 3. 作成されたブロックの`Keyword`をダブルクリックします。ここではこのWorkflowを呼び出すための英字キーワードを設定します。
-![手順3](workflow-3.png)
+{{<img alt="手順3" src="workflow-3.png">}}
 
 4. 次に、実行時に開きたいWebサイトを設定します。`Open URL`のブロックをダブルクリックして、[Web Search](#web-search)と同様に検索用のURLを設定します。
-![手順4](workflow-4.png)
+{{<img alt="手順4" src="workflow-4.png">}}
 
 5. 今回は複数のWebサイトの検索ページを開きたいので、`Open URL`を複製します。クリックして選択し、`⌘C`→`⌘V`でコピペします。複製したブロックをダブルクリックして、同様に別のURLを設定してください。
-![手順5](workflow-5.png)
+{{<img alt="手順5" src="workflow-5.png">}}
 
 6. `Keyword`からあたらしく複製した`Open URL`へ、ドラッグして線をつなぎます。
-![手順6](workflow-6.png)
+{{<img alt="手順6" src="workflow-6.png">}}
 
 7. 開きたいWebサイトの数だけ`Open URL`を作れば完成です。さきほど設定したKeywordで実行できるようになっています。
-![手順7](workflow-7.png)
+{{<img alt="手順7" src="workflow-7.png">}}
 
 8. 実行すると、ブラウザでいっきに検索を行ってくれます。めっちゃ便利。
-![手順8](workflow-8.png)
+{{<img alt="手順8" src="workflow-8.png">}}
 
 ## オススメ設定
 
