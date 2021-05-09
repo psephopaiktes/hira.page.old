@@ -97,7 +97,7 @@
                 {{ with .Params.tags -}}
                 <ul class="tags">
                     {{ range . -}}
-                    <li><a href="/works?tag={{ . | urlize }}">{{ . }}</a>
+                    <li><a href="/works?tag={{ . | urlize }}" target="_top">{{ . }}</a>
                     {{- end }}
                 </ul>
                 {{- end }}
