@@ -99,7 +99,7 @@
             data-id="open"
             data-size="small"
             href="https://github.com/psephopaiktes/hira.page"
-            target="_brank"
+            target="_blank"
             rel="noopener"
           >
             このサイトのソースコード<SVG symbol="open" class="c-textIcon" />
@@ -138,7 +138,7 @@
             data-id="open"
             data-size="small"
             href="https://yasuhisa.com/could/article/product-designer-skillmap/"
-            target="_brank"
+            target="_blank"
             rel="noopener"
           >
             参考
