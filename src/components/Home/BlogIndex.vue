@@ -6,7 +6,7 @@
         :target="item.exSite ? '_blank' : null"
         :rel="item.exSite ? 'noopener' : null"
       >
-        <img
+        <!-- <img
           alt="背景"
           src="/blog/placeholder.png"
           :data-src="`/blog/${item.id}/cover.png`"
@@ -21,6 +21,19 @@
           width="600"
           height="300"
           class="js-lazy"
+        /> -->
+        <img
+          alt="背景"
+          :src="`/blog/${item.id}/cover.png`"
+          width="600"
+          height="300"
+          class="bg"
+        />
+        <img
+          :src="`/blog/${item.id}/cover.png`"
+          :alt="`${item.title}のサムネイル画像`"
+          width="600"
+          height="300"
         />
         <h3>{{ item.title }}</h3>
         <div class="meta">
@@ -44,14 +57,14 @@
 </template>
 
 <script>
-import { lazyImages } from "@/lib/lazyImages";
+// import { lazyImages } from "@/lib/lazyImages";
 
 export default {
   name: "BlogIndex",
   mounted() {
-    this.$nextTick(() => {
-      lazyImages();
-    });
+    // this.$nextTick(() => {
+    //   lazyImages();
+    // });
   }
 };
 </script>

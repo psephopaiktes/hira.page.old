@@ -4,13 +4,19 @@
       <router-link :to="`?work=${item.id}`">
         <div class="thumb">
           <img
+            :src="'/works/' + item.id + '/thumbnail.png'"
+            :alt="`${item.title}のサムネイル画像`"
+            width="600"
+            height="600"
+          />
+          <!-- <img
             src="/works/placeholder.png"
             :data-src="'/works/' + item.id + '/thumbnail.png'"
             :alt="`${item.title}のサムネイル画像`"
             width="600"
             height="600"
             class="js-lazy"
-          />
+          /> -->
         </div>
         <h3>{{ item.title }}</h3>
         <ul class="tags">
@@ -27,14 +33,14 @@
 </template>
 
 <script>
-import { lazyImages } from "@/lib/lazyImages";
+// import { lazyImages } from "@/lib/lazyImages";
 
 export default {
   name: "WorksIndex",
   mounted() {
-    this.$nextTick(() => {
-      lazyImages();
-    });
+    // this.$nextTick(() => {
+    //   lazyImages();
+    // });
   },
   computed: {
     resultIndex() {
