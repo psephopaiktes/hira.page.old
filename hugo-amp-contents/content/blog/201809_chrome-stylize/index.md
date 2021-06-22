@@ -2,7 +2,7 @@
 id: "201809_chrome-stylize"
 title: "[Chrome拡張] よく見るサイトのデザインを自由に変えよう! 自作のCSSとJSを読み込ませる方法 [Stylish削除記念]"
 date: 2018-09-03T00:46:13+10:00
-lastmod: 2021-09-03T00:46:13+10:00
+lastmod: 2021-06-22T00:46:13+10:00
 draft: false
 tags: ["chrome", "web"]
 description: "最低限HTMLとCSSの基礎知識だけあればOKです。Google検索やGitHubなどを黒い背景に変えたり、いらない要素を消したりできます。ローカルで拡張機能を作る方法なので、「安心」「JSも使える」「SCSSも使える」などメリットたくさん。"
