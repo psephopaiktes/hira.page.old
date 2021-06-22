@@ -89,7 +89,7 @@
             <div class="meta">
                 <span class="date">
                     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
-                    {{- if .Params.update -}}
+                    {{- if ne .Date .Lastmod -}}
                     公開 / <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006" }}</time>更新
                     {{ end }}
                 </span>

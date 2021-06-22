@@ -2,7 +2,7 @@
 id: "201809_chrome-stylize"
 title: "[Chrome拡張] よく見るサイトのデザインを自由に変えよう! 自作のCSSとJSを読み込ませる方法 [Stylish削除記念]"
 date: 2018-09-03T00:46:13+10:00
-update: true
+lastmod: 2021-09-03T00:46:13+10:00
 draft: false
 tags: ["chrome", "web"]
 description: "最低限HTMLとCSSの基礎知識だけあればOKです。Google検索やGitHubなどを黒い背景に変えたり、いらない要素を消したりできます。ローカルで拡張機能を作る方法なので、「安心」「JSも使える」「SCSSも使える」などメリットたくさん。"
@@ -141,10 +141,10 @@ console.log('Hello World');
 
 
 ### テンプレート
-[テンプレート 最小構成](./weba_chrome-stylize.zip)  
+<a href="/blog/201809_chrome-stylize/weba_chrome-stylize.zip" download>テンプレート 最小構成</a>  
 最小のファイル構成で作成した例です。ダウンロードして解凍後、好きなように改造してください。
 
-[テンプレート SCSS, BABEL有り](./weba_chrome-stylize_npm.zip)  
+<a href="/blog/201809_chrome-stylize/weba_chrome-stylize_npm.zip" download>テンプレート SCSS, BABEL有り</a>  
 NPMに慣れている方はこちらをおすすめします。使い方は`npm i`して`npm start`するだけです。srcフォルダ内のSCSSファイルとJSファイルが監視されてdocsフォルダにビルドされます。
 
 ## まとめと補足
