@@ -380,7 +380,7 @@ article {
     background: url("/img/blog-sns.svg") no-repeat;
     background-color: color(main,.3);
     backdrop-filter: blur(8px);
-    background-size: 36rem 4rem;
+    background-size: 40rem 4rem;
     &.twitter{background-position: 0 0 }
     &:hover.twitter{ background-color: #008ff7 }
     &.facebook{ background-position: -4rem 0 }
@@ -417,6 +417,7 @@ article {
       letter-spacing: .05em;
       border-radius: .2rem;
       color: #fff;
+      background: #000;
       height: 4.8rem;
       line-height: 4.8rem;
       text-align: center;
@@ -429,7 +430,7 @@ article {
         width: 4rem;
         height: 4rem;
         background: url("/img/blog-sns.svg") no-repeat;
-        background-size: 36rem 4rem;
+        background-size: 40rem 4rem;
         margin-right: .4rem;
         vertical-align: -30%;
       }
@@ -441,7 +442,7 @@ article {
     margin-top: 12rem;
   }
   ul{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     @media(max-width: $MD) {
       grid-template-columns: 1fr 1fr;
     }
@@ -461,6 +462,10 @@ article {
   li:nth-child(4) a {
     background-color: color(main,.4);
     &::before { background-position: -20rem 0 }
+  }
+  li:nth-child(5) a {
+    background-color: #EB4D3C;
+    &::before { background-position: -36rem 0 }
   }
 }
 .support {

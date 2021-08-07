@@ -38,6 +38,15 @@
             <SVG symbol="rss" alt="rss" />
           </a>
         </li>
+        <li>
+          <a
+            href="https://news.google.com/publications/CAAqBwgKML_jpQswl-69Aw"
+            target="_blank"
+            rel="noopener"
+          >
+            <SVG symbol="google-news" alt="google-news" />
+          </a>
+        </li>
       </ul>
 
       <router-link to="/blog/search" class="search">
