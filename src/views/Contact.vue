@@ -18,7 +18,7 @@
       にリプライ、DMいただいても大丈夫です。<br class="u-hideSp" />
     </p>
 
-    <section class="status">
+    <!-- <section class="status">
       <h3>補足: 現在の受付状況</h3>
       <ul>
         <li>
@@ -28,7 +28,7 @@
           2021年8月中までは手が空かない為、新規のご依頼は受け付けておりません。
         </li>
       </ul>
-    </section>
+    </section> -->
 
     <Form />
 
