@@ -36,6 +36,7 @@
 
 :root{
   background: color(theme);
+  accent-color: color(theme);
   // scroll-behavior: smooth;
 
   @include max($SM) { background: color(base); }
@@ -79,9 +80,19 @@ body {
   letter-spacing: 0.02em;
   -webkit-text-size-adjust: 100%;
 }
+:focus-visible { outline-color: color(theme); }
 ::selection {
   background: color(theme);
   color: color(base);
+}
+::marker { color: color(theme); }
+:is(
+  ::-webkit-calendar-picker-indicator,
+  ::-webkit-clear-button,
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button
+) {
+  color: color(theme);
 }
 
 *, *::before, *::after {
