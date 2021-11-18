@@ -40,7 +40,7 @@ FigmaでUIデザインを作成している場合は、公式の[Figma Plugin](h
 
 ## Adaptive Design
 
-<amp-video src="adaptive.mp4" controls width="1247" height="830" layout="responsive"></amp-video>
+<amp-video src="./adaptive.mp4" controls width="1247" height="830" layout="responsive"></amp-video>
 <small>https://m3.material.io/foundations/adaptive-design/overview</small>
 
 モバイルディスプレイからタブレット・デスクトップ、フォルダブル（折りたたみ）デバイス、さらにそれらの縦横状態などでよりシームレスに利用できるUIデザイン対応が求められます。この背景はChromebook・Windows11でのAndroidアプリ対応や、発売が噂されているPixel Foldなど、Androidがこれからより多くのディスプレイサイズで利用されることが大きそうです。

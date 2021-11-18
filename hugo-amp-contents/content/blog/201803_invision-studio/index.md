@@ -61,7 +61,7 @@ description: "去年からプロモ動画のみを公開し、大きな反響を
 - いきなし感動しました。要は**レイヤーオブジェクトの大きさを、アートボードに対する%で設定できる機能**ですね。むしろなんでSketchこれないんでしょうね。
 - それに加えて、リサイズ時に親要素に対して子要素をどの位置に置くかの指定もできます。これはSketchシンボルのResizing機能と一緒ですね。
 
-<amp-video src="capture-layout.mp4" controls width="1247" height="830" layout="responsive"></amp-video>
+<amp-video src="./capture-layout.mp4" controls width="1247" height="830" layout="responsive"></amp-video>
 
 
 
@@ -69,12 +69,12 @@ description: "去年からプロモ動画のみを公開し、大きな反響を
 - InVision本来のサービスである画面遷移のプロトタイピングを作成する機能
 - つい先日リリースされた[Sketchのプロトタイピング機能]( controls)にめっちゃ似てる...画面右上から本家InVisionのサービスにすぐアップロードできるし、この分野ではSKetchに勝ち目はないかもしれませんね。
 
-<amp-video src="capture-animation.mp4" controls width="1280" height="800" layout="responsive"></amp-video>
+<amp-video src="./capture-animation.mp4" controls width="1280" height="800" layout="responsive"></amp-video>
 
 ### Scroll
 - こちらも画面プロトタイピングの機能。一部固定+スクローラブルな画面を作成できる。
 
-<amp-video src="capture-scroll.mp4" controls width="1280" height="800" layout="responsive"></amp-video>
+<amp-video src="./capture-scroll.mp4" controls width="1280" height="800" layout="responsive"></amp-video>
 
 
 
