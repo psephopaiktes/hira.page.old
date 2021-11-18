@@ -1,6 +1,7 @@
 {{ $src := .Get "src" }}
 {{ $alt := .Get "alt" }}
 {{ $image := $.Page.Resources.GetMatch $src }}
+<!-- {{ $resized := $image.Resize "1200x q80" }} -->
 {{ $width := $image.Width }}
 {{ $height := $image.Height }}
 <amp-img

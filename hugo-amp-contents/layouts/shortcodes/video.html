@@ -1,0 +1,13 @@
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $src := $.Page.Resources.GetMatch $src }}
+<amp-video
+    controls
+    autoplay
+    src="{{ $src.Permalink }}"
+    width="{{ $width }}"
+    height="{{ $height }}"
+    layout="responsive"
+    src="{{ $src }}"
+></amp-video>
