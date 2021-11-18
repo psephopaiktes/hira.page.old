@@ -12,7 +12,7 @@
 - 画像はindex.mdと同じフォルダに置いてOK
   - `⌘⌥V` でMarkdown中に画像を挿入
   - VS CODE で [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image)が必要
-- GIFや動画はAMP形式で書く必要があるので、以下を使用
+- 画像や動画はAMP形式で書く必要があるので、以下を使用
   - `{{<img src="terminal.gif" alt="GIFイメージ" >}}`
   - `<amp-video src="./adaptive.mp4" controls width="1247" height="830" layout="responsive"></amp-video>`
 

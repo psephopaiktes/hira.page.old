@@ -2,7 +2,7 @@
 id: "material-design-3"
 title: "Material Design 3 をざっくりまとめ"
 date: 2021-11-18T15:31:14+09:00
-draft: false
+draft: true
 tags: ["ui","design"]
 description: "Android 12 のリリースといっしょに、Material Design の公式ドキュメントも大きくアップデートされました（通称M3）。ひととおり目を通したので要所を簡単にまとめて紹介します。ある程度従来のMaterial Designを知っている前提です。"
 redirect: ""
@@ -36,11 +36,15 @@ FigmaでUIデザインを作成している場合は、公式の[Figma Plugin](h
 
 また、詳しいドキュメントは見つけられなかったのですが、アプリアイコン自体もユーザーのカスタムカラーに応じて動的に変更できるようになりそうです。Pixel+Android12で、一部アイコンはすでに変更可能です。
 
-![theme-color](theme-color.png)
+{{<img alt="theme-color" src="theme-color.png">}}
 
 ## Adaptive Design
 
-<amp-video src="./adaptive.mp4" controls width="1247" height="830" layout="responsive"></amp-video>
+<amp-video controls autoplay
+  width="3840"
+  height="2160"
+  layout="responsive"
+  src="./adaptive.mp4"></amp-video>
 <small>https://m3.material.io/foundations/adaptive-design/overview</small>
 
 モバイルディスプレイからタブレット・デスクトップ、フォルダブル（折りたたみ）デバイス、さらにそれらの縦横状態などでよりシームレスに利用できるUIデザイン対応が求められます。この背景はChromebook・Windows11でのAndroidアプリ対応や、発売が噂されているPixel Foldなど、Androidがこれからより多くのディスプレイサイズで利用されることが大きそうです。
@@ -61,7 +65,7 @@ FigmaでUIデザインを作成している場合は、公式の[Figma Plugin](h
 ## Typography
 タイポグラフィはバリエーションが減ってシンプルになりました。こちらも同様にトークンによる管理が可能になっています。さらに、デバイスサイズに応じて動的にフォントサイズを管理できる<b>Adaptive type scale</b>も利用できるようになりました。
 
-![adaptive-type-scale](adaptive-type-scale.png)
+{{<img alt="adaptive-type-scal" src="adaptive-type-scal.png">}}
 <small>https://m3.material.io/styles/typography/overview</small>
 
 
@@ -71,7 +75,7 @@ Floating Action Button や Bottom Navigation などのコンポーネントは�
 
 あえて言うなら[Top App Bars](https://m3.material.io/components/top-app-bar/overview)の種類が増えて使いやすくなってますね。デバイスの縦長化に伴って上部UIを大きくしたい需要は高いので、ありがたいです。
 
-![top-app-bars](top-app-bars.png)
+{{<img alt="top-app-bars" src="top-app-bars.png">}}
 <small>https://m3.material.io/components/top-app-bar/overview</small>
 
 あいかわらずMaterial DesignのドキュメントはUIの使用ケースやルールが明確でわかりやすいですね。
