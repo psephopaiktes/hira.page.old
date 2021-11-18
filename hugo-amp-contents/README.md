@@ -14,7 +14,7 @@
   - VS CODE で [Paste Image](https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image)が必要
 - 画像や動画はAMP形式で書く必要があるので、以下を使用
   - `{{<img alt="adaptive-type-scal" src="adaptive-type-scal.png">}}`
-  - `<amp-video controls autoplay width="3840" height="2160" layout="responsive" src="./adaptive.mp4"></amp-video>`
+  - `{{<video src="adaptive.mp4" width="3840" height="2160">}}`
 
 ## ファイル構成
 file | description

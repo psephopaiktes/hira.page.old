@@ -2,7 +2,7 @@
 id: "material-design-3"
 title: "Material Design 3 をざっくりまとめ"
 date: 2021-11-18T15:31:14+09:00
-draft: true
+draft: false
 tags: ["ui","design"]
 description: "Android 12 のリリースといっしょに、Material Design の公式ドキュメントも大きくアップデートされました（通称M3）。ひととおり目を通したので要所を簡単にまとめて紹介します。ある程度従来のMaterial Designを知っている前提です。"
 redirect: ""
