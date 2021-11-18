@@ -256,11 +256,12 @@ article {
     text-decoration: underline;
     color: color(theme);
     font-weight: 500;
+    filter: hue-rotate(-5deg) brightness(95%);
     &:visited {
       filter: brightness(80%);
     }
     &:hover, &:active, &:focus {
-      filter: hue-rotate(-20deg) brightness(95%);
+      filter: hue-rotate(-20deg) brightness(80%);
     }
   }
   amp-img {
