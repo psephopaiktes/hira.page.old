@@ -2,7 +2,7 @@
 id: "material-design-3"
 title: "Material Design 3 をざっくりまとめ"
 date: 2021-11-18T15:31:14+09:00
-draft: true
+draft: false
 tags: ["ui","design"]
 description: "Android 12 のリリースといっしょに、Material Design の公式ドキュメントも大きくアップデートされました（通称M3）。ひととおり目を通したので要所を簡単にまとめて紹介します。ある程度従来のMaterial Designを知っている前提です。"
 redirect: ""
@@ -40,11 +40,7 @@ FigmaでUIデザインを作成している場合は、公式の[Figma Plugin](h
 
 ## Adaptive Design
 
-<amp-video controls autoplay
-  width="3840"
-  height="2160"
-  layout="responsive"
-  src="./adaptive.mp4"></amp-video>
+<amp-video controls autoplay width="3840" height="2160" layout="responsive" src="./adaptive.mp4"></amp-video>
 <small>https://m3.material.io/foundations/adaptive-design/overview</small>
 
 モバイルディスプレイからタブレット・デスクトップ、フォルダブル（折りたたみ）デバイス、さらにそれらの縦横状態などでよりシームレスに利用できるUIデザイン対応が求められます。この背景はChromebook・Windows11でのAndroidアプリ対応や、発売が噂されているPixel Foldなど、Androidがこれからより多くのディスプレイサイズで利用されることが大きそうです。
