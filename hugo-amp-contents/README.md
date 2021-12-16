@@ -4,7 +4,6 @@
   - `blog/`: amp形式でビルドされたブログページのHTMLファイルです。
   - `index.xml`: RSS用ファイルです。
   - `sitemap.xml`: SEO用のサイトマップファイルです。
-- [hugo](https://gohugo.io/)のインストールが必要です
 
 ## ブログ・実績の更新作業
 - ルートで `$ nr new` を実行
