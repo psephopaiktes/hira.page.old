@@ -246,6 +246,23 @@ article {
     font-size: 0.9em;
     opacity: 0.8;
     line-height: 1.5;
+    &.reference {
+      width: 100%;
+      text-align: right;
+      display: block;
+      margin-top: .4em;
+      margin-bottom: -1em;
+      a {
+        color: color(main,.4);
+        text-decoration: none;
+      }
+      &::after {
+        content: "launch";
+        color: color(main,.4);
+        font-family: "Material Icons Round";
+        vertical-align: bottom;
+      }
+    }
   }
   hr {
     border: 0;

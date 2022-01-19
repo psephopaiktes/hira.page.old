@@ -14,6 +14,15 @@
 - 画像や動画はAMP形式で書く必要があるので、以下を使用
   - `{{<img alt="adaptive-type-scal" src="adaptive-type-scal.png">}}`
   - `{{<video src="adaptive.mp4" width="3840" height="2160">}}`
+  -画像の引用時は `<small class="reference">[参照: ]()</small>`も使える
+- Twitter の埋め込みは以下
+｀｀｀
+<amp-twitter
+    data-tweetid="1429345207145754624"
+    width="800"
+    height="600"
+    layout="responsive"></amp-twitter>
+｀｀｀
 
 ## ファイル構成
 file | description
