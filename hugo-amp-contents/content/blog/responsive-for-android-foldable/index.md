@@ -1,7 +1,7 @@
 ---
 id: "responsive-for-android-foldable"
 title: "2022年のAndroidフォルダブル・レスポンシブ対応"
-date: 2021-11-19T16:14:08+09:00
+date: 2022-1-19T16:14:08+09:00
 draft: true
 tags: ["ui","design"]
 description: ""
