@@ -21,4 +21,4 @@ hugo
 cd ..
 git add -A
 git commit -m "$COMMENT"
-git push origin main
+git push

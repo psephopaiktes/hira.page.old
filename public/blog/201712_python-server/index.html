@@ -57,7 +57,8 @@
 </code></pre><p>というコマンドを実行します。するとpythonのローカルサーバが起ち上がり、同一のWIFIに繋がったデバイスからアクセスできるようになります。スマホのブラウザなどにPCのIPアドレスとポート番号を入力することでアクセスします。IPアドレスはMacであれば<b>システム環境設定→ネットワーク</b>から見るか、<code>ifconfig</code>コマンドで確認できます。ポート番号はデフォルトでは<code>8000</code>です。たとえばIPアドレスが<code>192.168.11.11</code>なら<code>192.168.11.11:8000</code>にアクセスすることでプレビュー確認が可能です。</p>
 <h2 id=説明>説明</h2>
 <p>Webサイト・webアプリを作成していると、手元のPCで作成しているwebページを、スマホサイズで確認したいシーンが多々あると思います。基本的にはChromeのモバイルプレビューモード ( Devツールを開いてスマホのアイコンをクリック or <code>⌘⌥I</code> → <code>⌘⇧M</code> ) でもよいのですが、実機のCSSの正確な挙動を見たり、実際のデザインのイメージを説明するためには物足りません。</p>
-<amp-img src=https://hira.page/blog/201712_python-server/chrome.png width=2832 height=2050 layout=responsive alt=Chromeのモバイルプレビュー></amp-img>
+<amp-img src=https://hira.page/blog/201712_python-server/chrome.png width=2832 height=2050 layout=responsive alt=Chromeのモバイルプレビュー>
+</amp-img>
 <p>もしくはGulpやRailsなどの環境で開発用サーバが入っている場合ならそちらの機能を使えばいいのですが、ただ手元の静的なHTMLをちょっとスマホでみたい時、いちいち開発環境を用意するのは手間です。そういう時、Macであればデフォルトでインストールされている<b>Python</b>の機能を使用して、上記コマンドで簡単にサーバを起てられるというわけです。</p>
 </article>
 <footer>

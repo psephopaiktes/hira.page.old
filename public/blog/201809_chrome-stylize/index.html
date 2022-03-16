@@ -138,7 +138,8 @@
 </code></pre></div><p><code>matches</code> が対象となるWEBページのURLパターン、<code>css</code>,<code>js</code>がそのページに読み込ませるCSS,JSファイルの指定です。<code>*</code>はワイルドカードです。上記の例であれば、<code>https://www.google.co.jp/</code>から始まるURLすべてにマッチングします。その他のURL指定の方法は <a href=https://developer.chrome.com/extensions/match_patterns target=_blank rel=noopener>こちら</a>
 にまとまっています。</p>
 <p>CSS,JSファイルを対象ページごとにフォルダ分けして作成しておきましょう。まだ中身は空白です。</p>
-<amp-img src=https://hira.page/blog/201809_chrome-stylize/directory.png width=1224 height=138 layout=responsive alt=フォルダ構造></amp-img>
+<amp-img src=https://hira.page/blog/201809_chrome-stylize/directory.png width=1224 height=138 layout=responsive alt=フォルダ構造>
+</amp-img>
 <p><code>css</code>,<code>js</code>は複数指定可能です。jQueryを使いたい場合はDLしたjQueryファイルを置いて、<br>
 <code>"js": ["jquery.min.js","google/script.js"]</code> などと書けばOKです。</p>
 <h3 id=3-cssjsを作成>3. CSS,JSを作成</h3>
@@ -157,7 +158,8 @@
 <li>適当にGoogle検索ページを開いてみてください。背景がグレーになり、Devツールのコンソールでメッセージが確認できるようになったかと思います。</li>
 </ol>
 <p>
-<amp-img src=https://hira.page/blog/201809_chrome-stylize/reload.png width=816 height=434 layout=responsive alt=リロード></amp-img>
+<amp-img src=https://hira.page/blog/201809_chrome-stylize/reload.png width=816 height=434 layout=responsive alt=リロード>
+</amp-img>
 これ以降、CSSやJSファイルをさらに変更した場合、<strong>更新はすぐには反映されず、拡張機能ページで再読込する必要があります</strong>。画面中のリロードアイコンをクリックすることで再読込されます。</p>
 <h2 id=効率よくcssを書くには>効率よくCSSを書くには</h2>
 <p>上記が基本手順となりますが、やってみるとわかる通り、リアルタイムに結果を見ながらCSSを作成してくのは非常に面倒です。ここでは実際にどのようにCSSやJSファイルを書いていくのがよいか、2通りまとめてみます。</p>
