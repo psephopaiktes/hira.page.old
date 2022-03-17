@@ -1,7 +1,7 @@
 ---
 id: "responsive-for-android-foldable"
 title: "コレで完璧2022年のAndroidフォルダブル・レスポンシブ対応"
-date: 2022-03-15T16:14:08+09:00
+date: 2022-03-16T11:14:08+09:00
 draft: false
 tags: ["ui","design"]
 description: "自社アプリでフォルダブル(折りたたみスマホ)対応をしたので、最新のAndroidマルチデバイス・レスポンシブ対応についてUIデザインの観点からまとめてみます。ちょっと長いんで、目次から気になる部分だけでも読んでってください。"
@@ -12,7 +12,7 @@ redirect: ""
 ## 背景・前説
 Androdi OS はもともと、iOSと違って多くのデバイスで使われることを想定しています。iOSが自社製作のデバイスであるiPhone・iPadでのみ使われるのに対して、AndroidはGoogle以外が作った多くのスマートフォンやタブレットにもインストールされ、様々な環境で使用されますね。
 
-さらに昨今は Chromebook (Chrome OS) や Windows11 でAndroidアプリが使えるようになったことや、Foldableデバイス(折りたたみスマホ)などの発売など、Androidがこれからますます多くのディスプレイサイズで利用されることが予想されます。
+さらに昨今は ****Chromebook (Chrome OS) や Windows11 でAndroidアプリが使えるようになった** ことや、Foldableデバイス(折りたたみスマホ)などの発売など、Androidがこれからますます多くのディスプレイサイズで利用されることが予想されます。
 
 {{<img alt="android device sample" src="android-devices.png">}}
 <small>Androidが動くデバイスのほんの一例</small>
