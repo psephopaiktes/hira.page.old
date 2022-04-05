@@ -7,7 +7,7 @@ draft: false
 tags: ["UI","CODE"]
 description: "Webページを様々な方法で共有・コピーできるChrome拡張機能です。"
 exlink: "https://chrome.google.com/webstore/detail/share-it/kmfmfcdigkgfhmnopjfdnaikhjkmmplm/"
-priority: 3
+priority: 4
 ---
 
 

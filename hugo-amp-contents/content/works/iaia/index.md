@@ -7,7 +7,7 @@ draft: false
 tags: ["UI","CODE"]
 description: "現在開発中のクトゥルフTRPG用のゲームアプリです。"
 exlink: "https://iaia.app/"
-priority: 5
+priority: 3
 ---
 
 ## 概要

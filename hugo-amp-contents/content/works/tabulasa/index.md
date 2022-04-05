@@ -7,7 +7,7 @@ draft: false
 tags: ["UI","CODE"]
 description: "Chromeの新しいタブをMarkdownエディタにする拡張機能です。"
 exlink: "https://psephopaiktes.github.io/tabulasa/"
-priority: 3
+priority: 5
 ---
 
 ## 概要

@@ -6,7 +6,7 @@ draft: false
 tags: ["UI"]
 description: "Z Venture Capital株式会社さまのコーポレートサイトをデザインしました。"
 exlink: "https://zvc.vc/"
-priority: 5
+priority: 6
 ---
 
 ## 概要

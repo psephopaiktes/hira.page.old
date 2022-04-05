@@ -7,7 +7,7 @@ ID=$1
 
 # 引数がなかった場合は入力を待つ
 if [ -z ${ID} ]; then
-  echo "Enter blog id (ex.blog/hello-world or works/web-design) :"
+  echo "Enter page id (ex.blog/hello-world or works/web-design) :"
   read ID
 fi
 

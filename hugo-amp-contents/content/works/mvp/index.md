@@ -7,7 +7,7 @@ draft: false
 tags: ["UI","CODE"]
 description: "スマホ１台あればみんなで遊べる、超お手軽ゲーム。Vueにより開発し、PWAアプリとしてリリースしました。"
 exlink: "https://mafi.app/"
-priority: 5
+priority: 4
 ---
 
 ## 概要
