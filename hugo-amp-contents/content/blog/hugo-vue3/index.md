@@ -1,5 +1,5 @@
 ---
-id: "hugo+vue3"
+id: "hugo-vue3"
 title: "Vue 3 + Hugo でSPAかつSEOにつよいブログサイトを作る"
 date: 2021-03-08T16:55:13+09:00
 update: false
