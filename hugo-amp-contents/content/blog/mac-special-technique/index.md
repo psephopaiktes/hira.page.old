@@ -2,7 +2,7 @@
 id: "mac-special-technique"
 title: "Apple信者も意外と知らない、今日から「毎日」使えるMacの小ワザ"
 date: 2022-04-24T17:30:29+09:00
-draft: false
+draft: true
 tags: ["app・service"]
 description: ""
 redirect: ""
