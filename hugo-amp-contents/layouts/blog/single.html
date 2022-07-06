@@ -43,9 +43,7 @@
             "headline": {{ .Title }},
             "image": {{ $heder_img_path }},
             "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05" }},
-            {{- if .Params.update -}}
-            "dateModified": {{ time.Format "2006-01-02T15:04:05" .Params.update }},
-            {{ end }}
+            "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05" }},
             "author": {
                 "@type": "Person",
                 "name": {{ .Site.Params.Author }}
@@ -139,8 +137,8 @@
             <span class="date">
                 <i class="material-icons-round">today</i>
                 <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}" content="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
-                {{- if .Params.update -}}
-                公開 / <time itemprop="datePublished" datetime="{{ time.Format "2006-01-02" .Params.update }}" content="{{ time.Format "2006-01-02" .Params.update }}">{{ time.Format "2006年1月2日" .Params.update }}</time>更新
+                {{- if ne .Date .Lastmod -}}
+                公開 / <time itemprop="datePublished" datetime="{{ .Lastmod.Format "2006-01-02" }}" content="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006年1月2日" }}</time>更新
                 {{ end }}
             </span>
 
