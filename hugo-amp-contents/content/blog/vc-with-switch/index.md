@@ -1,6 +1,6 @@
 ---
 id: "vc-with-switch"
-title: "Switchでゲームしながらスマホでボイスチャット通話するイヤフォンの最適解 [Splatoon3]"
+title: "Switchのゲーム音とスマホのボイスチャット通話をイヤフォンで同時に聴く [Splatoon3]"
 date: 2022-08-22T18:42:41+09:00
 draft: false
 tags: ["review"]
