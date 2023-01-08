@@ -21,7 +21,7 @@
             <SVG symbol="twitter" alt="Twitter" />
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a
             href="https://note.com/psephopaiktes"
             target="_blank"
@@ -31,7 +31,7 @@
           >
             <SVG symbol="note" alt="note" />
           </a>
-        </li>
+        </li> -->
         <li>
           <a
             href="https://github.com/psephopaiktes"
