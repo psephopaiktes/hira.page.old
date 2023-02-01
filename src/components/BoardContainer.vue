@@ -54,6 +54,17 @@
             <SVG symbol="instagram" alt="Instagram" />
           </a>
         </li>
+        <li>
+          <a
+            href="https://www.pinterest.jp/psephopaiktes/"
+            target="_blank"
+            rel="noopener"
+            title="Pinterest"
+            class="c-tips"
+          >
+            <SVG symbol="pinterest" alt="pinterest" />
+          </a>
+        </li>
       </ul>
       <p>
         <small>© Akira HIRATA {{ new Date().getFullYear() }}</small>
