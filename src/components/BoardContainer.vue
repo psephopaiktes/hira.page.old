@@ -1,10 +1,10 @@
 <template>
   <div class="board">
-    <nav id="backhome">
+    <!-- <nav id="backhome">
       <router-link to="/">
         <SVG symbol="backhome" alt="ホームへ戻る" />
       </router-link>
-    </nav>
+    </nav> -->
 
     <slot></slot>
 
@@ -21,7 +21,7 @@
             <SVG symbol="twitter" alt="Twitter" />
           </a>
         </li>
-        <!-- <li>
+        <li>
           <a
             href="https://note.com/psephopaiktes"
             target="_blank"
@@ -31,7 +31,7 @@
           >
             <SVG symbol="note" alt="note" />
           </a>
-        </li> -->
+        </li>
         <li>
           <a
             href="https://github.com/psephopaiktes"

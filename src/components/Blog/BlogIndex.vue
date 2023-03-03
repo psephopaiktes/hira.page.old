@@ -189,6 +189,7 @@ export default {
       .c-exSite {
         width: 12rem;
         height: 4.8rem;
+        opacity: .9;
       }
     }
     a {

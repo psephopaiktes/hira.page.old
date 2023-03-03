@@ -341,6 +341,7 @@ export default {
   h2,
   p {
     max-width: 48rem;
+    text-align: justify;
     word-break: break-all;
   }
   img {
@@ -355,7 +356,7 @@ export default {
   &__left {
     @include min(#{$SM + 1}) {
       grid-area: left;
-      text-align: right;
+      text-align-last: right;
       justify-self: end;
     }
     > a {
@@ -372,7 +373,7 @@ export default {
   &__right {
     @include min(#{$SM + 1}) {
       grid-area: right;
-      text-align: left;
+      text-align-last: left;
       justify-self: start;
     }
     > a {
@@ -413,6 +414,9 @@ export default {
 .aboutMe.hirata {
   img {
     margin-top: 0rem;
+  }
+  .sns {
+    opacity: .5;
   }
 }
 .aboutMe.skillmap {

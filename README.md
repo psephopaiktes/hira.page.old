@@ -32,6 +32,7 @@ https://hira.page/
 - `$ npm run new`: ブログ・実績記事の新規追加
 - `$ npm run draft`: 下書き中の記事を選択して編集を再開
 - `$ npm run deploy`: すべてのビルド、GitHubプッシュ、本番公開
+- `$ npm run sprite`: `src/assets/svg-sprite/`のSVGからSVG sprite ファイルを生成。フォルダは無視される
 
 <br/>
 
