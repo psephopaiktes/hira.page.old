@@ -121,8 +121,8 @@ export default {
 @use "@/style/common.scss" as *;
 .lottie {
   display: inline-flex;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
 .toggleBtn {
@@ -141,19 +141,19 @@ export default {
     align-items: center;
     justify-content: center;
     .lottie {
-      margin: 0 1.2rem 0 -0.8em;
+      margin: 0 1.2rem 0 -1.2em;
     }
     .logo {
       fill: #fff;
-      width: 8rem;
-      height: 2rem;
+      width: 8.8rem;
+      height: 2.2rem;
     }
     span {
       color: rgba(#fff, 0.8);
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       letter-spacing: 0.1em;
-      margin-top: -0.3em;
+      margin-top: -0.2em;
     }
   }
 }

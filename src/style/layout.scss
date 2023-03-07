@@ -11,12 +11,15 @@ $Z_MODAL: 9000;
 @keyframes showUpMenu {
   0% {
     bottom: -8rem;
+    transform: scale(1);
   }
   80% {
     bottom: calc(8rem + env(safe-area-inset-bottom));
+    transform: scale(1.2);
   }
   100% {
     bottom: calc(2.4rem + env(safe-area-inset-bottom));
+    transform: scale(1);
   }
 }
 
@@ -39,9 +42,9 @@ $Z_MODAL: 9000;
     top: auto;
     background: #000;
     bottom: calc(2.4rem + env(safe-area-inset-bottom));
-    left: calc(50vw - 10rem);
-    width: 20rem;
-    height: 5.6rem;
+    left: calc(50vw - 12rem);
+    width: 24rem;
+    height: 6.4rem;
   }
 }
 
@@ -84,9 +87,9 @@ $Z_MODAL: 9000;
     animation: showUpMenu 0.4s ease-out;
     top: auto;
     bottom: calc(2.4rem + env(safe-area-inset-bottom));
-    left: calc(50vw - 10rem);
-    width: 20rem;
-    height: 5.6rem;
+    left: calc(50vw - 12rem);
+    width: 24rem;
+    height: 6.4rem;
     will-change: bottom, left, width, height;
     > * {
       opacity: 0;
