@@ -5,11 +5,15 @@
         <source
           srcset="@/assets/bitmap/me/eyecatch-sp.jpg"
           media="(max-width: 480px)"
+          width="960"
+          height="960"
         />
         <img
           @load="fadeImg()"
           src="@/assets/bitmap/me/eyecatch-pc.jpg"
           alt="アイキャッチ画像:仕事中のイメージ"
+          width="3200"
+          height="1600"
         />
       </picture>
 

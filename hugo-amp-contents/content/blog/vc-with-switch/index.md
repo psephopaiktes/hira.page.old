@@ -139,7 +139,7 @@ iPhoneユーザー限定ですが、スピーカー通話していてもほと�
 ## 案4: デュアル接続かつミキシング対応のBluetoothイヤフォンを使う
 {{<img alt="デュアルワイヤレスイヤフォンを利用した様子" src="4-dual-wireless-photo.webp">}}
 
-個人的にかなりおすすめの方法です。2.4Ghz方式とBluetooth方式/有線接続でSwitchとスマホに接続でき、なおかつそれらの音を **同時に聴ける(ミキシングできる)** イヤフォンを利用します。以下の様にSwitchには2.4Ghz用のドングル(通信機)を利用して遅延無しで接続し、スマホにはBluetoothもしくは有線で接続します。
+個人的おすすめの方法です。2.4Ghz方式とBluetooth方式/有線接続でSwitchとスマホに接続でき、なおかつそれらの音を **同時に聴ける(ミキシングできる)** イヤフォンを利用します。以下の様にSwitchには2.4Ghz用のドングル(通信機)を利用して遅延無しで接続し、スマホにはBluetoothもしくは有線で接続します。
 
 {{<img alt="デュアルワイヤレスイヤフォンを利用した配線図" src="4-dual-wireless.webp">}}
 
@@ -191,11 +191,18 @@ Sonyから発表されたゲーミングヘッドセットです。当然PS5向�
 
 こちらは2.4GhzWi-Fiには対応していないのですが、<b>有線接続とBluetoothをミキシング再生</b>できます。なのでスマホにはBluetooth、Switchには有線で繋ぐことで他の製品と同様にミキシング再生で利用可能です。
 
-有線になってしまう分 **価格がかなり安いですし、テレビに挿せばPS5との併用もラク** です。配線も1本だけなのでシンプルです。かなりオススメです。
+有線になってしまう分 **比較的安価ですし、テレビに挿せばPS5との併用もラク** です。配線も1本だけなのでシンプルです。かなりオススメです。
 
 重量: 352g, バッテリー: 最大20時間, 価格: 1.3万
 
-<small>※ 同じメーカーから最近 [2.4Ghz対応のモデル](https://amzn.to/3QT327c) も発売されたのですが、こちらはSwitchに対応していないそうです([参考](https://kakakumag.com/game/?id=17886))。</small>
+同じメーカーから最近 [2.4Ghz対応のモデル](https://amzn.to/3QT327c) も発売されたのですが、こちらはSwitchに対応していないそうです([参考](https://kakakumag.com/game/?id=17886))。ただおそらく同様に、有線でSwitchにつないでスマホ通話をBluetoothで使うことはできそうです。(未確認)
+
+<!-- 
+有線 + Bluetoothのその他
+* [ARCTIS 3 | Bluetooth対応ゲーミングヘッドセット | SteelSeries](https://jp.steelseries.com/gaming-headsets/arctis-3-bluetooth)
+* [H3 Hybrid Black Bluetooth® 機能装備の密閉型ゲーミングヘッドセット](https://www.eposaudio.com/ja/jp/gaming/products/h3-hybrid-black-bluetooth-gaming-headset-1000890)
+https://howmew.com/19357/
+ -->
 
 #### 4. GENKI: Waveform Earphones
 {{<img alt="GENKI: Waveform Earphones" src="4-product-4.webp">}}

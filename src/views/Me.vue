@@ -54,7 +54,6 @@
             alt="平田の写真"
             width="960"
             height="674"
-            loading="lazy"
           />
         </router-link>
       </div>
