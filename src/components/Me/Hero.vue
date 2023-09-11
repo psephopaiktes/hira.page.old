@@ -74,7 +74,6 @@
             </a>
           </li>
         </ul>
-
       </div>
     </div>
   </section>
@@ -85,7 +84,7 @@ export default {
   name: "MeHero",
   data() {
     return {
-      typography: null
+      typography: null,
     };
   },
   mounted() {
@@ -114,8 +113,8 @@ export default {
             ${mouseY - typographyY - typographyHeight / 2}px
           `;
       }, 100);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -165,7 +164,7 @@ export default {
   background-clip: text;
   background-repeat: no-repeat;
   color: transparent;
-  filter: drop-shadow(0 0 2rem color(main,.2));
+  filter: drop-shadow(0 0 2rem color(main, 0.2));
 
   @include max($SM) {
     font-size: 4vw;
@@ -185,17 +184,17 @@ export default {
     letter-spacing: 0.08em;
     &:nth-child(1) {
       font-size: 2.37em;
-      margin-top: .4em;
+      margin-top: 0.4em;
       @include max($SM) {
-        margin-top: .8em;
+        margin-top: 0.8em;
       }
     }
     &:nth-child(2) {
       font-size: 1.11em;
-      margin-top: .6em;
+      margin-top: 0.6em;
     }
     &:nth-child(3) {
-      margin-top: .6em;
+      margin-top: 0.6em;
     }
   }
 

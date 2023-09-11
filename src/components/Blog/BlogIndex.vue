@@ -64,12 +64,12 @@ export default {
   name: "BlogIndex",
   props: {
     searchWord: String,
-    tagWord: String
+    tagWord: String,
   },
   data() {
     return {
       addNum: 12,
-      currentNum: 0
+      currentNum: 0,
     };
   },
   mounted() {
@@ -102,13 +102,13 @@ export default {
       setTimeout(() => {
         el.classList.remove("show");
       }, delay);
-    }
+    },
   },
   computed: {
     resultIndex() {
       let result = [];
       if (this.searchWord) {
-        result = this.$store.state.blogIndex.filter(item => {
+        result = this.$store.state.blogIndex.filter((item) => {
           const titleCheck =
             item.title
               .normalize()
@@ -116,7 +116,7 @@ export default {
               .indexOf(this.searchWord.toLowerCase()) !== -1;
 
           let tagCheck = false;
-          item.tags.forEach(tag => {
+          item.tags.forEach((tag) => {
             if (
               tag
                 .normalize()
@@ -130,9 +130,9 @@ export default {
           return titleCheck || tagCheck;
         });
       } else if (this.tagWord) {
-        result = this.$store.state.blogIndex.filter(item => {
+        result = this.$store.state.blogIndex.filter((item) => {
           let tagCheck = false;
-          item.tags.forEach(tag => {
+          item.tags.forEach((tag) => {
             if (tag.normalize().toLowerCase() == this.tagWord.toLowerCase()) {
               tagCheck = true;
             }
@@ -144,7 +144,7 @@ export default {
       }
 
       return result;
-    }
+    },
   },
   watch: {
     searchWord() {
@@ -152,8 +152,8 @@ export default {
     },
     tagWord() {
       this.currentNum = this.addNum;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -189,7 +189,7 @@ export default {
       .c-exSite {
         width: 12rem;
         height: 4.8rem;
-        opacity: .9;
+        opacity: 0.9;
       }
     }
     a {
