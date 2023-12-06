@@ -1,6 +1,6 @@
 ---
 id: "kvm-display"
-title: "複数のPCをひとつのディスプレイやマウスで使いたい人へ！KVM&PbPモニターが超便利"
+title: "複数のPCをひとつのディスプレイやマウスで使いたい人へ！KVM・PbPモニターが超便利"
 date: 2023-12-06T01:40:08+09:00
 draft: false
 tags: ["review"]
