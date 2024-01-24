@@ -1,7 +1,7 @@
 languageCode = "ja"
 title = "WEBA"
 copyright = "© weba"
-baseURL = "https://hira.page/"
+baseURL = "https://psephopaiktes.github.io/hira.page.old/"
 publishDir = "../public/"
 newContentEditor = "code"
 hasCJKLanguage = true
