@@ -1,6 +1,6 @@
-<a href="hira.page" target="_blank">
-  <img src="design/ogp.png" alt="WEBA">
-</a>
+最新のコードはこちらから:
+https://github.com/psephopaiktes/hira.page
+
 
 <br/>
 <br/>
