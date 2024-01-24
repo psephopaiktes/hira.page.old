@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="ja"><head prefix="og: https://ogp.me/ns#"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WEBA</title><meta name="description" content="デザイナー「平田 章」のブログ兼ポートフォリオサイトです。Webフロント技術やUIデザインについてなどの情報を発信しています。"><link rel="icon" sizes="64x64" type="image/png" href="img/favicon.png"><link rel="icon" sizes="192x192" href="img/android-chrome.png"><link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"><meta name="theme-color" content="#FFCC66"><meta name="color-scheme" content="light dark"><meta property="og:type" content="website"><meta property="og:title" content="WEBA"><meta property="og:site_name" content="WEBA"><meta property="og:description" content="デザイナー「平田 章」のブログ兼ポートフォリオサイトです。Webフロント技術やUIデザインについてなどの情報を発信しています。"><meta property="og:image" content="https://hira.page/img/ogp.png"><meta property="og:url" content="https://hira.page"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><style>#loading{
+      width: 100vw;
+      height: 100vh;
+      background: #fc6;
+      position: fixed;
+      bottom: 0; left: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      opacity: 1;
+      transition: .4s ease-out;
+    }
+    @supports (-webkit-touch-callout: none) {
+      #loading { height: -webkit-fill-available;}
+    }
+    #loading.hide{
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loading svg {
+      width: min(40vw,160px);
+      fill: #fff;
+    }
+    #loading svg path { animation: blink 1s ease-out infinite alternate }
+    #loading svg #w { animation-delay: 000ms }
+    #loading svg #e { animation-delay: 250ms }
+    #loading svg #b { animation-delay: 500ms }
+    #loading svg #a { animation-delay: 750ms }
+    @keyframes blink {
+      from { opacity: 1 }
+      to { opacity: .2 }
+    }</style><link rel="preload" href="/font/Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/font/Bold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/font/FuturaNowVar.woff2" as="font" type="font/woff2" crossorigin><script data-ad-client="ca-pub-5055970484117246" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link href="/css/chunk-229eeaf4.e2814751.css" rel="prefetch"><link href="/css/chunk-24c26be6.7492d9a9.css" rel="prefetch"><link href="/css/chunk-2e358c0a.2cfad508.css" rel="prefetch"><link href="/css/chunk-5c38fe07.01802562.css" rel="prefetch"><link href="/css/chunk-5e871391.abd1f711.css" rel="prefetch"><link href="/css/chunk-6ebc0419.685cd035.css" rel="prefetch"><link href="/css/chunk-cc2c4362.2aaa75cf.css" rel="prefetch"><link href="/js/chunk-229eeaf4.e46c0b7c.js" rel="prefetch"><link href="/js/chunk-24c26be6.46ce6848.js" rel="prefetch"><link href="/js/chunk-2e358c0a.9d4463b6.js" rel="prefetch"><link href="/js/chunk-5c38fe07.7e3ebac4.js" rel="prefetch"><link href="/js/chunk-5e871391.11e8fd65.js" rel="prefetch"><link href="/js/chunk-6ebc0419.2a9f6910.js" rel="prefetch"><link href="/js/chunk-cc2c4362.9f42d126.js" rel="prefetch"><link href="/css/app.6c480c56.css" rel="preload" as="style"><link href="/js/app.d75110c7.js" rel="preload" as="script"><link href="/js/chunk-vendors.f3f5a0fb.js" rel="preload" as="script"><link href="/css/app.6c480c56.css" rel="stylesheet"></head><body><noscript><strong>Javascriptがサポートされているブラウザで御覧ください。</strong></noscript><div id="app"></div><section id="loading"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 960 240" fill="#fff"><path id="w" d="M216,0.1H37.8c-17,0-25.5,0-29,5.6C5.2,11.2,8.8,18.9,16,34.3l82.3,175.4c9.4,20,14.1,30.1,21.7,30.1 c7.6,0,12.3-10,21.7-30.1l3.2-6.9c6.8-14.5,10.2-21.8,16.5-22.8c6.3-1,11.8,4.9,22.7,16.6l14.3,15.2c17.6,18.7,26.3,28.1,33.9,25.1 c7.6-3,7.6-15.8,7.6-41.5V24.1c0-11.3,0-17-3.5-20.5S227.3,0.1,216,0.1z"/><path id="e" d="M446,0.1H314c-11.3,0-17,0-20.5,3.5c-3.5,3.5-3.5,9.2-3.5,20.5V216c0,11.3,0,17,3.5,20.5 c3.5,3.5,9.2,3.5,20.5,3.5h132c11.3,0,17,0,20.5-3.5s3.5-9.2,3.5-20.5v-12c0-11.3,0-17-3.5-20.5c-3.5-3.5-9.2-3.5-20.5-3.5h-21 c-1.8,0.1-3.6,0-5.3-0.2c-4.8-0.9-8.5-4.7-9.4-9.4c-0.2-1.8-0.3-3.6-0.2-5.3c-0.1-1.8,0-3.6,0.2-5.3c1-4.8,4.7-8.5,9.4-9.4 c1.8-0.2,3.6-0.3,5.3-0.2h5c7.5,0,11.2,0,14-1.6c1.8-1.1,3.3-2.6,4.4-4.4c1.6-2.8,1.6-6.5,1.6-14v-20c0-7.5,0-11.2-1.6-14 c-1.1-1.8-2.6-3.3-4.4-4.3c-2.8-1.6-6.5-1.6-14-1.6h-5c-1.8,0.1-3.6,0-5.3-0.2c-4.8-0.9-8.5-4.7-9.4-9.4c-0.2-1.8-0.3-3.6-0.2-5.3 c-0.1-1.8,0-3.6,0.2-5.3c1-4.8,4.7-8.5,9.4-9.4c1.8-0.2,3.6-0.3,5.3-0.2h21c11.3,0,17,0,20.5-3.5s3.5-9.2,3.5-20.5v-12 c0-11.3,0-17-3.5-20.5S457.3,0.1,446,0.1z"/><path id="b" d="M692.4,135.4c-3.5-5.7-8.3-10.5-14-13.9c-8-4.9-10.5-19.3-5.8-27.5c4.7-8.4,7.2-18.9,7.2-31.6 c0-41.6-22.2-62.5-66.5-62.5H546c-11.3,0-17,0-20.5,3.5C522,7,522,12.7,522,24v191.9c0,11.3,0,17,3.5,20.5c3.5,3.5,9.2,3.5,20.5,3.5 h74.5c29.8,0,51.9-8.1,66.5-24.5c10.1-11.1,15-25.6,15-43.6l0,0C702,158,698.9,145.9,692.4,135.4z"/><path id="a" d="M944,205.8L861.7,30.5c-9.4-20-14.1-30.1-21.7-30.1s-12.3,10-21.7,30.1L736,205.8c-7.2,15.4-10.8,23-7.3,28.6 s12,5.6,29,5.6h164.5c17,0,25.5,0,29-5.6S951.2,221.2,944,205.8z"/></svg></section><script src="/js/chunk-vendors.f3f5a0fb.js"></script><script src="/js/app.d75110c7.js"></script></body></html>

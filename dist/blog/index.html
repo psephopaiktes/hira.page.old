@@ -1,0 +1,16 @@
+<!-- index.xml が開かれてしまうのを回避する -->
+<!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;URL=/">
+  <meta name="robots" content="noindex">
+  <title>redirect...</title>
+  <script>localStorage.redirect = location.pathname + location.search + location.hash;</script>
+  <style>
+    html {
+      background: #fc6;
+    }
+  </style>
+</head>
+<body></body>
+</html>

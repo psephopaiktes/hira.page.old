@@ -42,7 +42,7 @@
       >
         <router-link
           :to="{
-            query: Object.assign({}, $route.query, { work: item.id })
+            query: Object.assign({}, $route.query, { work: item.id }),
           }"
         >
           <div class="thumb">
@@ -85,7 +85,7 @@ export default {
   name: "Works",
   components: {
     BoardContainer,
-    WorksModal
+    WorksModal,
   },
   data() {
     return {
@@ -93,7 +93,7 @@ export default {
       tagWord: "",
       sortOrder: "reccommend",
       addNum: 12,
-      currentNum: 0
+      currentNum: 0,
     };
   },
   mounted() {
@@ -105,7 +105,7 @@ export default {
 
     this.tagWord = this.$route.query.tag || "";
 
-    this.$store.state.worksIndex.forEach(item => {
+    this.$store.state.worksIndex.forEach((item) => {
       this.tags = [...this.tags, ...item.tags];
     });
     this.tags = [...new Set(this.tags)];
@@ -136,12 +136,12 @@ export default {
       setTimeout(() => {
         el.classList.remove("show");
       }, delay);
-    }
+    },
   },
   computed: {
     resultIdIndex() {
       let idIndex = [];
-      this.resultIndex.forEach(i => {
+      this.resultIndex.forEach((i) => {
         idIndex.push(i.id);
       });
       return idIndex;
@@ -149,9 +149,9 @@ export default {
     resultIndex() {
       let result = [];
       if (this.tagWord) {
-        result = this.$store.state.worksIndex.filter(item => {
+        result = this.$store.state.worksIndex.filter((item) => {
           let tagCheck = false;
-          item.tags.forEach(tag => {
+          item.tags.forEach((tag) => {
             if (tag.normalize().toLowerCase() == this.tagWord.toLowerCase()) {
               tagCheck = true;
             }
@@ -175,13 +175,13 @@ export default {
       });
 
       return result;
-    }
+    },
   },
   watch: {
     $route() {
       this.tagWord = this.$route.query.tag || "";
-    }
-  }
+    },
+  },
 };
 </script>
 
