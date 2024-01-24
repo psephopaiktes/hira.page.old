@@ -7,7 +7,8 @@ https://github.com/psephopaiktes/hira.page
 
 # WEBA
 ブログ兼ポートフォリオWebサイト
-https://hira.page/
+~~https://hira.page/~~
+https://psephopaiktes.github.io/hira.page.old/
 
 
 <br/>
